@@ -1,0 +1,70 @@
+{
+    "title": "leetcode刷题题型总结",
+    "description": "leetcode刷题题型总结",
+    "author": "sharwen",
+    "language": "zh-hans",
+    "root": ".",
+    "plugins": [
+        "expandable-chapters-small",
+        "expandable-chapters",
+        "code",
+        "copy-code-button",
+        "-lunr", "-search", "search-pro",
+        "github",
+        "emphasize",
+        "splitter",
+        "donate",
+        "-sharing", "sharing-plus"
+    ],
+
+    "pluginsConfig": {
+        "github-buttons": {
+            "repo": "https://github.com/fantasydreams",
+            "types": [
+                "star"
+            ],
+            "size": "small"
+        },
+        "donate": {
+            "wechat": "微信收款的二维码URL",
+            "alipay": "支付宝收款的二维码URL",
+            "title": "",
+            "button": "赏",
+            "alipayText": "支付宝打赏",
+            "wechatText": "微信打赏"
+        },
+        "sharing": {
+            "douban": false,
+            "facebook": false,
+            "google": true,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": true,
+            "linkedin": true,
+            "messenger": false,
+            "pocket": false,
+            "qq": false,
+            "qzone": true,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false,
+            "all": [
+                "douban", "facebook", "google", "hatenaBookmark", 
+                "instapaper", "linkedin","twitter", "weibo", 
+                "messenger","qq", "qzone","viber","vk","weibo",
+                "pocket", "stumbleupon","whatsapp"
+            ]
+        },
+       
+        "github": {
+            "url": "https://github.com/fantasydreams"
+        },
+        "theme-default": {
+            "showLevel": true
+        }
+        
+    }
+}

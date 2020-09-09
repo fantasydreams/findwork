@@ -1,0 +1,34 @@
+\contentsline {section}{\numberline {1}allocator}{3}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}内存分配}{3}{subsection.1.1}% 
+\contentsline {subsubsection}{\numberline {1.1.1}第一级配置器}{3}{subsubsection.1.1.1}% 
+\contentsline {subsubsection}{\numberline {1.1.2}第二级配置器}{3}{subsubsection.1.1.2}% 
+\contentsline {subsection}{\numberline {1.2}对象构造}{4}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}对象析构}{4}{subsection.1.3}% 
+\contentsline {subsection}{\numberline {1.4}数据初始化}{5}{subsection.1.4}% 
+\contentsline {subsection}{\numberline {1.5}内存回收}{5}{subsection.1.5}% 
+\contentsline {section}{\numberline {2}迭代器与traits}{5}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}迭代器分类}{5}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}traits判断POD}{6}{subsection.2.2}% 
+\contentsline {section}{\numberline {3}序列容器}{6}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}vector}{6}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}list}{7}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}deque}{7}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}stack}{8}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}queue}{8}{subsection.3.5}% 
+\contentsline {subsection}{\numberline {3.6}priority\_queue}{8}{subsection.3.6}% 
+\contentsline {subsection}{\numberline {3.7}slist}{8}{subsection.3.7}% 
+\contentsline {section}{\numberline {4}关联式容器}{8}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}RB Tree}{8}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}set}{8}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}map}{9}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}multiset}{9}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}multimap}{9}{subsection.4.5}% 
+\contentsline {subsection}{\numberline {4.6}hash\_table}{9}{subsection.4.6}% 
+\contentsline {subsubsection}{\numberline {4.6.1}hash\_table内存分配策略}{9}{subsubsection.4.6.1}% 
+\contentsline {subsection}{\numberline {4.7}hash\_set}{10}{subsection.4.7}% 
+\contentsline {subsection}{\numberline {4.8}hash\_map}{10}{subsection.4.8}% 
+\contentsline {subsection}{\numberline {4.9}hash\_multiset}{10}{subsection.4.9}% 
+\contentsline {subsection}{\numberline {4.10}hash\_multimap}{10}{subsection.4.10}% 
+\contentsline {section}{\numberline {5}some algorithm}{10}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}copy}{11}{subsection.5.1}% 
+\contentsline {section}{\numberline {6}adapter}{12}{section.6}% 

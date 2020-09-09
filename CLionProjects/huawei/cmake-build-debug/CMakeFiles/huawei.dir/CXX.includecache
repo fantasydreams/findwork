@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sharwen/CLionProjects/huawei/main.cpp
+iostream
+-
+vector
+-
+string
+-
+iostream
+-
+string
+-
+sstream
+-
+

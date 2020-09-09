@@ -1,0 +1,467 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>最近公共祖先LCA(Lowest Common Ancestor) · leetcode刷题题型总结</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="sharwen">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="bst.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../array/readme.html">
+            
+                <a href="../array/readme.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    数组
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../array/array_combine.html">
+            
+                <a href="../array/array_combine.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    从一个数组中找到特定组合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../array/bit.html">
+            
+                <a href="../array/bit.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    位运算专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    树
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="traverse.html">
+            
+                <a href="traverse.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    遍历
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="bst.html">
+            
+                <a href="bst.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    二叉搜索树BST
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="lca.html">
+            
+                <a href="lca.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    最近公共祖先LCA(Lowest Common Ancestor)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >最近公共祖先LCA(Lowest Common Ancestor)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;lcalowest-common-ancestor">&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;LCA(Lowest Common Ancestor)</h1>
+<h2 id="&#x5B9A;&#x4E49;">&#x5B9A;&#x4E49;</h2>
+<p>&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#x7B80;&#x79F0; LCA&#xFF08;Lowest Common Ancestor&#xFF09;&#x3002;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#xFF0C;&#x5C31;&#x662F;&#x8FD9;&#x4E24;&#x4E2A;&#x70B9;&#x7684;&#x516C;&#x5171;&#x7956;&#x5148;&#x91CC;&#x9762;&#xFF0C;&#x79BB;&#x6839;&#x6700;&#x8FDC;&#x7684;&#x90A3;&#x4E2A;&#x3002; &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#xFF0C;&#x6211;&#x4EEC;&#x8BB0;&#x67D0;&#x70B9;&#x96C6;S = {v1,v2,......,vn}&#x7684;&#x6700;&#x5C0F;&#x516C;&#x5171;&#x7956;&#x5148;&#x4E3A;LCA(v1,v2,...,vn)&#x6216;&#x8005;LCA(S)  </p>
+<ul>
+<li>&#x6027;&#x8D28;<ul>
+<li>LCA(v) = v</li>
+<li>u&#x662F;v&#x7684;&#x7956;&#x5148;&#xFF0C;&#x5219;LCA(u,v) = u</li>
+<li>&#x82E5;u&#xFF0C;v&#x5747;&#x4E0D;&#x662F;&#x5BF9;&#x65B9;&#x7684;&#x7956;&#x5148;&#xFF0C;&#x5219;u&#x548C;v&#x5728;LCA(u,v)&#x7684;&#x4E0D;&#x540C;&#x5B50;&#x6811;&#x4E2D;  </li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x6734;&#x7D20;">&#x6734;&#x7D20;</h2>
+<h3 id="bst-lca">BST LCA</h3>
+<ul>
+<li>BST&#x7684;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;&#x662F;LCA&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#x7684;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x51E0;&#x79CD;&#x5224;&#x5B9A;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;<ul>
+<li>&#x82E5;node&#x8282;&#x70B9;&#x7684;&#x503C;&#x5747;&#x5927;&#x4E8E;p,q&#x8282;&#x70B9;&#x7684;&#x503C;&#xFF0C;&#x5219;LCA(p,q)&#x5728;node&#x7684;&#x5DE6;&#x5B50;&#x6811;</li>
+<li>&#x82E5;node&#x8282;&#x70B9;&#x7684;&#x503C;&#x5747;&#x5C0F;&#x4E8E;p,q&#x8282;&#x70B9;&#x7684;&#x503C;&#xFF0C;&#x5219;LCA(p,q)&#x5728;node&#x7684;&#x53F3;&#x5B50;&#x6811;</li>
+<li>&#x82E5;node&#x8282;&#x70B9;&#x7684;&#x503C;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x503C;&#xFF0C;&#x4E14;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x503C;&#xFF0C;&#x5219;LCA(p,q) == node. </li>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(h)&#xFF0C;h&#x4E3A;&#x6811;&#x9AD8;&#xFF0C;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;O(1)</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-C++"><span class="hljs-function">TreeNode* <span class="hljs-title">lowestCommonAncestor</span><span class="hljs-params">(TreeNode* root, TreeNode* p, TreeNode* q)</span></span>{
+    <span class="hljs-keyword">if</span>(!root || !p || !q) <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;
+    <span class="hljs-keyword">if</span>(p-&gt;val &gt; q-&gt;val)swap(p,q);
+
+    <span class="hljs-keyword">while</span>(root){
+        <span class="hljs-keyword">if</span>(root-&gt;val &lt; p-&gt;val) root = root-&gt;right;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(root-&gt;val &gt; q-&gt;val)root = root-&gt;left;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> root;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;
+}
+</code></pre>
+<h3 id="&#x666E;&#x901A;&#x4E8C;&#x53C9;&#x6811;">&#x666E;&#x901A;&#x4E8C;&#x53C9;&#x6811;</h3>
+<p>&#x666E;&#x901A;&#x4E8C;&#x53C9;&#x6811;&#x7531;&#x4E8E;&#x4E0D;&#x5177;&#x5907;BST&#x7684;&#x6027;&#x8D28;&#xFF0C;&#x90A3;&#x4E48;&#x6700;&#x76F4;&#x63A5;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x7956;&#x5148;&#x8DEF;&#x5F84;&#xFF0C;&#x7136;&#x540E;&#x5BF9;&#x6BD4;&#x4E24;&#x4E2A;&#x8DEF;&#x5F84;&#x5F97;&#x5230;&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;  </p>
+<ul>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF0C;&#x4F9D;&#x6B21;&#x67E5;&#x8BE2;O(N)&#xFF0C;N&#x4E3A;&#x6811;&#x7684;&#x8282;&#x70B9;&#x6570;&#x91CF;</li>
+</ul>
+<pre><code class="lang-C++"><span class="hljs-keyword">class</span> Solution {
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function">TreeNode* <span class="hljs-title">lowestCommonAncestor</span><span class="hljs-params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>{
+        <span class="hljs-built_in">vector</span>&lt;TreeNode *&gt;p_ans,q_ans;
+        get_ancestor_path(root,p_ans,p);
+        get_ancestor_path(root,q_ans,q);
+        <span class="hljs-keyword">int</span> len = min(p_ans.size(),q_ans.size());
+        TreeNode * res = <span class="hljs-literal">nullptr</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i =<span class="hljs-number">0</span>;i &lt; len &amp;&amp; p_ans[i] == q_ans[i];++i)res = p_ans[i];
+        <span class="hljs-keyword">return</span> res;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">get_ancestor_path</span><span class="hljs-params">(TreeNode * root,<span class="hljs-built_in">vector</span>&lt;TreeNode *&gt; &amp;path,  TreeNode * p)</span></span>{
+        <span class="hljs-keyword">if</span>(!root) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        path.push_back(root);
+        <span class="hljs-keyword">if</span>(root == p) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">bool</span> res = get_ancestor_path(root-&gt;left,path,p);
+        <span class="hljs-keyword">if</span>(!res) res = get_ancestor_path(root-&gt;right,path,p);
+        <span class="hljs-keyword">if</span>(!res) path.pop_back();
+        <span class="hljs-keyword">return</span> res;
+    }
+};
+
+<span class="hljs-keyword">class</span> Solution{
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function">TreeNode* <span class="hljs-title">lowestCommonAncestor</span><span class="hljs-params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>{
+        <span class="hljs-keyword">if</span>(!root || !p || !q) <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;
+        <span class="hljs-keyword">if</span>(root == p || root == q) <span class="hljs-keyword">return</span> root;
+        TreeNode * left = lowestCommonAncestor(root-&gt;left,p,q);
+        TreeNode * right = lowestCommonAncestor(root-&gt;right,p,q);
+        <span class="hljs-keyword">if</span>(left &amp;&amp; right) <span class="hljs-keyword">return</span> root;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(left) <span class="hljs-keyword">return</span> left;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(right) <span class="hljs-keyword">return</span> right;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;
+    }
+};
+</code></pre>
+<p>&#x7136;&#x800C;&#x4EE5;&#x4E0A;&#x7684;&#x7B97;&#x6CD5;&#x5BF9;&#x4E8E;&#x5C11;&#x91CF;&#x7684;&#x67E5;&#x8BE2;&#x6027;&#x80FD;&#x8FD8;&#x80FD;&#x63A5;&#x53D7;&#xFF0C;&#x5982;&#x679C;&#x8FDB;&#x884C;&#x6279;&#x91CF;&#x67E5;&#x8BE2;&#xFF0C;&#x5219;&#x5C06;&#x96BE;&#x4EE5;&#x5FCD;&#x53D7;&#x9F9F;&#x901F;&#x6548;&#x7387;  </p>
+<h2 id="tarjan&#x7B97;&#x6CD5;&#xFF08;dfs&#x5E76;&#x67E5;&#x96C6;&#xFF09;">Tarjan&#x7B97;&#x6CD5;&#xFF08;DFS+&#x5E76;&#x67E5;&#x96C6;&#xFF09;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="bst.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 二叉搜索树BST">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"最近公共祖先LCA(Lowest Common Ancestor)","level":"1.3.3","depth":2,"previous":{"title":"二叉搜索树BST","level":"1.3.2","depth":2,"path":"tree/bst.md","ref":"tree/bst.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters-small","expandable-chapters","code","copy-code-button","-lunr","-search","search-pro","github","emphasize","splitter","donate","-sharing","sharing-plus","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"emphasize":{},"github":{"url":"https://github.com/fantasydreams"},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"支付宝收款的二维码URL","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"微信收款的二维码URL","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"github-buttons":{"repo":"https://github.com/fantasydreams","types":["star"],"size":"small"},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","vk","weibo","pocket","stumbleupon","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":true,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"expandable-chapters":{}},"theme":"default","author":"sharwen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"leetcode刷题题型总结","language":"zh-hans","gitbook":"*","description":"leetcode刷题题型总结"},"file":{"path":"tree/lca.md","mtime":"2020-03-30T15:56:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-08T06:52:23.975Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

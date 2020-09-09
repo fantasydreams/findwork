@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="normal"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="C__">
+				<Option output="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/C__" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 C__"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="C__/fast">
+				<Option output="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/C__" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 C__/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/inet_pton.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/leetcode/4.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/leetcode/48.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/1to.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/List.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/Pow.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/adjust_array.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/after_26.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/binary_search_tree_post.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/byte_calculate.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/find_last_k_list_node.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/find_sum_path.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/has_subtree.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/merge_sorted_list.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/min_stack.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/mirror_tree.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/print_matrix_circle.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/quickSort.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/rebuild_binary_tree.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/reverse_forward_list.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/rotate_array.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/offer/two_stack_quene.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/primer/perimer_cpp.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/primer/test.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/code/tools.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/leetcode/leetcode_ch.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/leetcode/leetcode_en.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/1ton.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/4.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/INET_PTON.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/List.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/adjustArray.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/after_26.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/binary_search_tree_post.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/byte_calculate.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/find_last_k_list_node.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/find_sum_path.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/has_sub_tree.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/merge_sorted_list.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/min_stack.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/mirror_tree.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/pow.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/print_matrix_circle.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/quickSort.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/rebuild_binary_tree.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/reverse_forward_list.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/rotate_array.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/stack_pop_sequence.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/stack_pop_sequence.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/offer/two_stack_quene.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/primer_header.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/project.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/test.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/tools.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/header/type.h">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/main.cpp">
+			<Option target="C__"/>
+		</Unit>
+		<Unit filename="/Users/sharwen/Desktop/practice/CLionProjects/normal/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

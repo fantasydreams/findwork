@@ -1,0 +1,238 @@
+\documentclass[a4paper,fontset=mac]{ctexart}
+\linespread{1.5}                         %行距
+\usepackage[top=2cm,bottom=2cm,left=2.5cm,right=2.5cm]{geometry}
+% \headsep=2cm
+% \textwidth=16cm \textheight=24.2cm
+\usepackage{fontspec,xltxtra,xunicode}
+\usepackage[colorlinks,linkcolor=blue,anchorcolor=red,citecolor=green,urlcolor=blue]{hyperref}  
+\usepackage{tabularx}
+\usepackage{amsmath}                   % 数学符号与公式
+\usepackage{amsfonts}                  % 数学符号与字体
+\usepackage{graphics}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{fancyhdr}                  % 设置页眉页脚
+\usepackage{fancyvrb}                  % 抄录环境
+\usepackage{float}                     % 管理浮动体
+\usepackage{geometry}                  % 定制页面格式
+\usepackage{hyperref}                  % 为PDF文档创建超链接
+\usepackage{lineno}                    % 生成行号
+\usepackage{listings}                  % 插入程序源代码
+\usepackage{multicol}                  % 多栏排版
+\usepackage{rotating}                  % 旋转文字，图形，表格
+\usepackage{subfigure}                 % 排版子图形
+\usepackage{indentfirst}               % 首段缩进
+\usepackage{booktabs}                  % 使用\multicolumn
+\usepackage{multirow}                  % 使用\multirow
+\usepackage{graphicx}  
+\usepackage{xcolor}
+\usepackage{cite}
+\usepackage{listings}
+
+
+
+\lstset{ %
+	backgroundcolor=\color[RGB]{245,245,244},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=bl,                    % sets the caption-position to bottom
+	commentstyle=\color[RGB]{0,96,96},    % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	frame=none,                    % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color[RGB]{40,40,255},       % keyword style
+	%language=Python,                 % the language of the code
+	morekeywords={*,...},            % if you want to add more keywords to the set
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color[RGB]{128,0,0},     % string literal style
+	tabsize=2,                       % sets default tabsize to 2 spaces
+	language=c++,
+	%title=myPython.py                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
+\graphicspath{{sources/}}
+\setlength{\parindent}{2em}       %设置缩进为两个大写M的宽度，大约为两个汉字的宽度
+\ctexset{section = {format = \raggedright\Large\bfseries,}} %section 左对齐
+\graphicspath{{sources/}}
+
+
+%------------------------------设置字体大小------------------------%  
+\newcommand{\cuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     %初号  
+\newcommand{\xiaocuhao}{\fontsize{36pt}{\baselineskip}\selectfont} %小初号  
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}      %一号  
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}      %二号  
+\newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}  %小二号  
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}  %三号  
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}       %四号  
+\newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\selectfont}  %小四号  
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}    %五号  
+\newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   %小五号  
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  %六号  
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    %七号
+
+
+\setCJKmainfont[BoldFont={STHeiti}, ItalicFont={STKaiti}]{STSong}
+%\setCJKsansfont{SimHei}
+\setCJKsansfont{STHeiti}
+%\setCJKmonofont{FangSong}
+\setCJKmonofont{STFangsong}
+
+\setmainfont{Times New Roman}   %西文默认衬线字体(serif)
+\setsansfont{Arial}   %西文默认无衬线字体(sans serif)
+\setmonofont{Courier New}           %西文默认的等宽字体
+
+
+
+
+\title{select、poll，epoll笔记}
+\author{sharwen}
+\date{}
+%==================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 正文
+%==================================================
+\begin{document}
+	% \pagenumbering{Roman}          %页码为大写罗马数字
+	% \pagenumbering{arabic}         %页码为阿拉伯数字
+%	{\tiny \thispagestyle{empty}   %本页不显示页码
+%	\begin{figure}[h]
+%		\centering
+%		\includegraphics[width=5in]{logo1}
+%		\includegraphics[width=2in]{logo2}
+%	\end{figure}
+%	
+%	\vspace{42pt}
+%	\begin{table}[h]
+%		\centering
+%		\linespread{2}   
+%		\sanhao
+%		\begin{tabular}{lcl}% 通过添加 | 来表示是否需要绘制竖线
+%		%		\hline  % 在表格最上方绘制横线
+%		\textbf{题\, \; \; \; 目}&\textbf{:}&\textbf{论文综述题目}\\
+%		\textbf{姓名学号}&\textbf{:}&\textbf{罗胜文/21821167}\\
+%		\textbf{邮\, \; \; \; 箱}&\textbf{:}&\textbf{sharwen568@gmail.com}\\
+%		\textbf{电\, \; \; \; 话}&\textbf{:}&\textbf{18883287841}\\
+%		\textbf{老\, \; \; \; 师}&\textbf{:}&\textbf{。。。}\\
+%		\textbf{专\, \; \; \; 业}&\textbf{:}&\textbf{计算机科学与技术}\\
+%		\end{tabular}
+%	
+%		\vspace{42pt}
+%		\centering
+%		\textbf{2019年1月9日}
+%	\end{table}
+%	
+%
+%	\newpage
+%	\setcounter{page}{1}}
+	\maketitle
+	\tableofcontents
+%	\begin{abstract}
+%		abstract goes here.
+%		
+%		\centering%使得关键字居中
+%		\textbf{关键字：}摘要、\LaTeX、中文
+%	\end{abstract}
+	\newpage%另起一页
+	
+	\section{select}
+	select是Linux内核自身支持的一个网络编程，支持同时多fd监听的网络编程接口。
+	
+	\subsection{select接口}
+	\begin{lstlisting}
+	int select(int nfds, fd_set *readfds, fd_set *writefds,	fd_set *exceptfds, struct timeval *timeout);
+	void FD_CLR(int fd, fd_set *set);
+	int  FD_ISSET(int fd, fd_set *set);
+	void FD_SET(int fd, fd_set *set);
+	void FD_ZERO(fd_set *set);
+	
+	/* fd_set for select and pselect.  */
+	#define __FD_SETSIZE 1024
+	
+	/* The fd_set member is required to be an array of longs.  */
+	typedef long int __fd_mask;
+	
+	/* It's easier to assume 8-bit bytes than to get CHAR_BIT.  */
+	#define __NFDBITS (8 * (int)sizeof(__fd_mask)) // 每 long int 的位数 32
+	#define __FD_ELT(d) ((d) / __NFDBITS)
+	#define __FD_MASK(d) ((__fd_mask)1 << ((d) % __NFDBITS)) // 取模进行左移
+	
+	typedef struct {
+	__fd_mask __fds_bits[__FD_SETSIZE / __NFDBITS];
+	#define __FDS_BITS(set) ((set)->__fds_bits)
+	} fd_set;
+	
+	#define __FD_SET(d, set) ((void)(__FDS_BITS(set)[__FD_ELT(d)] |= __FD_MASK(d)))
+	#define __FD_CLR(d, set) ((void)(__FDS_BITS(set)[__FD_ELT(d)] &= ~__FD_MASK(d)))
+	#define __FD_ISSET(d, set) ((__FDS_BITS(set)[__FD_ELT(d)] & __FD_MASK(d)) != 0)
+	\end{lstlisting}
+	从代码易知道，select支持的最大fd数量为{\color{red}1024}个，fd\_set使用位运算来标识 0<=fd < 1024，如果超过这个范围，则会引发未知错误如程序崩溃等。这个\_\_FD\_SETSIZE也可以自己手动修改，以便支持更多的fd数量。虽然一般单个程序fd的标号不会超过1024，但也存在一个程序处理超过这么多的fd，因此这个隐患还是很明显的。
+	
+	
+	\subsection{为什么select慢}
+	在第一次所有监听都没有事件时，调用 select 都需要把进程挂到所有监听的文件描述符一次，并切调用select会将所有的fd从用户空间拷贝到内核空间。
+	
+	有事件到来时，不知道是哪些文件描述符有数据可以读写，需要把所有的文件描述符都轮询一遍才能知道。
+	
+	通知事件到来给用户进程，需要把整个 bitmap 拷到用户空间，让用户空间去查询。
+	
+	
+	
+	
+	
+	
+	
+
+	
+	\newpage%另起一页
+	\begin{thebibliography}{1}
+		\bibitem{}
+		STL源码剖析，侯捷等
+	\end{thebibliography}
+	
+% 插入图片并排，且图片编号不属于同一个大编号，图片编号数字不同
+%	\begin{figure}
+%		\begin{minipage}[t]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width=2.2in]{logo1}
+%			\caption{fig1}
+%			\label{logo1}
+%		\end{minipage}%
+%		\begin{minipage}[t]{0.5\linewidth}
+%			\centering
+%			\includegraphics[width=2.2in]{logo2}
+%			\caption{fig2}
+%			\label{logo2}
+%		\end{minipage}
+%	\end{figure}
+
+
+
+% 插入图片并排，图片属于同一个编号，但是每一个图片有自己的子编号a,b,c
+%\begin{figure}
+%	\centering
+%	\subfigure[logo1]{
+%		\label{logo1} %% label for first subfigure
+%		\includegraphics[width=1.0in]{logo1}}
+%	\hspace{1in}
+%	\subfigure[logo2]{
+%		\label{logo2} %% label for second subfigure
+%		\includegraphics[width=1.5in]{logo2}}
+%	\caption{Two Subfigures}
+%	\label{logo} %% label for entire figure
+%\end{figure}
+
+
+	\end{document}
+%==================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

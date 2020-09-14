@@ -6,6 +6,110 @@
 #define C___LEETCODE_CH_H
 #include "../type.h"
 
+//dp 337. 打家劫舍 III
+class Solution337{
+    void dfs(TreeNode * root){
+        if(!root) return;
+        dfs(root->left);
+        dfs(root->right);
+        f[root] = root->val + g[root->left] + g[root->right];
+        g[root] = max(f[root->left], g[root->left]) + max(f[root->right],g[root->right]);
+    }
+    unordered_map<TreeNode *,int> f,g;
+public:
+    int rob(TreeNode* root) {
+        if(!root) return 0;
+        dfs(root);
+        return max(f[root],g[root]);
+    }
+};
+
+//dp 213. 打家劫舍 II
+class Solution213 {
+public:
+    int rob_real(vector<int>& nums) {
+        if(nums.size()== 0)return 0;
+        if(nums.size()== 1)return nums[0];
+        int dp_i, dp_i_2 = nums[0],dp_i_1 = max(dp_i_2,nums[1]);
+        
+        for(int i=2;i<nums.size();++i){
+            dp_i = max(dp_i_2 + nums[i], dp_i_1);
+            dp_i_2 = dp_i_1;
+            dp_i_1 = dp_i;
+        }
+
+        return dp_i_1;
+    }
+
+    int rob(vector<int>& nums){
+        if(nums.size() == 0) return 0;
+        if(nums.size() == 1) return nums[0];
+        
+        vector<int> left(nums.begin(),nums.end()-1);
+        vector<int> right(nums.begin() + 1,nums.end());
+        return max(rob_real(left),rob_real(right));
+    }
+};
+
+
+//dp背包 198. 打家劫舍
+
+class Solution198_b {
+public:
+
+    int rob(vector<int>& nums) {
+        if(nums.size()== 0)return 0;
+        if(nums.size()== 1)return nums[0];
+        int dp_i, dp_i_2 = nums[0],dp_i_1 = max(dp_i_2,nums[1]);
+        
+        for(int i=2;i<nums.size();++i){
+            dp_i = max(dp_i_2 + nums[i], dp_i_1);
+            dp_i_2 = dp_i_1;
+            dp_i_1 = dp_i;
+        }
+
+        return dp_i_1;
+    }
+};
+class Solution198_dp_a {
+public:
+
+    int rob(vector<int>& nums) {
+        if(nums.size()== 0)return 0;
+        if(nums.size()== 1)return nums[0];
+        vector<int> dp(nums.size(),0);
+        dp[0] = nums[0];
+        dp[1] = max(dp[0],nums[1]);
+        for(int i=2;i<nums.size();++i){
+            dp[i] = max(dp[i-2] + nums[i], dp[i-1]);
+        }
+
+        return dp[nums.size()-1];
+    }
+};
+
+// 198. 打家劫舍 递归
+class Solution198_reverse {
+public:
+    void find_max(vector<int> &nums, int idx, int cur, int & max){
+        if(idx >= nums.size()){
+            if(max < cur){
+                max = cur;
+            }
+            return;
+        }
+        for(int i = idx;i < nums.size();++i){
+            find_max(nums,i + 2, cur + nums[i], max);
+            find_max(nums,i + 1, cur, max);
+        }
+    }
+    int rob(vector<int>& nums) {
+        int _max = 0;
+        find_max(nums,0,0,_max);
+        return _max;
+    }
+};
+
 // dp 714. 买卖股票的最佳时机含手续费
 class Solution714 {
 public:

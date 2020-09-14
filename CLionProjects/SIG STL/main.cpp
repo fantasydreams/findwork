@@ -12,7 +12,6 @@ int main() {
     std::cout<< "__GUNC__";
 #endif
 
-    sort
     return 0;
 
 

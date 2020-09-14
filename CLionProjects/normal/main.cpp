@@ -11,10 +11,21 @@ using namespace std;
 
 
 int main(){
-    Solution_5 instance;
-    cout << instance.longestPalindrome("abccdfdwqweewqwqeewqqweewq");
+
+//    Solution576 instance;
+//    instance.checkInclusion("adc","dcda");
+//    cout << instance.checkInclusion("hello","ooolleoooleh");
+//    cout << instance.checkInclusion("ky","ainwkckifykxlribaypk");
+    Solution438 s;
+    s.findAnagrams("cbaebabacd","abc");
     return 0;
 }
+
+//int main(){
+//    Solution_5 instance;
+//    cout << instance.longestPalindrome("abccdfdwqweewqwqeewqqweewq");
+//    return 0;
+//}
 
 
 //class vbase{

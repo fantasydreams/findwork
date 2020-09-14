@@ -1,4 +1,4 @@
-# Install script for directory: /Users/sharwen/Desktop/practice/CLionProjects/normal
+# Install script for directory: /Users/sharwen/Desktop/findwork/CLionProjects/normal
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/sharwen/Desktop/findwork/CLionProjects/normal/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

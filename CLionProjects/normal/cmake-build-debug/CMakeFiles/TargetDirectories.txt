@@ -1,3 +1,3 @@
-/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/sharwen/Desktop/practice/CLionProjects/normal/cmake-build-debug/CMakeFiles/C__.dir
+/Users/sharwen/Desktop/findwork/CLionProjects/normal/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sharwen/Desktop/findwork/CLionProjects/normal/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sharwen/Desktop/findwork/CLionProjects/normal/cmake-build-debug/CMakeFiles/C__.dir

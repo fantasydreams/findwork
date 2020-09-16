@@ -6,6 +6,82 @@
 #define C___LEETCODE_EN_H
 #include "../type.h"
 
+
+class Solution31 {
+public:
+    void nextPermutation(vector<int>& nums) {
+        auto i = nums.end() - 1;
+        while(i!= nums.begin()){ //注意检查边界条件
+            auto after = i;
+            if(*after > *--i){
+                auto j = nums.end();
+                while(*i >= *--j);
+                swap(*i, *j);
+                reverse(after, nums.end());
+                return;
+            }
+
+            if(i == nums.begin()){
+                reverse(nums.begin(),nums.end());
+                return;
+            }
+        }
+    }
+};
+
+//双指针 11. Container With Most Water
+class Solution11 {
+public:
+    int maxArea(vector<int>& height) {
+        int start = 0, end = height.size()-1;
+        int max_val = INT_MIN;
+        while(start < end){
+            int area = (end - start) * min(height[start],height[end]);
+            if(area > max_val) max_val = area;
+            if(height[start] > height[end]) --end;
+            else if(height[start] < height[end]) ++ start;
+            else{
+                ++start;
+                --end;
+            }
+        }
+
+        return max_val;
+    }
+};
+
+//三指针 16. 3Sum Closest
+class Solution16 {
+public:
+    int threeSumClosest(vector<int>& nums, int target) {
+
+        sort(nums.begin(),nums.end());
+        int min_abs = INT_MAX;
+        int res = 0;
+
+        for(int i = 0;i < nums.size() && res != target;++i){
+            int start = i + 1;
+            int end = nums.size()-1;
+            while(start < end){
+                int sum = nums[i] + nums[start] + nums[end];
+                if(sum == target){
+                    res = sum;
+                    break;
+                }else {
+                    if(abs(sum - target) < min_abs){
+                        min_abs = abs(sum - target);
+                        res = sum;
+                    }
+                    if(sum < target) ++start;
+                    else --end;
+                }
+            }
+        }
+
+        return res;
+    }
+};
+
 class Solution_236_a {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {

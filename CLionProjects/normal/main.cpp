@@ -24,9 +24,19 @@ int main(){
 //    Solution_ch_15 s;
 //    vector<int> nums =  {0,0,0};
 //    s.threeSum(nums);
-    Solution_ch_18 s;
-    vector<int> nums = {1,0,-1,0,-2,2};
-    s.fourSum(nums,0);
+//    Solution_ch_18 s;
+//    vector<int> nums = {1,0,-1,0,-2,2};
+//    s.fourSum(nums,0);
+//    Solution16 s;
+//    vector<int> vec = {4,-1,-4,-1};
+////    s.threeSumClosest(vec,-1);
+//    vector<int > vec= {1,2,3,4,5};
+//    while(next_permutation(vec.begin(),vec.end())){
+//        print_vector(vec);
+//    }
+    Solution31 s;
+    vector<int> vec = {1,2,3};
+    s.nextPermutation(vec);
     return 0;
 }
 

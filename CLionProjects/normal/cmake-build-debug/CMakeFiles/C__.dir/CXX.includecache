@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/sharwen/Desktop/findwork/CLionProjects/normal/cmake-build-debug/code/leetcode/48.cpp
+../../header/leetcode/leetcode_en.h
+/Users/sharwen/Desktop/findwork/CLionProjects/normal/cmake-build-debug/header/leetcode/leetcode_en.h
+
 /Users/sharwen/Desktop/findwork/CLionProjects/normal/cmake-build-debug/code/primer/test.cpp
 ../../header/test.h
 /Users/sharwen/Desktop/findwork/CLionProjects/normal/cmake-build-debug/header/test.h

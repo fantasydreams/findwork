@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
       <config projectName="huawei" targetName="huawei" />
@@ -11,7 +29,46 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe4c3dfe-b90f-4863-908d-dc3fdad43e38" name="Default Changelist" comment="" />
+    <list default="true" id="fe4c3dfe-b90f-4863-908d-dc3fdad43e38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/huawei.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/huawei" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/huawei" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/huawei.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/huawei.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../normal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normal/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../normal/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normal/cmake-build-debug/CMakeFiles/C__.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../normal/cmake-build-debug/CMakeFiles/C__.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normal/cmake-build-debug/C__" beforeDir="false" afterPath="$PROJECT_DIR$/../normal/cmake-build-debug/C__" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normal/cmake-build-debug/header/leetcode/leetcode_ch.h" beforeDir="false" afterPath="$PROJECT_DIR$/../normal/cmake-build-debug/header/leetcode/leetcode_ch.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normal/cmake-build-debug/header/type.h" beforeDir="false" afterPath="$PROJECT_DIR$/../normal/cmake-build-debug/header/type.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normal/cmake-build-debug/normal.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../normal/cmake-build-debug/normal.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../normal/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../normal/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,24 +78,42 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1ZIeQEihjconCr2emx2wl3602DR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RunManager">
-    <configuration name="huawei" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="huawei" TARGET_NAME="huawei" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="huawei" RUN_TARGET_NAME="huawei">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="huawei" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="huawei" TARGET_NAME="huawei" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="huawei" RUN_TARGET_NAME="huawei">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -50,45 +125,71 @@
       <option name="presentableId" value="Default" />
       <updated>1584531017522</updated>
       <workItem from="1584531018848" duration="5482000" />
+      <workItem from="1600141139743" duration="2194000" />
+      <workItem from="1600143456799" duration="54000" />
+      <workItem from="1600143597845" duration="589000" />
+      <workItem from="1600158447074" duration="1000" />
+      <workItem from="1600159155548" duration="12000" />
+      <workItem from="1600162566254" duration="1611000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1638" height="262" key="GridCell.Tab.0.bottom" timestamp="1584582721998">
-      <screen x="0" y="23" width="1680" height="972" />
+    <state width="431" height="466" key="DebuggerActiveHint" timestamp="1600142178655">
+      <screen x="0" y="23" width="1680" height="973" />
     </state>
-    <state width="1638" height="262" key="GridCell.Tab.0.bottom/0.23.1680.972@0.23.1680.972" timestamp="1584582721998" />
-    <state width="1638" height="262" key="GridCell.Tab.0.center" timestamp="1584582721998">
-      <screen x="0" y="23" width="1680" height="972" />
+    <state width="431" height="466" key="DebuggerActiveHint/0.23.1680.973@0.23.1680.973" timestamp="1600142178655" />
+    <state width="1638" height="112" key="GridCell.Tab.0.bottom" timestamp="1600143337174">
+      <screen x="0" y="23" width="1680" height="973" />
     </state>
-    <state width="1638" height="262" key="GridCell.Tab.0.center/0.23.1680.972@0.23.1680.972" timestamp="1584582721998" />
-    <state width="1638" height="262" key="GridCell.Tab.0.left" timestamp="1584582721998">
-      <screen x="0" y="23" width="1680" height="972" />
+    <state width="1638" height="112" key="GridCell.Tab.0.bottom/0.23.1680.973@0.23.1680.973" timestamp="1600143337174" />
+    <state width="1638" height="112" key="GridCell.Tab.0.center" timestamp="1600143337173">
+      <screen x="0" y="23" width="1680" height="973" />
     </state>
-    <state width="1638" height="262" key="GridCell.Tab.0.left/0.23.1680.972@0.23.1680.972" timestamp="1584582721998" />
-    <state width="1638" height="262" key="GridCell.Tab.0.right" timestamp="1584582721998">
-      <screen x="0" y="23" width="1680" height="972" />
+    <state width="1638" height="112" key="GridCell.Tab.0.center/0.23.1680.973@0.23.1680.973" timestamp="1600143337173" />
+    <state width="1638" height="112" key="GridCell.Tab.0.left" timestamp="1600143337173">
+      <screen x="0" y="23" width="1680" height="973" />
     </state>
-    <state width="1638" height="262" key="GridCell.Tab.0.right/0.23.1680.972@0.23.1680.972" timestamp="1584582721998" />
-    <state width="1638" height="342" key="GridCell.Tab.1.bottom" timestamp="1584582721985">
-      <screen x="0" y="23" width="1680" height="972" />
+    <state width="1638" height="112" key="GridCell.Tab.0.left/0.23.1680.973@0.23.1680.973" timestamp="1600143337173" />
+    <state width="1638" height="112" key="GridCell.Tab.0.right" timestamp="1600143337174">
+      <screen x="0" y="23" width="1680" height="973" />
     </state>
-    <state width="1638" height="342" key="GridCell.Tab.1.bottom/0.23.1680.972@0.23.1680.972" timestamp="1584582721985" />
-    <state width="1638" height="342" key="GridCell.Tab.1.center" timestamp="1584582721985">
-      <screen x="0" y="23" width="1680" height="972" />
+    <state width="1638" height="112" key="GridCell.Tab.0.right/0.23.1680.973@0.23.1680.973" timestamp="1600143337174" />
+    <state width="1638" height="112" key="GridCell.Tab.1.bottom" timestamp="1600143337175">
+      <screen x="0" y="23" width="1680" height="973" />
     </state>
-    <state width="1638" height="342" key="GridCell.Tab.1.center/0.23.1680.972@0.23.1680.972" timestamp="1584582721985" />
-    <state width="1638" height="342" key="GridCell.Tab.1.left" timestamp="1584582721984">
-      <screen x="0" y="23" width="1680" height="972" />
+    <state width="1638" height="112" key="GridCell.Tab.1.bottom/0.23.1680.973@0.23.1680.973" timestamp="1600143337175" />
+    <state width="1638" height="112" key="GridCell.Tab.1.center" timestamp="1600143337174">
+      <screen x="0" y="23" width="1680" height="973" />
     </state>
-    <state width="1638" height="342" key="GridCell.Tab.1.left/0.23.1680.972@0.23.1680.972" timestamp="1584582721984" />
-    <state width="1638" height="342" key="GridCell.Tab.1.right" timestamp="1584582721985">
-      <screen x="0" y="23" width="1680" height="972" />
+    <state width="1638" height="112" key="GridCell.Tab.1.center/0.23.1680.973@0.23.1680.973" timestamp="1600143337174" />
+    <state width="1638" height="112" key="GridCell.Tab.1.left" timestamp="1600143337174">
+      <screen x="0" y="23" width="1680" height="973" />
     </state>
-    <state width="1638" height="342" key="GridCell.Tab.1.right/0.23.1680.972@0.23.1680.972" timestamp="1584582721985" />
+    <state width="1638" height="112" key="GridCell.Tab.1.left/0.23.1680.973@0.23.1680.973" timestamp="1600143337174" />
+    <state width="1638" height="112" key="GridCell.Tab.1.right" timestamp="1600143337174">
+      <screen x="0" y="23" width="1680" height="973" />
+    </state>
+    <state width="1638" height="112" key="GridCell.Tab.1.right/0.23.1680.973@0.23.1680.973" timestamp="1600143337174" />
+    <state x="505" y="237" width="670" height="676" key="search.everywhere.popup" timestamp="1600162949459">
+      <screen x="0" y="23" width="1680" height="973" />
+    </state>
+    <state x="505" y="237" width="670" height="676" key="search.everywhere.popup/0.23.1680.973@0.23.1680.973" timestamp="1600162949459" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -97,6 +198,21 @@
           <url>file://$PROJECT_DIR$/main.cpp</url>
           <line>101</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>165</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>142</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>137</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

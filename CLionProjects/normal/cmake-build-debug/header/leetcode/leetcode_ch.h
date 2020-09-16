@@ -6,6 +6,137 @@
 #define C___LEETCODE_CH_H
 #include "../type.h"
 
+class Solution_ch_18 {
+    vector<vector<int>> twoSum(vector<int>& nums, int start, int target){
+        int end = nums.size() - 1;
+        vector<vector<int>> res;
+        while(start < end){
+            int sum = nums[start] + nums[end];
+            if(sum < target) ++start;
+            else if(sum > target) --end;
+            else{
+                res.push_back(vector<int>{nums[start],nums[end]});
+                while(++start < end && nums[start] == nums[start-1]);
+                while(--end > start && nums[end] == nums[end+1]);
+            }
+        }
+        return res;
+    }
+
+    vector<vector<int>> threeSum(vector<int> &nums, int start, int target){
+        vector<vector<int>> res;
+        int end = nums.size();
+        while(start + 1 < end){
+            vector<vector<int>> two = twoSum(nums,start + 1,target-nums[start]);
+            for(int j = 0;j < two.size();++j){
+                two[j].insert(two[j].begin(),nums[start]);
+                res.push_back(two[j]);
+            }
+            while(++start < nums.size() && nums[start] == nums[start-1]);
+
+        }
+
+        return res;
+    }
+public:
+
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> res;
+        sort(nums.begin(),nums.end());
+        int start = 0,end = nums.size();
+        while(start < end){
+            vector<vector<int>> three = threeSum(nums,start + 1,target-nums[start]);
+            for(int j = 0;j < three.size();++j){
+                three[j].insert(three[j].begin(),nums[start]);
+                res.push_back(three[j]);
+            }
+            while(++start < nums.size() && nums[start] == nums[start-1]);
+
+        }
+
+        return res;
+    }
+};
+
+class Solution_ch_15 {
+    void getSum_pack(vector<int>& nums, int idx, int cur, int const target, vector<int> & vec, set<vector<int>> &res){
+        if(cur == target && vec.size() == 3){
+            vector<int> tmp = vec = vec;
+            sort(tmp.begin(),tmp.end());
+            res.insert(tmp);
+        }
+        for(int i = idx;i<nums.size(); ++i){
+            vec.push_back(nums[i]);
+            getSum_pack(nums,i+1,cur + nums[i],target, vec, res);
+            vec.pop_back();
+        }
+    }
+    void getSum_three_indicator(vector<int> &nums, vector<vector<int>> &res, int target){
+        if(nums.size() < 3) return;
+        sort(nums.begin(),nums.end());
+        int left = 0, right = nums.size();
+        bool is_ans = false;
+        set<vector<int>> tmp;
+        for(int i = 0;i < nums.size() - 2; ++i){
+            if(is_ans){
+                while(i < nums.size() - 2 && nums[i] == nums[i-1]){
+                    ++i;
+                }
+                is_ans = false;
+            }
+            int start = i + 1, end = nums.size() - 1;
+            while(start < end){
+                int sum = nums[i] + nums[start] + nums[end];
+                if(sum == target){
+                    is_ans = true;
+                    vector<int> vec;
+                    vec.push_back(nums[i]);
+                    vec.push_back(nums[start]);
+                    vec.push_back(nums[end]);
+                    tmp.insert(vec);
+                    if(nums[start] == nums[end])break;
+                    ++start;--end;
+                }else if(sum < target) ++start;
+                else --end;
+            }
+        }
+
+        for(auto it = tmp.begin(); it != tmp.end(); ++it){
+            res.push_back(*it);
+        }
+
+    }
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        // set<vector<int>> tmp;
+        // vector<int> vec;
+        // getSum_pack(nums,0,0,0,vec,tmp);
+        // vector<vector<int>> res;
+        // for(auto it = tmp.begin();it != tmp.end(); ++it){
+        //     res.push_back(*it);
+        // }
+        vector<vector<int>> res;
+        if(nums.size() == 0) return res;
+        getSum_three_indicator(nums,res,0);
+
+        return res;
+    }
+};
+
+//二叉树遍历 236. 二叉树的最近公共祖先
+class Solution236 {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if(!root) return nullptr;
+        if(root == p || root ==q) return root;
+        TreeNode * left = lowestCommonAncestor(root->left,p,q);
+        TreeNode * right= lowestCommonAncestor(root->right,p,q);
+        if(left && right) return root;
+        if(!left && ! right) return nullptr;
+        return left ? left:right;
+    }
+};
+
 //dp 337. 打家劫舍 III
 class Solution337{
     void dfs(TreeNode * root){

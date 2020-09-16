@@ -67,4 +67,14 @@ public:
     }
 };
 
+class DoubleLinkNode{
+public:
+    DoubleLinkNode():pre(nullptr),next(nullptr){};
+    DoubleLinkNode(string key,int value): _key(key),_value(value),pre(nullptr),next(nullptr){};
+    ~DoubleLinkNode(){};
+    DoubleLinkNode * pre, *next;
+    int _value;
+    string _key;
+};
+
 #endif //C___TYPE_H

@@ -6,17 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/sharwen/CLionProjects/huawei/main.cpp
+/Users/sharwen/Desktop/findwork/CLionProjects/huawei/main.cpp
 iostream
+-
+string
 -
 vector
--
-string
--
-iostream
--
-string
--
-sstream
 -
 

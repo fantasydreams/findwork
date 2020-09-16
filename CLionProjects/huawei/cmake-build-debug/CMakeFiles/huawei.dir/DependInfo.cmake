@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/sharwen/CLionProjects/huawei/main.cpp" "/Users/sharwen/CLionProjects/huawei/cmake-build-debug/CMakeFiles/huawei.dir/main.cpp.o"
+  "/Users/sharwen/Desktop/findwork/CLionProjects/huawei/main.cpp" "/Users/sharwen/Desktop/findwork/CLionProjects/huawei/cmake-build-debug/CMakeFiles/huawei.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

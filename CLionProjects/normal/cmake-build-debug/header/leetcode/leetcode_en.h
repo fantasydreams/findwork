@@ -6,6 +6,164 @@
 #define C___LEETCODE_EN_H
 #include "../type.h"
 
+//greedy 45. Jump Game II
+class Solution45 {
+public:
+    /*
+    int jump(vector<int>& nums) {
+        vector<int> dp(nums.size(),INT_MAX - 1);
+        dp[nums.size() - 1] = 0;
+        for(int pos = nums.size() - 2; pos >= 0; --pos){
+            int max_step = min(nums[pos], (int)nums.size() - pos - 1);
+            for(int step = 1; step <= max_step; ++step){
+                dp[pos] = min(dp[pos], dp[pos + step] + 1);
+            }
+        }
+        return dp[0];
+    }*/
+
+    int jump(vector<int>& nums) {
+        int min_step = 0, cur_max_pos = 0, pos = 0;
+        while(cur_max_pos < nums.size() - 1){
+            ++min_step;
+            int pre_pos = cur_max_pos;
+            while(pos <= pre_pos){
+                cur_max_pos = max(cur_max_pos, pos + nums[pos]);
+                ++pos;
+            }
+        }
+
+        return min_step;
+    }
+};
+
+//回溯/dp 55. Jump Game
+class Solution55 {
+public:
+    /*
+    bool canJump(vector<int>& nums) {
+        vector<bool> dp(nums.size(),false);
+        dp[nums.size() - 1] = true;
+        for(int pos = nums.size() - 2; pos >= 0; --pos){
+            int max_step = min(nums[pos], (int)nums.size() - pos - 1);
+            for(int step = 1; step <= max_step; ++step){
+                if(dp[pos + step]){
+                    dp[pos] = true;
+                    break;
+                }
+            }
+        }
+        return dp[0];
+    }
+    */
+    bool canJump(vector<int>& nums) {
+        int right_reach_pos = nums.size() - 1;
+        vector<bool> dp(nums.size(), false);
+        dp[nums.size() - 1] = true;
+        for(int pos = nums.size() - 2; pos >= 0; --pos){
+            if(pos + nums[pos] >= right_reach_pos){
+                dp[pos] = true;
+                right_reach_pos = pos;
+            }
+        }
+        
+        return dp[0];
+    }
+};
+
+//模拟 54. Spiral Matrix
+class Solution54 {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        vector<int> res;
+        if(matrix.size() == 0 || matrix[0].size() == 0) return res;
+        int top = 0,bottom = matrix.size() - 1, left = 0, right = matrix[0].size() - 1;
+        while(top <= bottom && left <= right){
+            for(int i = left; i <= right; ++i) res.push_back(matrix[top][i]);
+            ++top;
+            for(int i = top; i <= bottom; ++i) res.push_back(matrix[i][right]);
+            --right;
+            for(int i = right; top <= bottom && i >= left; --i) res.push_back(matrix[bottom][i]);
+            --bottom;
+            for(int i = bottom; left <= right && i >= top; --i) res.push_back(matrix[i][left]);
+            ++left;
+        }
+
+        return res;
+    }
+};
+
+// 53. Maximum Subarray 极简版dp
+class Solution53 {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int max_res = nums[0];
+        int tmp = nums[0];
+        for(int i=1;i<nums.size();++i){
+            if(tmp + nums[i] < nums[i]) tmp = nums[i];
+            else tmp += nums[i];
+            if(tmp > max_res) max_res = tmp;
+        }
+        return max_res;
+    }
+};
+
+//
+class Solution41 {
+public:
+    int firstMissingPositive(vector<int>& nums) {
+        for(auto num : nums){
+            while(num > 0 && num <= nums.size() && nums[num - 1] != num){  //注意边界条件
+                swap(num,nums[num - 1]);
+            }
+        }
+        
+        for(int i = 1;i <= nums.size(); ++i){
+            if(i != nums[i - 1]){
+                return i;
+            }
+        }
+        
+        return nums.size() + 1;
+    }
+};
+
+class Solution34 {
+    //需要注意的是，二分查找如果元素不存在数组中的时候的特殊情况处理，可以是查找到边界也可以是查找到中间
+    int left_bound(vector<int> & nums, int target){
+        if(nums.size() == 0) return -1;
+        
+        int start = 0, end = nums.size() - 1;
+        while(start <= end){
+            int mid = start + (end - start) / 2; 
+            if(nums[mid] >= target) end = mid - 1;
+            else if(nums[mid] < target) start = mid + 1;
+        }
+        if(end < 0 && nums[0] != target || start >= nums.size() || nums[start] != target) return -1;
+        return start;
+    }
+    
+    int right_bound(vector<int> & nums, int target){
+        if(nums.size() == 0)return -1;
+        int start = 0, end = nums.size() - 1;
+        while(start <= end){
+            int mid = start + (end - start) / 2;
+            if(nums[mid] > target) end = mid - 1;
+            else start = mid + 1;
+        }
+        
+        if(start >= nums.size() && nums[nums.size() - 1] != target || end < 0 || nums[end] != target) return -1;
+        return end;
+    }
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+        int left = left_bound(nums,target);
+        if(left == -1) return vector<int> {-1,-1};
+        int right = right_bound(nums,target);
+        return vector<int> {left, right};
+    }
+};
+
 
 class Solution31 {
 public:

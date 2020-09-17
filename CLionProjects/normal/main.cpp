@@ -34,9 +34,15 @@ int main(){
 //    while(next_permutation(vec.begin(),vec.end())){
 //        print_vector(vec);
 //    }
-    Solution31 s;
-    vector<int> vec = {1,2,3};
-    s.nextPermutation(vec);
+    // Solution31 s;
+    // vector<int> vec = {1,2,3};
+    // s.nextPermutation(vec);
+//    Solution41 s;
+//    vector<int> vec = {2,1};
+//    s.firstMissingPositive(vec);
+    Solution45 s;
+    vector<int> vec = {1, 2, 3};
+    s.jump(vec);
     return 0;
 }
 

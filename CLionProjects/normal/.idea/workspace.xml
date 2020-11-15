@@ -33,8 +33,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/C__.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/C__.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/C__" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/C__" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/header/leetcode/leetcode_en.h" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/header/leetcode/leetcode_en.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/header/leetcode/leetcode_ch.h" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/header/leetcode/leetcode_ch.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,12 +65,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="C__" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="normal" TARGET_NAME="C__" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="normal" RUN_TARGET_NAME="C__">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="C__" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="normal" TARGET_NAME="C__" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="normal" RUN_TARGET_NAME="C__">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -108,6 +107,7 @@
       <workItem from="1600331500618" duration="1341000" />
       <workItem from="1600348480578" duration="2129000" />
       <workItem from="1600355721757" duration="533000" />
+      <workItem from="1605445094121" duration="171000" />
     </task>
     <servers />
   </component>
@@ -132,30 +132,34 @@
     </state>
     <state width="449" height="465" key="DebuggerActiveHint/0.23.1680.970@0.23.1680.970" timestamp="1600273548765" />
     <state width="449" height="466" key="DebuggerActiveHint/0.23.1680.973@0.23.1680.973" timestamp="1600180265409" />
-    <state width="1638" height="50" key="GridCell.Tab.0.bottom" timestamp="1600356374284">
-      <screen x="0" y="23" width="1680" height="970" />
+    <state width="1358" height="243" key="GridCell.Tab.0.bottom" timestamp="1605445265204">
+      <screen x="0" y="25" width="1680" height="961" />
     </state>
     <state width="1398" height="213" key="GridCell.Tab.0.bottom/0.23.1440.823@0.23.1440.823" timestamp="1599986459728" />
     <state width="1638" height="50" key="GridCell.Tab.0.bottom/0.23.1680.970@0.23.1680.970" timestamp="1600356374284" />
     <state width="1638" height="229" key="GridCell.Tab.0.bottom/0.23.1680.973@0.23.1680.973" timestamp="1600190077800" />
-    <state width="1638" height="50" key="GridCell.Tab.0.center" timestamp="1600356374283">
-      <screen x="0" y="23" width="1680" height="970" />
+    <state width="1358" height="243" key="GridCell.Tab.0.bottom/0.25.1680.961@0.25.1680.961" timestamp="1605445265204" />
+    <state width="1358" height="243" key="GridCell.Tab.0.center" timestamp="1605445265203">
+      <screen x="0" y="25" width="1680" height="961" />
     </state>
     <state width="1398" height="213" key="GridCell.Tab.0.center/0.23.1440.823@0.23.1440.823" timestamp="1599986459727" />
     <state width="1638" height="50" key="GridCell.Tab.0.center/0.23.1680.970@0.23.1680.970" timestamp="1600356374283" />
     <state width="1638" height="229" key="GridCell.Tab.0.center/0.23.1680.973@0.23.1680.973" timestamp="1600190077800" />
-    <state width="1638" height="50" key="GridCell.Tab.0.left" timestamp="1600356374283">
-      <screen x="0" y="23" width="1680" height="970" />
+    <state width="1358" height="243" key="GridCell.Tab.0.center/0.25.1680.961@0.25.1680.961" timestamp="1605445265203" />
+    <state width="1358" height="243" key="GridCell.Tab.0.left" timestamp="1605445265202">
+      <screen x="0" y="25" width="1680" height="961" />
     </state>
     <state width="1398" height="213" key="GridCell.Tab.0.left/0.23.1440.823@0.23.1440.823" timestamp="1599986459727" />
     <state width="1638" height="50" key="GridCell.Tab.0.left/0.23.1680.970@0.23.1680.970" timestamp="1600356374283" />
     <state width="1638" height="229" key="GridCell.Tab.0.left/0.23.1680.973@0.23.1680.973" timestamp="1600190077799" />
-    <state width="1638" height="50" key="GridCell.Tab.0.right" timestamp="1600356374283">
-      <screen x="0" y="23" width="1680" height="970" />
+    <state width="1358" height="243" key="GridCell.Tab.0.left/0.25.1680.961@0.25.1680.961" timestamp="1605445265202" />
+    <state width="1358" height="243" key="GridCell.Tab.0.right" timestamp="1605445265203">
+      <screen x="0" y="25" width="1680" height="961" />
     </state>
     <state width="1398" height="213" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1599986459728" />
     <state width="1638" height="50" key="GridCell.Tab.0.right/0.23.1680.970@0.23.1680.970" timestamp="1600356374283" />
     <state width="1638" height="229" key="GridCell.Tab.0.right/0.23.1680.973@0.23.1680.973" timestamp="1600190077800" />
+    <state width="1358" height="243" key="GridCell.Tab.0.right/0.25.1680.961@0.25.1680.961" timestamp="1605445265203" />
     <state width="1638" height="50" key="GridCell.Tab.1.bottom" timestamp="1600356374285">
       <screen x="0" y="23" width="1680" height="970" />
     </state>
@@ -191,12 +195,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/cmake-build-debug/header/leetcode/leetcode_ch.h</url>
-          <line>505</line>
+          <line>612</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/cmake-build-debug/header/leetcode/leetcode_ch.h</url>
-          <line>121</line>
+          <line>228</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">

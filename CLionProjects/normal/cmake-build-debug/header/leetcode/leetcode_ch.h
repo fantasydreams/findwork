@@ -6,6 +6,113 @@
 #define C___LEETCODE_CH_H
 #include "../type.h"
 
+//887. 鸡蛋掉落
+class Solution {
+    int dp(int K, int N){
+        if(K == 1) return N;
+        if(N == 0) return 0;
+        static map<pair<int,int>,int> memo;
+
+        if(memo.find(make_pair(K,N)) != memo.end()) return memo[make_pair(K,N)];
+        else{
+            int res = INT_MAX;
+            // for(int i=1; i<= N;++i){
+            //     res = min(res, max(dp(K,N-i),dp(K-1,i-1)) + 1);
+            // }
+            int low = 1, high = N;
+            while(low <= high){
+                int mid = low + (high - low) / 2;
+                int broken = dp(K-1, mid-1);
+                int noBroken = dp(K, N - mid);
+                if (broken > noBroken){
+                    res = min(res, broken + 1);
+                    high = mid - 1;
+                }else{
+                    res = min(res, noBroken + 1);
+                    low = mid + 1;
+                }
+            }
+            memo[make_pair(K,N)] = res;
+            return res;
+        }
+    }
+public:
+    int superEggDrop(int K, int N) {
+        return dp(K,N);
+    }
+};
+
+//72. 编辑距离
+class Solution {
+public:
+    int minDistance(string word1, string word2) {
+        vector<vector<int>> dp(word1.size() + 1, vector<int> (word2.size() + 1, 0));
+        for(int i=0;i<=word1.size();++i){
+            dp[i][0] = i;
+        }
+
+        for(int i=0;i<=word2.size();++i){
+            dp[0][i] = i;
+        }
+
+        for(int i=1;i<= word1.size();++i){
+            for(int j=1;j<=word2.size();++j){
+                if(word1[i-1] == word2[j-1]){
+                    dp[i][j] = dp[i-1][j-1];
+                }else{
+                    dp[i][j] = min(min(dp[i-1][j],dp[i][j-1]),dp[i-1][j-1])+1;
+                }
+            }
+        }
+
+        return dp[word1.size()][word2.size()];
+    }
+};
+
+
+// 300. 最长上升子序列
+class Solution_300_1 {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        vector<int> dp;
+        for(int i=0;i<nums.size();++i){
+            int left = 0, right = dp.size();
+            while(left < right){
+                int mid=left + (right - left) / 2;
+                if(dp[mid] < nums[i]) left = mid + 1;
+                else right = mid;
+            }
+
+            if(left == dp.size()){
+                dp.push_back(nums[i]);
+            }else{
+                dp[left] = nums[i];
+            }
+        }
+        return dp.size();
+    }
+};
+
+class Solution_300_2 {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        vector<int> dp(nums.size(), 1);
+        int res = 0;
+        for(int i = 0;i < nums.size();++i){
+            int _max = 1;
+            for(int j = 0;j < i;++j){
+                if(nums[i] > nums[j]){
+                    _max = max(_max, dp[j] + 1);
+                }
+            }
+            dp[i] = _max;
+            res = max(res, _max);
+        }
+
+        return res;
+    }
+};
+
 class Solution_ch_18 {
     vector<vector<int>> twoSum(vector<int>& nums, int start, int target){
         int end = nums.size() - 1;

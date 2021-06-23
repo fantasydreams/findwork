@@ -25,6 +25,7 @@ int main(){
 			printf("print from parent process id = %ld, %s\n",(long)getpid(), buf);
 			int status = 0;
 			if((pid = waitpid(pid,&status,0)) < 0){
+				//如果这里watidpid 的 pid填0的话，就代表父进程需要等所有的子进程消亡后才会继续往下执行
 				printf("waitpid err");
 			} 
 			printf("child process watied...\n");

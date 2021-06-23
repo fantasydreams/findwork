@@ -11,4 +11,4 @@
 #include <cstdlib>
 #include <cmath>
 
-std::pair<int,int> twosum(const std::vector<int> &array, int sum);
+std::vector<int> twoSum(const std::vector<int> &array, int sum);

@@ -18,7 +18,7 @@ void err_ret(const char *fmt, ...);
  * Print a message and terminate.
  */
 void err_sys(const char *fmt, ...);
-
+void err_sys_printf_noly(const char *fmt, ...);
 
 /*
  * Fatal error unrelated to a system call.

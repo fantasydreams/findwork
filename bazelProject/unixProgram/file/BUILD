@@ -4,3 +4,10 @@ cc_binary(
     copts = ["-std=c++11"],
     deps  = ["//lib/err:myerr"]
 )
+
+cc_binary(
+    name = "set_file_flag",
+    srcs = ["setflag.cc"],
+    copts = ["-std=c++11"],
+    deps = ["//lib/file:myfcntl"],
+)

@@ -54,3 +54,7 @@ void err_quit(const char *fmt, ...);
  * Caller specifies "errnoflag".
  */
 void err_doit(int errnoflag, int error, const char *fmt, va_list ap);
+
+
+#define debug(format, args...) printf(format, ##args)
+// 当写debug("debug info")，不存在可变参数时，##的作用将[去掉] [,及其以后的除括号] 的内容

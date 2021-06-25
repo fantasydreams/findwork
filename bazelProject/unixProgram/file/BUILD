@@ -3,6 +3,7 @@ cc_binary(
     srcs  = ["fcntl_getfl.cc"],
     copts = ["-std=c++11"],
     deps  = ["//lib/err:myerr"]
+    copts = ["-std=c++11"],
 )
 
 cc_binary(

@@ -15,7 +15,7 @@ int writefiletest(int argc, char * argv[])
 
     condition_equal(seek_pos <= write_content.size(), true, "seekpos need less equal write content's lenth");
 
-    // int fd = creat(file_name.c_str(), O_CREAT | O_RDWR);
+    // int fd = creat(file_name.c_str(), O_CREAT | O_RDWR, 0644);
     // condition_equal(fd > 0, true, "create file err fd: %d", fd);
     // close(fd);
 

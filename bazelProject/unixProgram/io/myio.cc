@@ -18,6 +18,6 @@ int dup_fd_and_write(int fd, std::string  s_content)
 
 int main(int argc, char * argv[])
 {
-    agrc_condi(argc, 3, argv, "<fd>  <content stream>", true);
+    argc_condi(argc == 3, true, argv, "<fd>  <content stream>", true);
     return dup_fd_and_write(atoi(argv[1]), argv[2]);
 }

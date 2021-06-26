@@ -1,9 +1,9 @@
 #include "condition.h"
 #include "lib/err/myerr.h"
 
-int agrc_condi(int argc, int num, char * argv[], const std::string & para_tips, bool err_exit)
+int argc_condi(int expr, int expect_ret, char * argv[], const std::string & para_tips, bool err_exit)
 {
-    if(argc != num)
+    if(expr != expect_ret)
     {
         if(err_exit)
         {

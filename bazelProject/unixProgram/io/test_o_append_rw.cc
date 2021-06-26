@@ -7,7 +7,7 @@
 
 int writefiletest(int argc, char * argv[])
 {
-    agrc_condi(argc, 5, argv, "<filename> <seekpos> <w_content> <r_content>" , true);
+    argc_condi(argc == 5, true, argv, "<filename> <seekpos> <w_content> <r_content>" , true);
     int seek_pos = atoi(argv[2]);
     std::string file_name = argv[1];
     std::string write_content = argv[3];
@@ -63,5 +63,5 @@ sharwenluobig
 seek content
 nluobig
 
-结论， 加了O_APPEND标志的，不能通过lseek后写，但是能通过lseek读
+结论， 加了O_APPEND标志的，不能通过lseek定位到具体的位置后写，只能在文件末尾追加写，但是能通过lseek定位到相应的位置读
 */

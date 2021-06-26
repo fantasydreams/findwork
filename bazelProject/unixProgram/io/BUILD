@@ -19,3 +19,14 @@ cc_binary(
         ],
     copts = ["-std=c++11"]
 )
+
+
+cc_binary(
+    name = "stat",
+    srcs = ["stat.cc",
+            "stat.h"],
+    deps = ["//lib/err:myerr",
+            "//lib/condition:condition"
+    ],
+    copts = ["-std=c++11"]
+)

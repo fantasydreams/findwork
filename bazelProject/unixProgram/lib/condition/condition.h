@@ -8,7 +8,7 @@
         if(_ret != ret) \
         {\
             std::string _fmt = std::string("ret = %d ") + fmt; \
-            err_ret(_fmt.c_str(), _ret, __VA_ARGS__);\
+            err_ret(_fmt.c_str(), _ret, ##__VA_ARGS__);\
             return _ret; \
         }\
     }\
@@ -19,7 +19,7 @@
         if(_ret != ret) \
         {\
             std::string _fmt = std::string("ret = %d ") + fmt; \
-            err_quit(_fmt.c_str(), _ret, __VA_ARGS__);\
+            err_exit(_ret, _fmt.c_str(), _ret, ##__VA_ARGS__);\
             return _ret; \
         }\
     }\

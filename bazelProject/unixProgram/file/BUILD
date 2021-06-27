@@ -11,3 +11,16 @@ cc_binary(
     copts = ["-std=c++11"],
     deps = ["//lib/file:myfcntl"],
 )
+
+cc_binary(
+    name = "umask",
+    srcs = ["umask.cc",
+            "umask.h",
+        ],
+    deps = ["//lib/err:myerr",
+            "//lib/condition:condition",
+            "//lib/string:stringlib",
+            "//lib/file:mode",
+        ],
+    copts = ["-std=c++11"],
+)

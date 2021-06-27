@@ -16,6 +16,7 @@ cc_library(
     deps = ["//lib/condition:condition",
             "//lib/err:myerr",
             "//lib/string:stringlib",
+            "//lib/term:term",
         ],
     copts = ["-std=c++11"],
 )

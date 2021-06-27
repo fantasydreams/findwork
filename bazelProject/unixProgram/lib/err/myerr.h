@@ -27,7 +27,6 @@ void err_sys_printf_noly(const char *fmt, ...);
  */
 void err_exit(int error, const char *fmt, ...);
 
-
 /*
  * Fatal error related to a system call.
  * Print a message, dump core, and terminate.

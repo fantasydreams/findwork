@@ -61,14 +61,17 @@ namespace filelib
     };
 
 
-    bool get_mode(const std::string & mode_list, mode_t & mode)
+    bool get_mode(const std::string & mode_list, mode_t & mode ,bool clear)
     {
         std::vector<std::string> list = stringlib::str_split(mode_list, "|", " ", true);
         if(list.size() == 0){
             return false;
         }
 
-        mode = 0;
+        if(clear){
+            mode = 0;
+        }
+        
         for(size_t idx = 0; idx < list.size(); ++idx)
         {
             if(mode_map.find(list[idx]) != mode_map.end()){

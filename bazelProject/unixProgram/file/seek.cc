@@ -2,12 +2,14 @@
 #include <iostream>
 #include <fcntl.h>
 #include <errno.h>
+#include "lib/term/term.h"
 
 void writeHoleFile()
 {
 	int fd;
 	extern int errno;
-	if((fd = open("file.no",O_RDWR | O_CREAT)) == -1){
+	printf("write hole file\n");
+	if((fd = open("file.no",O_CREAT | O_RDWR, 0644)) == -1){
 		printf("open err %d, %s\n",errno,strerror(errno));
 
 	}
@@ -34,11 +36,18 @@ void writeHoleFile()
 	}
 
 	long seekEnd = lseek(fd,0,SEEK_END);
-	printf("len cur %ld",seekEnd);
+	printf("len cur %ld\n",seekEnd);
 
 	if(close(fd) == -1){
 		printf("close err %d, %s\n",errno,strerror(errno));
 	}
+
+	
+	printf("%s\n%s","od -c file.no", exec_term("od -c file.no", 2048).c_str());
+	printf("%s\n%s","ls -l file.no", exec_term("ls -l file.no", 2048).c_str());
+	printf("%s\n%s","du -s file.no", exec_term("du -s file.no", 2048).c_str());
+	printf("%s\n%s","wc -c file.no", exec_term("wc -c file.no", 2048).c_str());
+
 }
 // sharwen@sharwens-MacBook-Pro seek % od -c file.no 
 // 0000000    1   2   3   4   5   6   7   8   9   0  \0  \0  \0  \0  \0  \0
@@ -51,7 +60,8 @@ void writeRealFile()
 {
 	int fd;
 	extern int errno;
-	if((fd = open("file1.no",O_RDWR | O_CREAT)) == -1){
+	printf("write real file\n");
+	if((fd = open("file1.no",O_RDWR | O_CREAT, 0644)) == -1){
 		printf("open err %d, %s\n",errno,strerror(errno));
 
 	}
@@ -86,11 +96,16 @@ void writeRealFile()
 	}
 
 	long seekEnd = lseek(fd,0,SEEK_END);
-	printf("len cur %ld",seekEnd);
+	printf("len cur %ld\n",seekEnd);
 
 	if(close(fd) == -1){
 		printf("close err %d, %s\n",errno,strerror(errno));
 	}
+
+	printf("%s\n%s","od -c file1.no", exec_term("od -c file1.no", 2048).c_str());
+	printf("%s\n%s","ls -l file1.no", exec_term("ls -l file1.no", 2048).c_str());
+	printf("%s\n%s","du -s file1.no", exec_term("du -s file1.no", 2048).c_str());
+	printf("%s\n%s","wc -c file1.no", exec_term("wc -c file1.no", 2048).c_str());
 }
 
 /*
@@ -104,6 +119,7 @@ void writeRealFile()
 
 int main(){
 
+	printf("%s\n%s","rm -rf file*", exec_term("rm -rf file*", 2048).c_str());
 	writeHoleFile();
 	writeRealFile();
 
@@ -111,9 +127,34 @@ int main(){
 }
 
 /*
-➜  seek ls -ls file.no file1.no 
-40 -rw-r--r--  1 sharwen  wheel  16394 Jun 24 00:50 file.no
-40 -rw-r--r--  1 sharwen  wheel  16394 Jun 24 00:50 file1.no
+./seek          
+rm -rf file*
+write hole file
+len cur 16394
+od -c file.no
+0000000    1   2   3   4   5   6   7   8   9   0  \0  \0  \0  \0  \0  \0
+0000020   \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0  \0
+*
+0040000    1   2   3   4   5   6   7   8   9   0                        
+0040012
+ls -l file.no
+-rw-r--r--  1 sharwen  wheel  16394 Jun 27 19:42 file.no
+du -s file.no
+40      file.no
+wc -c file.no
+   16394 file.no
+write real file
+len cur 16394
+od -c file1.no
+0000000    1   2   3   4   5   6   7   8   9   0   a   a   a   a   a   a
+0000020    a   a   a   a   a   a   a   a   a   a   a   a   a   a   a   a
+*
+0040000    1   2   3   4   5   6   7   8   9   0                        
+0040012
+ls -l file1.no
+-rw-r--r--  1 sharwen  wheel  16394 Jun 27 19:42 file1.no
+du -s file1.no
+40      file1.no
+wc -c file1.no
+   16394 file1.no
 */
-
-//mac在系统中，固态硬盘测试结果如上，可能在其他的系统如机械硬盘中，占据的盘块可能不一致

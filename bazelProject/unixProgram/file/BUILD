@@ -24,3 +24,22 @@ cc_binary(
         ],
     copts = ["-std=c++11"],
 )
+
+
+cc_binary(
+	name = "seek",
+	srcs = ["seek.cc"],
+	deps = ["//lib/term:term",
+		],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name = "link",
+	srcs = ["link.cc"],
+	deps = ["//lib/term:term",
+            "//lib/condition:condition",
+            "//lib/err:myerr",
+		],
+	copts = ["-std=c++11"],
+)

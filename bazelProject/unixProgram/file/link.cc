@@ -44,8 +44,7 @@ int main(int argc, char * argv[])
 }
 
 
-/*
-./file.txt                                                   
+/*                                               
 ➜  file ./link file.txt filelink sharwentest
 cmd: rm -rf file.txt
 cmd: ls -ll file.txt

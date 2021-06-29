@@ -17,7 +17,7 @@ bool copy(const std::string & src, const std::string & dst)
     {
         std::string wbuf = "test";
         for(int idx =0 ; idx < n; ++idx){
-            if(buf[idx] != '\0'){
+            if(buf[idx]){
                 wbuf += buf[idx];
             }
         }
@@ -40,6 +40,7 @@ int main(int argc, char * argv[])
     condition_equal(copy(argv[1], argv[2]) == true, true, "copy file err");
     printf("wc -c %s\n%s",argv[1], exec_term(std::string("wc -c ") + argv[1], 2048).c_str());
     printf("wc -c %s\n%s",argv[2], exec_term(std::string("wc -c ") + argv[2], 2048).c_str());
+    
     return 0;
 }
 

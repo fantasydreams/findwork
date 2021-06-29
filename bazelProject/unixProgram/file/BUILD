@@ -30,6 +30,7 @@ cc_binary(
 	name = "seek",
 	srcs = ["seek.cc"],
 	deps = ["//lib/term:term",
+            "//lib/condition:condition",
 		],
 	copts = ["-std=c++11"],
 )
@@ -37,6 +38,16 @@ cc_binary(
 cc_binary(
 	name = "link",
 	srcs = ["link.cc"],
+	deps = ["//lib/term:term",
+            "//lib/condition:condition",
+            "//lib/err:myerr",
+		],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name = "copy",
+	srcs = ["copy.cc"],
 	deps = ["//lib/term:term",
             "//lib/condition:condition",
             "//lib/err:myerr",

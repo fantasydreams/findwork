@@ -3,13 +3,17 @@
 #include <fcntl.h>
 #include <errno.h>
 #include "lib/term/term.h"
+#include "lib/condition/condition.h"
+#include <string>
 
-void writeHoleFile()
+void writeHoleFile(const std::string & path_name)
 {
 	int fd;
 	extern int errno;
+	printf("cmd : rm -rf %s\n%s", path_name.c_str(), 
+		exec_term(("rm -rf " + path_name).c_str(), 1024, true).c_str());
 	printf("write hole file\n");
-	if((fd = open("file.no",O_CREAT | O_RDWR, 0644)) == -1){
+	if((fd = open(path_name.c_str(), O_CREAT | O_RDWR, 0644)) == -1){
 		printf("open err %d, %s\n",errno,strerror(errno));
 
 	}
@@ -31,22 +35,22 @@ void writeHoleFile()
 	}
 
 
-	if((fd = open("file.no",O_RDONLY)) == -1){
+	if((fd = open(path_name.c_str() , O_RDONLY)) == -1){
 		printf("open err %d\n, %s",errno,strerror(errno));
 	}
 
-	long seekEnd = lseek(fd,0,SEEK_END);
+	long seekEnd = lseek(fd, 0, SEEK_END);
 	printf("len cur %ld\n",seekEnd);
 
 	if(close(fd) == -1){
 		printf("close err %d, %s\n",errno,strerror(errno));
 	}
 
-	
-	printf("%s\n%s","od -c file.no", exec_term("od -c file.no", 2048).c_str());
-	printf("%s\n%s","ls -l file.no", exec_term("ls -l file.no", 2048).c_str());
-	printf("%s\n%s","du -s file.no", exec_term("du -s file.no", 2048).c_str());
-	printf("%s\n%s","wc -c file.no", exec_term("wc -c file.no", 2048).c_str());
+	close(fd);
+	printf("%s\n%s",("od -c " + path_name).c_str(), exec_term("od -c " + path_name, 2048).c_str());
+	printf("%s\n%s",("ls -l " + path_name).c_str(), exec_term("od -c " + path_name, 2048).c_str());
+	printf("%s\n%s",("du -s " + path_name).c_str(), exec_term("od -c " + path_name, 2048).c_str());
+	printf("%s\n%s",("wc -c " + path_name).c_str(), exec_term("od -c " + path_name, 2048).c_str());
 
 }
 // sharwen@sharwens-MacBook-Pro seek % od -c file.no 
@@ -56,12 +60,14 @@ void writeHoleFile()
 // 0040000    1   2   3   4   5   6   7   8   9   0                        
 // 0040012
 
-void writeRealFile()
+void writeRealFile(const std::string & path_name)
 {
 	int fd;
 	extern int errno;
+	printf("cmd : rm -rf %s\n%s", path_name.c_str(), 
+		exec_term(("rm -rf " + path_name).c_str(), 1024, true).c_str());
 	printf("write real file\n");
-	if((fd = open("file1.no",O_RDWR | O_CREAT, 0644)) == -1){
+	if((fd = open(path_name.c_str(), O_RDWR | O_CREAT, 0644)) == -1){
 		printf("open err %d, %s\n",errno,strerror(errno));
 
 	}
@@ -91,7 +97,7 @@ void writeRealFile()
 	}
 
 
-	if((fd = open("file1.no",O_RDONLY)) == -1){
+	if((fd = open(path_name.c_str(), O_RDONLY)) == -1){
 		printf("open err %d\n, %s",errno,strerror(errno));
 	}
 
@@ -102,10 +108,11 @@ void writeRealFile()
 		printf("close err %d, %s\n",errno,strerror(errno));
 	}
 
-	printf("%s\n%s","od -c file1.no", exec_term("od -c file1.no", 2048).c_str());
-	printf("%s\n%s","ls -l file1.no", exec_term("ls -l file1.no", 2048).c_str());
-	printf("%s\n%s","du -s file1.no", exec_term("du -s file1.no", 2048).c_str());
-	printf("%s\n%s","wc -c file1.no", exec_term("wc -c file1.no", 2048).c_str());
+	close(fd);
+	printf("%s\n%s",("od -c " + path_name).c_str(), exec_term("od -c " + path_name, 2048).c_str());
+	printf("%s\n%s",("ls -l " + path_name).c_str(), exec_term("od -c " + path_name, 2048).c_str());
+	printf("%s\n%s",("du -s " + path_name).c_str(), exec_term("od -c " + path_name, 2048).c_str());
+	printf("%s\n%s",("wc -c " + path_name).c_str(), exec_term("od -c " + path_name, 2048).c_str());
 }
 
 /*
@@ -117,12 +124,11 @@ void writeRealFile()
 0040012
 */
 
-int main(){
-
-	printf("%s\n%s","rm -rf file*", exec_term("rm -rf file*", 2048).c_str());
-	writeHoleFile();
-	writeRealFile();
-
+int main(int argc, char * argv[])
+{
+	argc_condi(argc == 3, true, argv, "<hole file> <real file>", true);
+	writeHoleFile(argv[1]);
+	writeRealFile(argv[2]);
 	return 0;
 }
 

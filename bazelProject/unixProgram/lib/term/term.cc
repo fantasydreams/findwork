@@ -17,7 +17,8 @@ std::string exec_term(const std::string & cmd, int max_len, bool with_err)
     while(fgets(buf, sizeof(buf) - 1 , fp))
     {
         int n = strlen(buf);
-        if(res.size() + n > max_len){
+        if(res.size() + n > max_len)
+        {
             res += std::string(buf).substr(0, max_len - res.size());
             break;
         }

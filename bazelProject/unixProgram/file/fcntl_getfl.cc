@@ -33,7 +33,7 @@ int main(int argc, char * argv[])
     if(argc != 2)
     {
         printSomeFlag();
-        err_quit("usage: %s <descriptor#>", argc[0]);
+        err_quit("usage: %s <descriptor#>", argv[0]);
     }
 
     int val = 0;

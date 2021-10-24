@@ -11,3 +11,20 @@ cc_binary(
 	deps  = ["1_twoSum",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "Median",
+	hdrs = ["comm.h",
+			"4.MedianOfTwoSortedArrays.h",
+		],
+	srcs = ["4.MedianOfTwoSortedArrays.cpp"]
+)
+
+cc_binary(
+	name  = "MedianTest",
+	srcs  = ["4.MedianOfTwoSortedArraysTest.cpp",
+		],
+	copts = ["-std=c++11"],
+	deps  = ["Median",
+			 "@googletest//:gtest_main"],
+)

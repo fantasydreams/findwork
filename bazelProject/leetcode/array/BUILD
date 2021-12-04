@@ -28,3 +28,11 @@ cc_binary(
 	deps  = ["Median",
 			 "@googletest//:gtest_main"],
 )
+
+cc_binary(
+	name  = "otherTest",
+	srcs  = ["otherTest.cc",
+		],
+	copts = ["-std=c++11"],
+	deps  = ["Median"],
+)

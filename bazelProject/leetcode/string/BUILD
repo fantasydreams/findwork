@@ -11,3 +11,18 @@ cc_binary(
 	deps  = ["14_LongestCommonPrefix",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "3LongestSubStringWithoutRepeat",
+	hdrs = ["3.LongestSubstringWithoutRepeatingCharacters.h"],
+	srcs = ["3.LongestSubstringWithoutRepeatingCharacters.cpp"]
+)
+
+
+cc_binary(
+	name  = "3LongestSubStringWithoutRepeatTest",
+	srcs  = ["3.LongestSubstringWithoutRepeatingCharactersTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["3LongestSubStringWithoutRepeat",
+			 "@googletest//:gtest_main"],
+)

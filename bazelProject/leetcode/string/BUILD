@@ -26,3 +26,18 @@ cc_binary(
 	deps  = ["3LongestSubStringWithoutRepeat",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "5LongestPalindromicSubstring",
+	hdrs = ["5.LongestPalindromicSubstring.h"],
+	srcs = ["5.LongestPalindromicSubstring.cpp"]
+)
+
+
+cc_binary(
+	name  = "5LongestPalindromicSubstringTest",
+	srcs  = ["5.LongestPalindromicSubstringTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["5LongestPalindromicSubstring",
+			 "@googletest//:gtest_main"],
+)

@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "comm.h"
+#include "arraycomm.h"
 #include "4.MedianOfTwoSortedArrays.h"
 
 TEST(case_1,content)

@@ -41,3 +41,18 @@ cc_binary(
 	deps  = ["5LongestPalindromicSubstring",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "zigzagConversion",
+	hdrs = ["6.ZigzagConversion.h"],
+	srcs = ["6.ZigzagConversion.cpp"]
+)
+
+
+cc_binary(
+	name  = "zigzagConversionTest",
+	srcs  = ["6.ZigzagConversionTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["zigzagConversion",
+			 "@googletest//:gtest_main"],
+)

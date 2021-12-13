@@ -14,7 +14,7 @@ cc_binary(
 
 cc_library(
 	name = "Median",
-	hdrs = ["comm.h",
+	hdrs = ["arraycomm.h",
 			"4.MedianOfTwoSortedArrays.h",
 		],
 	srcs = ["4.MedianOfTwoSortedArrays.cpp"]

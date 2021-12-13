@@ -1,5 +1,5 @@
 #include "4.MedianOfTwoSortedArrays.h"
-#include "comm.h"
+#include "arraycomm.h"
 
 int main()
 {

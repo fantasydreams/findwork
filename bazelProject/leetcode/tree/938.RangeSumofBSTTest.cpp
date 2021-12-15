@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "938.RangeSumofBST.h"
 
-TEST(case_11,content)
+TEST(case_1,content)
 {
     TreeNode * root = nullptr;
     EXPECT_EQ(rangeSumBST(root, 5, 10), 0);

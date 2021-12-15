@@ -4,6 +4,14 @@ cc_library(
 	srcs = ["treecomm.cpp"]
 )
 
+cc_binary(
+	name  = "treecommtest",
+	srcs  = ["treecommtest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["treecomm",
+			 "@googletest//:gtest_main"],
+)
+
 
 cc_library(
 	name  = "938RangeSumofBSTT",

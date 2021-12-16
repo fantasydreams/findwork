@@ -69,6 +69,42 @@ void TraverseTreePost(TreeNode * root, std::string & res)
     }
 }
 
+void TraverseTreePostNoRecursion(TreeNode * root, std::string & res)
+{
+
+}
+
+
+void PushTaskLeftPathUntilNull(TreeNode * root, std::stack<TreeNode *> & stack)
+{
+    while(root){
+        stack.push(root);
+        root = root->left;
+    }
+}
+
+void TraverseTreeMidNoRecursion(TreeNode * root, std::string & res)
+{
+    if(!root) return;
+    std::stack<TreeNode *> stack;
+    PushTaskLeftPathUntilNull(root, stack);
+
+    while(stack.size())
+    {
+        TreeNode * pNode = stack.top();
+        stack.pop();
+        if(res.size() == 0){
+            res += std::to_string(pNode->val);
+        }else{
+            res += " ";
+            res += std::to_string(pNode->val);
+        }
+        if(pNode->right){
+            PushTaskLeftPathUntilNull(pNode->right, stack);
+        }
+    }
+}
+
 void TraverseTreePreNoRecursion(TreeNode * root)
 {
     if(!root) return;
@@ -85,6 +121,33 @@ void TraverseTreePreNoRecursion(TreeNode * root)
         }
         if(pNode->left) {
             que.push(pNode->left);
+        }
+    }
+}
+
+
+void TraverseTreePreNoRecursion(TreeNode * root, std::string & res)
+{
+    if(!root) return;
+    std::stack<TreeNode *> stack;
+    stack.push(root);
+
+    while(stack.size())
+    {
+        TreeNode * pNode = stack.top();
+        stack.pop();
+        if(res.size() == 0){
+            res = std::to_string(pNode->val);
+        }else
+        {
+            res += " ";
+            res += std::to_string(pNode->val);
+        }
+        if(pNode->right) {
+            stack.push(pNode->right);
+        }
+        if(pNode->left) {
+            stack.push(pNode->left);
         }
     }
 }
@@ -124,7 +187,7 @@ void FreeTree(TreeNode * root)
 }
 
 
-TreeNode * CreateTree(const std::vector<int> &pre, const std::vector<int> mid, size_t pre_b, size_t pre_e, size_t mid_b, size_t mid_e)
+TreeNode * CreateTreePreMid(const std::vector<int> & pre, const std::vector<int> & mid, int64_t pre_b, int64_t pre_e, int64_t mid_b, int64_t mid_e)
 {
     if(pre_b > pre_e || mid_b > mid_e || 
        pre_b >= pre.size() || mid_b >= mid.size() || 
@@ -139,18 +202,45 @@ TreeNode * CreateTree(const std::vector<int> &pre, const std::vector<int> mid, s
         ++mid_idx;
         ++len;
     }
-    root->left = CreateTree(pre, mid, pre_b + 1, pre_b + len, mid_b, mid_idx - 1);
-    root->right = CreateTree(pre, mid, pre_b + len + 1, pre_e, mid_idx + 1, mid_e);
+    root->left = CreateTreePreMid(pre, mid, pre_b + 1, pre_b + len, mid_b, mid_idx - 1);
+    root->right = CreateTreePreMid(pre, mid, pre_b + len + 1, pre_e, mid_idx + 1, mid_e);
 
     return root;
 }
 
 
-TreeNode * CreateTree(const std::vector<int> pre, const std::vector<int> mid)
+TreeNode * CreateTreePreMid(const std::vector<int> & pre, const std::vector<int> & mid)
 {
     if(pre.size() != mid.size() || pre.size() == 0){
         return nullptr;
     }
 
-    return CreateTree(pre, mid, 0, pre.size() - 1, 0, mid.size() - 1);
+    return CreateTreePreMid(pre, mid, 0, pre.size() - 1, 0, mid.size() - 1);
+}
+
+TreeNode * CreateTreeMidPost(const std::vector<int> & mid, const std::vector<int> & post, int64_t mid_b, int64_t mid_e, int64_t post_b, int64_t post_e)
+{
+    if(mid_b > mid_e || post_b > post_e ||
+       mid_b >= mid.size() || mid_e < 0 ||
+       post_b >= post.size() || post_e < 0 ){
+           return nullptr;
+    }
+
+    TreeNode * root = new TreeNode(post[post_e]);
+    uint64_t m_idx = mid_b;
+    while(m_idx <= mid_e && mid[m_idx] != post[post_e]){
+        ++m_idx;
+    }
+
+    root->left  = CreateTreeMidPost(mid, post, mid_b, m_idx - 1, post_b, post_b + m_idx - mid_b - 1);
+    root->right = CreateTreeMidPost(mid, post, m_idx + 1, mid_e, post_b + m_idx - mid_b, post_e - 1);
+    return root;
+}
+
+TreeNode * CreateTreeMidPost(const std::vector<int> & mid, const std::vector<int> & post)
+{
+    if(mid.size() != post.size() || post.size() == 0){
+        return nullptr;
+    }
+    return CreateTreeMidPost(mid, post, 0, mid.size() - 1, 0, post.size() - 1);
 }

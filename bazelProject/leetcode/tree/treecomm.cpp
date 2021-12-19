@@ -1,6 +1,8 @@
 #include "treecomm.h"
 #include <iostream>
 
+void PushTaskLeftPathUntilNull(TreeNode * root, std::stack<TreeNode *> & stack);
+
 void TraverseTreePre(TreeNode * root)
 {
     if(!root) return;
@@ -71,7 +73,31 @@ void TraverseTreePost(TreeNode * root, std::string & res)
 
 void TraverseTreePostNoRecursion(TreeNode * root, std::string & res)
 {
+    if(!root){
+        return;
+    } 
 
+    TreeNode * pre = nullptr;
+    std::stack<TreeNode *> stack;
+    PushTaskLeftPathUntilNull(root, stack);
+    while(stack.size())
+    {
+        TreeNode * pTmp = stack.top();
+        if(pTmp->right == pre || pTmp->right == nullptr)
+        {
+            stack.pop();
+            if(res.size() == 0){
+                res += std::to_string(pTmp->val);
+            }else
+            {
+                res += " ";
+                res += std::to_string(pTmp->val);
+            }
+            pre = pTmp;
+        }else{
+            PushTaskLeftPathUntilNull(pTmp->right, stack);
+        }
+    }
 }
 
 

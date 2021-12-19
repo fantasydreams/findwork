@@ -36,3 +36,33 @@ cc_binary(
 	copts = ["-std=c++11"],
 	deps  = ["Median"],
 )
+
+
+cc_library(
+	name = "7ReverseInteger",
+	hdrs = ["7.ReverseInteger.h"],
+	srcs = ["7.ReverseInteger.cpp"]
+)
+
+cc_binary(
+	name  = "7ReverseIntegerTest",
+	srcs  = ["7.ReverseIntegerTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["7ReverseInteger",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "9PalindromeNumber",
+	hdrs = ["9.PalindromeNumber.h"],
+	srcs = ["9.PalindromeNumber.cpp"]
+)
+
+cc_binary(
+	name  = "9PalindromeNumberTest",
+	srcs  = ["9.PalindromeNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["9PalindromeNumber",
+			 "@googletest//:gtest_main"],
+)

@@ -6,3 +6,4 @@ CLionProjects/normal/cmake-build-debug/CMakeFiles/C__.dir/main.cpp.o
 CLionProjects/normal/cmake-build-debug/C__
 CLionProjects/normal/cmake-build-debug/C__
 bazelProject/leetcode/bazel*
+bazelProject/leetcode/.vscode/settings.json

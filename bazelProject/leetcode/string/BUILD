@@ -56,3 +56,35 @@ cc_binary(
 	deps  = ["zigzagConversion",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "394DecodeString",
+	hdrs = ["394.DecodeString.h"],
+	srcs = ["394.DecodeString.cpp"]
+)
+
+
+cc_binary(
+	name  = "394DecodeStringTest",
+	srcs  = ["394.DecodeStringTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["394DecodeString",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "8StringtoIntegerATOI",
+	hdrs = ["8.StringtoInteger(atoi).h"],
+	srcs = ["8.StringtoInteger(atoi).cpp"]
+)
+
+
+cc_binary(
+	name  = "8StringtoIntegerATOITest",
+	srcs  = ["8.StringtoInteger(atoi)Test.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["8StringtoIntegerATOI",
+			 "@googletest//:gtest_main"],
+)
+

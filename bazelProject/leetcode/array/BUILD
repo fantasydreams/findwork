@@ -66,3 +66,17 @@ cc_binary(
 	deps  = ["9PalindromeNumber",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "1200MinimumAbsoluteDifference",
+	hdrs = ["1200.MinimumAbsoluteDifference.h"],
+	srcs = ["1200.MinimumAbsoluteDifference.cpp"]
+)
+
+cc_binary(
+	name  = "1200MinimumAbsoluteDifferenceTest",
+	srcs  = ["1200.MinimumAbsoluteDifferenceTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["1200MinimumAbsoluteDifference",
+			 "@googletest//:gtest_main"],
+)

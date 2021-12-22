@@ -19,3 +19,20 @@ cc_binary(
 	deps  = ["AddTwoNum",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "143ReorderList",
+	hdrs = ["143.ReorderList.h"],
+	srcs = ["143.ReorderList.cpp"],
+    copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "143ReorderListTest",
+	srcs  = ["143.ReorderListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["143ReorderList",
+			 "@googletest//:gtest_main"],
+)

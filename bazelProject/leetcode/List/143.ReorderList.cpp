@@ -53,7 +53,7 @@ void reorderList(ListNode* head)
 
 //快慢指针，满指针一定是分成链表分成两部分的第二部分的头指针，
 //奇数的情况中间的那个元素在第一部分，偶数的时候两部分元素个数相等
-void reorderList(ListNode* head) 
+void reorderList1(ListNode* head) 
 {
     if(!head || head->next == nullptr) return;
     ListNode * fast = head, *slow = head, *pre;

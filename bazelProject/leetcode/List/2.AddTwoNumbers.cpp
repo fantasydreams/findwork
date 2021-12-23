@@ -1,7 +1,7 @@
 #include "2.AddTwoNumbers.h"
 
 
-ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
+ListNode* addTwoNumbers1(ListNode* l1, ListNode* l2) 
 {
     ListNode * pListHead = nullptr, *pCurNode = nullptr;
     int carry = 0;

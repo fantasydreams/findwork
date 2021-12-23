@@ -88,3 +88,17 @@ cc_binary(
 			 "@googletest//:gtest_main"],
 )
 
+cc_library(
+	name = "13RomantoInteger",
+	hdrs = ["13.RomantoInteger.h"],
+	srcs = ["13.RomantoInteger.cpp"]
+)
+
+
+cc_binary(
+	name  = "13RomantoIntegerTest",
+	srcs  = ["13.RomantoIntegerTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["13RomantoInteger",
+			 "@googletest//:gtest_main"],
+)

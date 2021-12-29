@@ -27,3 +27,22 @@ cc_binary(
 	deps  = ["938RangeSumofBSTT",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "116PopulatingNextRightPointersinEachNode",
+    hdrs  = ["116.PopulatingNextRightPointersinEachNode.h"], 
+	srcs  = ["116.PopulatingNextRightPointersinEachNode.cpp"],
+	deps  = ["treecomm"],
+	copts  = ["-DNODE"],
+)
+
+cc_binary(
+	name  = "116PopulatingNextRightPointersinEachNodeTest",
+	srcs  = ["116.PopulatingNextRightPointersinEachNodeTest.cpp"],
+	copts = [
+		"-std=c++11",
+		"-DNODE",
+	],
+	deps  = ["116PopulatingNextRightPointersinEachNode",
+			 "@googletest//:gtest_main"],
+)

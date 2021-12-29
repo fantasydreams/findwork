@@ -11,9 +11,19 @@ struct TreeNode
     int val;
     TreeNode *left;
     TreeNode *right;
+
+    #ifndef NODE
     TreeNode() : val(0), left(nullptr), right(nullptr) {}
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    #else
+
+    TreeNode* next;
+    TreeNode() : val(0), left(NULL), right(NULL), next(NULL) {}
+    TreeNode(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
+    TreeNode(int _val, TreeNode* _left, TreeNode* _right, TreeNode* _next)
+        : val(_val), left(_left), right(_right), next(_next) {}
+    #endif
 };
 
 

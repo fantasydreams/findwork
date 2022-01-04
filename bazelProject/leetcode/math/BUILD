@@ -30,3 +30,18 @@ cc_binary(
 	deps  = ["1015SmallestIntegerDivisiblebyK",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "1009ComplementofBase10Integer",
+	hdrs = ["1009.ComplementofBase10Integer.h"],
+	srcs = ["1009.ComplementofBase10Integer.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "1009ComplementofBase10IntegerTest",
+	srcs  = ["1009.ComplementofBase10IntegerTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["1009ComplementofBase10Integer",
+			 "@googletest//:gtest_main"],
+)

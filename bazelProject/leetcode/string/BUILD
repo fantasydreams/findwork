@@ -102,3 +102,19 @@ cc_binary(
 	deps  = ["13RomantoInteger",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "131PalindromePartitioning",
+	hdrs = ["131.PalindromePartitioning.h"],
+	srcs = ["131.PalindromePartitioning.cpp"]
+)
+
+
+cc_binary(
+	name  = "131PalindromePartitioningTest",
+	srcs  = ["131.PalindromePartitioningTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["131PalindromePartitioning",
+			 "@googletest//:gtest_main"],
+)

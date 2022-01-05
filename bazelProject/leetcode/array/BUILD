@@ -80,3 +80,18 @@ cc_binary(
 	deps  = ["1200MinimumAbsoluteDifference",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "11ContainerWithMostWater",
+	hdrs = ["11.ContainerWithMostWater.h"],
+	srcs = ["11.ContainerWithMostWater.cpp"]
+)
+
+cc_binary(
+	name  = "11ContainerWithMostWaterTest",
+	srcs  = ["11.ContainerWithMostWaterTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["11ContainerWithMostWater",
+			 "@googletest//:gtest_main"],
+)

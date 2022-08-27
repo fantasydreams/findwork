@@ -19,7 +19,7 @@ int maxArea(std::vector<int>& height)
             ++start;
         }else if(height[start] > height[end]){
             --end;
-        }else{
+        }else{ // 这里不管谁遇到start 和 end都会比当前的积小，所以两个都可以移动
             ++start;
             --end;
         }

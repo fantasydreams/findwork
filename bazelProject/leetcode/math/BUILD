@@ -45,3 +45,18 @@ cc_binary(
 	deps  = ["1009ComplementofBase10Integer",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "12IntegerToRoman",
+	hdrs = ["12.IntegerToRoman.h"],
+	srcs = ["12.IntegerToRoman.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "12IntegerToRomanTest",
+	srcs  = ["12.IntegerToRomanTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["12IntegerToRoman",
+			 "@googletest//:gtest_main"],
+)

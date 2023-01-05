@@ -39,3 +39,18 @@ cc_binary(
 	deps  = ["435NonOverlappingIntervals",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "605CanPlaceFlower",
+	hdrs = ["605.CanPlaceFlowers.h"],
+	srcs = ["605.CanPlaceFlowers.cpp"]
+)
+
+cc_binary(
+	name  = "605CanPlaceFlowerTest",
+	srcs  = ["605.CanPlaceFlowersTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["605CanPlaceFlower",
+			 "@googletest//:gtest_main"],
+)

@@ -98,3 +98,17 @@ cc_binary(
 	deps  = ["122BestTimetoBuyandSellStockII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "406QueueReconstructionbyHeight",
+	hdrs = ["406.QueueReconstructionbyHeight.h"],
+	srcs = ["406.QueueReconstructionbyHeight.cpp"]
+)
+
+cc_binary(
+	name  = "406QueueReconstructionbyHeightTest",
+	srcs  = ["406.QueueReconstructionbyHeightTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["406QueueReconstructionbyHeight",
+			 "@googletest//:gtest_main"],
+)

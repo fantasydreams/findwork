@@ -7,3 +7,17 @@ CLionProjects/normal/cmake-build-debug/C__
 CLionProjects/normal/cmake-build-debug/C__
 bazelProject/leetcode/bazel*
 bazelProject/leetcode/.vscode/settings.json
+.DS_Store
+*inux笔记/.DS_Store
+bazelProject/.DS_Store
+bazelProject/unixProgram/.DS_Store
+bazelProject/unixProgram/lib/.DS_Store
+bazelProject/unixProgram/lib/mode/.DS_Store
+books/.DS_Store
+CLionProjects/.DS_Store
+CLionProjects/alibaba/.DS_Store
+CLionProjects/huawei/.DS_Store
+CLionProjects/huawei/cmake-build-debug/.DS_Store
+CLionProjects/normal/.DS_Store
+leetcode/.DS_Store
+STL笔记/.DS_Store

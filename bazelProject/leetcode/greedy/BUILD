@@ -69,3 +69,17 @@ cc_binary(
 	deps  = ["452MinimumNumberofArrowstoBurstBalloons",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "763PartitionLabels",
+	hdrs = ["763.PartitionLabels.h"],
+	srcs = ["763.PartitionLabels.cpp"]
+)
+
+cc_binary(
+	name  = "763PartitionLabelsTest",
+	srcs  = ["763.PartitionLabelsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["763PartitionLabels",
+			 "@googletest//:gtest_main"],
+)

@@ -83,3 +83,18 @@ cc_binary(
 	deps  = ["763PartitionLabels",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "122BestTimetoBuyandSellStockII",
+	hdrs = ["122.BestTimetoBuyandSellStockII.h"],
+	srcs = ["122.BestTimetoBuyandSellStockII.cpp"]
+)
+
+cc_binary(
+	name  = "122BestTimetoBuyandSellStockIITest",
+	srcs  = ["122.BestTimetoBuyandSellStockIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["122BestTimetoBuyandSellStockII",
+			 "@googletest//:gtest_main"],
+)

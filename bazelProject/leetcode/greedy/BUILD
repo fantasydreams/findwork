@@ -54,3 +54,18 @@ cc_binary(
 	deps  = ["605CanPlaceFlower",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "452MinimumNumberofArrowstoBurstBalloons",
+	hdrs = ["452.MinimumNumberofArrowstoBurstBalloons.h"],
+	srcs = ["452.MinimumNumberofArrowstoBurstBalloons.cpp"]
+)
+
+cc_binary(
+	name  = "452MinimumNumberofArrowstoBurstBalloonsTest",
+	srcs  = ["452.MinimumNumberofArrowstoBurstBalloonsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["452MinimumNumberofArrowstoBurstBalloons",
+			 "@googletest//:gtest_main"],
+)

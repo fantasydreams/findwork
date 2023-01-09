@@ -112,3 +112,18 @@ cc_binary(
 	deps  = ["406QueueReconstructionbyHeight",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "665NondecreasingArray",
+	hdrs = ["665.NondecreasingArray.h"],
+	srcs = ["665.NondecreasingArray.cpp"]
+)
+
+cc_binary(
+	name  = "665NondecreasingArrayTest",
+	srcs  = ["665.NondecreasingArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["665NondecreasingArray",
+			 "@googletest//:gtest_main"],
+)

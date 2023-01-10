@@ -5,30 +5,30 @@
 void merge1(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n)
 {
     int iIdx = nums1.size() - 1;
-    while(m >= 0 && n >= 0)
+    while(m > 0 && n > 0)
     {
-        if(nums1[m] > nums2[n]) 
+        if(nums1[m-1] > nums2[n-1]) 
         {
-            nums1[iIdx] = nums1[m];
+            nums1[iIdx] = nums1[m-1];
             --m;
         }else 
         {
-            nums1[iIdx] = nums2[n];
+            nums1[iIdx] = nums2[n-1];
             --n;
         }
         --iIdx;
     }
 
-    while(m>=0)
+    while(m>0)
     {
-        nums1[iIdx] = nums1[m];
+        nums1[iIdx] = nums1[m-1];
         --iIdx;
         --m;
     }
 
-    while(n>=0)
+    while(n>0)
     {
-        nums1[iIdx] = nums2[n];
+        nums1[iIdx] = nums2[n-1];
         --iIdx;
         --n;
     }

@@ -11,3 +11,18 @@ cc_binary(
 	deps  = ["167TwoSumIIInputArrayIsSorted",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "88MergeSortedArray",
+	hdrs = ["88.MergeSortedArray.h"],
+	srcs = ["88.MergeSortedArray.cpp"]
+)
+
+cc_binary(
+	name  = "88MergeSortedArrayTest",
+	srcs  = ["88.MergeSortedArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["88MergeSortedArray",
+			 "@googletest//:gtest_main"],
+)

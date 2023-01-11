@@ -36,3 +36,21 @@ cc_binary(
 	deps  = ["143ReorderList",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name = "142LinkedListCycleII",
+	hdrs = ["142.LinkedListCycleII.h"],
+	srcs = ["142.LinkedListCycleII.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "142LinkedListCycleIITest",
+	srcs  = ["142.LinkedListCycleIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["142LinkedListCycleII",
+			 "@googletest//:gtest_main"],
+)

@@ -15,6 +15,37 @@ ListNode * createLinkList(const std::vector<int> & vec)
     return pLinkHead;
 }
 
+ListNode * createCircleLinkList(const std::vector<int> & vec, int pos)
+{
+    if(vec.size() == 0) return nullptr;
+    ListNode * pLinkHead = nullptr;
+
+    ListNode * pLastPtr = NULL, * pPosPtr = NULL;
+    for(int64_t idx = vec.size() - 1; idx >= 0; --idx)
+    {
+        ListNode * pTmpNode = new ListNode(vec[idx]);
+        pTmpNode->next = pLinkHead;
+        pLinkHead = pTmpNode;
+
+        if(idx == vec.size() - 1) {
+            pLastPtr = pTmpNode;
+        }
+        if(idx == pos) {
+            pPosPtr = pTmpNode;
+        }
+    }
+
+    if(pLastPtr && pPosPtr) {
+        pLastPtr->next = pPosPtr;
+    }
+
+    printf("%" PRIu64 "\n", (uint64_t)pPosPtr);
+
+    return pLinkHead;
+}
+
+
+
 void freeLinkList(ListNode * linkList)
 {
     while(linkList)

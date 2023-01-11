@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <cmath>
 #include <iostream>
+#include <cinttypes>
 
 
 // Definition for singly-linked list.
@@ -24,6 +25,7 @@ struct ListNode {
 
 
 ListNode * createLinkList(const std::vector<int> & vec);
+ListNode * createCircleLinkList(const std::vector<int> & vec, int pos);
 void freeLinkList(ListNode * linkList);
 std::vector<int> convertLink2Vector(ListNode * pList);
 ListNode * revertList(ListNode * pList);

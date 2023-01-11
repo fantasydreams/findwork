@@ -10,6 +10,7 @@ TEST(case_1,content)
 	ListNode * pNode = detectCycle(pCircle);
     EXPECT_EQ((bool)pNode, 1);
     EXPECT_EQ(pNode->val, 4);
+    freeCircleLinkList(pCircle);
 }
 
 TEST(case_2,content)
@@ -19,6 +20,7 @@ TEST(case_2,content)
 	ListNode * pNode = detectCycle(pCircle);
     EXPECT_EQ((bool)pNode, 1);
     EXPECT_EQ(pNode->val, 2);
+    freeCircleLinkList(pCircle);
 }
 
 TEST(case_3,content)
@@ -28,6 +30,7 @@ TEST(case_3,content)
 	ListNode * pNode = detectCycle(pCircle);
     EXPECT_EQ((bool)pNode, 1);
     EXPECT_EQ(pNode->val, 1);
+    freeCircleLinkList(pCircle);
 }
 
 TEST(case_4,content)
@@ -36,4 +39,5 @@ TEST(case_4,content)
     ListNode * pCircle = createCircleLinkList(a, 1);
 	ListNode * pNode = detectCycle(pCircle);
     EXPECT_EQ((bool)pNode, 0);
+    freeCircleLinkList(pCircle);
 }

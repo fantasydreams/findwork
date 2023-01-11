@@ -27,6 +27,7 @@ struct ListNode {
 ListNode * createLinkList(const std::vector<int> & vec);
 ListNode * createCircleLinkList(const std::vector<int> & vec, int pos);
 void freeLinkList(ListNode * linkList);
+void freeCircleLinkList(ListNode * linkList);
 std::vector<int> convertLink2Vector(ListNode * pList);
 ListNode * revertList(ListNode * pList);
 ListNode * revertListNewList(ListNode * pList);

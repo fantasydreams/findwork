@@ -56,6 +56,63 @@ void freeLinkList(ListNode * linkList)
     }
 }
 
+static ListNode *detectCycle(ListNode *head)
+{
+    if(!head) {
+        return NULL;
+    }
+
+    ListNode * pFast = head, * pSlow = head;
+    ListNode * pTmp = NULL;
+    do
+    {
+        pSlow = pSlow->next;
+        pFast = pFast->next;
+        if(pFast) {
+            pFast = pFast->next;
+        }
+
+        if(pFast && (pFast == pSlow)) 
+        {
+            pTmp = pFast;
+            break;
+        }
+    }while(pFast && pSlow);
+    
+    if(!pTmp) {
+        return NULL;
+    }
+
+    ListNode * pCur = head;
+    while(pCur != pTmp)
+    {
+        pCur = pCur->next;
+        pTmp = pTmp->next;
+    }
+
+    return pCur;
+}
+
+void freeCircleLinkList(ListNode * linkList)
+{
+    ListNode * pCircle = detectCycle(linkList);
+    if(pCircle)
+    {
+        while(linkList)
+        {
+            ListNode * pTmpNode = linkList;
+            linkList = linkList->next;
+            delete pTmpNode;
+
+            if(linkList == pCircle){
+                break;
+            }
+        }
+    }else{
+        freeLinkList(linkList);
+    }
+}
+
 std::vector<int> convertLink2Vector(ListNode * pList)
 {
     std::vector<int> res;

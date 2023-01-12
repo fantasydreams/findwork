@@ -26,3 +26,18 @@ cc_binary(
 	deps  = ["88MergeSortedArray",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "633SumofSquareNumbers",
+	hdrs = ["633.SumofSquareNumbers.h"],
+	srcs = ["633.SumofSquareNumbers.cpp"]
+)
+
+cc_binary(
+	name  = "633SumofSquareNumbersTest",
+	srcs  = ["633.SumofSquareNumbersTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["633SumofSquareNumbers",
+			 "@googletest//:gtest_main"],
+)

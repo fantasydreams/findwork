@@ -41,3 +41,17 @@ cc_binary(
 	deps  = ["633SumofSquareNumbers",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "76MinimumWindowSubstring",
+	hdrs = ["76.MinimumWindowSubstring.h"],
+	srcs = ["76.MinimumWindowSubstring.cpp"]
+)
+
+cc_binary(
+	name  = "76MinimumWindowSubstringTest",
+	srcs  = ["76.MinimumWindowSubstringTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["76MinimumWindowSubstring",
+			 "@googletest//:gtest_main"],
+)

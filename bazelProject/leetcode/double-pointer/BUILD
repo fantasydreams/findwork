@@ -55,3 +55,18 @@ cc_binary(
 	deps  = ["76MinimumWindowSubstring",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "680ValidPalindromeII",
+	hdrs = ["680.ValidPalindromeII.h"],
+	srcs = ["680.ValidPalindromeII.cpp"]
+)
+
+cc_binary(
+	name  = "680ValidPalindromeIITest",
+	srcs  = ["680.ValidPalindromeIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["680ValidPalindromeII",
+			 "@googletest//:gtest_main"],
+)

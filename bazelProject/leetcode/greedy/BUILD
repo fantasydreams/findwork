@@ -127,3 +127,17 @@ cc_binary(
 	deps  = ["665NondecreasingArray",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "1323Maximum69Number",
+	hdrs = ["1323.Maximum69Number.h"],
+	srcs = ["1323.Maximum69Number.cpp"]
+)
+
+cc_binary(
+	name  = "1323Maximum69NumberTest",
+	srcs  = ["1323.Maximum69NumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["1323Maximum69Number",
+			 "@googletest//:gtest_main"],
+)

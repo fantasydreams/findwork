@@ -26,3 +26,17 @@ cc_binary(
 	deps  = ["34FindFirstandLastPositionofElementinSortedArray",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "81SearchinRotatedSortedArrayII",
+	hdrs = ["81.SearchinRotatedSortedArrayII.h"],
+	srcs = ["81.SearchinRotatedSortedArrayII.cpp"]
+)
+
+cc_binary(
+	name  = "81SearchinRotatedSortedArrayIITest",
+	srcs  = ["81.SearchinRotatedSortedArrayIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["81SearchinRotatedSortedArrayII",
+			 "@googletest//:gtest_main"],
+)

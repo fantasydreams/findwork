@@ -68,3 +68,17 @@ cc_binary(
 	deps  = ["540SingleElementinaSortedArray",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "4MedianofTwoSortedArrays",
+	hdrs = ["4.MedianofTwoSortedArrays.h"],
+	srcs = ["4.MedianofTwoSortedArrays.cpp"]
+)
+
+cc_binary(
+	name  = "4MedianofTwoSortedArraysTest",
+	srcs  = ["4.MedianofTwoSortedArraysTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["4MedianofTwoSortedArrays",
+			 "@googletest//:gtest_main"],
+)

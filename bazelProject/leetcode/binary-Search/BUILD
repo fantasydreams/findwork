@@ -54,3 +54,17 @@ cc_binary(
 	deps  = ["154FindMinimuminRotatedSortedArrayII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "540SingleElementinaSortedArray",
+	hdrs = ["540.SingleElementinaSortedArray.h"],
+	srcs = ["540.SingleElementinaSortedArray.cpp"]
+)
+
+cc_binary(
+	name  = "540SingleElementinaSortedArrayTest",
+	srcs  = ["540.SingleElementinaSortedArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["540SingleElementinaSortedArray",
+			 "@googletest//:gtest_main"],
+)

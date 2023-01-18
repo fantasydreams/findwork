@@ -88,3 +88,46 @@ int maxAreaOfIsland1(vector<vector<int>>& grid)
 
     return _max;
 }
+
+//使用队列
+int maxAreaOfIsland2(vector<vector<int>>& grid)
+{
+    int _max = 0, _tmpmax = 0;
+    std::vector<int> direction = {-1, 0, 1, 0, -1};
+    std::queue<std::pair<int, int>> _queue;
+    for(int i = 0; i < grid.size(); ++i)
+    {
+        for(int j = 0; j < grid[i].size(); ++j)
+        {
+            if(grid[i][j])
+            {
+                _tmpmax = 1;
+                grid[i][j] = 0;
+                _queue.push({i, j});
+                while(!_queue.empty())
+                {
+                    auto [x, y] = _queue.front();
+                    _queue.pop();
+                    for(int k = 0; k < 4; ++k)
+                    {
+                        int nextx = x + direction[k];
+                        int nexty = y + direction[k + 1];
+                        if(nextx < 0 ||  nextx >= grid.size() || nexty < 0 || nexty >= grid[nextx].size()) {
+                            continue;
+                        }
+                        
+                        if(grid[nextx][nexty]) 
+                        {
+                            _tmpmax += 1;
+                            grid[nextx][nexty] = 0;
+                            _queue.push({nextx, nexty});
+                        }
+                    }
+                }
+                _max = std::max(_max, _tmpmax);
+            }
+        }
+    }
+
+    return _max;
+}

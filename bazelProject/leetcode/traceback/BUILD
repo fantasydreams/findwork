@@ -40,3 +40,16 @@ cc_binary(
 			 "@googletest//:gtest_main"],
 )
 
+cc_library(
+	name = "51NQueens",
+	hdrs = ["51.N-Queens.h"],
+	srcs = ["51.N-Queens.cpp"]
+)
+
+cc_binary(
+	name  = "51NQueensTest",
+	srcs  = ["51.N-QueensTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["51NQueens",
+			 "@googletest//:gtest_main"],
+)

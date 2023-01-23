@@ -40,3 +40,18 @@ cc_binary(
 	deps  = ["417PacificAtlanticWaterFlow",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "934ShortestBridge",
+	hdrs = ["934.ShortestBridge.h"],
+	srcs = ["934.ShortestBridge.cpp"]
+)
+
+cc_binary(
+	name  = "934ShortestBridgeTest",
+	srcs  = ["934.ShortestBridgeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["934ShortestBridge",
+			 "@googletest//:gtest_main"],
+)

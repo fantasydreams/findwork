@@ -55,3 +55,17 @@ cc_binary(
 	deps  = ["934ShortestBridge",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "130SurroundedRegions",
+	hdrs = ["130.SurroundedRegions.h"],
+	srcs = ["130.SurroundedRegions.cpp"]
+)
+
+cc_binary(
+	name  = "130SurroundedRegionsTest",
+	srcs  = ["130.SurroundedRegionsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["130SurroundedRegions",
+			 "@googletest//:gtest_main"],
+)

@@ -82,3 +82,17 @@ cc_binary(
 	deps  = ["47PermutationsII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "40CombinationSumII",
+	hdrs = ["40.CombinationSumII.h"],
+	srcs = ["40.CombinationSumII.cpp"]
+)
+
+cc_binary(
+	name  = "40CombinationSumIITest",
+	srcs  = ["40.CombinationSumIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["40CombinationSumII",
+			 "@googletest//:gtest_main"],
+)

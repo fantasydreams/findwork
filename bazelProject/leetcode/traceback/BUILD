@@ -53,3 +53,18 @@ cc_binary(
 	deps  = ["51NQueens",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "126.WordLadderII",
+	hdrs = ["126.WordLadderII.h"],
+	srcs = ["126.WordLadderII.cpp"]
+)
+
+cc_binary(
+	name  = "126WordLadderIITest",
+	srcs  = ["126.WordLadderIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["126.WordLadderII",
+			 "@googletest//:gtest_main"],
+)

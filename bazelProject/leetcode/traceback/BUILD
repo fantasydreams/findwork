@@ -68,3 +68,17 @@ cc_binary(
 	deps  = ["126.WordLadderII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "47PermutationsII",
+	hdrs = ["47.PermutationsII.h"],
+	srcs = ["47.PermutationsII.cpp"]
+)
+
+cc_binary(
+	name  = "47PermutationsIITest",
+	srcs  = ["47.PermutationsIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["47PermutationsII",
+			 "@googletest//:gtest_main"],
+)

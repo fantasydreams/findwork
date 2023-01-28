@@ -46,3 +46,22 @@ cc_binary(
 	deps  = ["116PopulatingNextRightPointersinEachNode",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "257BinaryTreePaths",
+    hdrs  = ["257.BinaryTreePaths.h"], 
+	srcs  = ["257.BinaryTreePaths.cpp"],
+	deps  = ["treecomm"],
+	copts  = ["-DNODE"],
+)
+
+cc_binary(
+	name  = "257BinaryTreePathsTest",
+	srcs  = ["257.BinaryTreePathsTest.cpp"],
+	copts = [
+		"-std=c++11",
+		"-DNODE",
+	],
+	deps  = ["257BinaryTreePaths",
+			 "@googletest//:gtest_main"],
+)

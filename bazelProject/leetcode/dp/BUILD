@@ -25,3 +25,17 @@ cc_binary(
 	deps  = ["198HouseRobber",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "413ArithmeticSlices",
+	hdrs = ["413.ArithmeticSlices.h"],
+	srcs = ["413.ArithmeticSlices.cpp"]
+)
+
+cc_binary(
+	name  = "413ArithmeticSlicesTest",
+	srcs  = ["413.ArithmeticSlicesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["413ArithmeticSlices",
+			 "@googletest//:gtest_main"],
+)

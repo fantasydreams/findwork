@@ -11,3 +11,17 @@ cc_binary(
 	deps  = ["70ClimbingStairs",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "198HouseRobber",
+	hdrs = ["198.HouseRobber.h"],
+	srcs = ["198.HouseRobber.cpp"]
+)
+
+cc_binary(
+	name  = "198HouseRobberTest",
+	srcs  = ["198.HouseRobberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["198HouseRobber",
+			 "@googletest//:gtest_main"],
+)

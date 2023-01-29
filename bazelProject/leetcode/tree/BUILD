@@ -65,3 +65,22 @@ cc_binary(
 	deps  = ["257BinaryTreePaths",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "310MinimumHeightTrees",
+    hdrs  = ["310.MinimumHeightTrees.h"], 
+	srcs  = ["310.MinimumHeightTrees.cpp"],
+	deps  = ["treecomm"],
+	copts  = ["-DNODE"],
+)
+
+cc_binary(
+	name  = "310MinimumHeightTreesTest",
+	srcs  = ["310.MinimumHeightTreesTest.cpp"],
+	copts = [
+		"-std=c++11",
+		"-DNODE",
+	],
+	deps  = ["310MinimumHeightTrees",
+			 "@googletest//:gtest_main"],
+)

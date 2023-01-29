@@ -69,3 +69,17 @@ cc_binary(
 	deps  = ["130SurroundedRegions",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "37SudokuSolver",
+	hdrs = ["37.SudokuSolver.h"],
+	srcs = ["37.SudokuSolver.cpp"]
+)
+
+cc_binary(
+	name  = "37SudokuSolverTest",
+	srcs  = ["37.SudokuSolverTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["37SudokuSolver",
+			 "@googletest//:gtest_main"],
+)

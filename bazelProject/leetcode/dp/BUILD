@@ -53,3 +53,17 @@ cc_binary(
 	deps  = ["64MinimumPathSum",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "54201Matrix",
+	hdrs = ["542.01Matrix.h"],
+	srcs = ["542.01Matrix.cpp"]
+)
+
+cc_binary(
+	name  = "54201MatrixTest",
+	srcs  = ["542.01MatrixTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["54201Matrix",
+			 "@googletest//:gtest_main"],
+)

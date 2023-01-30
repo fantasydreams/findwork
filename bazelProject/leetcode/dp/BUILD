@@ -67,3 +67,17 @@ cc_binary(
 	deps  = ["54201Matrix",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "221MaximalSquare",
+	hdrs = ["221.MaximalSquare.h"],
+	srcs = ["221.MaximalSquare.cpp"]
+)
+
+cc_binary(
+	name  = "221MaximalSquareTest",
+	srcs  = ["221.MaximalSquareTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["221MaximalSquare",
+			 "@googletest//:gtest_main"],
+)

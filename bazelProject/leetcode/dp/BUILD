@@ -39,3 +39,17 @@ cc_binary(
 	deps  = ["413ArithmeticSlices",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "64MinimumPathSum",
+	hdrs = ["64.MinimumPathSum.h"],
+	srcs = ["64.MinimumPathSum.cpp"]
+)
+
+cc_binary(
+	name  = "64MinimumPathSumTest",
+	srcs  = ["64.MinimumPathSumTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["64MinimumPathSum",
+			 "@googletest//:gtest_main"],
+)

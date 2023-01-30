@@ -124,3 +124,17 @@ cc_binary(
 	deps  = ["279PerfectSquares",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "91DecodeWays",
+	hdrs = ["91.DecodeWays.h"],
+	srcs = ["91.DecodeWays.cpp"]
+)
+
+cc_binary(
+	name  = "91DecodeWaysTest",
+	srcs  = ["91.DecodeWaysTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["91DecodeWays",
+			 "@googletest//:gtest_main"],
+)

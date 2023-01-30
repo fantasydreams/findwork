@@ -109,3 +109,18 @@ cc_binary(
 	deps  = ["1137NthTribonacciNumber",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "279PerfectSquares",
+	hdrs = ["279.PerfectSquares.h"],
+	srcs = ["279.PerfectSquares.cpp"]
+)
+
+cc_binary(
+	name  = "279PerfectSquaresTest",
+	srcs  = ["279.PerfectSquaresTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["279PerfectSquares",
+			 "@googletest//:gtest_main"],
+)

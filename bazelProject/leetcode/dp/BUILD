@@ -81,3 +81,31 @@ cc_binary(
 	deps  = ["221MaximalSquare",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "85MaximalRectangle",
+	hdrs = ["85.MaximalRectangle.h"],
+	srcs = ["85.MaximalRectangle.cpp"]
+)
+
+cc_binary(
+	name  = "85MaximalRectangleTest",
+	srcs  = ["85.MaximalRectangleTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["85MaximalRectangle",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "1137NthTribonacciNumber",
+	hdrs = ["1137.NthTribonacciNumber.h"],
+	srcs = ["1137.NthTribonacciNumber.cpp"]
+)
+
+cc_binary(
+	name  = "1137NthTribonacciNumberTest",
+	srcs  = ["1137.NthTribonacciNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["1137NthTribonacciNumber",
+			 "@googletest//:gtest_main"],
+)

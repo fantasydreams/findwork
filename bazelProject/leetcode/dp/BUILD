@@ -138,3 +138,17 @@ cc_binary(
 	deps  = ["91DecodeWays",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "139WordBreak",
+	hdrs = ["139.WordBreak.h"],
+	srcs = ["139.WordBreak.cpp"]
+)
+
+cc_binary(
+	name  = "139WordBreakTest",
+	srcs  = ["139.WordBreakTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["139WordBreak",
+			 "@googletest//:gtest_main"],
+)

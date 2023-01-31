@@ -152,3 +152,17 @@ cc_binary(
 	deps  = ["139WordBreak",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "300LongestIncreasingSubsequence",
+	hdrs = ["300.LongestIncreasingSubsequence.h"],
+	srcs = ["300.LongestIncreasingSubsequence.cpp"]
+)
+
+cc_binary(
+	name  = "300LongestIncreasingSubsequenceTest",
+	srcs  = ["300.LongestIncreasingSubsequenceTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["300LongestIncreasingSubsequence",
+			 "@googletest//:gtest_main"],
+)

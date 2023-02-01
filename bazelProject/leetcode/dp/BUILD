@@ -179,5 +179,16 @@ cc_binary(
 	srcs  = ["416.PartitionEqualSubsetSumTest.cpp"],
 	copts = ["-std=c++11"],
 	deps  = ["416PartitionEqualSubsetSum",
+cc_library(
+	name = "1143LongestCommonSubsequence",
+	hdrs = ["1143.LongestCommonSubsequence.h"],
+	srcs = ["1143.LongestCommonSubsequence.cpp"]
+)
+
+cc_binary(
+	name  = "1143LongestCommonSubsequenceTest",
+	srcs  = ["1143.LongestCommonSubsequenceTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["1143LongestCommonSubsequence",
 			 "@googletest//:gtest_main"],
 )

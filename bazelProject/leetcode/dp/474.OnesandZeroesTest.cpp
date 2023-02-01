@@ -27,6 +27,6 @@ TEST(case_3,content)
 TEST(case_4, content)
 {
     std::vector<std::string> strs = {"10","0","1"};
-    int ans = 0, m = 3, n = 2;
+    int ans = 3, m = 3, n = 2;
     EXPECT_EQ(findMaxForm(strs, m, n), ans);
 }

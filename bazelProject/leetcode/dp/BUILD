@@ -195,3 +195,18 @@ cc_binary(
 	deps  = ["1143LongestCommonSubsequence",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "474OnesandZeroes",
+	hdrs = ["474.OnesandZeroes.h"],
+	srcs = ["474.OnesandZeroes.cpp"]
+)
+
+cc_binary(
+	name  = "474OnesandZeroesTest",
+	srcs  = ["474.OnesandZeroesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["474OnesandZeroes",
+			 "@googletest//:gtest_main"],
+)

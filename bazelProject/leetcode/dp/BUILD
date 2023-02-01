@@ -210,3 +210,17 @@ cc_binary(
 	deps  = ["474OnesandZeroes",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "322CoinChange",
+	hdrs = ["322.CoinChange.h"],
+	srcs = ["322.CoinChange.cpp"]
+)
+
+cc_binary(
+	name  = "322CoinChangeTest",
+	srcs  = ["322.CoinChangeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["322CoinChange",
+			 "@googletest//:gtest_main"],
+)

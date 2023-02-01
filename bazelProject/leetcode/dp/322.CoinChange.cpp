@@ -1,5 +1,6 @@
 #include "322.CoinChange.h"
 
+// 完全背包，先遍历空间或者体积 再遍历 空间
 // 求min初始化为最大，求max初始化为最小
 int coinChange(vector<int>& coins, int amount)
 {

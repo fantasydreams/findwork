@@ -17,7 +17,7 @@ bool canPartition(vector<int>& nums)
     }
 
     int half = sum >> 1;
-    // 0/1 背包问题，等于从这个多个物品中挑出总价值为half的物品
+    // 0/1 背包问题，等于从这个多个物品中挑出总价值为half的物品， 0/1背包先遍历物品再便利空间或者体积
     std::vector<std::vector<bool>> dp(nums.size() + 1, std::vector<bool>(half + 1, false));
     for(int i = 0; i < nums.size() + 1; ++i) {
         dp[i][0] = true;

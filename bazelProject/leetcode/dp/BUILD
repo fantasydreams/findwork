@@ -166,3 +166,18 @@ cc_binary(
 	deps  = ["300LongestIncreasingSubsequence",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "416PartitionEqualSubsetSum",
+	hdrs = ["416.PartitionEqualSubsetSum.h"],
+	srcs = ["416.PartitionEqualSubsetSum.cpp"]
+)
+
+cc_binary(
+	name  = "416PartitionEqualSubsetSumTest",
+	srcs  = ["416.PartitionEqualSubsetSumTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["416PartitionEqualSubsetSum",
+			 "@googletest//:gtest_main"],
+)

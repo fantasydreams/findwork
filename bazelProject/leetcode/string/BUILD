@@ -118,3 +118,18 @@ cc_binary(
 	deps  = ["131PalindromePartitioning",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "953VerifyinganAlienDictionary",
+	hdrs = ["953.VerifyinganAlienDictionary.h"],
+	srcs = ["953.VerifyinganAlienDictionary.cpp"]
+)
+
+
+cc_binary(
+	name  = "953VerifyinganAlienDictionaryTest",
+	srcs  = ["953.VerifyinganAlienDictionaryTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["953VerifyinganAlienDictionary",
+			 "@googletest//:gtest_main"],
+)

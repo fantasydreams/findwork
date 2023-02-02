@@ -224,3 +224,17 @@ cc_binary(
 	deps  = ["322CoinChange",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "72EditDistance",
+	hdrs = ["72.EditDistance.h"],
+	srcs = ["72.EditDistance.cpp"]
+)
+
+cc_binary(
+	name  = "72EditDistanceTest",
+	srcs  = ["72.EditDistanceTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["72EditDistance",
+			 "@googletest//:gtest_main"],
+)

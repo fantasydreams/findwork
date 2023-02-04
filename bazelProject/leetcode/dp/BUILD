@@ -238,3 +238,17 @@ cc_binary(
 	deps  = ["72EditDistance",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "6502KeysKeyboard",
+	hdrs = ["650.2KeysKeyboard.h"],
+	srcs = ["650.2KeysKeyboard.cpp"]
+)
+
+cc_binary(
+	name  = "6502KeysKeyboardTest",
+	srcs  = ["650.2KeysKeyboardTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["6502KeysKeyboard",
+			 "@googletest//:gtest_main"],
+)

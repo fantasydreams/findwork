@@ -252,3 +252,31 @@ cc_binary(
 	deps  = ["6502KeysKeyboard",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "10RegularExpressionMatching",
+	hdrs = ["10.RegularExpressionMatching.h"],
+	srcs = ["10.RegularExpressionMatching.cpp"]
+)
+
+cc_binary(
+	name  = "10RegularExpressionMatchingTest",
+	srcs  = ["10.RegularExpressionMatchingTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["10RegularExpressionMatching",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "188BestTimetoBuyandSellStockIV",
+	hdrs = ["188.BestTimetoBuyandSellStockIV.h"],
+	srcs = ["188.BestTimetoBuyandSellStockIV.cpp"]
+)
+
+cc_binary(
+	name  = "188BestTimetoBuyandSellStockIVTest",
+	srcs  = ["188.BestTimetoBuyandSellStockIVTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["188BestTimetoBuyandSellStockIV",
+			 "@googletest//:gtest_main"],
+)

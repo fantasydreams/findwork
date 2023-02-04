@@ -95,3 +95,17 @@ cc_binary(
 	deps  = ["11ContainerWithMostWater",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "121BestTimetoBuyandSellStock",
+	hdrs = ["121.BestTimetoBuyandSellStock.h"],
+	srcs = ["121.BestTimetoBuyandSellStock.cpp"]
+)
+
+cc_binary(
+	name  = "121BestTimetoBuyandSellStockTest",
+	srcs  = ["121.BestTimetoBuyandSellStockTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["121BestTimetoBuyandSellStock",
+			 "@googletest//:gtest_main"],
+)

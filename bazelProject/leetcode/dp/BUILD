@@ -295,3 +295,17 @@ cc_binary(
 	deps  = ["309BestTimetoBuyandSellStockwithCooldown",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "53MaximumSubarray",
+	hdrs = ["53.MaximumSubarray.h"],
+	srcs = ["53.MaximumSubarray.cpp"]
+)
+
+cc_binary(
+	name  = "53MaximumSubarrayTest",
+	srcs  = ["53.MaximumSubarrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["53MaximumSubarray",
+			 "@googletest//:gtest_main"],
+)

@@ -10,11 +10,14 @@
 
 int maxProfit(vector<int>& prices)
 {
-    std::vector<int> s0(prices.size() + 1, 0), s1(prices.size() + 1, INT_MIN), s2(prices.size() + 1, INT_MIN);
+    if(prices.size() <= 1) {
+        return 0;
+    }
+    std::vector<int> s0(prices.size() + 1, 0), s1(prices.size() + 1, -prices[0]), s2(prices.size() + 1, INT_MIN);
     for(int i = 1; i <= prices.size(); ++i)
     {
         s0[i] = std::max(s0[i - 1], s2[i - 1]);
-        s1[i] = std::max(s1[i - 1], s0[i - 1] - prices[i - 1]);
+        s1[i] = std::max(s1[i - 1], s0[i - 1] - prices[i]);
         s2[i] = s1[i - 1] + prices[i];
     }
 
@@ -29,12 +32,12 @@ int maxProfit1(vector<int>& prices)
     int s0 = 0;
     int s1 = -prices[0];
     int s2 = INT_MIN;
-    for (int i = 1; i < prices.size(); i++){
+    for (int i = 1; i < prices.size(); i++)
+    {
         int pre0 = s0;
         int pre1 = s1;
-        int pre2 = s2;
-        s0 = max(pre0, pre2);
-        s1 = max(pre0 - prices[i], pre1);
+        s0 = max(s0, s2);
+        s1 = max(pre0 - prices[i], s1);
         s2 = pre1 + prices[i];
     }
     //最大利润不可能出现在buy而未sell的时候，所以不考虑s1

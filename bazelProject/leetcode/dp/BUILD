@@ -309,3 +309,17 @@ cc_binary(
 	deps  = ["53MaximumSubarray",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "213HouseRobberII",
+	hdrs = ["213.HouseRobberII.h"],
+	srcs = ["213.HouseRobberII.cpp"]
+)
+
+cc_binary(
+	name  = "213HouseRobberIITest",
+	srcs  = ["213.HouseRobberIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["213HouseRobberII",
+			 "@googletest//:gtest_main"],
+)

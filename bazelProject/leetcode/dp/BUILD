@@ -337,3 +337,17 @@ cc_binary(
 	deps  = ["343IntegerBreak",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "583DeleteOperationforTwoStrings",
+	hdrs = ["583.DeleteOperationforTwoStrings.h"],
+	srcs = ["583.DeleteOperationforTwoStrings.cpp"]
+)
+
+cc_binary(
+	name  = "583DeleteOperationforTwoStringsTest",
+	srcs  = ["583.DeleteOperationforTwoStringsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["583DeleteOperationforTwoStrings",
+			 "@googletest//:gtest_main"],
+)

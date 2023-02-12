@@ -323,3 +323,17 @@ cc_binary(
 	deps  = ["213HouseRobberII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "343IntegerBreak",
+	hdrs = ["343.IntegerBreak.h"],
+	srcs = ["343.IntegerBreak.cpp"]
+)
+
+cc_binary(
+	name  = "343IntegerBreakTest",
+	srcs  = ["343.IntegerBreakTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["343IntegerBreak",
+			 "@googletest//:gtest_main"],
+)

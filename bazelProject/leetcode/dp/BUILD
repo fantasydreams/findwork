@@ -295,3 +295,59 @@ cc_binary(
 	deps  = ["309BestTimetoBuyandSellStockwithCooldown",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "53MaximumSubarray",
+	hdrs = ["53.MaximumSubarray.h"],
+	srcs = ["53.MaximumSubarray.cpp"]
+)
+
+cc_binary(
+	name  = "53MaximumSubarrayTest",
+	srcs  = ["53.MaximumSubarrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["53MaximumSubarray",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "213HouseRobberII",
+	hdrs = ["213.HouseRobberII.h"],
+	srcs = ["213.HouseRobberII.cpp"]
+)
+
+cc_binary(
+	name  = "213HouseRobberIITest",
+	srcs  = ["213.HouseRobberIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["213HouseRobberII",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "343IntegerBreak",
+	hdrs = ["343.IntegerBreak.h"],
+	srcs = ["343.IntegerBreak.cpp"]
+)
+
+cc_binary(
+	name  = "343IntegerBreakTest",
+	srcs  = ["343.IntegerBreakTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["343IntegerBreak",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "583DeleteOperationforTwoStrings",
+	hdrs = ["583.DeleteOperationforTwoStrings.h"],
+	srcs = ["583.DeleteOperationforTwoStrings.cpp"]
+)
+
+cc_binary(
+	name  = "583DeleteOperationforTwoStringsTest",
+	srcs  = ["583.DeleteOperationforTwoStringsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["583DeleteOperationforTwoStrings",
+			 "@googletest//:gtest_main"],
+)

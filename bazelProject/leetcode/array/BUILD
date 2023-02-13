@@ -109,3 +109,17 @@ cc_binary(
 	deps  = ["121BestTimetoBuyandSellStock",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "646MaximumLengthofPairChain",
+	hdrs = ["646.MaximumLengthofPairChain.h"],
+	srcs = ["646.MaximumLengthofPairChain.cpp"]
+)
+
+cc_binary(
+	name  = "646MaximumLengthofPairChainTest",
+	srcs  = ["646.MaximumLengthofPairChainTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["646MaximumLengthofPairChain",
+			 "@googletest//:gtest_main"],
+)

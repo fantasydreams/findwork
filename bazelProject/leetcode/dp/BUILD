@@ -351,3 +351,17 @@ cc_binary(
 	deps  = ["583DeleteOperationforTwoStrings",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "376WiggleSubsequence",
+	hdrs = ["376.WiggleSubsequence.h"],
+	srcs = ["376.WiggleSubsequence.cpp"]
+)
+
+cc_binary(
+	name  = "376WiggleSubsequenceTest",
+	srcs  = ["376.WiggleSubsequenceTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["376WiggleSubsequence",
+			 "@googletest//:gtest_main"],
+)

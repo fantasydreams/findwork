@@ -20,7 +20,7 @@ int wiggleMaxLength(vector<int>& nums)
 }
 
 
-//直接比较 
+//直接比较，这里不能记录第一次翻转的下标，有些情况下可能丢失翻转记录，如： 1 17 20 19 ，第一次翻转在17，如果记录之后，后面的相对于他都没有进行翻转，丢失了20这个顶点
 int wiggleMaxLength1(vector<int>& nums)
 {
     if(nums.size() <= 1) {

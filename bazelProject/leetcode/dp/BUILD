@@ -365,3 +365,17 @@ cc_binary(
 	deps  = ["376WiggleSubsequence",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "494TargetSum",
+	hdrs = ["494.TargetSum.h"],
+	srcs = ["494.TargetSum.cpp"]
+)
+
+cc_binary(
+	name  = "494TargetSumTest",
+	srcs  = ["494.TargetSumTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["494TargetSum",
+			 "@googletest//:gtest_main"],
+)

@@ -379,3 +379,17 @@ cc_binary(
 	deps  = ["494TargetSum",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "714BestTimetoBuyandSellStockwithTransactionFee",
+	hdrs = ["714.BestTimetoBuyandSellStockwithTransactionFee.h"],
+	srcs = ["714.BestTimetoBuyandSellStockwithTransactionFee.cpp"]
+)
+
+cc_binary(
+	name  = "714BestTimetoBuyandSellStockwithTransactionFeeTest",
+	srcs  = ["714.BestTimetoBuyandSellStockwithTransactionFeeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["714BestTimetoBuyandSellStockwithTransactionFee",
+			 "@googletest//:gtest_main"],
+)

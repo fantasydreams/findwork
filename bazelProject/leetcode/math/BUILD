@@ -123,3 +123,19 @@ cc_binary(
 	deps  = ["415AddStrings",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "326PowerofThree",
+	hdrs = ["326.PowerofThree.h"],
+	srcs = ["326.PowerofThree.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "326PowerofThreeTest",
+	srcs  = ["326.PowerofThreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["326PowerofThree",
+			 "@googletest//:gtest_main"],
+)

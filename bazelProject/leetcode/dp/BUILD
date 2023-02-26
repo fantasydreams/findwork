@@ -393,3 +393,18 @@ cc_binary(
 	deps  = ["714BestTimetoBuyandSellStockwithTransactionFee",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "312BurstBalloons",
+	hdrs = ["312.BurstBalloons.h"],
+	srcs = ["312.BurstBalloons.cpp"]
+)
+
+cc_binary(
+	name  = "312BurstBalloonsTest",
+	srcs  = ["312.BurstBalloonsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["312BurstBalloons",
+			 "@googletest//:gtest_main"],
+)

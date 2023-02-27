@@ -155,3 +155,19 @@ cc_binary(
 	deps  = ["384ShuffleanArray",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "528RandomPickwithWeight",
+	hdrs = ["528.RandomPickwithWeight.h"],
+	srcs = ["528.RandomPickwithWeight.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "528RandomPickwithWeightTest",
+	srcs  = ["528.RandomPickwithWeightTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["528RandomPickwithWeight",
+			 "@googletest//:gtest_main"],
+)

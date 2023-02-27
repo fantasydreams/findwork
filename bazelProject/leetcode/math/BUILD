@@ -139,3 +139,19 @@ cc_binary(
 	deps  = ["326PowerofThree",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "384ShuffleanArray",
+	hdrs = ["384.ShuffleanArray.h"],
+	srcs = ["384.ShuffleanArray.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "384ShuffleanArrayTest",
+	srcs  = ["384.ShuffleanArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["384ShuffleanArray",
+			 "@googletest//:gtest_main"],
+)

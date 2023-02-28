@@ -171,3 +171,18 @@ cc_binary(
 	deps  = ["528RandomPickwithWeight",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "168ExcelSheetColumnTitle",
+	hdrs = ["168.ExcelSheetColumnTitle.h"],
+	srcs = ["168.ExcelSheetColumnTitle.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "168ExcelSheetColumnTitleTest",
+	srcs  = ["168.ExcelSheetColumnTitleTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["168ExcelSheetColumnTitle",
+			 "@googletest//:gtest_main"],
+)

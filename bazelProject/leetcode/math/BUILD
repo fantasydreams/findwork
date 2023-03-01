@@ -225,7 +225,24 @@ cc_binary(
 
 cc_binary(
 	name  = "382LinkedListRandomNodeTest",
-	srcs  = ["382LinkedListRandomNodeTest.cpp"],
+	srcs  = ["382.LinkedListRandomNodeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["382LinkedListRandomNode",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "169MajorityElement",
+	hdrs = ["169.MajorityElement.h"],
+	srcs = ["169.MajorityElement.cpp"],
+    copts = ["-std=c++11"],
+)
+
+
+cc_binary(
+	name  = "169MajorityElementTest",
+	srcs  = ["169.MajorityElementTest.cpp"],
 	copts = ["-std=c++11"],
 	deps  = ["382LinkedListRandomNode",
 			 "@googletest//:gtest_main"],

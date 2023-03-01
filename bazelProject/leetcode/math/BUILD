@@ -176,6 +176,11 @@ cc_library(
 	name = "168ExcelSheetColumnTitle",
 	hdrs = ["168.ExcelSheetColumnTitle.h"],
 	srcs = ["168.ExcelSheetColumnTitle.cpp"],
+
+cc_library(
+	name = "382LinkedListRandomNode",
+	hdrs = ["382.LinkedListRandomNode.h"],
+	srcs = ["382.LinkedListRandomNode.cpp"],
     copts = ["-std=c++11"],
 )
 
@@ -214,5 +219,14 @@ cc_binary(
 	srcs  = ["238.ProductofArrayExceptSelTest.cpp"],
 	copts = ["-std=c++11"],
 	deps  = ["238ProductofArrayExceptSel",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_binary(
+	name  = "382LinkedListRandomNodeTest",
+	srcs  = ["382LinkedListRandomNodeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["382LinkedListRandomNode",
 			 "@googletest//:gtest_main"],
 )

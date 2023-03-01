@@ -186,3 +186,33 @@ cc_binary(
 	deps  = ["168ExcelSheetColumnTitle",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "67AddBinary",
+	hdrs = ["67.AddBinary.h"],
+	srcs = ["67.AddBinary.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "67AddBinaryTest",
+	srcs  = ["67.AddBinaryTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["67AddBinary",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "238ProductofArrayExceptSel",
+	hdrs = ["238.ProductofArrayExceptSel.h"],
+	srcs = ["238.ProductofArrayExceptSel.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "238ProductofArrayExceptSelTest",
+	srcs  = ["238.ProductofArrayExceptSelTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["238ProductofArrayExceptSel",
+			 "@googletest//:gtest_main"],
+)

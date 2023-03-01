@@ -176,6 +176,8 @@ cc_library(
 	name = "168ExcelSheetColumnTitle",
 	hdrs = ["168.ExcelSheetColumnTitle.h"],
 	srcs = ["168.ExcelSheetColumnTitle.cpp"],
+	copts = ["-std=c++11"],
+)
 
 cc_library(
 	name = "382LinkedListRandomNode",
@@ -244,6 +246,23 @@ cc_binary(
 	name  = "169MajorityElementTest",
 	srcs  = ["169.MajorityElementTest.cpp"],
 	copts = ["-std=c++11"],
-	deps  = ["382LinkedListRandomNode",
+	deps  = ["169MajorityElement",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "202HappyNumber",
+	hdrs = ["202.HappyNumber.h"],
+	srcs = ["202.HappyNumber.cpp"],
+    copts = ["-std=c++11"],
+)
+
+
+cc_binary(
+	name  = "202HappyNumberTest",
+	srcs  = ["202.HappyNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["202HappyNumber",
 			 "@googletest//:gtest_main"],
 )

@@ -266,3 +266,19 @@ cc_binary(
 	deps  = ["202HappyNumber",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "462MinimumMovestoEqualArrayElementsII",
+	hdrs = ["462.MinimumMovestoEqualArrayElementsII.h"],
+	srcs = ["462.MinimumMovestoEqualArrayElementsII.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "462MinimumMovestoEqualArrayElementsIITest",
+	srcs  = ["462.MinimumMovestoEqualArrayElementsIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["462MinimumMovestoEqualArrayElementsII",
+			 "@googletest//:gtest_main"],
+)

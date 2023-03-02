@@ -27,3 +27,33 @@ int minMoves2(vector<int>& nums) {
 
     return ans;
 }
+
+int minMoves21(vector<int>& nums) {
+    if(nums.empty()) {
+        return 0;
+    }
+
+    std::sort(nums.begin(), nums.end());
+    int mid = nums.size() / 2;
+    int ans = 0;
+    for(int i = 0; i < nums.size(); ++i) {
+        ans += abs(nums[i] - nums[mid]);
+    }
+
+    return ans;
+}
+
+int minMoves22(vector<int>& nums) {
+    if(nums.empty()) {
+        return 0;
+    }
+
+    std::sort(nums.begin(), nums.end());
+    int mid = nums.size() / 2;
+    int ans = 0;
+    for(int i = 0; i < mid; ++i) {
+        ans += abs(nums[nums.size() - 1 - i] - nums[i]);
+    }
+
+    return ans;
+}

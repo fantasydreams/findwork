@@ -59,3 +59,66 @@ cc_binary(
 	deps  = ["342PowerofFour",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "318MaximumProductofWordLengths",
+	hdrs = ["318.MaximumProductofWordLengths.h"],
+	srcs = ["318.MaximumProductofWordLengths.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "318MaximumProductofWordLengthsTest",
+	srcs  = ["318.MaximumProductofWordLengthsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["318MaximumProductofWordLengths",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "338CountingBits",
+	hdrs = ["338.CountingBits.h"],
+	srcs = ["338.CountingBits.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "338CountingBitsTest",
+	srcs  = ["338.CountingBitsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["338CountingBits",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "268MissingNumber",
+	hdrs = ["268.MissingNumber.h"],
+	srcs = ["268.MissingNumber.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "268MissingNumberTest",
+	srcs  = ["268.MissingNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["268MissingNumber",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "693BinaryNumberwithAlternatingBits",
+	hdrs = ["693.BinaryNumberwithAlternatingBits.h"],
+	srcs = ["693.BinaryNumberwithAlternatingBits.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "693BinaryNumberwithAlternatingBitsTest",
+	srcs  = ["693.BinaryNumberwithAlternatingBitsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["693BinaryNumberwithAlternatingBits",
+			 "@googletest//:gtest_main"],
+)

@@ -122,3 +122,18 @@ cc_binary(
 	deps  = ["693BinaryNumberwithAlternatingBits",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "260SingleNumberIII",
+	hdrs = ["260.SingleNumberIII.h"],
+	srcs = ["260.SingleNumberIII.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "260SingleNumberIIITest",
+	srcs  = ["260.SingleNumberIIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["260SingleNumberIII",
+			 "@googletest//:gtest_main"],
+)

@@ -123,3 +123,18 @@ cc_binary(
 	deps  = ["646MaximumLengthofPairChain",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "448FindAllNumbersDisappearedinanArray",
+	hdrs = ["448.FindAllNumbersDisappearedinanArray.h"],
+	srcs = ["448.FindAllNumbersDisappearedinanArray.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "448FindAllNumbersDisappearedinanArrayTest",
+	srcs  = ["448.FindAllNumbersDisappearedinanArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["448FindAllNumbersDisappearedinanArray",
+			 "@googletest//:gtest_main"],
+)

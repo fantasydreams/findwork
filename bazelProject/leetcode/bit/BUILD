@@ -122,3 +122,19 @@ cc_binary(
 	deps  = ["693BinaryNumberwithAlternatingBits",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "476NumberComplement",
+	hdrs = ["476.NumberComplement.h"],
+	srcs = ["476.NumberComplement.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "476NumberComplementTest",
+	srcs  = ["476.NumberComplementTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["476NumberComplement",
+			 "@googletest//:gtest_main"],
+)

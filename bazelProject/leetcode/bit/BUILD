@@ -128,6 +128,13 @@ cc_library(
 	name = "476NumberComplement",
 	hdrs = ["476.NumberComplement.h"],
 	srcs = ["476.NumberComplement.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_library(
+	name = "260SingleNumberIII",
+	hdrs = ["260.SingleNumberIII.h"],
+	srcs = ["260.SingleNumberIII.cpp"],
     copts = ["-std=c++11"],
 )
 
@@ -136,5 +143,13 @@ cc_binary(
 	srcs  = ["476.NumberComplementTest.cpp"],
 	copts = ["-std=c++11"],
 	deps  = ["476NumberComplement",
+			 "@googletest//:gtest_main"],
+)
+
+cc_binary(
+	name  = "260SingleNumberIIITest",
+	srcs  = ["260.SingleNumberIIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["260SingleNumberIII",
 			 "@googletest//:gtest_main"],
 )

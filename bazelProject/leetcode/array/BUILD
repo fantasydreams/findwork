@@ -138,3 +138,18 @@ cc_binary(
 	deps  = ["448FindAllNumbersDisappearedinanArray",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "48RotateImage",
+	hdrs = ["48.RotateImage.h"],
+	srcs = ["48.RotateImage.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "48RotateImageTest",
+	srcs  = ["48.RotateImageTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["48RotateImage",
+			 "@googletest//:gtest_main"],
+)

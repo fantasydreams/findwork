@@ -28,3 +28,35 @@ cc_binary(
 	deps  = ["155MinStack",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "20ValidParentheses",
+	hdrs = ["20.ValidParentheses.h"],
+	srcs = ["20.ValidParentheses.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "20ValidParenthesesTest",
+	srcs  = ["20.ValidParenthesesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["20ValidParentheses",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "739DailyTemperatures",
+	hdrs = ["739.DailyTemperatures.h"],
+	srcs = ["739.DailyTemperatures.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "739DailyTemperaturesTest",
+	srcs  = ["739.DailyTemperaturesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["739DailyTemperatures",
+			 "@googletest//:gtest_main"],
+)

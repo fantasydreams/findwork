@@ -154,3 +154,19 @@ cc_binary(
 	deps  = ["240Searcha2DMatrixII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "769MaxChunksToMakeSorted",
+	hdrs = ["769.MaxChunksToMakeSorted.h"],
+	srcs = ["769.MaxChunksToMakeSorted.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "769MaxChunksToMakeSortedTest",
+	srcs  = ["769.MaxChunksToMakeSortedTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["769MaxChunksToMakeSorted",
+			 "@googletest//:gtest_main"],
+)

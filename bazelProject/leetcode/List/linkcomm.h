@@ -31,3 +31,5 @@ void freeCircleLinkList(ListNode * linkList);
 std::vector<int> convertLink2Vector(ListNode * pList);
 ListNode * revertList(ListNode * pList);
 ListNode * revertListNewList(ListNode * pList);
+bool ListValEqual(ListNode * pLista, ListNode * pListb);
+void printList(ListNode * pLista);

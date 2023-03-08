@@ -27,3 +27,21 @@ cc_binary(
 	deps  = ["347TopKFrequentElements",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "23MergekSortedLists",
+    hdrs  = ["23.MergekSortedLists.h"], 
+	srcs  = ["23.MergekSortedLists.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["//List:linkComm",
+				],
+)
+
+cc_binary(
+	name  = "23MergekSortedListsTest",
+	srcs  = ["23.MergekSortedListsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["23MergekSortedLists",
+			 "@googletest//:gtest_main"],
+)

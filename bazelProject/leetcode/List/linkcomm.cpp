@@ -159,3 +159,24 @@ ListNode * revertListNewList(ListNode * pList)
     
     return pNewHead;
 }
+
+
+bool ListValEqual(ListNode * pLista, ListNode * pListb) {
+    while(pLista && pListb) {
+        if(pLista->val != pListb->val) {
+            return false;
+        }
+        pLista = pLista -> next;
+        pListb = pListb -> next;
+    }
+
+    return (pLista == nullptr) && (pListb == nullptr);
+}
+
+void printList(ListNode * pList) {
+    while(pList) {
+        printf("%d ", pList->val);
+        pList = pList -> next;
+    }
+    printf("\n");
+}

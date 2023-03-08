@@ -17,7 +17,7 @@ std::vector<int> topKFrequent(std::vector<int>& nums, int k)
 
     // printf("%d\n", mapCount.size());
 
-    std::multimap<int, int, std::greater<int> > mapTopK;
+    std::multimap<int, int, std::greater<int> > mapTopK; //只有优先队列才是反着的，其他的都是正着的
     auto pIter = mapCount.begin();
     while(pIter != mapCount.end()) 
     {

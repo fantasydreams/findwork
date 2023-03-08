@@ -1,7 +1,8 @@
 cc_library(
 	name = "linkComm",
 	hdrs = ["linkcomm.h"],
-	srcs = ["linkcomm.cpp"]
+	srcs = ["linkcomm.cpp"],
+	visibility = ["//visibility:public"],
 )
 
 cc_library(

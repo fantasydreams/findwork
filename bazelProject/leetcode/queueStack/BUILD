@@ -1,0 +1,30 @@
+cc_library(
+	name = "232ImplementQueueusingStacks",
+	hdrs = ["232.ImplementQueueusingStacks.h"],
+	srcs = ["232.ImplementQueueusingStacks.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "232ImplementQueueusingStacksTest",
+	srcs  = ["232.ImplementQueueusingStacksTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["232ImplementQueueusingStacks",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "155MinStack",
+	hdrs = ["155.MinStack.h"],
+	srcs = ["155.MinStack.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "155MinStackTest",
+	srcs  = ["155.MinStackTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["155MinStack",
+			 "@googletest//:gtest_main"],
+)

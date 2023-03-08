@@ -138,3 +138,19 @@ cc_binary(
 	deps  = ["448FindAllNumbersDisappearedinanArray",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "240Searcha2DMatrixII",
+	hdrs = ["240.Searcha2DMatrixII.h"],
+	srcs = ["240.Searcha2DMatrixII.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "240Searcha2DMatrixIITest",
+	srcs  = ["240.Searcha2DMatrixIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["240Searcha2DMatrixII",
+			 "@googletest//:gtest_main"],
+)

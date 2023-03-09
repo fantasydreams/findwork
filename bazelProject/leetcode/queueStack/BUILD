@@ -60,3 +60,19 @@ cc_binary(
 	deps  = ["739DailyTemperatures",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "218TheSkylineProblem",
+	hdrs = ["218.TheSkylineProblem.h"],
+	srcs = ["218.TheSkylineProblem.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "218TheSkylineProblemTest",
+	srcs  = ["218.TheSkylineProblemTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["218TheSkylineProblem",
+			 "@googletest//:gtest_main"],
+)

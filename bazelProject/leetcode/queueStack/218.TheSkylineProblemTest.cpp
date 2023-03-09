@@ -7,6 +7,7 @@ TEST(case_1,content)
     vector<vector<int>> Output = {{2,10},{3,15},{7,12},{12,0},{15,10},{20,8},{24,0}};
 
     EXPECT_EQ(getSkyline(Input), Output);
+    EXPECT_EQ(getSkyline1(Input), Output);
 }
 
 
@@ -16,4 +17,5 @@ TEST(case_2,content)
     vector<vector<int>> Output = {{0,3},{5,0}};
 
     EXPECT_EQ(getSkyline(Input), Output);
+    EXPECT_EQ(getSkyline1(Input), Output);
 }

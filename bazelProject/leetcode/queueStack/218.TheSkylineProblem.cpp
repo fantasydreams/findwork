@@ -31,20 +31,30 @@ vector<vector<int>> getSkyline(vector<vector<int>>& buildings) {
     return ans;
 }
 
-vector<vector<int>> getSkyline(vector<vector<int>>& buildings) {
+vector<vector<int>> getSkyline1(vector<vector<int>>& buildings) {
     priority_queue<pair<int, int>> max_heap;
     int cur_x;
     decltype(buildings.size()) idx = 0;
-    while(idx < buildings.size()) {
+    vector<vector<int>> ans;
+    while(idx < buildings.size() || !max_heap.empty()) {
         if(max_heap.empty() || (idx < buildings.size() && buildings[idx][0] <= max_heap.top().second)) {
             cur_x = buildings[idx][0];
             while(idx < buildings.size() && cur_x == buildings[idx][0]) {
-                max_heap.push({buildings[idx][1], buildings[idx][2]});
+                max_heap.push({buildings[idx][2], buildings[idx][1]});
                 ++idx;
             }
         }else {
-            cur_x = buildings[idx][0];
+            cur_x = max_heap.top().second;
+            while(!max_heap.empty() && cur_x >= max_heap.top().second) {
+                max_heap.pop();
+            }
+        }
 
+        int cur_h = max_heap.empty() ? 0 : max_heap.top().first;
+        if(ans.empty() || cur_h != ans.back()[1]) {
+            ans.push_back({cur_x, cur_h});
         }
     } 
+
+    return ans;
 }

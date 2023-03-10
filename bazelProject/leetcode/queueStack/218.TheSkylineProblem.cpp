@@ -43,11 +43,13 @@ vector<vector<int>> getSkyline1(vector<vector<int>>& buildings) {
                 max_heap.push({buildings[idx][2], buildings[idx][1]});
                 ++idx;
             }
+            // 大顶推，最高的排前面，然后把最高对应的右边最左边未入优先队列的轮廓高度和右端都入优先队列，这种情况是说明与当前最高的有交集，可能存在轮廓点
         }else {
             cur_x = max_heap.top().second;
             while(!max_heap.empty() && cur_x >= max_heap.top().second) {
                 max_heap.pop();
             }
+            // 当前的与堆顶无交集。存在下降轮廓点
         }
 
         int cur_h = max_heap.empty() ? 0 : max_heap.top().first;

@@ -90,3 +90,18 @@ cc_binary(
 	deps  = ["560SubarraySumEqualsK",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "217ContainsDuplicate",
+    hdrs  = ["217.ContainsDuplicate.h"], 
+	srcs  = ["217.ContainsDuplicate.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "217ContainsDuplicateTest",
+	srcs  = ["217.ContainsDuplicateTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["217ContainsDuplicate",
+			 "@googletest//:gtest_main"],
+)

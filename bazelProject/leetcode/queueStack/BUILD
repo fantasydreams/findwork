@@ -93,3 +93,19 @@ cc_binary(
 	deps  = ["239SlidingWindowMaximum",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "225ImplementStackusingQueues",
+	hdrs = ["225.ImplementStackusingQueues.h"],
+	srcs = ["225.ImplementStackusingQueues.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "225ImplementStackusingQueuesTest",
+	srcs  = ["225.ImplementStackusingQueuesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["225ImplementStackusingQueues",
+			 "@googletest//:gtest_main"],
+)

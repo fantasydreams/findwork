@@ -76,3 +76,20 @@ cc_binary(
 	deps  = ["218TheSkylineProblem",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name = "239SlidingWindowMaximum",
+	hdrs = ["239.SlidingWindowMaximum.h"],
+	srcs = ["239.SlidingWindowMaximum.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "239SlidingWindowMaximumTest",
+	srcs  = ["239.SlidingWindowMaximumTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["239SlidingWindowMaximum",
+			 "@googletest//:gtest_main"],
+)

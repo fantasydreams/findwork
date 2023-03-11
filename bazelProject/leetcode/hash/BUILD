@@ -75,3 +75,18 @@ cc_binary(
 	deps  = ["304RangeSumQuery2DImmutable",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "560SubarraySumEqualsK",
+    hdrs  = ["560.SubarraySumEqualsK.h"], 
+	srcs  = ["560.SubarraySumEqualsK.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "560SubarraySumEqualsKTest",
+	srcs  = ["560.SubarraySumEqualsKTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["560SubarraySumEqualsK",
+			 "@googletest//:gtest_main"],
+)

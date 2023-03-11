@@ -185,3 +185,18 @@ cc_binary(
 	deps  = ["769MaxChunksToMakeSorted",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "566ReshapetheMatrix",
+	hdrs = ["566.ReshapetheMatrix.h"],
+	srcs = ["566.ReshapetheMatrix.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "566ReshapetheMatrixTest",
+	srcs  = ["566.ReshapetheMatrixTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["566ReshapetheMatrix",
+			 "@googletest//:gtest_main"],
+)

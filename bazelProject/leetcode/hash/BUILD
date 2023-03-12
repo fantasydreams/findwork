@@ -137,3 +137,19 @@ cc_binary(
 	deps  = ["697DegreeofanArray",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "594LongestHarmoniousSubsequence",
+    hdrs  = ["594.LongestHarmoniousSubsequence.h"], 
+	srcs  = ["594.LongestHarmoniousSubsequence.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "594LongestHarmoniousSubsequenceTest",
+	srcs  = ["594.LongestHarmoniousSubsequenceTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["594LongestHarmoniousSubsequence",
+			 "@googletest//:gtest_main"],
+)

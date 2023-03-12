@@ -153,3 +153,19 @@ cc_binary(
 	deps  = ["594LongestHarmoniousSubsequence",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "287FindtheDuplicateNumber",
+    hdrs  = ["287.FindtheDuplicateNumber.h"], 
+	srcs  = ["287.FindtheDuplicateNumber.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "287FindtheDuplicateNumberTest",
+	srcs  = ["287.FindtheDuplicateNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["287FindtheDuplicateNumber",
+			 "@googletest//:gtest_main"],
+)

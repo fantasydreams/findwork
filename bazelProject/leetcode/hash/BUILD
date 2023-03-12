@@ -105,3 +105,19 @@ cc_binary(
 	deps  = ["217ContainsDuplicate",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "503NextGreaterElementII",
+    hdrs  = ["503.NextGreaterElementII.h"], 
+	srcs  = ["503.NextGreaterElementII.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "503NextGreaterElementIITest",
+	srcs  = ["503.NextGreaterElementIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["503NextGreaterElementII",
+			 "@googletest//:gtest_main"],
+)

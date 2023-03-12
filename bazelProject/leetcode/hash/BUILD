@@ -169,3 +169,18 @@ cc_binary(
 	deps  = ["287FindtheDuplicateNumber",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "313SuperUglyNumber",
+    hdrs  = ["313.SuperUglyNumber.h"], 
+	srcs  = ["313.SuperUglyNumber.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "313SuperUglyNumberTest",
+	srcs  = ["313.SuperUglyNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["313SuperUglyNumber",
+			 "@googletest//:gtest_main"],
+)

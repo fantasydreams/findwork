@@ -4,6 +4,12 @@ cc_library(
 	srcs = ["treecomm.cpp"]
 )
 
+cc_library(
+	name = "segmenttree",
+	hdrs = ["segmenttree.h"],
+	srcs = ["segmenttree.cpp"]
+)
+
 cc_binary(
 	name  = "treecommtest",
 	srcs  = ["treecommtest.cpp"],
@@ -82,5 +88,20 @@ cc_binary(
 		"-DNODE",
 	],
 	deps  = ["310MinimumHeightTrees",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name  = "307RangeSumQueryMutable",
+    hdrs  = ["307.RangeSumQuery-Mutable.h"], 
+	copts = ["-std=c++11"],
+	deps  = [":segmenttree"],
+)
+
+cc_binary(
+	name  = "307RangeSumQueryMutableTest",
+	srcs  = ["307.RangeSumQuery-MutableTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["307RangeSumQueryMutable",
 			 "@googletest//:gtest_main"],
 )

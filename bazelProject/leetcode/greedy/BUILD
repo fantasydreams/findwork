@@ -141,3 +141,17 @@ cc_binary(
 	deps  = ["1323Maximum69Number",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "870AdvantageShuffle",
+	hdrs = ["870.AdvantageShuffle.h"],
+	srcs = ["870.AdvantageShuffle.cpp"]
+)
+
+cc_binary(
+	name  = "870AdvantageShuffleTest",
+	srcs  = ["870.AdvantageShuffleTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["870AdvantageShuffle",
+			 "@googletest//:gtest_main"],
+)

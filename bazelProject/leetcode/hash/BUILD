@@ -184,3 +184,18 @@ cc_binary(
 	deps  = ["313SuperUglyNumber",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "307RangeSumQueryMutable",
+    hdrs  = ["307.RangeSumQuery-Mutable.h"], 
+	srcs  = ["307.RangeSumQuery-Mutable.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "307RangeSumQueryMutableTest",
+	srcs  = ["307.RangeSumQuery-MutableTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["307RangeSumQueryMutable",
+			 "@googletest//:gtest_main"],
+)

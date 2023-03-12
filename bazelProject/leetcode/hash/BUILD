@@ -121,3 +121,19 @@ cc_binary(
 	deps  = ["503NextGreaterElementII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "697DegreeofanArray",
+    hdrs  = ["697.DegreeofanArray.h"], 
+	srcs  = ["697.DegreeofanArray.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "697DegreeofanArrayTest",
+	srcs  = ["697.DegreeofanArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["697DegreeofanArray",
+			 "@googletest//:gtest_main"],
+)

@@ -133,3 +133,19 @@ cc_binary(
 	deps  = ["953VerifyinganAlienDictionary",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "242ValidAnagram",
+	hdrs = ["242.ValidAnagram.h"],
+	srcs = ["242.ValidAnagram.cpp"]
+)
+
+
+cc_binary(
+	name  = "242ValidAnagramTest",
+	srcs  = ["242.ValidAnagramTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["242ValidAnagram",
+			 "@googletest//:gtest_main"],
+)

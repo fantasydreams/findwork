@@ -164,3 +164,35 @@ cc_binary(
 	deps  = ["205IsomorphicStrings",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "647PalindromicSubstrings",
+	hdrs = ["647.PalindromicSubstrings.h"],
+	srcs = ["647.PalindromicSubstrings.cpp"]
+)
+
+
+cc_binary(
+	name  = "647PalindromicSubstringsTest",
+	srcs  = ["647.PalindromicSubstringsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["647PalindromicSubstrings",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "696CountBinarySubstrings",
+	hdrs = ["696.CountBinarySubstrings.h"],
+	srcs = ["696.CountBinarySubstrings.cpp"]
+)
+
+
+cc_binary(
+	name  = "696CountBinarySubstringsTest",
+	srcs  = ["696.CountBinarySubstringsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["696CountBinarySubstrings",
+			 "@googletest//:gtest_main"],
+)

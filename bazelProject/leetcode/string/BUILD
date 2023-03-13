@@ -149,3 +149,18 @@ cc_binary(
 	deps  = ["242ValidAnagram",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "205IsomorphicStrings",
+	hdrs = ["205.IsomorphicStrings.h"],
+	srcs = ["205.IsomorphicStrings.cpp"]
+)
+
+
+cc_binary(
+	name  = "205IsomorphicStringsTest",
+	srcs  = ["205.IsomorphicStringsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["205IsomorphicStrings",
+			 "@googletest//:gtest_main"],
+)

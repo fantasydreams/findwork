@@ -196,3 +196,19 @@ cc_binary(
 	deps  = ["696CountBinarySubstrings",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "227BasicCalculatorII",
+	hdrs = ["227.BasicCalculatorII.h"],
+	srcs = ["227.BasicCalculatorII.cpp"]
+)
+
+
+cc_binary(
+	name  = "227BasicCalculatorIITest",
+	srcs  = ["227.BasicCalculatorIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["227BasicCalculatorII",
+			 "@googletest//:gtest_main"],
+)

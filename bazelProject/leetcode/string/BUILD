@@ -212,3 +212,20 @@ cc_binary(
 	deps  = ["227BasicCalculatorII",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name = "28FindtheIndexoftheFirstOccurrenceinaString",
+	hdrs = ["28.FindtheIndexoftheFirstOccurrenceinaString.h"],
+	srcs = ["28.FindtheIndexoftheFirstOccurrenceinaString.cpp"]
+)
+
+
+cc_binary(
+	name  = "28FindtheIndexoftheFirstOccurrenceinaStringTest",
+	srcs  = ["28.FindtheIndexoftheFirstOccurrenceinaStringTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["28FindtheIndexoftheFirstOccurrenceinaString",
+			 "@googletest//:gtest_main"],
+)

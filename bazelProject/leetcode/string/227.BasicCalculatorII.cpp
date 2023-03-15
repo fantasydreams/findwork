@@ -1,6 +1,7 @@
 #include "227.BasicCalculatorII.h"
 #include <vector>
 #include <stack>
+#include <locale>
 
 using namespace std;
 
@@ -76,4 +77,50 @@ int calculate(string s) {
     }
 
     return nums.front();
+}
+
+
+int64_t getNext(const std::string & s, int & idx) {
+    int64_t num = 0;
+    for(;idx < s.size() && isdigit(s[idx]); ++idx) {
+        num = 10 * num + s[idx] - '0';
+    }
+
+    return num;
+}
+
+int calculate1(string s) {
+    char op = '+';
+    int64_t left = 0, right = 0, tmp;
+    int i = 0;
+    while(i < s.size()) {
+        if(s[i] == ' ') {
+            ++i;
+            continue;
+        }
+
+        tmp = getNext(s, i);
+        switch(op) {
+            case '+':
+                left += right;
+                right = tmp;
+                break;
+            case '-':
+                left += right;
+                right = -tmp;
+                break;
+            case '*':
+                right *= tmp;
+                break;
+            case '/':
+                right /= tmp;
+                break;
+        }
+
+        if(i < s.size()) {
+            op = s[i++];
+        }
+    }
+
+    return left + right;
 }

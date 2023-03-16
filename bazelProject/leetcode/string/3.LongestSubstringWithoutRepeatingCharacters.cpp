@@ -1,6 +1,7 @@
 #include "3.LongestSubstringWithoutRepeatingCharacters.h"
 #include <map>
 #include <set>
+#include <unordered_set>
 
 void printMap(const std::map<char,size_t> & Map)
 {
@@ -66,5 +67,25 @@ int lengthOfLongestSubstringWithSet(std::string s)
         cSet.insert(s[i]);
         maxLen = (i - start + 1) > maxLen ? (i - start + 1) : maxLen;
     }
+    return maxLen;
+}
+
+int lengthOfLongestSubstringWithSet1(std::string s) 
+{  
+    std::unordered_set<char> eSet;
+    int start = 0, maxLen = 0, i = 0;
+    while(i < s.size()) {
+        if(eSet.count(s[i]) == 0) {
+            eSet.insert(s[i++]);
+            maxLen = std::max(maxLen, (int)eSet.size());
+        }else {
+            while(s[start] != s[i]) {
+                eSet.erase(s[start]);
+                ++start;
+            }
+            eSet.erase(s[start++]);
+        }
+    }
+
     return maxLen;
 }

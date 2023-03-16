@@ -1,6 +1,7 @@
 #include "5.LongestPalindromicSubstring.h"
 #include <vector>
 #include <algorithm>
+#include <inttypes.h>
 //普通算法，以某个字符为中心，向两边扩展来计算最大回文字串
 //时间复杂度：O(n^2)，空间复杂度O(n)
 std::string longestPalindrome(std::string s)
@@ -169,8 +170,8 @@ void printVec(std::vector<int> & vec)
 --------i--------max_idx-------idx-----|-----
 ---------------------------------------_last
 
-i 是 idx关于max_idx对称的点， 由于idx的范围在(max_idx - max_r, max_idx + max_r) 的范围内，
-因此vecMa[idx] 的值与vecMa[i]的值有关，由于macMa[i]的半径，是有可能超过max_idx的覆盖范围的，因此取
+i 是 idx关于max_idx对称的点， 由于idx的范围在[max_idx + 1, max_idx + max_r] 的范围内，
+因此vecMa[idx] 的值与vecMa[i]的值有关，由于vecMa[i]的半径，是有可能超过max_idx的覆盖范围的，因此取
 边界即min(vecMa[i], _last-idx), 由于（max_idx - max_r, max_idx + max_r）取开区间，因此这里是_last_idx
 
 对于第二种情况
@@ -213,6 +214,44 @@ std::string longestPalindromeManacher(std::string s)
         }
     }
 
+    // printVec(vecMa);
     size_t origIdx = (max_idx - max_r)/2;
     return s.substr(origIdx, max_r - 1);
+}
+
+
+std::string longestPalindromeManacher1(std::string s)
+{
+    std::string tmp = "$";
+    for(const auto & ch : s) {
+        tmp += "#";
+        tmp += ch;
+        // printf("%s\n", tmp.c_str());
+    }
+    tmp += "#@";
+
+    std::vector<int> vecMa(tmp.size(), 0);
+    int curCenter = 0, curR = 0, maxCenter = 0, maxR = 0, last;
+    for(int i = 1; i < tmp.size() - 1; ++i) {
+        last = curCenter + curR;
+        if(last > i) {
+            vecMa[i] = std::min(last - i, vecMa[2 * curCenter - i]);
+        }
+        // printf("%c %c %d %d %d\n", s[i - vecMa[i] - 1], s[i + vecMa[i] + 1], i, i - vecMa[i] - 1, i + vecMa[i] + 1);
+        while(tmp[i - vecMa[i] - 1] == tmp[i + vecMa[i] + 1]) {
+            ++vecMa[i];
+        }
+
+        if(vecMa[i] > maxR) {
+            maxCenter = i;
+            maxR = vecMa[i];
+        }
+
+        if(i + vecMa[i] > last) {
+            curCenter = i;
+            curR = vecMa[i];
+        }
+    }
+    // printVec(vecMa);
+    return s.substr((maxCenter - maxR) / 2, maxR);
 }

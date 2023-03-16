@@ -10,6 +10,7 @@ TEST(case_1,content)
     EXPECT_EQ(longestPalindromeWithoutAsistant(str), "bab");
     EXPECT_EQ(longestPalindromeWithDP(str), "bab");
     EXPECT_EQ(longestPalindromeManacher(str), "bab");
+    EXPECT_EQ(longestPalindromeManacher1(str), "bab");
 }
 
 
@@ -21,6 +22,7 @@ TEST(case_2,content)
     EXPECT_EQ(longestPalindromeWithoutAsistant(str), "bb");
     EXPECT_EQ(longestPalindromeWithDP(str), "bb");
     EXPECT_EQ(longestPalindromeManacher(str), "bb");
+    EXPECT_EQ(longestPalindromeManacher1(str), "bb");
 }
 
 
@@ -32,6 +34,7 @@ TEST(case_3,content)
     EXPECT_EQ(longestPalindromeWithoutAsistant(str), "a");
     EXPECT_EQ(longestPalindromeWithDP(str), "a");
     EXPECT_EQ(longestPalindromeManacher(str), "a");
+    EXPECT_EQ(longestPalindromeManacher1(str), "a");
 }
 
 
@@ -42,6 +45,7 @@ TEST(case_4,content)
     EXPECT_EQ(longestPalindromeWithoutAsistant(str), "a");
     EXPECT_EQ(longestPalindromeWithDP(str), "a");
     EXPECT_EQ(longestPalindromeManacher(str), "a");
+    EXPECT_EQ(longestPalindromeManacher1(str), "a");
 }
 
 //字符串整个串是回文
@@ -54,6 +58,7 @@ TEST(case_5,content)
     EXPECT_EQ(longestPalindromeWithoutAsistant(str), "aaaaa");
     EXPECT_EQ(longestPalindromeWithDP(str), "aaaaa");
     EXPECT_EQ(longestPalindromeManacher(str), "aaaaa");
+    EXPECT_EQ(longestPalindromeManacher1(str), "aaaaa");
 }
 
 
@@ -65,6 +70,7 @@ TEST(case_6,content)
     EXPECT_EQ(longestPalindromeWithoutAsistant(str), "xaabacxcabaax");
     EXPECT_EQ(longestPalindromeWithDP(str), "xaabacxcabaax");
     EXPECT_EQ(longestPalindromeManacher(str), "xaabacxcabaax");
+    EXPECT_EQ(longestPalindromeManacher1(str), "xaabacxcabaax");
 }
 
 //"cbcdcbedcbc"
@@ -75,6 +81,7 @@ TEST(case_7,content)
     EXPECT_EQ(longestPalindromeWithoutAsistant(str), "bcdcb");
     EXPECT_EQ(longestPalindromeWithDP(str), "bcdcb");
     EXPECT_EQ(longestPalindromeManacher(str), "bcdcb");
+    EXPECT_EQ(longestPalindromeManacher1(str), "bcdcb");
 }
 
 int main(int argc, char* argv[])

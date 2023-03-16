@@ -212,3 +212,18 @@ cc_binary(
 	deps  = ["227BasicCalculatorII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "409LongestPalindrome",
+	hdrs = ["409.LongestPalindrome.h"],
+	srcs = ["409.LongestPalindrome.cpp"]
+)
+
+
+cc_binary(
+	name  = "409LongestPalindromeTest",
+	srcs  = ["409.LongestPalindromeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["409LongestPalindrome",
+			 "@googletest//:gtest_main"],
+)

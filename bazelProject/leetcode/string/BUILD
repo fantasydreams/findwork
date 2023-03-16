@@ -220,10 +220,25 @@ cc_library(
 )
 
 
+cc_library(
+	name = "28FindtheIndexoftheFirstOccurrenceinaString",
+	hdrs = ["28.FindtheIndexoftheFirstOccurrenceinaString.h"],
+	srcs = ["28.FindtheIndexoftheFirstOccurrenceinaString.cpp"]
+)
+
+
 cc_binary(
 	name  = "409LongestPalindromeTest",
 	srcs  = ["409.LongestPalindromeTest.cpp"],
 	copts = ["-std=c++11"],
 	deps  = ["409LongestPalindrome",
+			 "@googletest//:gtest_main"],
+)
+
+cc_binary(
+	name  = "28FindtheIndexoftheFirstOccurrenceinaStringTest",
+	srcs  = ["28.FindtheIndexoftheFirstOccurrenceinaStringTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["28FindtheIndexoftheFirstOccurrenceinaString",
 			 "@googletest//:gtest_main"],
 )

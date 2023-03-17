@@ -170,3 +170,20 @@ cc_binary(
 	deps  = ["328OddEvenLinkedList",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "19RemoveNthNodeFromEndofList",
+	hdrs = ["19.RemoveNthNodeFromEndofList.h"],
+	srcs = ["19.RemoveNthNodeFromEndofList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "19RemoveNthNodeFromEndofListTest",
+	srcs  = ["19.RemoveNthNodeFromEndofListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["19RemoveNthNodeFromEndofList",
+			 "@googletest//:gtest_main"],
+)

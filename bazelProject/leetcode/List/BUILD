@@ -87,3 +87,19 @@ cc_binary(
 	deps  = ["21MergeTwoSortedLists",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "24SwapNodesinPairs",
+	hdrs = ["24.SwapNodesinPairs.h"],
+	srcs = ["24.SwapNodesinPairs.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "24SwapNodesinPairsTest",
+	srcs  = ["24.SwapNodesinPairsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["24SwapNodesinPairs",
+			 "@googletest//:gtest_main"],
+)

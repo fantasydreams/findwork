@@ -187,3 +187,19 @@ cc_binary(
 	deps  = ["19RemoveNthNodeFromEndofList",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "148SortList",
+	hdrs = ["148.SortList.h"],
+	srcs = ["148.SortList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "148SortListTest",
+	srcs  = ["148.SortListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["148SortList",
+			 "@googletest//:gtest_main"],
+)

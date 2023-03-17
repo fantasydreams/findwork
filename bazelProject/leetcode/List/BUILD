@@ -55,3 +55,35 @@ cc_binary(
 	deps  = ["142LinkedListCycleII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "206ReverseLinkedList",
+	hdrs = ["206.ReverseLinkedList.h"],
+	srcs = ["206.ReverseLinkedList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "206ReverseLinkedListTest",
+	srcs  = ["206.ReverseLinkedListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["206ReverseLinkedList",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "21MergeTwoSortedLists",
+	hdrs = ["21.MergeTwoSortedLists.h"],
+	srcs = ["21.MergeTwoSortedLists.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "21MergeTwoSortedListsTest",
+	srcs  = ["21.MergeTwoSortedListsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["21MergeTwoSortedLists",
+			 "@googletest//:gtest_main"],
+)

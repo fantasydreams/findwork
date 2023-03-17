@@ -1,14 +1,13 @@
 #include "2.AddTwoNumbers.h"
 #include "gtest/gtest.h"
 
-
 //一样长
 TEST(case_1,content)
 {
     std::vector<int> a = {2,4,3};
     std::vector<int> b = {5,6,4};
     std::vector<int> sum = {7,0,8};
-	  ListNode * lista = createLinkList(a);
+	ListNode * lista = createLinkList(a);
     ListNode * listb = createLinkList(b);
     ListNode * listsum = addTwoNumbers(lista, listb);
     std::vector<int> realsum = convertLink2Vector(listsum);

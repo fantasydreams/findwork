@@ -103,3 +103,36 @@ cc_binary(
 	deps  = ["24SwapNodesinPairs",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "160IntersectionofTwoLinkedLists",
+	hdrs = ["160.IntersectionofTwoLinkedLists.h"],
+	srcs = ["160.IntersectionofTwoLinkedLists.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "160IntersectionofTwoLinkedListsTest",
+	srcs  = ["160.IntersectionofTwoLinkedListsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["160IntersectionofTwoLinkedLists",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "234PalindromeLinkedList",
+	hdrs = ["234.PalindromeLinkedList.h"],
+	srcs = ["234.PalindromeLinkedList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "234PalindromeLinkedListTest",
+	srcs  = ["234.PalindromeLinkedListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["234PalindromeLinkedList",
+			 "@googletest//:gtest_main"],
+)

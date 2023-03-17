@@ -136,3 +136,20 @@ cc_binary(
 	deps  = ["234PalindromeLinkedList",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "83RemoveDuplicatesfromSortedList",
+	hdrs = ["83.RemoveDuplicatesfromSortedList.h"],
+	srcs = ["83.RemoveDuplicatesfromSortedList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "83RemoveDuplicatesfromSortedListTest",
+	srcs  = ["83.RemoveDuplicatesfromSortedListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["83RemoveDuplicatesfromSortedList",
+			 "@googletest//:gtest_main"],
+)

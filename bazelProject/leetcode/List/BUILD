@@ -153,3 +153,20 @@ cc_binary(
 	deps  = ["83RemoveDuplicatesfromSortedList",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "328OddEvenLinkedList",
+	hdrs = ["328.OddEvenLinkedList.h"],
+	srcs = ["328.OddEvenLinkedList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "328OddEvenLinkedListTest",
+	srcs  = ["328.OddEvenLinkedListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["328OddEvenLinkedList",
+			 "@googletest//:gtest_main"],
+)

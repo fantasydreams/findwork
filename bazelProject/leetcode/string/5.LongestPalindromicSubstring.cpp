@@ -86,7 +86,7 @@ std::string longestPalindromeWithDP(std::string s)
     {
         dp[i][i] = true;
         if(i + 1 < s.size()){
-            dp[i][i + 1] = (s[i] == s[i + 1]);
+            dp[i][i + 1] = (s[i] == s[i + 1]); // 偶数的情况
         }
     }
     int start = 0, len = 0;
@@ -215,4 +215,34 @@ std::string longestPalindromeManacher(std::string s)
 
     size_t origIdx = (max_idx - max_r)/2;
     return s.substr(origIdx, max_r - 1);
+}
+
+std::string getPalindromeAxis(const std::string & str, int s, int e)
+{
+    std::string ans;
+    while(s >=0 && e < str.size() && str[s] == str[e]) {
+        ans = str.substr(s, e - s + 1);
+        --s;
+        ++e;
+    }
+
+    return ans;
+}
+
+std::string longestPalindrome1(std::string s)
+{
+    std::string ans;
+    for(int i = 0; i < s.size(); ++i) {
+        std::string tmp = getPalindromeAxis(s, i, i);
+        if(tmp.size() > ans.size()) {
+            ans = tmp;
+        }
+
+        tmp = getPalindromeAxis(s, i, i + 1);
+        if(tmp.size() > ans.size()) {
+            ans = tmp;
+        }
+    }   
+
+    return ans;
 }

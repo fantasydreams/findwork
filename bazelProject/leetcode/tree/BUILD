@@ -258,3 +258,20 @@ cc_binary(
 	deps  = ["144BinaryTreePreorderTraversal",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "99RecoverBinarySearchTree",
+    hdrs  = ["99.RecoverBinarySearchTree.h"], 
+	srcs  = ["99.RecoverBinarySearchTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "99RecoverBinarySearchTreeTest",
+	srcs  = ["99.RecoverBinarySearchTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["99RecoverBinarySearchTree",
+			 "@googletest//:gtest_main"],
+)

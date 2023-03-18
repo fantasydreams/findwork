@@ -308,3 +308,21 @@ cc_binary(
 	deps  = ["226InvertBinaryTree",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name  = "617MergeTwoBinaryTrees",
+    hdrs  = ["617.MergeTwoBinaryTrees.h"], 
+	srcs  = ["617.MergeTwoBinaryTrees.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "617MergeTwoBinaryTreesTest",
+	srcs  = ["617.MergeTwoBinaryTreesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["617MergeTwoBinaryTrees",
+			 "@googletest//:gtest_main"],
+)

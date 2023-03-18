@@ -392,3 +392,20 @@ cc_binary(
 	deps  = ["538ConvertBSTtoGreaterTree",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "235LowestCommonAncestorofaBinarySearchTree",
+    hdrs  = ["235.LowestCommonAncestorofaBinarySearchTree.h"], 
+	srcs  = ["235.LowestCommonAncestorofaBinarySearchTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "235LowestCommonAncestorofaBinarySearchTreeTest",
+	srcs  = ["235.LowestCommonAncestorofaBinarySearchTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["235LowestCommonAncestorofaBinarySearchTree",
+			 "@googletest//:gtest_main"],
+)

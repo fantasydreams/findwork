@@ -156,3 +156,20 @@ cc_binary(
 	deps  = ["543DiameterofBinaryTree",
 			 "@googletest//:gtest_main"],
 )
+
+    
+cc_library(
+	name  = "437PathSumIII",
+    hdrs  = ["437.PathSumIII.h"], 
+	srcs  = ["437.PathSumIII.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "437PathSumIIITest",
+	srcs  = ["437.PathSumIIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["437PathSumIII",
+			 "@googletest//:gtest_main"],
+)

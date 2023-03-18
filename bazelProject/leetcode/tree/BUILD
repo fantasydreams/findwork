@@ -409,3 +409,20 @@ cc_binary(
 	deps  = ["235LowestCommonAncestorofaBinarySearchTree",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "530MinimumAbsoluteDifferenceinBST",
+    hdrs  = ["530.MinimumAbsoluteDifferenceinBST.h"], 
+	srcs  = ["530.MinimumAbsoluteDifferenceinBST.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "530MinimumAbsoluteDifferenceinBSTTest",
+	srcs  = ["530.MinimumAbsoluteDifferenceinBSTTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["530MinimumAbsoluteDifferenceinBST",
+			 "@googletest//:gtest_main"],
+)

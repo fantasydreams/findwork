@@ -105,3 +105,37 @@ cc_binary(
 	deps  = ["307RangeSumQueryMutable",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "104MaximumDepthofBinaryTree",
+    hdrs  = ["104.MaximumDepthofBinaryTree.h"], 
+	srcs  = ["104.MaximumDepthofBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "104MaximumDepthofBinaryTreeTest",
+	srcs  = ["104.MaximumDepthofBinaryTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["104MaximumDepthofBinaryTree",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name  = "110BalancedBinaryTree",
+    hdrs  = ["110.BalancedBinaryTree.h"], 
+	srcs  = ["110.BalancedBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "110BalancedBinaryTreeTest",
+	srcs  = ["110.BalancedBinaryTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["110BalancedBinaryTree",
+			 "@googletest//:gtest_main"],
+)

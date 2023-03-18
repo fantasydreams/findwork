@@ -375,3 +375,20 @@ cc_binary(
 	deps  = ["513FindBottomLeftTreeValue",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "538ConvertBSTtoGreaterTree",
+    hdrs  = ["538.ConvertBSTtoGreaterTree.h"], 
+	srcs  = ["538.ConvertBSTtoGreaterTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "538ConvertBSTtoGreaterTreeTest",
+	srcs  = ["538.ConvertBSTtoGreaterTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["538ConvertBSTtoGreaterTree",
+			 "@googletest//:gtest_main"],
+)

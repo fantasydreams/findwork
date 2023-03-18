@@ -131,6 +131,23 @@ void TraverseTreeMidNoRecursion(TreeNode * root, std::string & res)
     }
 }
 
+void TraverseTreeMidNoRecursion(TreeNode * root, std::vector<int> & res)
+{
+    if(!root) return;
+    std::stack<TreeNode *> stack;
+    PushTaskLeftPathUntilNull(root, stack);
+
+    while(stack.size())
+    {
+        TreeNode * pNode = stack.top();
+        stack.pop();
+        res.push_back(pNode->val);
+        if(pNode->right){
+            PushTaskLeftPathUntilNull(pNode->right, stack);
+        }
+    }
+}
+
 void TraverseTreePreNoRecursion(TreeNode * root)
 {
     if(!root) return;
@@ -169,6 +186,26 @@ void TraverseTreePreNoRecursion(TreeNode * root, std::string & res)
             res += " ";
             res += std::to_string(pNode->val);
         }
+        if(pNode->right) {
+            stack.push(pNode->right);
+        }
+        if(pNode->left) {
+            stack.push(pNode->left);
+        }
+    }
+}
+
+void TraverseTreePreNoRecursion(TreeNode * root, std::vector<int> & res)
+{
+    if(!root) return;
+    std::stack<TreeNode *> stack;
+    stack.push(root);
+
+    while(stack.size())
+    {
+        TreeNode * pNode = stack.top();
+        stack.pop();
+        res.push_back(pNode->val);
         if(pNode->right) {
             stack.push(pNode->right);
         }

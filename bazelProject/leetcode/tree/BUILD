@@ -275,3 +275,20 @@ cc_binary(
 	deps  = ["99RecoverBinarySearchTree",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "208ImplementTriePrefixTree",
+    hdrs  = ["208.ImplementTriePrefixTree.h"], 
+	srcs  = ["208.ImplementTriePrefixTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "208ImplementTriePrefixTreeTest",
+	srcs  = ["208.ImplementTriePrefixTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["208ImplementTriePrefixTree",
+			 "@googletest//:gtest_main"],
+)

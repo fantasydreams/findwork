@@ -1,0 +1,19 @@
+#include "669.TrimaBinarySearchTree.h"
+
+TreeNode* trimBST(TreeNode* root, int low, int high) {
+    if(!root) {
+        return root;
+    }
+
+    if(root->val < low) {
+        return trimBST(root->right, low, right);
+    }
+    if(root->val > high) {
+        return trimBST(root->left, low, right);
+    }
+
+    root->left = trimBST(root->left, low, high);
+    root->right = trimBST(root->right, low, high);
+    return root;
+}
+

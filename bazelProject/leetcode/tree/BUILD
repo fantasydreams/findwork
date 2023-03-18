@@ -358,3 +358,20 @@ cc_binary(
 	deps  = ["404SumofLeftLeaves",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "513FindBottomLeftTreeValue",
+    hdrs  = ["513.FindBottomLeftTreeValue.h"], 
+	srcs  = ["513.FindBottomLeftTreeValue.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "513FindBottomLeftTreeValueTest",
+	srcs  = ["513.FindBottomLeftTreeValueTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["513FindBottomLeftTreeValue",
+			 "@googletest//:gtest_main"],
+)

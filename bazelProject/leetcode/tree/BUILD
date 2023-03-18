@@ -139,3 +139,20 @@ cc_binary(
 	deps  = ["110BalancedBinaryTree",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "543DiameterofBinaryTree",
+    hdrs  = ["543.DiameterofBinaryTree.h"], 
+	srcs  = ["543.DiameterofBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "543DiameterofBinaryTreeTest",
+	srcs  = ["543.DiameterofBinaryTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["543DiameterofBinaryTree",
+			 "@googletest//:gtest_main"],
+)

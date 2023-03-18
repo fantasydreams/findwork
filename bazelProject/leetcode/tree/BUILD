@@ -292,3 +292,19 @@ cc_binary(
 	deps  = ["208ImplementTriePrefixTree",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "226InvertBinaryTree",
+    hdrs  = ["226.InvertBinaryTree.h"], 
+	srcs  = ["226.InvertBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "226InvertBinaryTreeTest",
+	srcs  = ["226.InvertBinaryTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["226InvertBinaryTree",
+			 "@googletest//:gtest_main"],
+)

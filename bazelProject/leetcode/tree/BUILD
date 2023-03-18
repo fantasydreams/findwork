@@ -326,3 +326,19 @@ cc_binary(
 	deps  = ["617MergeTwoBinaryTrees",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "572SubtreeofAnotherTree",
+    hdrs  = ["572.SubtreeofAnotherTree.h"], 
+	srcs  = ["572.SubtreeofAnotherTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "572SubtreeofAnotherTreeTest",
+	srcs  = ["572.SubtreeofAnotherTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["572SubtreeofAnotherTree",
+			 "@googletest//:gtest_main"],
+)

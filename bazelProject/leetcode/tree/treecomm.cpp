@@ -279,4 +279,5 @@ bool isTreeValEqual(TreeNode* a, TreeNode* b) {
     }else {
         return isTreeValEqual(a->left, b->left) && isTreeValEqual(a->right, b->right);
     }
+    return false;
 }

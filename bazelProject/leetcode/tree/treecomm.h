@@ -42,3 +42,4 @@ void FreeTree(TreeNode * root);
 TreeNode * CreateTreePreMid(const std::vector<int> & pre, const std::vector<int> & mid);
 TreeNode * CreateTreeMidPost(const std::vector<int> & mid, const std::vector<int> & post);
 void TraverseTreeLevelDebug(TreeNode * root);
+bool isTreeValEqual(TreeNode* a, TreeNode* b);

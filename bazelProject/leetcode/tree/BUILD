@@ -224,3 +224,37 @@ cc_binary(
 	deps  = ["637AverageofLevelsinBinaryTree",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name  = "105ConstructBinaryTreefromPreorderandInorderTraversal",
+    hdrs  = ["105.ConstructBinaryTreefromPreorderandInorderTraversal.h"], 
+	srcs  = ["105.ConstructBinaryTreefromPreorderandInorderTraversal.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "105ConstructBinaryTreefromPreorderandInorderTraversalTest",
+	srcs  = ["105.ConstructBinaryTreefromPreorderandInorderTraversalTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["105ConstructBinaryTreefromPreorderandInorderTraversal",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name  = "144BinaryTreePreorderTraversal",
+    hdrs  = ["144.BinaryTreePreorderTraversal.h"], 
+	srcs  = ["144.BinaryTreePreorderTraversal.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "144BinaryTreePreorderTraversalTest",
+	srcs  = ["144.BinaryTreePreorderTraversalTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["144BinaryTreePreorderTraversal",
+			 "@googletest//:gtest_main"],
+)

@@ -173,3 +173,21 @@ cc_binary(
 	deps  = ["437PathSumIII",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name  = "101SymmetricTree",
+    hdrs  = ["101.SymmetricTree.h"], 
+	srcs  = ["101.SymmetricTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "101SymmetricTreeTest",
+	srcs  = ["101.SymmetricTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["101SymmetricTree",
+			 "@googletest//:gtest_main"],
+)

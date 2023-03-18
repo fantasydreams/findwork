@@ -191,3 +191,36 @@ cc_binary(
 	deps  = ["101SymmetricTree",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "1110DeleteNodesAndReturnForest",
+    hdrs  = ["1110.DeleteNodesAndReturnForest.h"], 
+	srcs  = ["1110.DeleteNodesAndReturnForest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "1110DeleteNodesAndReturnForestTest",
+	srcs  = ["1110.DeleteNodesAndReturnForestTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["1110DeleteNodesAndReturnForest",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name  = "637AverageofLevelsinBinaryTree",
+    hdrs  = ["637.AverageofLevelsinBinaryTree.h"], 
+	srcs  = ["637.AverageofLevelsinBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "637AverageofLevelsinBinaryTreeTest",
+	srcs  = ["637.AverageofLevelsinBinaryTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["637AverageofLevelsinBinaryTree",
+			 "@googletest//:gtest_main"],
+)

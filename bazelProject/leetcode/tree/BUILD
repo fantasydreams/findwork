@@ -342,3 +342,19 @@ cc_binary(
 	deps  = ["572SubtreeofAnotherTree",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "404SumofLeftLeaves",
+    hdrs  = ["404.SumofLeftLeaves.h"], 
+	srcs  = ["404.SumofLeftLeaves.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "404SumofLeftLeavesTest",
+	srcs  = ["404.SumofLeftLeavesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["404SumofLeftLeaves",
+			 "@googletest//:gtest_main"],
+)

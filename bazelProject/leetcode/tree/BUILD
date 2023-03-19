@@ -477,3 +477,20 @@ cc_binary(
 	deps  = ["94BinaryTreeInorderTraversal",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "145BinaryTreePostorderTraversal",
+    hdrs  = ["145.BinaryTreePostorderTraversal.h"], 
+	srcs  = ["145.BinaryTreePostorderTraversal.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "145BinaryTreePostorderTraversalTest",
+	srcs  = ["145.BinaryTreePostorderTraversalTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["145BinaryTreePostorderTraversal",
+			 "@googletest//:gtest_main"],
+)

@@ -502,3 +502,20 @@ cc_library(
 	copts = ["-std=c++11"],
 	deps  = [":treecomm"],
 )
+
+
+cc_library(
+	name  = "653TwoSumIVInputisaBST",
+    hdrs  = ["653.TwoSumIVInputisaBST.h"], 
+	srcs  = ["653.TwoSumIVInputisaBST.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "653TwoSumIVInputisaBSTTest",
+	srcs  = ["653.TwoSumIVInputisaBSTTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["653TwoSumIVInputisaBST",
+			 "@googletest//:gtest_main"],
+)

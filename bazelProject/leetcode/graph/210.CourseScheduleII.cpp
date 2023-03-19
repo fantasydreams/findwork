@@ -1,6 +1,9 @@
 #include "210.CourseScheduleII.h"
 #include <map>
 #include <queue>
+#include <unordered_map>
+#include <unordered_set>
+
 
 //这是一版粗略的bfs
 std::vector<int> findOrder(int numCourses, std::vector<std::vector<int> >& prerequisites)
@@ -92,3 +95,32 @@ std::vector<int> findOrderBfs(int numCourses, std::vector<std::vector<int> >& pr
 
     return res.size() == numCourses ? res : std::vector<int>();
 }
+
+vector<int> findOrderBfs1(int numCourses, vector<vector<int>>& prerequisites) {
+        unordered_map<int, std::unordered_set<int>> hash;
+        vector<int> inDegree(numCourses, 0), res;
+        queue<int> que;
+
+        for(int i = 0; i < prerequisites.size(); ++i) {
+            hash[prerequisites[i][1]].insert(prerequisites[i][0]);
+            ++inDegree[prerequisites[i][0]];
+        }
+
+        for(int i = 0; i < numCourses; ++i) {
+            if(inDegree[i] == 0) {
+                que.push(i);
+            }
+        }
+
+        while(!que.empty()) {
+            int node = que.front(); que.pop();
+            res.push_back(node);
+            for(const auto & adj : hash[node]) {
+                if(--inDegree[adj] == 0) {
+                    que.push(adj);
+                }
+            }
+        }
+
+        return res.size() == numCourses ? res : std::vector<int>();
+    }

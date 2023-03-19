@@ -426,3 +426,20 @@ cc_binary(
 	deps  = ["530MinimumAbsoluteDifferenceinBST",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "889ConstructBinaryTreefromPreorderandPostorderTraversal",
+    hdrs  = ["889.ConstructBinaryTreefromPreorderandPostorderTraversal.h"], 
+	srcs  = ["889.ConstructBinaryTreefromPreorderandPostorderTraversal.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "889ConstructBinaryTreefromPreorderandPostorderTraversalTest",
+	srcs  = ["889.ConstructBinaryTreefromPreorderandPostorderTraversalTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["889ConstructBinaryTreefromPreorderandPostorderTraversal",
+			 "@googletest//:gtest_main"],
+)

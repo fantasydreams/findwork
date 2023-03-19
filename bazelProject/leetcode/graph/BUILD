@@ -26,3 +26,18 @@ cc_binary(
 	deps  = ["785IsGraphBipartite",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "684RedundantConnection",
+	hdrs = ["684.RedundantConnection.h"],
+	srcs = ["684.RedundantConnection.cpp"]
+)
+
+cc_binary(
+	name  = "684RedundantConnectionTest",
+	srcs  = ["684.RedundantConnectionTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["684RedundantConnection",
+			 "@googletest//:gtest_main"],
+)

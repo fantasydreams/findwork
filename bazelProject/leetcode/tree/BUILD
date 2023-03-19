@@ -494,3 +494,11 @@ cc_binary(
 	deps  = ["145BinaryTreePostorderTraversal",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "897IncreasingOrderSearchTree",
+    hdrs  = ["897.IncreasingOrderSearchTree.h"], 
+	srcs  = ["897.IncreasingOrderSearchTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)

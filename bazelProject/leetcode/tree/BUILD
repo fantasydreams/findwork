@@ -519,3 +519,20 @@ cc_binary(
 	deps  = ["653TwoSumIVInputisaBST",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "450DeleteNodeinaBST",
+    hdrs  = ["450.DeleteNodeinaBST.h"], 
+	srcs  = ["450.DeleteNodeinaBST.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "450DeleteNodeinaBSTTest",
+	srcs  = ["450.DeleteNodeinaBSTTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["450DeleteNodeinaBST",
+			 "@googletest//:gtest_main"],
+)

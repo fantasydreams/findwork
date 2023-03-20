@@ -12,3 +12,4 @@
 #include <cmath>
 
 std::vector<int> twoSum(const std::vector<int> &array, int sum);
+std::vector<int> twoSum1(const std::vector<int>& nums, int target);

@@ -1,7 +1,6 @@
 #include "2.AddTwoNumbers.h"
 #include "gtest/gtest.h"
 
-
 //一样长
 TEST(case_1,content)
 {

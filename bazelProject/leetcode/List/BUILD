@@ -87,3 +87,119 @@ cc_binary(
 	deps  = ["21MergeTwoSortedLists",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "24SwapNodesinPairs",
+	hdrs = ["24.SwapNodesinPairs.h"],
+	srcs = ["24.SwapNodesinPairs.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "24SwapNodesinPairsTest",
+	srcs  = ["24.SwapNodesinPairsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["24SwapNodesinPairs",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "160IntersectionofTwoLinkedLists",
+	hdrs = ["160.IntersectionofTwoLinkedLists.h"],
+	srcs = ["160.IntersectionofTwoLinkedLists.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "160IntersectionofTwoLinkedListsTest",
+	srcs  = ["160.IntersectionofTwoLinkedListsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["160IntersectionofTwoLinkedLists",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "234PalindromeLinkedList",
+	hdrs = ["234.PalindromeLinkedList.h"],
+	srcs = ["234.PalindromeLinkedList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "234PalindromeLinkedListTest",
+	srcs  = ["234.PalindromeLinkedListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["234PalindromeLinkedList",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "83RemoveDuplicatesfromSortedList",
+	hdrs = ["83.RemoveDuplicatesfromSortedList.h"],
+	srcs = ["83.RemoveDuplicatesfromSortedList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "83RemoveDuplicatesfromSortedListTest",
+	srcs  = ["83.RemoveDuplicatesfromSortedListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["83RemoveDuplicatesfromSortedList",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "328OddEvenLinkedList",
+	hdrs = ["328.OddEvenLinkedList.h"],
+	srcs = ["328.OddEvenLinkedList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "328OddEvenLinkedListTest",
+	srcs  = ["328.OddEvenLinkedListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["328OddEvenLinkedList",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "19RemoveNthNodeFromEndofList",
+	hdrs = ["19.RemoveNthNodeFromEndofList.h"],
+	srcs = ["19.RemoveNthNodeFromEndofList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "19RemoveNthNodeFromEndofListTest",
+	srcs  = ["19.RemoveNthNodeFromEndofListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["19RemoveNthNodeFromEndofList",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "148SortList",
+	hdrs = ["148.SortList.h"],
+	srcs = ["148.SortList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "148SortListTest",
+	srcs  = ["148.SortListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["148SortList",
+			 "@googletest//:gtest_main"],
+)

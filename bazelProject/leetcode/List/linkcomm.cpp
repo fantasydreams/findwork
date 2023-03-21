@@ -180,3 +180,43 @@ void printList(ListNode * pList) {
     }
     printf("\n");
 }
+
+
+size_t getLinkLen(ListNode * pList) {
+    size_t len = 0;
+    while(pList) {
+        ++len;
+        pList = pList -> next;
+    }
+
+    return len;
+}
+
+
+void createIntersection(const std::vector<int> & vecAHead,  const std::vector<int> & vecBHead, const std::vector<int> & vecSection, ListNode * &aHead, ListNode * &bHead) {
+    ListNode oComm, * tmp = &oComm;
+    for(size_t idx = 0; idx < vecSection.size(); ++idx) {
+        tmp->next = new ListNode(vecSection[idx]);
+        tmp = tmp -> next;
+    }
+
+    ListNode oHeadA;
+    tmp = &oHeadA;
+    for(size_t idx = 0; idx < vecAHead.size(); ++idx) {
+        tmp->next = new ListNode(vecAHead[idx]);
+        tmp = tmp -> next;
+    }
+
+    tmp -> next = oComm.next;
+
+    ListNode oHeadB;
+    tmp = &oHeadB;
+    for(size_t idx = 0; idx < vecBHead.size(); ++idx) {
+        tmp->next = new ListNode(vecBHead[idx]);
+        tmp = tmp -> next;
+    }
+
+    tmp -> next = oComm.next;
+    aHead = oHeadA.next;
+    bHead = oHeadB.next;
+}

@@ -10,7 +10,9 @@ TEST(case_1,content)
     std::vector<int> ans = {1, 0};
     EXPECT_EQ(ans, res);
     EXPECT_EQ(ans, bfs);
+    EXPECT_EQ(findOrderBfs1(numCourses, prerequisites), ans);
 }
+
 
 TEST(case_2,content)
 {
@@ -21,6 +23,7 @@ TEST(case_2,content)
     std::vector<int> ans = {0, 1, 2, 3};
     EXPECT_EQ(ans, res);
     EXPECT_EQ(ans, bfs);
+    // EXPECT_EQ(findOrderBfs1(numCourses, prerequisites), ans);
 }
 
 
@@ -33,6 +36,7 @@ TEST(case_3,content)
     std::vector<int> ans = {0};
     EXPECT_EQ(ans, res);
     EXPECT_EQ(ans, bfs);
+    EXPECT_EQ(findOrderBfs1(numCourses, prerequisites), ans);
 }
 
 int main(int argc, char* argv[])

@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
@@ -33,3 +34,5 @@ ListNode * revertList(ListNode * pList);
 ListNode * revertListNewList(ListNode * pList);
 bool ListValEqual(ListNode * pLista, ListNode * pListb);
 void printList(ListNode * pLista);
+size_t getLinkLen(ListNode * pList);
+void createIntersection(const std::vector<int> & vecAHead,  const std::vector<int> & vecBHead, const std::vector<int> & vecSection, ListNode * &aHead, ListNode * &bHead);

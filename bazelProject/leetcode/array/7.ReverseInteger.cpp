@@ -19,3 +19,18 @@ int reverse(int x)
 
     return res;
 }
+
+
+
+int reverse1(int x) {
+    int ans = 0;
+    while(x) {
+        int remain = x % 10;
+        if(ans < INT_MIN / 10 || (ans == INT_MIN / 10 && remain > 8) || ans > INT_MAX / 10 || (ans == INT_MAX / 10 && remain > 7)) {
+            return 0;
+        }
+        x /= 10;
+        ans = ans * 10 + remain;
+    }
+    return ans;
+}

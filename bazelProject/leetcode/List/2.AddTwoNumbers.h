@@ -1,3 +1,4 @@
 #include "linkcomm.h"
 
-ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+ListNode* addTwoNumbers1(ListNode* l1, ListNode* l2);
+ListNode* addTwoNumbers2(ListNode* l1, ListNode* l2);

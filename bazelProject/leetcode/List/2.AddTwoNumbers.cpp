@@ -55,3 +55,47 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 
     return pListHead;
 }
+
+
+
+
+ListNode* addTwoNumbers2(ListNode* l1, ListNode* l2) {
+    ListNode* tmp1 = l1, * tmp2 = l2;
+    while(tmp1 && tmp2) {
+        tmp1 = tmp1->next;
+        tmp2 = tmp2->next;
+    }
+
+    ListNode* pLong = tmp1 ? l1 : l2;
+    ListNode* pShort = tmp1 ? l2 : l1;
+    ListNode* pre = pLong;
+    tmp1 = pLong, tmp2 = pShort;
+    int carry = 0, sum = 0;
+    while(tmp1 &&  tmp2) {
+        sum = tmp1->val + tmp2->val + carry;
+        tmp1->val = sum % 10;
+        carry = sum / 10;
+
+        pre = tmp1;
+        tmp1 = tmp1->next;
+        tmp2 = tmp2->next;
+    }
+
+    while(tmp1 && carry) {
+        pre = tmp1;
+        sum = tmp1->val + carry;
+        tmp1->val = sum % 10;
+        carry = sum / 10;
+        tmp1 = tmp1->next;
+    }
+
+    if(carry) {
+        pre->next = new ListNode(carry);
+    }
+
+    if(pLong == nullptr) {
+        return new ListNode(0);
+    }
+
+    return pLong;
+}

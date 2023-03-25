@@ -4,36 +4,43 @@
 TEST(case_1,content)
 {
     EXPECT_EQ(reverse(1), 1);
+    EXPECT_EQ(reverse1(1), 1);
 }
 
 TEST(case_2,content)
 {
     EXPECT_EQ(reverse(-1), -1);
+    EXPECT_EQ(reverse1(1), 1);
 }
 
 TEST(case_3,content)
 {
     EXPECT_EQ(reverse(-123), -321);
+    EXPECT_EQ(reverse1(-123), -321);
 }
 
 TEST(case_4,content)
 {
     EXPECT_EQ(reverse(123), 321);
+    EXPECT_EQ(reverse1(123), 321);
 }
 
 TEST(case_5,content)
 {
     EXPECT_EQ(reverse(120), 21);
+    EXPECT_EQ(reverse1(120), 21);
 }
 
 TEST(case_6,content)
 {
     EXPECT_EQ(reverse(-1231231239), 0);
+    EXPECT_EQ(reverse1(-1231231239), 0);
 }
 
 TEST(case_7,content)
 {
     EXPECT_EQ(reverse(1231231239), 0);
+    EXPECT_EQ(reverse1(1231231239), 0);
 }
 
 int main(int argc, char* argv[])

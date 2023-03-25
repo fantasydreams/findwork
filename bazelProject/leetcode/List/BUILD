@@ -203,3 +203,20 @@ cc_binary(
 	deps  = ["148SortList",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "138CopyListwithRandomPointer",
+	hdrs = ["138.CopyListwithRandomPointer.h"],
+	srcs = ["138.CopyListwithRandomPointer.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "138CopyListwithRandomPointerTest",
+	srcs  = ["138.CopyListwithRandomPointerTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["138CopyListwithRandomPointer",
+			 "@googletest//:gtest_main"],
+)

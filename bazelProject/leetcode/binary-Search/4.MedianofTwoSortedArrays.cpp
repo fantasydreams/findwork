@@ -73,9 +73,42 @@ double findMedianSortedArrays1(vector<int>& nums1, vector<int>& nums2)
 
 
 
+double findMedianSortedArrays2(vector<int>& nums1, vector<int>& nums2, int n1s, int n2s, int idx) {
+    if(n1s >= nums1.size()) {
+        return nums2[n2s + idx - 1];
+    }
+    if(n2s >= nums2.size()) {
+        return nums1[n1s + idx - 1];
+    }
+    if(idx == 1) { //因为索引从1开始，所以为1的时候要直接返回当前的最小值
+        return std::min(nums1[n1s], nums2[n2s]);
+    }
+
+    int step = (idx >> 1) - 1; //>> 运算符比算数运算符的优先级要低
+    int num1 = n1s + step >= nums1.size() ? INT_MAX : nums1[n1s + step];
+    int num2 = n2s + step >= nums2.size() ? INT_MAX : nums2[n2s + step];
+    if(num1 < num2) { //过滤掉一半
+        return findMedianSortedArrays2(nums1, nums2, n1s + step + 1, n2s, idx - (idx >> 1));
+    }else {
+        return findMedianSortedArrays2(nums1, nums2, n1s, n2s + step + 1, idx - (idx >> 1));
+    }
+
+}
 
 
+double findMedianSortedArrays2(vector<int>& nums1, vector<int>& nums2) {
+    int total = nums1.size() + nums2.size();
+    if(total == 0) {
+        return -1;//找不到
+    }
 
+    if(total & 0x1) {
+        return findMedianSortedArrays2(nums1, nums2, 0, 0, (total >> 1) + 1); //注意右移运算符比算数运算符优先级低
+    }else {
+        return ((double)findMedianSortedArrays2(nums1, nums2, 0, 0, (total >> 1) + 1) + 
+                (double)findMedianSortedArrays2(nums1, nums2, 0, 0, (total >> 1))) / 2;
+    }
+}
 
 
 

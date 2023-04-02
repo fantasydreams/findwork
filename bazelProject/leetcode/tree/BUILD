@@ -536,3 +536,21 @@ cc_binary(
 	deps  = ["450DeleteNodeinaBST",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name  = "662MaximumWidthofBinaryTree",
+    hdrs  = ["662.MaximumWidthofBinaryTree.h"], 
+	srcs  = ["662.MaximumWidthofBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "662MaximumWidthofBinaryTreeTest",
+	srcs  = ["662.MaximumWidthofBinaryTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["662MaximumWidthofBinaryTree",
+			 "@googletest//:gtest_main"],
+)

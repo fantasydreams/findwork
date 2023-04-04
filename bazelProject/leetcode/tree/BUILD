@@ -570,3 +570,20 @@ cc_binary(
 	deps  = ["98ValidateBinarySearchTree",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "958CheckCompletenessofaBinaryTree",
+    hdrs  = ["958.CheckCompletenessofaBinaryTree.h"], 
+	srcs  = ["958.CheckCompletenessofaBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "958CheckCompletenessofaBinaryTreeTest",
+	srcs  = ["958.CheckCompletenessofaBinaryTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["958CheckCompletenessofaBinaryTree",
+			 "@googletest//:gtest_main"],
+)

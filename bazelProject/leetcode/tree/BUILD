@@ -554,3 +554,19 @@ cc_binary(
 	deps  = ["662MaximumWidthofBinaryTree",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "98ValidateBinarySearchTree",
+    hdrs  = ["98.ValidateBinarySearchTree.h"], 
+	srcs  = ["98.ValidateBinarySearchTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "98ValidateBinarySearchTreeTest",
+	srcs  = ["98.ValidateBinarySearchTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["98ValidateBinarySearchTree",
+			 "@googletest//:gtest_main"],
+)

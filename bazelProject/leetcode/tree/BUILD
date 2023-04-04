@@ -587,3 +587,21 @@ cc_binary(
 	deps  = ["958CheckCompletenessofaBinaryTree",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name  = "222CountCompleteTreeNodes",
+    hdrs  = ["222.CountCompleteTreeNodes.h"], 
+	srcs  = ["222.CountCompleteTreeNodes.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "222CountCompleteTreeNodesTest",
+	srcs  = ["222.CountCompleteTreeNodesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["222CountCompleteTreeNodes",
+			 "@googletest//:gtest_main"],
+)

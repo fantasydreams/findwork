@@ -6,6 +6,7 @@ TEST(case_1,content)
     TreeNode * root = nullptr;
     bool ans = true;
     EXPECT_EQ(isCompleteTree(root), ans);
+    EXPECT_EQ(isCompleteTree1(root), ans);
 }
 
 
@@ -16,6 +17,7 @@ TEST(case_2,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     bool ans = false;
     EXPECT_EQ(isCompleteTree(root), ans);
+    EXPECT_EQ(isCompleteTree1(root), ans);
     FreeTree(root);
 }
 
@@ -37,6 +39,7 @@ TEST(case_4,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     bool ans = true;
     EXPECT_EQ(isCompleteTree(root), ans);
+    EXPECT_EQ(isCompleteTree1(root), ans);
     FreeTree(root);
 }
 
@@ -47,6 +50,7 @@ TEST(case_5,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     bool ans = true;
     EXPECT_EQ(isCompleteTree(root), ans);
+    EXPECT_EQ(isCompleteTree1(root), ans);
     FreeTree(root);
 }
 
@@ -57,6 +61,7 @@ TEST(case_6,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     bool ans = true;
     EXPECT_EQ(isCompleteTree(root), ans);
+    EXPECT_EQ(isCompleteTree1(root), ans);
     FreeTree(root);
 }
 
@@ -67,5 +72,6 @@ TEST(case_7,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     bool ans = false;
     EXPECT_EQ(isCompleteTree(root), ans);
+    EXPECT_EQ(isCompleteTree1(root), ans);
     FreeTree(root);
 }

@@ -154,3 +154,20 @@ double findMedianSortedArraysBinarySearchNotRecursion(const vector<int>& nums1, 
     }
     return 0;
 }
+
+
+double findMedianSortedArraysBinarySearchNotRecursion1(const vector<int>& nums1, const vector<int>& nums2) 
+{
+    size_t iLen = nums1.size() + nums2.size();
+    if(nums1.size() < nums2.size()) {
+        swap(nums1, nums2);
+    }
+
+    size_t kth = (iLen >> 1);
+    size_t idx1 = 0, idx2 = 0, step;
+    while(kth) {
+        step = kTh >> 1;
+        
+    }
+
+}

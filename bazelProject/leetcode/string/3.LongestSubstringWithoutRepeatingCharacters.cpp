@@ -89,3 +89,36 @@ int lengthOfLongestSubstringWithSet1(std::string s)
 
     return maxLen;
 }
+
+int lengthOfLongestSubstringWithBitMap(std::string s) {
+    std::vector<bool> bitmap(256, false);
+    int iLeft = 0, iRight = 0, ans = 0;
+    while(iRight < s.size()) {
+        if(bitmap[s[iRight]] == true) {
+            bitmap[s[iLeft]] = false;
+            ++iLeft;
+        }else {
+            bitmap[s[iRight]] = true;
+            ans = std::max(ans, iRight - iLeft + 1);
+            ++iRight;
+        }
+    }
+
+    return ans;
+}
+
+int lengthOfLongestSubstringWithWindow(std::string s) {
+    int iLeft = 0, iRight = 0, ans = 0;
+    std::vector<int> freq(256, 0);
+    while(iRight < s.size()) {
+        if(freq[s[iRight]] == 0) {
+            ++freq[s[iRight]];
+            ++iRight;
+            ans = std::max(ans, iRight - iLeft);
+        }else {
+            --freq[s[iLeft]];
+            ++iLeft;
+        }
+    }
+    return ans;
+}

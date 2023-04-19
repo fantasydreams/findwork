@@ -7,6 +7,7 @@ TEST(case_1,content)
     int res = 3;
     EXPECT_EQ(romanToInt(sroman), res);
     EXPECT_EQ(romanToInt1(sroman), res);
+    EXPECT_EQ(romanToInt2(sroman), res);
 }
 
 TEST(case_2,content)
@@ -15,6 +16,7 @@ TEST(case_2,content)
     int res = 58;
     EXPECT_EQ(romanToInt(sroman), res);
     EXPECT_EQ(romanToInt1(sroman), res);
+    EXPECT_EQ(romanToInt2(sroman), res);
 }
 
 
@@ -24,6 +26,7 @@ TEST(case_3,content)
     int res = 1994;
     EXPECT_EQ(romanToInt(sroman), res);
     EXPECT_EQ(romanToInt1(sroman), res);
+    EXPECT_EQ(romanToInt2(sroman), res);
 }
 
 

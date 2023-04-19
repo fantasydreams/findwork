@@ -536,3 +536,72 @@ cc_binary(
 	deps  = ["450DeleteNodeinaBST",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name  = "662MaximumWidthofBinaryTree",
+    hdrs  = ["662.MaximumWidthofBinaryTree.h"], 
+	srcs  = ["662.MaximumWidthofBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "662MaximumWidthofBinaryTreeTest",
+	srcs  = ["662.MaximumWidthofBinaryTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["662MaximumWidthofBinaryTree",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name  = "98ValidateBinarySearchTree",
+    hdrs  = ["98.ValidateBinarySearchTree.h"], 
+	srcs  = ["98.ValidateBinarySearchTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "98ValidateBinarySearchTreeTest",
+	srcs  = ["98.ValidateBinarySearchTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["98ValidateBinarySearchTree",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name  = "958CheckCompletenessofaBinaryTree",
+    hdrs  = ["958.CheckCompletenessofaBinaryTree.h"], 
+	srcs  = ["958.CheckCompletenessofaBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "958CheckCompletenessofaBinaryTreeTest",
+	srcs  = ["958.CheckCompletenessofaBinaryTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["958CheckCompletenessofaBinaryTree",
+			 "@googletest//:gtest_main"],
+)
+
+
+
+cc_library(
+	name  = "222CountCompleteTreeNodes",
+    hdrs  = ["222.CountCompleteTreeNodes.h"], 
+	srcs  = ["222.CountCompleteTreeNodes.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "222CountCompleteTreeNodesTest",
+	srcs  = ["222.CountCompleteTreeNodesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["222CountCompleteTreeNodes",
+			 "@googletest//:gtest_main"],
+)

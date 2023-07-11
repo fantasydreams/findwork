@@ -42,3 +42,46 @@ bool isPalindrome(ListNode* head) {
 
     return true;
 }
+
+
+bool isPalindrome1(ListNode* head) {
+        if(head == nullptr) {
+            return true;
+        } 
+
+        ListNode* pFast = head, * pSlow = head;
+        ListNode* pPre;
+        while(pSlow) {
+            pPre = pFast;
+            pFast = pFast->next;
+            pSlow = pSlow->next;
+            if(pSlow) {
+                pSlow = pSlow->next;
+            }
+        }
+
+        ListNode* pNode = nullptr;
+        while(pFast) {
+            ListNode* tmp = pFast;
+            pFast = pFast->next;
+            tmp->next = pNode;
+            pNode = tmp;
+        }
+        pPre->next = pNode;
+
+        // printList(head);
+        // if(pNode) {
+        //     printf("mid start %d\n", pNode->val);
+        // }
+
+        ListNode* pLink = head;
+        while(pNode) {
+            if(pLink->val != pNode->val) {
+                return false;
+            }
+            pNode = pNode->next;
+            pLink = pLink->next;
+        }
+
+        return true;
+    }

@@ -1,3 +1,17 @@
+cc_library(
+	name = "bytedance_balljump",
+	hdrs = ["bytedance.balljump.h"],
+	srcs = ["bytedance.balljump.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "bytedanceballjumpTest",
+	srcs  = ["bytedance.balljumpTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["bytedance_balljump",
+			 "@googletest//:gtest_main"],
+)
 
 
 cc_library(

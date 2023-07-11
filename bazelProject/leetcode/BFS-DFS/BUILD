@@ -13,6 +13,20 @@ cc_binary(
 )
 
 cc_library(
+	name = "17LetterCombinationsofaPhoneNumber",
+	hdrs = ["17.LetterCombinationsofaPhoneNumber.h"],
+	srcs = ["17.LetterCombinationsofaPhoneNumber.cpp"]
+)
+
+cc_binary(
+	name  = "17LetterCombinationsofaPhoneNumberTest",
+	srcs  = ["17.LetterCombinationsofaPhoneNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["17LetterCombinationsofaPhoneNumber",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
 	name = "547NumberofProvinces",
 	hdrs = ["547.NumberofProvinces.h"],
 	srcs = ["547.NumberofProvinces.cpp"]

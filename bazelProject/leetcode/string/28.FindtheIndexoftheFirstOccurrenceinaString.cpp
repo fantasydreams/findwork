@@ -19,6 +19,8 @@ void getNextArr(const std::string & s, vector<int> & vecNext) {
     }
 }
 
+
+// kmp算法
 int strStr(string haystack, string needle) {
     vector<int> vecNext;
     getNextArr(needle, vecNext);

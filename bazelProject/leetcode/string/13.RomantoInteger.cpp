@@ -31,6 +31,34 @@ int romanToInt(std::string s)
 }
 
 
+int romanToInt2(std::string s)
+{
+    std::map<char, int> rmap = {
+        {'I',1},
+        {'V',5},
+        {'X',10},
+        {'L',50},
+        {'C',100},
+        {'D',500},
+        {'M',1000},
+    };
+
+    int pre = INT_MIN;
+    int res = 0;
+    for(int i = s.size() - 1; i >= 0; --i) {
+        int neg = 1;
+        if(pre > rmap[s[i]]){
+            neg = -1;
+        }
+        res += neg * rmap[s[i]];
+        pre = rmap[s[i]];
+    }
+
+    return res;
+}
+
+
+
 int char2int(char c)
 {
     switch(c){

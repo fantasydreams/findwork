@@ -9,6 +9,8 @@ TEST(case_1,content)
     EXPECT_EQ(lengthOfLongestSubstring(str), 3);
     EXPECT_EQ(lengthOfLongestSubstringWithSet(str), 3);
     EXPECT_EQ(lengthOfLongestSubstringWithSet1(str), 3);
+    EXPECT_EQ(lengthOfLongestSubstringWithBitMap(str), 3);
+    EXPECT_EQ(lengthOfLongestSubstringWithWindow(str), 3);
 }
 
 //空串
@@ -18,6 +20,8 @@ TEST(case_2,content)
     EXPECT_EQ(lengthOfLongestSubstring(str), 0);
     EXPECT_EQ(lengthOfLongestSubstringWithSet(str), 0);
     EXPECT_EQ(lengthOfLongestSubstringWithSet1(str), 0);
+    EXPECT_EQ(lengthOfLongestSubstringWithBitMap(str), 0);
+    EXPECT_EQ(lengthOfLongestSubstringWithWindow(str), 0);
 }
 
 // repeat
@@ -27,6 +31,8 @@ TEST(case_3,content)
     EXPECT_EQ(lengthOfLongestSubstring(str), 1);
     EXPECT_EQ(lengthOfLongestSubstringWithSet(str), 1);
     EXPECT_EQ(lengthOfLongestSubstringWithSet1(str), 1);
+    EXPECT_EQ(lengthOfLongestSubstringWithBitMap(str), 1);
+    EXPECT_EQ(lengthOfLongestSubstringWithWindow(str), 1);
 }
 
 //waaaaaw
@@ -36,6 +42,8 @@ TEST(case_4,content)
     EXPECT_EQ(lengthOfLongestSubstring(str), 2);
     EXPECT_EQ(lengthOfLongestSubstringWithSet(str), 2);
     EXPECT_EQ(lengthOfLongestSubstringWithSet1(str), 2);
+    EXPECT_EQ(lengthOfLongestSubstringWithBitMap(str), 2);
+    EXPECT_EQ(lengthOfLongestSubstringWithWindow(str), 2);
 }
 
 //pwwkew
@@ -45,6 +53,8 @@ TEST(case_5,content)
     EXPECT_EQ(lengthOfLongestSubstring(str), 3);
     EXPECT_EQ(lengthOfLongestSubstringWithSet(str), 3);
     EXPECT_EQ(lengthOfLongestSubstringWithSet1(str), 3);
+    EXPECT_EQ(lengthOfLongestSubstringWithBitMap(str), 3);
+    EXPECT_EQ(lengthOfLongestSubstringWithWindow(str), 3);
 }
 
 //"dvdf"
@@ -54,6 +64,8 @@ TEST(case_6,content)
     EXPECT_EQ(lengthOfLongestSubstring(str), 3);
     EXPECT_EQ(lengthOfLongestSubstringWithSet(str), 3);
     EXPECT_EQ(lengthOfLongestSubstringWithSet1(str), 3);
+    EXPECT_EQ(lengthOfLongestSubstringWithBitMap(str), 3);
+    EXPECT_EQ(lengthOfLongestSubstringWithWindow(str), 3);
 }
 
 
@@ -65,6 +77,8 @@ TEST(case_7,content)
     EXPECT_EQ(lengthOfLongestSubstring(str), 5);
     EXPECT_EQ(lengthOfLongestSubstringWithSet(str), 5);
     EXPECT_EQ(lengthOfLongestSubstringWithSet1(str), 5);
+    EXPECT_EQ(lengthOfLongestSubstringWithBitMap(str), 5);
+    EXPECT_EQ(lengthOfLongestSubstringWithWindow(str), 5);
 }
 
 int main(int argc, char* argv[])

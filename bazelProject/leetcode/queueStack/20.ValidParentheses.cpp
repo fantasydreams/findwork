@@ -26,3 +26,27 @@ bool isValid(string s) {
 
     return st.empty();
 }
+
+
+bool isValid1(string s)
+{
+    static map<char, char> chMap = {
+        {')', '('},
+        {']', '['},
+        {'}', '{'}
+    };
+
+    stack<char> st;
+    for(const auto& ch : s) {
+        auto pIter = chMap.find(ch);
+        if(pIter == chMap.end()) {
+            st.push(ch);
+        }else {
+            if(st.empty() || pIter->second != st.top()) {
+                return false;
+            }
+            st.pop();
+        }
+    }
+    return st.empty();
+}

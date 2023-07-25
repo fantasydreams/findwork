@@ -55,3 +55,57 @@ TEST(case_4,content)
     freeLinkList(pswap);
     freeLinkList(pans);
 }
+
+
+TEST(case_5,content)
+{
+    std::vector<int> a = {2,3,4}, ans = {3,2,4};
+    ListNode * pa = createLinkList(a);
+    ListNode * pans = createLinkList(ans);
+    
+    ListNode * pswap = swapPairs1(pa);
+    // printList(pswap);
+    EXPECT_EQ(ListValEqual(pswap, pans), true);
+    freeLinkList(pswap);
+    freeLinkList(pans);
+}
+
+
+TEST(case_6,content)
+{
+    std::vector<int> a = {2,3,4,5}, ans = {3,2,5,4};
+    ListNode * pa = createLinkList(a);
+    ListNode * pans = createLinkList(ans);
+    
+    ListNode * pswap = swapPairs1(pa);
+    // printList(pswap);
+    EXPECT_EQ(ListValEqual(pswap, pans), true);
+    freeLinkList(pswap);
+    freeLinkList(pans);
+}
+
+TEST(case_7,content)
+{
+    std::vector<int> a = {2}, ans = {2};
+    ListNode * pa = createLinkList(a);
+    ListNode * pans = createLinkList(ans);
+    
+    ListNode * pswap = swapPairs1(pa);
+    // printList(pswap);
+    EXPECT_EQ(ListValEqual(pswap, pans), true);
+    freeLinkList(pswap);
+    freeLinkList(pans);
+}
+
+TEST(case_8,content)
+{
+    std::vector<int> a = {2}, ans = {2};
+    ListNode * pa = nullptr;
+    ListNode * pans = nullptr;
+    
+    ListNode * pswap = swapPairs1(pa);
+    // printList(pswap);
+    EXPECT_EQ(ListValEqual(pswap, pans), true);
+    freeLinkList(pswap);
+    freeLinkList(pans);
+}

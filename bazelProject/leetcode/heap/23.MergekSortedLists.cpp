@@ -28,3 +28,33 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
 
     return head.next;
 }
+
+
+struct cmp{
+    bool operator()(const ListNode* a, const ListNode*b) {
+        return a->val > b->val;
+    }
+};
+
+
+ListNode* mergeKLists1(vector<ListNode*>& lists) {
+    ListNode oHead, *pTmp = &oHead;
+    priority_queue<ListNode*, std::vector<ListNode*>, cmp> oPriorityQue;
+    for(auto pPtr : lists) {
+        if(pPtr != nullptr) {
+            oPriorityQue.push(pPtr);
+        }
+    }
+
+    while(!oPriorityQue.empty()) {
+        ListNode* pNode = oPriorityQue.top();
+        oPriorityQue.pop();
+        pTmp->next = pNode;
+        pTmp = pNode;
+        if(pNode->next) {
+            oPriorityQue.push(pNode->next);
+        }
+    }
+
+    return oHead.next;
+}

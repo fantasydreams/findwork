@@ -19,3 +19,20 @@ TEST(case_1,content)
     bool ans = true;
     EXPECT_EQ(ListValEqual(listc, listAns), ans);
 }
+
+
+TEST(case_2,content)
+{
+    std::vector<int> a = {2,3,3,6};
+    std::vector<int> b = {1,2,7,9};
+    std::vector<int> c = {1,2,2,3,3,6,7,9};
+	ListNode * lista = createLinkList(a);
+    ListNode * listb = createLinkList(b);
+    ListNode * listc = createLinkList(c);
+    
+    vector<ListNode*> lists = {lista, listb};
+    ListNode * listAns = mergeKLists1(lists);
+    printList(listAns);
+    bool ans = true;
+    EXPECT_EQ(ListValEqual(listc, listAns), ans);
+}

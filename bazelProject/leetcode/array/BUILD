@@ -13,6 +13,36 @@ cc_binary(
 )
 
 cc_library(
+	name = "26RemoveDuplicatesfromSortedArray",
+	hdrs = ["26.RemoveDuplicatesfromSortedArray.h"],
+	srcs = ["26.RemoveDuplicatesfromSortedArray.cpp"]
+)
+
+cc_binary(
+	name  = "26RemoveDuplicatesfromSortedArrayTest",
+	srcs  = ["26.RemoveDuplicatesfromSortedArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["26RemoveDuplicatesfromSortedArray",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "27RemoveElement",
+	hdrs = ["27.RemoveElement.h"],
+	srcs = ["27.RemoveElement.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "27RemoveElementTest",
+	srcs  = ["27.RemoveElementTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["27RemoveElement",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
 	name = "Median",
 	hdrs = ["arraycomm.h",
 			"4.MedianOfTwoSortedArrays.h",

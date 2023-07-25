@@ -3,11 +3,18 @@ export LSCOLORS=CxfxcxdxbxegedabagGxGx
 autoload -U colors && colors
 PROMPT="%{$fg_bold[cyan]%}%n%{$reset_color%}@%{$fg_bold[cyan]%}%m %{$fg_bold[green]%}%1~ %{$reset_color%}%#"
 
-
-alias ll="ls -all"
-alias bb="bazel build"
-alias ..="cd .."
-alias ...="cd ../.."
+alias terr='tail -f ~/log/error/$(date +%Y%m%d%H).log'
+alias toss='tail -f ~/log/oss/$(date +%Y%m%d%H).log'
+alias grep="grep --color"
 alias repo="cd ~/Desktop/Repository/"
 alias lecode="cd ~/Desktop/Repository/findwork/bazelProject/leetcode"
 alias bbin="cd ~/Desktop/Repository/findwork/bazelProject/leetcode/bazel-bin"
+alias ..='cd ..'
+alias ll='ls -alF'
+alias la='ls -aF'
+alias gp='git push'
+alias gpl='git pull'
+alias gc='git checkout'
+alias gba='git branch -a'
+alias gm='git commit -m'
+alias gcp='git cherry-pick'

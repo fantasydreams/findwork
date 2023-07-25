@@ -40,3 +40,10 @@ int strStr(string haystack, string needle) {
     
     return -1;
 }
+
+
+int strStr1(string haystack, string needle) {
+    // int idx = haystack.find_first_of(needle);
+    int idx = haystack.find(needle); // 需要注意的是 find和find_first_of， find_first_of(const char* ptr) 只要ptr中任意字符在原串中出现就返回那个字符在原串中的位置
+    return idx;
+}

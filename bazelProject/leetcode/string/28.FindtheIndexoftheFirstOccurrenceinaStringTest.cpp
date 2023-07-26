@@ -8,6 +8,7 @@ TEST(case_1,content)
     int ans = 0;
     EXPECT_EQ(strStr(haystack, needle), ans);
     EXPECT_EQ(strStr1(haystack, needle), ans); 
+    EXPECT_EQ(strKmp(haystack, needle), ans);
 }
 
 TEST(case_2,content)
@@ -16,6 +17,7 @@ TEST(case_2,content)
     int ans = -1;
     EXPECT_EQ(strStr(haystack, needle), ans);
     EXPECT_EQ(strStr1(haystack, needle), ans); 
+    EXPECT_EQ(strKmp(haystack, needle), ans);
 }
 
 TEST(case_3,content)
@@ -24,6 +26,7 @@ TEST(case_3,content)
     int ans = 4;
     EXPECT_EQ(strStr(haystack, needle), ans);
     EXPECT_EQ(strStr1(haystack, needle), ans); 
+    EXPECT_EQ(strKmp(haystack, needle), ans);
 }
 
 TEST(case_4,content)
@@ -32,4 +35,5 @@ TEST(case_4,content)
     int ans = 1;
     EXPECT_EQ(strStr(haystack, needle), ans);
     EXPECT_EQ(strStr1(haystack, needle), ans); 
+    EXPECT_EQ(strKmp(haystack, needle), ans);
 }

@@ -58,7 +58,7 @@ int strKmp(string haystack, string needle) {
     std::vector<int> vecNext(needle.size(), 0);
     vecNext[0] = -1;
     int i = 0, j = -1;
-    while(i < needle.size() - 1) { // 这里要注意一定是i < needle.size() - 1
+    while(i < needle.size() - 1) { // 这里要注意一定是i < needle.size() - 1, 不然会core
         if(j == -1 || needle[j] == needle[i]) {
             ++i;
             ++j;

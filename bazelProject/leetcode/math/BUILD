@@ -29,6 +29,21 @@ cc_binary(
 			 "@googletest//:gtest_main"],
 )
 
+cc_library(
+	name = "29DivideTwoIntegers",
+	hdrs = ["29.DivideTwoIntegers.h"],
+	srcs = ["29.DivideTwoIntegers.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "29DivideTwoIntegersTest",
+	srcs  = ["29.DivideTwoIntegersTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["29DivideTwoIntegers",
+			 "@googletest//:gtest_main"],
+)
+
 
 cc_library(
 	name = "1015SmallestIntegerDivisiblebyK",

@@ -83,3 +83,49 @@ int strKmp(string haystack, string needle) {
     }
     return -1;
 }
+
+
+// kmp 20230805
+void getNextVec(std::string& str, std::vector<int>& vecNext) {
+    vecNext.resize(str.size());
+    if(str.empty()) {
+        return;
+        vecNext.clear();
+    }
+
+    vecNext[0] = -1;
+    int j = -1;
+    for(int i = 0; i < str.size(); ++i) {
+        if(j == -1 || str[i] == str[j]) {
+            ++j;
+            ++i;
+            vecNext[i] = j;
+        }else {
+            j = vecNext[j];
+        }
+    }
+}
+
+int strKmp1(string haystack, string needle) {
+    if(needle.empty() || haystack.empty()) {
+        return -1;
+    }
+
+    std::vector<int> vecNext;
+    getNextArr(needle, vecNext);
+    int i = 0, j = 0;
+    while(i < haystack.size()) {
+        if(j == -1 || haystack[i] == needle[j]) {
+            if(j == needle.size() - 1) {
+                return i - j;
+            }
+
+            ++i;
+            ++j;
+        }else {
+            j = vecNext[j];
+        }
+    }
+
+    return -1;
+}

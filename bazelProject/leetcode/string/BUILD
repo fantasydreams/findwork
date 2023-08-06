@@ -257,3 +257,18 @@ cc_binary(
 	deps  = ["30SubstringwithConcatenationofAllWords",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "31NextPermutation",
+	hdrs = ["31.NextPermutation.h"],
+	srcs = ["31.NextPermutation.cpp"]
+)
+
+
+cc_binary(
+	name  = "31NextPermutationTest",
+	srcs  = ["31.NextPermutationTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["31NextPermutation",
+			 "@googletest//:gtest_main"],
+)

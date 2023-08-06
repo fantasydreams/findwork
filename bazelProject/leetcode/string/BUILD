@@ -242,3 +242,18 @@ cc_binary(
 	deps  = ["28FindtheIndexoftheFirstOccurrenceinaString",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "30SubstringwithConcatenationofAllWords",
+	hdrs = ["30.SubstringwithConcatenationofAllWords.h"],
+	srcs = ["30.SubstringwithConcatenationofAllWords.cpp"]
+)
+
+
+cc_binary(
+	name  = "30SubstringwithConcatenationofAllWordsTest",
+	srcs  = ["30.SubstringwithConcatenationofAllWordsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["30SubstringwithConcatenationofAllWords",
+			 "@googletest//:gtest_main"],
+)

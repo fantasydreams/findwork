@@ -230,3 +230,18 @@ cc_binary(
 	deps  = ["566ReshapetheMatrix",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "33SearchinRotatedSortedArray",
+	hdrs = ["33.SearchinRotatedSortedArray.h"],
+	srcs = ["33.SearchinRotatedSortedArray.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "33SearchinRotatedSortedArrayTest",
+	srcs  = ["33.SearchinRotatedSortedArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["33SearchinRotatedSortedArray",
+			 "@googletest//:gtest_main"],
+)

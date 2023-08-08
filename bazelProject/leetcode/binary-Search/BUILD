@@ -82,3 +82,17 @@ cc_binary(
 	deps  = ["4MedianofTwoSortedArrays",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "34FindFirstandLastPositionofElementinSortedArra",
+	hdrs = ["34.FindFirstandLastPositionofElementinSortedArra.h"],
+	srcs = ["34.FindFirstandLastPositionofElementinSortedArra.cpp"]
+)
+
+cc_binary(
+	name  = "34FindFirstandLastPositionofElementinSortedArraTest",
+	srcs  = ["34.FindFirstandLastPositionofElementinSortedArraTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["34FindFirstandLastPositionofElementinSortedArra",
+			 "@googletest//:gtest_main"],
+)

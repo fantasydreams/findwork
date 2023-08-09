@@ -96,3 +96,18 @@ cc_binary(
 	deps  = ["34FindFirstandLastPositionofElementinSortedArra",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "35SearchInsertPosition",
+	hdrs = ["35.SearchInsertPosition.h"],
+	srcs = ["35.SearchInsertPosition.cpp"]
+)
+
+cc_binary(
+	name  = "35SearchInsertPositionTest",
+	srcs  = ["35.SearchInsertPositionTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["35SearchInsertPosition",
+			 "@googletest//:gtest_main"],
+)

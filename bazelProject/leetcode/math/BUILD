@@ -311,3 +311,18 @@ cc_binary(
 	deps  = ["462MinimumMovestoEqualArrayElementsII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "36ValidSudoku",
+	hdrs = ["36.ValidSudoku.h"],
+	srcs = ["36.ValidSudoku.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "36ValidSudokuTest",
+	srcs  = ["36.ValidSudokuTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["36ValidSudoku",
+			 "@googletest//:gtest_main"],
+)

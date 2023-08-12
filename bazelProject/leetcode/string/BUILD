@@ -288,3 +288,19 @@ cc_binary(
 	deps  = ["38CountandSay",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "32longestValidParentheses",
+	hdrs = ["32.LongestValidParentheses.h"],
+	srcs = ["32.LongestValidParentheses.cpp"]
+)
+
+
+cc_binary(
+	name  = "32longestValidParenthesesTest",
+	srcs  = ["32.LongestValidParenthesesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["32longestValidParentheses",
+			 "@googletest//:gtest_main"],
+)

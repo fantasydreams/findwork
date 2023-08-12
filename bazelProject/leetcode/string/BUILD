@@ -272,3 +272,19 @@ cc_binary(
 	deps  = ["31NextPermutation",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "38CountandSay",
+	hdrs = ["38.CountandSay.h"],
+	srcs = ["38.CountandSay.cpp"]
+)
+
+
+cc_binary(
+	name  = "38CountandSayTest",
+	srcs  = ["38.CountandSayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["38CountandSay",
+			 "@googletest//:gtest_main"],
+)

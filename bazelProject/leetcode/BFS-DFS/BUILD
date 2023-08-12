@@ -97,3 +97,18 @@ cc_binary(
 	deps  = ["37SudokuSolver",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "39CombinationSum",
+	hdrs = ["39.CombinationSum.h"],
+	srcs = ["39.CombinationSum.cpp"]
+)
+
+cc_binary(
+	name  = "39CombinationSumTest",
+	srcs  = ["39.CombinationSumTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["39CombinationSum",
+			 "@googletest//:gtest_main"],
+)

@@ -67,3 +67,41 @@ vector<vector<int>> combinationSum2_(vector<int>& candidates, int target) {
     CombinationToTarget(candidates,combination,result,target,0);
     return result;
 }
+
+
+void CombinationToTarget1(vector<int> &candidates,vector<int> &combination,vector<vector<int> > &result, int target,int startIndex){
+    if(target == 0) {
+        result.push_back(combination);
+        return;
+    }
+    // if(target < 0) {
+    //     return;
+    // }
+
+    for(int i = startIndex; i < candidates.size(); ++i) {
+        if(candidates[i] > target){
+            break;
+        }
+
+        if(i != startIndex && candidates[i] == candidates[i - 1]) { // 这里一定要是 candidates[i] == candidates[i - 1], 如果是 candidates[i] == candidates[startIndex], 则会存在一部分不重合的
+            continue;
+        }
+
+        combination.push_back(candidates[i]);
+        CombinationToTarget1(candidates, combination, result, target - candidates[i], i + 1);
+        combination.pop_back();
+    }
+}
+
+
+vector<vector<int> > combinationSum3(vector<int>& candidates, int target) { // 2023/08/13
+    vector<vector<int> > ans;
+    if(candidates.empty()) {
+        return ans;
+    }
+
+    std::sort(candidates.begin(), candidates.end());
+    vector<int> combination;
+    CombinationToTarget1(candidates, combination, ans, target, 0);
+    return ans;
+}

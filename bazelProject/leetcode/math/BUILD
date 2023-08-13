@@ -326,3 +326,19 @@ cc_binary(
 	deps  = ["36ValidSudoku",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "43MultiplyStrings",
+	hdrs = ["43.MultiplyStrings.h"],
+	srcs = ["43.MultiplyStrings.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "43MultiplyStringsTest",
+	srcs  = ["43.MultiplyStringsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["43MultiplyStrings",
+			 "@googletest//:gtest_main"],
+)

@@ -245,3 +245,19 @@ cc_binary(
 	deps  = ["33SearchinRotatedSortedArray",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "41FirstMissingPositive",
+	hdrs = ["41.FirstMissingPositive.h"],
+	srcs = ["41.FirstMissingPositive.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "41FirstMissingPositiveTest",
+	srcs  = ["41.FirstMissingPositiveTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["41FirstMissingPositive",
+			 "@googletest//:gtest_main"],
+)

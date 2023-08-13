@@ -70,3 +70,18 @@ cc_binary(
 	deps  = ["680ValidPalindromeII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "42TrappingRainWater",
+	hdrs = ["42.TrappingRainWater.h"],
+	srcs = ["42.TrappingRainWater.cpp"]
+)
+
+cc_binary(
+	name  = "42TrappingRainWaterTest",
+	srcs  = ["42.TrappingRainWaterTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["42TrappingRainWater",
+			 "@googletest//:gtest_main"],
+)

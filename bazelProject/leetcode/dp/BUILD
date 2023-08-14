@@ -408,3 +408,18 @@ cc_binary(
 	deps  = ["312BurstBalloons",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "44WildcardMatching",
+	hdrs = ["44.WildcardMatching.h"],
+	srcs = ["44.WildcardMatching.cpp"]
+)
+
+
+cc_binary(
+	name  = "44WildcardMatchingTest",
+	srcs  = ["44.WildcardMatchingTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["44WildcardMatching",
+			 "@googletest//:gtest_main"],
+)

@@ -423,3 +423,19 @@ cc_binary(
 	deps  = ["44WildcardMatching",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "45JumpGameII",
+	hdrs = ["45.JumpGameII.h"],
+	srcs = ["45.JumpGameII.cpp"]
+)
+
+
+cc_binary(
+	name  = "45JumpGameIITest",
+	srcs  = ["45.JumpGameIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["45JumpGameII",
+			 "@googletest//:gtest_main"],
+)

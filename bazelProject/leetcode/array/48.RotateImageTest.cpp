@@ -16,7 +16,15 @@ TEST(case_1,content)
     rotate(tmp);
     EXPECT_EQ(tmp, ans);
     tmp = image;
-    rotate(tmp);
+    rotate1(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate2(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate3(tmp);
     EXPECT_EQ(tmp, ans);
 }
 
@@ -36,7 +44,15 @@ TEST(case_2,content)
     rotate(tmp);
     EXPECT_EQ(tmp, ans);
     tmp = image;
-    rotate(tmp);
+    rotate1(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate2(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate3(tmp);
     EXPECT_EQ(tmp, ans);
 }
 
@@ -58,7 +74,15 @@ TEST(case_3,content)
     rotate(tmp);
     EXPECT_EQ(tmp, ans);
     tmp = image;
-    rotate(tmp);
+    rotate1(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate2(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate3(tmp);
     EXPECT_EQ(tmp, ans);
 }
 
@@ -75,6 +99,14 @@ TEST(case_4,content)
     EXPECT_EQ(tmp, ans);
     tmp = image;
     rotate1(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate2(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate3(tmp);
     EXPECT_EQ(tmp, ans);
 }
 
@@ -98,6 +130,14 @@ TEST(case_5,content)
     rotate(tmp);
     EXPECT_EQ(tmp, ans);
     tmp = image;
-    rotate(tmp);
+    rotate1(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate2(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotate3(tmp);
     EXPECT_EQ(tmp, ans);
 }

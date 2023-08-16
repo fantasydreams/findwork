@@ -28,3 +28,33 @@ void rotate1(vector<vector<int>>& matrix)
         }
     }
 }
+
+
+// 上下翻转，然后对称翻转
+void rotate2(vector<vector<int> >& matrix) { // 2023/08/17
+    int i = 0, j = matrix.size() - 1;
+    while(i < j) {
+        swap(matrix[i], matrix[j]);
+        ++i;
+        --j;
+    }
+
+    for(int i = 0; i < matrix.size(); ++i) {
+        for(int j = i + 1; j < matrix.size(); ++j) {
+            swap(matrix[i][j], matrix[j][i]);
+        }
+    }
+}
+
+// 模拟翻转
+void rotate3(vector<vector<int> >& matrix) { // 2023/08/17
+    int size = matrix.size();
+    int torow = size / 2;
+    for(int i = 0; i < torow; ++i) {
+        for(int j = i; j < size - i - 1; ++j) {
+            swap(matrix[i][j], matrix[j][size - i - 1]); // 前后相邻
+            swap(matrix[i][j], matrix[size - i - 1][size - j - 1]); // 前一个交换元素的列就是下一个交换元素的行
+            swap(matrix[i][j], matrix[size - j - 1][i]);
+        }
+    }
+}

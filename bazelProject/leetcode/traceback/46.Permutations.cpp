@@ -1,4 +1,5 @@
 #include "46.Permutations.h"
+#include <vector>
 
 void backtrace(const vector<int> & nums, vector<int> & place, vector<vector<int>> & res, vector<int> & tmp)
 {
@@ -60,4 +61,27 @@ vector<vector<int>> permute1(vector<int>& nums)
     vector<vector<int>> res;
     backtrace1(nums, 0, res);
     return res;
+}
+
+
+void bt(vector<int>& nums, int idx, vector<vector<int> >& ans) {
+    if(idx >= nums.size()) {
+        ans.push_back(nums);
+        return;
+    }
+
+    for(int i = idx ; i < nums.size(); ++i) {
+        swap(nums[idx], nums[i]);
+        bt(nums, idx + 1, ans);
+        swap(nums[idx], nums[i]);
+    }
+}
+
+
+vector<vector<int>> permute2(vector<int>& nums) { // 2023/8/16
+    std::vector<std::vector<int>>  ans;
+
+    bt(nums, 0, ans);
+
+    return ans;
 }

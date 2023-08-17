@@ -22,3 +22,7 @@ CLionProjects/normal/.DS_Store
 leetcode/.DS_Store
 STL笔记/.DS_Store
 .DS_Store
+bazelProject/unixProgram/bazel-bin
+bazelProject/unixProgram/bazel-out
+bazelProject/unixProgram/bazel-testlogs
+bazelProject/unixProgram/bazel-unixProgram

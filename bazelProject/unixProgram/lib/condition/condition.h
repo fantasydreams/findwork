@@ -11,7 +11,7 @@
             err_ret(_fmt.c_str(), _ret, ##__VA_ARGS__);\
             return _ret; \
         }\
-    }\
+    }
 
 #define condi_eq_exit(exp, ret, fmt, ...) \
     {\
@@ -22,6 +22,15 @@
             err_exit(_ret, _fmt.c_str(), _ret, ##__VA_ARGS__);\
             return _ret; \
         }\
-    }\
+    }
+
+#define condition_true(exp, ret, fmt, ...)\
+    {\
+        bool _ret = (exp); \
+        if(!_ret) { \
+            err_ret(fmt, ##__VA_ARGS__);\
+            return ret; \
+        } \
+    }
 
 int argc_condi(int expr, int expect_ret, char * argv[], const std::string & para_tips, bool err_exit);

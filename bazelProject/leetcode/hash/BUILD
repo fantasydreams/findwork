@@ -199,3 +199,19 @@ cc_binary(
 	deps  = ["307RangeSumQueryMutable",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "49GroupAnagrams",
+    hdrs  = ["49.GroupAnagrams.h"], 
+	srcs  = ["49.GroupAnagrams.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "49GroupAnagramsTest",
+	srcs  = ["49.GroupAnagramsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["49GroupAnagrams",
+			 "@googletest//:gtest_main"],
+)

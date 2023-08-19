@@ -342,3 +342,18 @@ cc_binary(
 	deps  = ["43MultiplyStrings",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "50Pow_x_n",
+	hdrs = ["50.Powx.n.h"],
+	srcs = ["50.Powx.n.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "50Pow_x_nTest",
+	srcs  = ["50.Powx.nTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["50Pow_x_n",
+			 "@googletest//:gtest_main"],
+)

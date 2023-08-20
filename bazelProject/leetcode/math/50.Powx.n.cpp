@@ -11,11 +11,11 @@ double myPow(double x, int n) {
     if(n < 0) {
         if(n == INT_MIN) { 
             x = 1.0 / x;
-            // 这一段逻辑是不对的，虽然-INT_MIN比INT_MAX少一，但是 INT_MAX 是奇数，除以2之后又少了1，这里会发生错位
-            // double tmp = myPow(x * x, INT_MAX / 2); 
-            // return tmp * x * x;
+            
+            double tmp = myPow(x * x, INT_MAX / 2); 
+            return tmp * x * x;
 
-            return myPow(x * x, INT_MAX / 2 + 1);
+            // return myPow(x * x, INT_MAX / 2 + 1);
 
             // 保证指数一致就可以
             // 也可以写作

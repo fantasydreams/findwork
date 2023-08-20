@@ -1,0 +1,2 @@
+
+int totalNQueens(int n);

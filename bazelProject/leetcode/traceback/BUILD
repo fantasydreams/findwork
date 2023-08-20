@@ -96,3 +96,17 @@ cc_binary(
 	deps  = ["40CombinationSumII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "52N-QueensII",
+	hdrs = ["52.N-QueensII.h"],
+	srcs = ["52.N-QueensII.cpp"]
+)
+
+cc_binary(
+	name  = "52N-QueensIITest",
+	srcs  = ["52.N-QueensIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["52N-QueensII",
+			 "@googletest//:gtest_main"],
+)

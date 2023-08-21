@@ -46,3 +46,20 @@ int maxSubArray1(vector<int>& nums)
 
     return largesum;
 }
+
+
+int maxSubArray2(vector<int>& nums) { // 2023 / 08 /21
+    int iMax = nums[0]; 
+    int iTmp = 0;
+    for(const auto & iNum : nums) {
+        if(iTmp > 0) {
+            iTmp += iNum;
+        }else {
+            iTmp = iNum;
+        }
+
+        iMax = std::max(iTmp, iMax);
+    }
+
+    return iMax;
+}

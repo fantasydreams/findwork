@@ -261,3 +261,19 @@ cc_binary(
 	deps  = ["41FirstMissingPositive",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "54SpiralMatrix",
+	hdrs = ["54.SpiralMatrix.h"],
+	srcs = ["54.SpiralMatrix.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "54SpiralMatrixTest",
+	srcs  = ["54.SpiralMatrixTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["54SpiralMatrix",
+			 "@googletest//:gtest_main"],
+)

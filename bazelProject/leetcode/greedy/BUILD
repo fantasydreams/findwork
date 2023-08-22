@@ -155,3 +155,17 @@ cc_binary(
 	deps  = ["870AdvantageShuffle",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "55JumpGame",
+	hdrs = ["55.JumpGame.h"],
+	srcs = ["55.JumpGame.cpp"]
+)
+
+cc_binary(
+	name  = "55JumpGameTest",
+	srcs  = ["55.JumpGameTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["55JumpGame",
+			 "@googletest//:gtest_main"],
+)

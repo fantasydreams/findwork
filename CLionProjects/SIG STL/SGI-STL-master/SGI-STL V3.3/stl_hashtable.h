@@ -49,7 +49,7 @@ __STL_BEGIN_NAMESPACE
 template <class _Val>
 struct _Hashtable_node
 {
-  _Hashtable_node* _M_next;
+  _Hashtable_node* _M_next; //拉链法处理冲突
   _Val _M_val;
 };  
 
@@ -157,11 +157,11 @@ static const unsigned long __stl_prime_list[__stl_num_primes] =
   1610612741ul, 3221225473ul, 4294967291ul
 };
 
-inline unsigned long __stl_next_prime(unsigned long __n)
+inline unsigned long __stl_next_prime(unsigned long __n) // 找一个大于或者等于n的素数
 {
   const unsigned long* __first = __stl_prime_list;
   const unsigned long* __last = __stl_prime_list + (int)__stl_num_primes;
-  const unsigned long* pos = lower_bound(__first, __last, __n);
+  const unsigned long* pos = lower_bound(__first, __last, __n); // lower_bound 返回第一个能够插入n的位置 upper_bound事返回最后一个能够插入n的位置
   return pos == __last ? *(__last - 1) : *pos;
 }
 

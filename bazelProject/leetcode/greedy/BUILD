@@ -169,3 +169,17 @@ cc_binary(
 	deps  = ["55JumpGame",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "56MergeIntervals",
+	hdrs = ["56.MergeIntervals.h"],
+	srcs = ["56.MergeIntervals.cpp"]
+)
+
+cc_binary(
+	name  = "56MergeIntervalsTest",
+	srcs  = ["56.MergeIntervalsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["56MergeIntervals",
+			 "@googletest//:gtest_main"],
+)

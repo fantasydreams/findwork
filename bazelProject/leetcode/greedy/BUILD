@@ -187,7 +187,8 @@ cc_binary(
 cc_library(
 	name = "57InsertInterval",
 	hdrs = ["57.InsertInterval.h"],
-	srcs = ["57.InsertInterval.cpp"]
+	srcs = ["57.InsertInterval.cpp"],
+	deps  = ["56MergeIntervals"]
 )
 
 cc_binary(

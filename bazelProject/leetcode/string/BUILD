@@ -304,3 +304,19 @@ cc_binary(
 	deps  = ["32longestValidParentheses",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "58LengthofLastWord",
+	hdrs = ["58.LengthofLastWord.h"],
+	srcs = ["58.LengthofLastWord.cpp"]
+)
+
+
+cc_binary(
+	name  = "58LengthofLastWordTest",
+	srcs  = ["58.LengthofLastWordTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["58LengthofLastWord",
+			 "@googletest//:gtest_main"],
+)

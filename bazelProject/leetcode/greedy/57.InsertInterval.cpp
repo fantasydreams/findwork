@@ -1,4 +1,6 @@
 #include "57.InsertInterval.h"
+#include <algorithm>
+#include <iterator>
 
 vector<vector<int>> insert(vector<vector<int> >& intervals, vector<int>& newInterval) {
     vector<vector<int>> ans;
@@ -7,7 +9,7 @@ vector<vector<int>> insert(vector<vector<int> >& intervals, vector<int>& newInte
         return ans;
     }
 
-    //如果在所有序列之前
+    // 如果在所有序列之前
     if(intervals[0][0] > newInterval[1]) {
         ans = intervals;
         ans.insert(ans.begin(), newInterval);

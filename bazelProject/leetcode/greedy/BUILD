@@ -183,3 +183,17 @@ cc_binary(
 	deps  = ["56MergeIntervals",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "57InsertInterval",
+	hdrs = ["57.InsertInterval.h"],
+	srcs = ["57.InsertInterval.cpp"]
+)
+
+cc_binary(
+	name  = "57InsertIntervalTest",
+	srcs  = ["57.InsertIntervalTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["57InsertInterval",
+			 "@googletest//:gtest_main"],
+)

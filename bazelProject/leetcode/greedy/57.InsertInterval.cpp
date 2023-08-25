@@ -1,6 +1,7 @@
 #include "57.InsertInterval.h"
 #include <algorithm>
 #include <iterator>
+#include "56.MergeIntervals.h"
 
 vector<vector<int>> insert(vector<vector<int> >& intervals, vector<int>& newInterval) {
     vector<vector<int>> ans;
@@ -59,3 +60,11 @@ vector<vector<int>> insert(vector<vector<int> >& intervals, vector<int>& newInte
 
     return ans;
 }
+
+
+// https://leetcode.wang/leetCode-57-Insert-Interval.html 思路启发
+vector<vector<int> > insert1(vector<vector<int> >& intervals, vector<int>& newInterval) {
+    intervals.push_back(newInterval);
+    return merge(intervals);
+}
+

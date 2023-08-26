@@ -277,3 +277,18 @@ cc_binary(
 	deps  = ["54SpiralMatrix",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "59SpiralMatrixII",
+	hdrs = ["59.SpiralMatrixII.h"],
+	srcs = ["59.SpiralMatrixII.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "59SpiralMatrixIITest",
+	srcs  = ["59.SpiralMatrixIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["59SpiralMatrixII",
+			 "@googletest//:gtest_main"],
+)

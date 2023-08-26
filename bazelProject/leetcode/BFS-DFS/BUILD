@@ -112,3 +112,18 @@ cc_binary(
 	deps  = ["39CombinationSum",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "60PermutationSequence",
+	hdrs = ["60.PermutationSequence.h"],
+	srcs = ["60.PermutationSequence.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "60PermutationSequenceTest",
+	srcs  = ["60.PermutationSequenceTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["60PermutationSequence",
+			 "@googletest//:gtest_main"],
+)

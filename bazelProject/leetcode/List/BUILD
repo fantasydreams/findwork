@@ -220,3 +220,19 @@ cc_binary(
 	deps  = ["138CopyListwithRandomPointer",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "61RotateList",
+	hdrs = ["61.RotateList.h"],
+	srcs = ["61.RotateList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "61RotateListTest",
+	srcs  = ["61.RotateListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["61RotateList",
+			 "@googletest//:gtest_main"],
+)

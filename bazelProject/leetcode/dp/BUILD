@@ -439,3 +439,18 @@ cc_binary(
 	deps  = ["45JumpGameII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "62UniquePaths",
+	hdrs = ["62.UniquePaths.h"],
+	srcs = ["62.UniquePaths.cpp"]
+)
+
+
+cc_binary(
+	name  = "62UniquePathsTest",
+	srcs  = ["62.UniquePathsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["62UniquePaths",
+			 "@googletest//:gtest_main"],
+)

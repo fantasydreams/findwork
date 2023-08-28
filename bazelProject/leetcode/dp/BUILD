@@ -454,3 +454,18 @@ cc_binary(
 	deps  = ["62UniquePaths",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "63UniquePathsII",
+	hdrs = ["63.UniquePathsII.h"],
+	srcs = ["63.UniquePathsII.cpp"]
+)
+
+
+cc_binary(
+	name  = "63UniquePathsIITest",
+	srcs  = ["63.UniquePathsIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["63UniquePathsII",
+			 "@googletest//:gtest_main"],
+)

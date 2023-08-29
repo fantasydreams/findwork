@@ -292,3 +292,33 @@ cc_binary(
 	deps  = ["59SpiralMatrixII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "66PlusOne",
+	hdrs = ["66.PlusOne.h"],
+	srcs = ["66.PlusOne.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "66PlusOneTest",
+	srcs  = ["66.PlusOneTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["66PlusOne",
+			 "@googletest//:gtest_main"],
+)
+
+cc_library(
+	name = "67AddBinary",
+	hdrs = ["67.AddBinary.h"],
+	srcs = ["67.AddBinary.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "67AddBinaryTest",
+	srcs  = ["67.AddBinaryTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["67AddBinary",
+			 "@googletest//:gtest_main"],
+)

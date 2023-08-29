@@ -29,6 +29,7 @@ cc_library(
 cc_binary(
     name = "avltree_test",
     srcs = [
+            "avltree_tools.h",
             "avltree_test.cpp",
         ],
     deps = [

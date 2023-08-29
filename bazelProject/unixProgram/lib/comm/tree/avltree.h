@@ -32,36 +32,59 @@ public:
     bool Insert(const Type& value);
     bool Remove(const Type& value);
     const NodePtr Find() const;
-    const AvlTree<Type> GetTree() const {return m_pRoot;};
+    const NodePtr GetTree() const {return m_pRoot;};
+    int GetHeight();
+    bool GetTreeMax(Type&);
+    bool GetTreeMin(Type&);
 private:
     int GetHeight(NodePtr pRoot);
+    void UpdateHeight(NodePtr pRoot);
     int GetBalanceFactor(NodePtr pRoot);
     NodePtr RotateRight(NodePtr);
     NodePtr RotateLeft(NodePtr);
-    AvlTreeNode<Type>* Insert(NodePtrRef pNode, const Type& value, bool& bSucc);
-    AvlTreeNode<Type>* Remove(NodePtrRef pNode, const Type& value, bool& bSucc);
+    bool Insert(NodePtrRef pNode, const Type& value);
+    bool Remove(NodePtrRef pNode, const Type& value);
     const Type& GetTreeMin(NodePtr pNode);
     const Type& GetTreeMax(NodePtr pNode);
 
     AvlTreeNode<Type> * m_pRoot;
 };
 
+template <typename Type> int AvlTree<Type>::GetHeight() {
+    return GetHeight(m_pRoot);
+}
+
+template <typename Type> bool AvlTree<Type>::GetTreeMax(Type& max) {
+    if(m_pRoot == nullptr) {
+        return false;
+    }
+    max = GetTreeMax(m_pRoot);
+    return true;
+}
+
+template <typename Type> bool AvlTree<Type>::GetTreeMin(Type& min) {
+    if(m_pRoot == nullptr) {
+        return false;
+    }
+
+    min = GetTreeMin(m_pRoot);
+    return true;
+}
+
 template <typename Type> bool AvlTree<Type>::Insert(const Type& val) {
-    bool bSucc = false;
-    Insert(m_pRoot, val, bSucc);
-    return bSucc;
+    return Insert(m_pRoot, val);
 }
 
 template <typename Type> bool AvlTree<Type>::Remove(const Type& val) {
-    bool bSucc = false;
-    Remove(m_pRoot, val, bSucc);
-    return bSucc;
+    return Remove(m_pRoot, val);;
 }
 
 
 template <typename Type> inline int AvlTree<Type>::GetHeight(NodePtr pRoot) {
     if(pRoot == nullptr) {
         return 0;
+    }else if(pRoot->m_iHeight){
+        return pRoot->m_iHeight;
     }else {
         return std::max(GetHeight(pRoot->m_pLeft), GetHeight(pRoot->m_pRight)) + 1;
     }
@@ -85,8 +108,8 @@ template <typename Type> AvlTreeNode<Type>* AvlTree<Type>::RotateRight(NodePtr p
     pRoot->m_pLeft = pNewRoot->m_pRight;
     pNewRoot->m_pRight = pRoot;
 
-    pRoot->m_iHeight = std::max(GetHeight(pRoot->m_pLeft), GetHeight(pRoot->m_pRight)) + 1;
-    pNewRoot->m_iHeight = std::max(GetHeight(pNewRoot->m_pLeft), GetHeight(pRoot->m_pRight)) + 1;
+    UpdateHeight(pRoot);
+    UpdateHeight(pNewRoot);
 
     return pNewRoot;
 }
@@ -96,75 +119,89 @@ template <typename Type> AvlTreeNode<Type>* AvlTree<Type>::RotateLeft(NodePtr pR
     pRoot->m_pRight = pNewRoot->m_pLeft;
     pNewRoot->m_pLeft = pRoot;
 
-    pRoot->m_iHeight = std::max(GetHeight(pRoot->m_pLeft), GetHeight(pRoot->m_pRight)) + 1;
-    pNewRoot->m_iHeight = std::max(GetHeight(pNewRoot->m_pLeft), GetHeight(pNewRoot->m_pRight)) + 1;
+    UpdateHeight(pRoot);
+    UpdateHeight(pNewRoot);
 
     return pNewRoot;
 }
 
-template <typename Type> AvlTreeNode<Type>* AvlTree<Type>::Insert(NodePtrRef pNode, const Type& Val, bool& bSucc) {
+template<typename Type> void AvlTree<Type>::UpdateHeight(NodePtr pRoot) {
+    if(pRoot == nullptr) {
+        return;
+    }
+    pRoot->m_iHeight = std::max(GetHeight(pRoot->m_pLeft), GetHeight(pRoot->m_pRight)) + 1;
+}
+
+template <typename Type> bool AvlTree<Type>::Insert(NodePtrRef pNode, const Type& Val) {
+    bool bSucc = false;
     if(pNode == nullptr) {
         pNode = new AvlTreeNode<Type>(Val);
         if(pNode == nullptr) {
             bSucc = false;
-            return nullptr;
         }
         bSucc = true;
-        return pNode;
     }else {
         if(pNode->m_value == Val) {
             bSucc = false;
-            return nullptr;
         }else if(pNode->m_value > Val) {
-            pNode->m_pLeft = Insert(pNode->m_pLeft, Val, bSucc);
-            if(GetHeight(pNode->m_pLeft) - GetHeight(pNode->m_pRight) > 1) {
-                if(pNode->m_pLeft->m_value > Val) {
-                    pNode = RotateRight(pNode->m_pLeft);
-                }else {
-                    pNode->m_pLeft = RotateLeft(pNode->m_pLeft);
-                    pNode = RotateRight(pNode->m_pLeft);
-                }
-            } 
+            bSucc = Insert(pNode->m_pLeft, Val);
+            if(bSucc) {
+                if(GetHeight(pNode->m_pLeft) - GetHeight(pNode->m_pRight) > 1) {
+                    if(pNode->m_pLeft->m_value > Val) {
+                        pNode = RotateRight(pNode);
+                    }else {
+                        pNode->m_pLeft = RotateLeft(pNode->m_pLeft);
+                        pNode = RotateRight(pNode);
+                    }
+                } 
+            }
         }else {
-            pNode->m_pRight = Insert(pNode->m_pRight, Val, bSucc);
-            if(GetHeight(pNode->m_pLeft) - GetHeight(pNode->m_pRight) < -1) {
-                if(pNode->m_pRight->m_value < Val) {
-                    pNode = RotateLeft(pNode->m_pLeft);
-                }else {
-                    pNode->m_pRight = RotateRight(pNode->m_pRight);
-                    pNode = RotateLeft(pNode->m_pRight);
+            bSucc = Insert(pNode->m_pRight, Val);
+            if(bSucc) {
+                if(GetHeight(pNode->m_pLeft) - GetHeight(pNode->m_pRight) < -1) {
+                    if(pNode->m_pRight->m_value < Val) {
+                        pNode = RotateLeft(pNode);
+                    }else {
+                        pNode->m_pRight = RotateRight(pNode->m_pRight);
+                        pNode = RotateLeft(pNode);
+                    }
                 }
             }
         }
     }
 
     if(bSucc) {
-        pNode->m_iHeight = GetHeight(pNode);
+        UpdateHeight(pNode);
     }
-    return pNode;
+    return bSucc;
 }
 
-template <typename Type> AvlTreeNode<Type>* AvlTree<Type>::Remove(NodePtrRef pNode, const Type &val, bool& bSucc) {
+template <typename Type>bool AvlTree<Type>::Remove(NodePtrRef pNode, const Type &val) {
+    bool bSucc = false;
     if(pNode == nullptr) {
-        return false;
+        bSucc = false;
     }else if(pNode->m_value < val){
-        pNode = Remove(pNode->m_pRight, val, bSucc);
-        if(GetHeight(pNode->m_pLeft) - GetHeight(pNode->m_pRight) > 1) { // 如果当前节点不平衡
-            if(GetHeight(pNode->m_pLeft->m_pLeft) < GetHeight(pNode->m_pLeft->m_pRight)) { // LR
-                pNode->m_pLeft = RotateRight(pNode->m_pLeft);
-                pNode = RotateLeft(pNode->m_pLeft);
-            }else { // LR
-                pNode = RotateRight(pNode->m_pLeft);
+        bSucc = Remove(pNode->m_pRight, val);
+        if(bSucc) {
+            if(GetHeight(pNode->m_pLeft) - GetHeight(pNode->m_pRight) > 1) { // 如果当前节点不平衡
+                if(GetHeight(pNode->m_pLeft->m_pLeft) < GetHeight(pNode->m_pLeft->m_pRight)) { // LR
+                    pNode->m_pLeft = RotateLeft(pNode->m_pLeft);
+                    pNode = RotateRight(pNode);
+                }else { // LL
+                    pNode = RotateRight(pNode);
+                }
             }
         }
     }else if(pNode->m_value > val) {
-        pNode = Remove(pNode->m_pLeft, val, bSucc);
-        if(GetHeight(pNode->m_pLeft) - GetHeight(pNode->m_pRight) < -1) {
-            if(GetHeight(pNode->m_pRight->m_pLeft) > GetHeight(pNode->m_pRight->m_pRight)) { // RL
-                pNode->m_pRight = RotateLeft(pNode->m_pRight);
-                pNode = RotateLeft(pNode->m_pRight); 
-            }else { // RR
-                pNode = RotateRight(pNode->m_pRight);
+        bSucc = Remove(pNode->m_pLeft, val);
+        if(bSucc) {
+            if(GetHeight(pNode->m_pLeft) - GetHeight(pNode->m_pRight) < -1) {
+                if(GetHeight(pNode->m_pRight->m_pLeft) > GetHeight(pNode->m_pRight->m_pRight)) { // RL
+                    pNode->m_pRight = RotateRight(pNode->m_pRight);
+                    pNode = RotateLeft(pNode); 
+                }else { // RR
+                    pNode = RotateLeft(pNode);
+                }
             }
         }
     }else { // 删除的事当前节点
@@ -172,22 +209,24 @@ template <typename Type> AvlTreeNode<Type>* AvlTree<Type>::Remove(NodePtrRef pNo
             if(GetHeight(pNode->m_pLeft) < GetHeight(pNode->m_pRight)) { // 取右子树的最左节点
                 Type vDel = GetTreeMin(pNode->m_pRight);
                 pNode->m_value = vDel;
-                pNode->m_pRight = Remove(pNode->m_pRight, vDel);
+                bSucc = Remove(pNode->m_pRight, vDel);
             }else { // 取左子树的最右节点
                 Type vDel = GetTreeMax(pNode->m_pLeft);
                 pNode->m_value = vDel;
-                pNode->m_pLeft = Remove(pNode->m_pLeft, vDel);
+                bSucc = Remove(pNode->m_pLeft, vDel);
             }
         }else {
-            AvlTreeNode<Type> pDel = pNode;
+            NodePtr pDel = pNode;
             pNode = pNode->m_pLeft ? pNode->m_pLeft : pNode->m_pRight;
+            bSucc = true;
             delete pDel;
         }
     }
+
     if(bSucc) {
-        pNode->m_iHeight = GetHeight(pNode);
+        UpdateHeight(pNode);
     }
-    return pNode;
+    return bSucc;
 }
 
 template <typename Type> const Type& AvlTree<Type>::GetTreeMax(NodePtr pNode) {

@@ -24,3 +24,10 @@ TEST(case_2,content)
     EXPECT_EQ(minPathSumDp(grid), ans);
     EXPECT_EQ(minPathSumDpCompress(grid), ans);
 }
+
+
+int main(int argc, char* argv[])
+{
+  testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

@@ -7,7 +7,7 @@ TEST(mode_test_1, content)
     std::string mode_list = "O_CREAT | O_TRUNC | O_EXCL";
     mode_t expect = O_CREAT|O_TRUNC|O_EXCL;
     mode_t res;
-    bool succ = filelib::get_mode(mode_list, res);
+    bool succ = filelib::get_mode(mode_list, res, true);
     EXPECT_EQ(succ, true);
     EXPECT_EQ(expect, res);
 }

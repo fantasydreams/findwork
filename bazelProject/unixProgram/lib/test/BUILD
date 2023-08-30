@@ -16,3 +16,18 @@ cc_binary(
         ],
     copts = ["-std=c++11"],
 )
+
+
+cc_test(
+    name = "mode_test_c",
+    srcs = ["mode_test.cc"],
+    deps = ["//lib/file:mode",
+            "@googletest//:gtest_main",
+        ],
+    copts = [
+        "-std=c++11",
+        "-fprofile-arcs",
+        "-ftest-coverage",
+    ],
+    linkopts = ["-fprofile-arcs"],
+)

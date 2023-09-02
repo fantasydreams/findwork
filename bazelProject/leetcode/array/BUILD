@@ -322,3 +322,18 @@ cc_binary(
 	deps  = ["67AddBinary",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "73SetMatrixZeroes",
+	hdrs = ["73.SetMatrixZeroes.h"],
+	srcs = ["73.SetMatrixZeroes.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "73SetMatrixZeroesTest",
+	srcs  = ["73.SetMatrixZeroesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["73SetMatrixZeroes",
+			 "@googletest//:gtest_main"],
+)

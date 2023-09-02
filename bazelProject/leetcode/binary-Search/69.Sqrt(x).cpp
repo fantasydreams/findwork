@@ -1,4 +1,5 @@
 #include "69.Sqrt(x).h"
+#include <cmath>
 #include <cstdint>
 
 int mySqrt(int x)
@@ -53,4 +54,8 @@ int mySqrt2(int x)
         res = (res + x / res) / 2;
     }
     return res;
+}
+
+int mySqrt3(int x) {
+    return pow(x, 0.5);
 }

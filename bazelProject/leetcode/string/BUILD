@@ -351,3 +351,18 @@ cc_binary(
 	deps  = ["68TextJustification",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "71SimplifyPath",
+	hdrs = ["71.SimplifyPath.h"],
+	srcs = ["71.SimplifyPath.cpp"]
+)
+
+
+cc_binary(
+	name  = "71SimplifyPathTest",
+	srcs  = ["71.SimplifyPathTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["71SimplifyPath",
+			 "@googletest//:gtest_main"],
+)

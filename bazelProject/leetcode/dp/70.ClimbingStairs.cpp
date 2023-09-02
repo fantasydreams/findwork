@@ -19,3 +19,19 @@ int climbStairs(int n)
     }
     return dp[0];
 }
+
+int climbStairsDp(int n) {
+    std::vector<int> dp(3, 0);
+    dp[1] = 1; dp[2] = 2;
+    if (n <= 2) {
+        return dp[n];
+    }
+
+    for(int k = 3; k <=n; ++k) {
+        dp[0] = dp[1] + dp[2];
+        dp[1] = dp[2];
+        dp[2] = dp[0];
+    }
+
+    return dp[0];
+}

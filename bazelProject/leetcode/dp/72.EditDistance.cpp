@@ -24,12 +24,34 @@ int minDistance(string word1, string word2)
             {
                 if(word1[i - 1] == word2[j - 1]) { //相等看前面的就行了
                     dp[i][j] = std::min(dp[i][j], dp[i - 1][j - 1]);
-                }else { //不相等有两种情况，一种删除一种修改
+                }else { //不相等有三种情况，一种修改，一种插入，一种删除, dp[i-1][j-1] 是修改，dp[i-1][j] 字符串2删除或者字符串1插入 和 dp[i][j - 1]是字符串1删除字符串2插入
                     dp[i][j] = std::min(dp[i - 1][j - 1], std::min(dp[i - 1][j], dp[i][j - 1])) + 1;
                 }
             }
         }
     }    
+
+    return dp[word1.size()][word2.size()];
+}
+
+int minDistanceDp(string word1, string word2) { // 2023 / 09 / 02
+    int _max = std::max(word1.size(), word2.size());
+    std::vector<std::vector<int> > dp(word1.size() + 1, std::vector<int>(word2.size() + 1, _max));
+    for(int i = 0; i <= word1.size(); ++i) {
+        for(int j = 0;j <= word2.size(); ++j) {
+            if(i == 0) {
+                dp[i][j] = j;
+            }else if(j == 0) {
+                dp[i][j] = i;
+            }else {
+                if(word1[i - 1] == word2[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                }else {
+                    dp[i][j] = std::min(dp[i - 1][j - 1], std::min(dp[i - 1][j], dp[i][j - 1])) + 1;
+                }
+            }
+        }
+    }
 
     return dp[word1.size()][word2.size()];
 }

@@ -336,3 +336,18 @@ cc_binary(
 	deps  = ["65ValidNumber",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "68TextJustification",
+	hdrs = ["68.TextJustification.h"],
+	srcs = ["68.TextJustification.cpp"]
+)
+
+
+cc_binary(
+	name  = "68TextJustificationTest",
+	srcs  = ["68.TextJustificationTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["68TextJustification",
+			 "@googletest//:gtest_main"],
+)

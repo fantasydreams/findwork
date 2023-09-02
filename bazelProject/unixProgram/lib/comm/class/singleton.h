@@ -35,30 +35,33 @@ template <class Type, typename... Args> Type* Singleton<Type, Args...>::m_pInsta
 template <class Type, typename... Args> std::atomic_flag Singleton<Type, Args...>::m_flag = ATOMIC_FLAG_INIT;
 
 
-//attention 这个适合单核cpu 多线程，多核心cpu可能导致已经返回指针但是类还没有构造的情况
 template <class Type, typename... Args>
 class SingletonMutex :public NonCopyable {
     public:
         static Type* GetInstance(Args&&... args) {
-            if(m_pInstace == nullptr) {
-                std:std::lock_guard<std::mutex> oLock(m_oMutex);
-                if(m_pInstace == nullptr) {
-                    m_pInstace = new Type(std::forward<Args>(args)...);
+            Type* pInstace = m_pInstace.load(std::memory_order_acquire);
+            if(pInstace == nullptr) {
+                std::lock_guard<std::mutex> oLock(m_oMutex);
+                pInstace = m_pInstace.load(std::memory_order_relaxed);
+                if(pInstace == nullptr) {
+                    pInstace = new Type(std::forward<Args>(args)...);
+                    m_pInstace.store(pInstace, std::memory_order_release);
                 }
             }
             return m_pInstace;
         };
 
         static void Destory() {
-            delete m_pInstace;
-            m_pInstace = nullptr;
+            Type * pInstace = m_pInstace.load(std::memory_order_acquire);
+            delete pInstace;
+            m_pInstace.store(nullptr, std::memory_order_release);
         }
     private:
-        static Type* m_pInstace;
+        static std::atomic<Type*> m_pInstace;
         static std::mutex m_oMutex;
 };
 
-template <class Type, typename... Args> Type* SingletonMutex<Type, Args...>::m_pInstace = nullptr;
+template <class Type, typename... Args> std::atomic<Type*> SingletonMutex<Type, Args...>::m_pInstace;
 template <class Type, typename... Args> std::mutex SingletonMutex<Type, Args...>::m_oMutex;
 
 

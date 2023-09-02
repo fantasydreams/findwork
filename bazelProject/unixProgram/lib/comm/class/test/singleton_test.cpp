@@ -55,7 +55,7 @@ TEST(case_1, content)
     auto pOject1 = A::GetInstance(124,123);
     EXPECT_EQ(pOject1->Get(), 123);
     EXPECT_EQ(pOject1->GetB(), 321);
-    EXPECT_EQ((uint64_t)pOject1, (uint64_t)pOject1);
+    EXPECT_EQ((uint64_t)pOject, (uint64_t)pOject1);
 
     A::Destory();
 }
@@ -69,7 +69,7 @@ TEST(case_2, content)
     auto pOject1 = B::GetInstance(124,123);
     EXPECT_EQ(pOject1->Get(), 123);
     EXPECT_EQ(pOject1->GetB(), 321);
-    EXPECT_EQ((uint64_t)pOject1, (uint64_t)pOject1);
+    EXPECT_EQ((uint64_t)pOject, (uint64_t)pOject1);
 
     B::Destory();
 }
@@ -79,13 +79,13 @@ TEST(case_3, content)
 {
     auto pOject = C::GetInstance();
     auto pOject1 = C::GetInstance();
-    EXPECT_EQ((uint64_t)pOject1, (uint64_t)pOject1);
+    EXPECT_EQ((uint64_t)pOject, (uint64_t)pOject1);
 }
 
 
-// TEST(case_4, content)
-// {
-//     auto pOject = D::GetInstance();
-//     auto pOject1 = D::GetInstance();
-//     EXPECT_EQ((uint64_t)pOject1, (uint64_t)pOject1);
-// }
+TEST(case_4, content)
+{
+    auto pOject = D::GetInstance();
+    auto pOject1 = D::GetInstance();
+    EXPECT_EQ((uint64_t)pOject, (uint64_t)pOject1);
+}

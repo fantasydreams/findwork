@@ -13,6 +13,13 @@ all_link_actions = [ # NEW
     ACTION_NAMES.cpp_link_nodeps_dynamic_library,
 ]
 
+all_compile_actions = [
+    ACTION_NAMES.cc_flags_make_variable,
+    ACTION_NAMES.c_compile,
+    ACTION_NAMES.cpp_compile,
+    ACTION_NAMES.cpp_header_parsing,
+]
+
 def _impl(ctx):
     tool_paths = [ # NEW
         tool_path(
@@ -29,7 +36,7 @@ def _impl(ctx):
         ),
         tool_path(
             name = "cpp",
-            path = "/bin/false",
+            path = "/opt/homebrew/Cellar/gcc/13.1.0/bin/g++-13",
         ),
         tool_path(
             name = "gcov",

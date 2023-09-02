@@ -31,3 +31,17 @@ cc_test(
     ],
     linkopts = ["-fprofile-arcs"],
 )
+
+cc_test(
+    name = "single_test_c",
+    srcs = ["single_test.cpp"],
+    deps = [
+            "@googletest//:gtest_main",
+        ],
+    copts = [
+        "-std=c++11",
+        "-fprofile-arcs",
+        "-ftest-coverage",
+    ],
+    linkopts = ["-fprofile-arcs"],
+)

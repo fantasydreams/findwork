@@ -320,3 +320,19 @@ cc_binary(
 	deps  = ["58LengthofLastWord",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "65ValidNumber",
+	hdrs = ["65.ValidNumber.h"],
+	srcs = ["65.ValidNumber.cpp"]
+)
+
+
+cc_binary(
+	name  = "65ValidNumberTest",
+	srcs  = ["65.ValidNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["65ValidNumber",
+			 "@googletest//:gtest_main"],
+)

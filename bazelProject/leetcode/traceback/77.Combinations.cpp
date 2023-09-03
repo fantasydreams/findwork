@@ -48,3 +48,23 @@ vector<vector<int>> combine1(int n, int k)
     traceback1(n, k, cnt, 0, res, tmp);
     return res;
 }
+
+void dfs(vector<vector<int> >& ans, int n, int pos, int cnt, std::vector<int>& tmp) {
+    if(cnt == tmp.size()) {
+        ans.push_back(tmp);
+        return;
+    }
+
+    for(int i = pos; i < n; ++i) {
+        tmp[cnt] = i + 1;
+        dfs(ans, n, i + 1, cnt + 1, tmp);
+    }
+}
+
+vector<vector<int> > combine2(int n, int k) // 2023 / 09 / 03
+{
+    std::vector<std::vector<int> > res;
+    std::vector<int> tmp(k, 0);
+    dfs(res, n, 0, 0, tmp);
+    return res;
+}

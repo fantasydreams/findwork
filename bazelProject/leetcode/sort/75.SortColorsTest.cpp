@@ -40,3 +40,43 @@ TEST(case_5,content)
     sortColors(vec);
     EXPECT_EQ(vec, res);
 }
+
+TEST(case_11,content)
+{
+    std::vector<int> vec = {2,0,2,1,1,0};
+    std::vector<int> res = {0,0,1,1,2,2};
+    sortColors1(vec);
+    EXPECT_EQ(vec, res);
+}
+
+TEST(case_12,content)
+{
+    std::vector<int> vec = {2,0,1};
+    std::vector<int> res = {0,1,2};
+    sortColors1(vec);
+    EXPECT_EQ(vec, res);
+}
+
+TEST(case_13,content)
+{
+    std::vector<int> vec = {0,0};
+    std::vector<int> res = {0,0};
+    sortColors1(vec);
+    EXPECT_EQ(vec, res);
+}
+
+TEST(case_14,content)
+{
+    std::vector<int> vec = {1,1};
+    std::vector<int> res = {1,1};
+    sortColors1(vec);
+    EXPECT_EQ(vec, res);
+}
+
+TEST(case_15,content)
+{
+    std::vector<int> vec = {2,2};
+    std::vector<int> res = {2,2};
+    sortColors1(vec);
+    EXPECT_EQ(vec, res);
+}

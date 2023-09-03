@@ -337,3 +337,19 @@ cc_binary(
 	deps  = ["73SetMatrixZeroes",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "74Searcha2DMatrix",
+	hdrs = ["74.Searcha2DMatrix.h"],
+	srcs = ["74.Searcha2DMatrix.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "74Searcha2DMatrixTest",
+	srcs  = ["74.Searcha2DMatrixTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["74Searcha2DMatrix",
+			 "@googletest//:gtest_main"],
+)

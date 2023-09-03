@@ -9,6 +9,7 @@ TEST(case_1,content)
     vector<vector<int>> res = {{1,2},{1,3},{1,4},{2,3},{2,4},{3,4}};
     EXPECT_EQ(combine(n, k), res);
     EXPECT_EQ(combine1(n, k), res);
+    EXPECT_EQ(combine2(n, k), res);
 }
 
 TEST(case_2,content)
@@ -17,6 +18,7 @@ TEST(case_2,content)
     vector<vector<int>> res = {{1}};
     EXPECT_EQ(combine(n, k), res);
     EXPECT_EQ(combine1(n, k), res);
+    EXPECT_EQ(combine2(n, k), res);
 }
 
 TEST(case_3,content)
@@ -25,6 +27,7 @@ TEST(case_3,content)
     vector<vector<int>> res = {{1}, {2}, {3}, {4}, {5}};
     EXPECT_EQ(combine(n, k), res);
     EXPECT_EQ(combine1(n, k), res);
+    EXPECT_EQ(combine2(n, k), res);
 }
 
 TEST(case_4,content)
@@ -33,4 +36,5 @@ TEST(case_4,content)
     vector<vector<int>> res = {{1,2,3}, {1,2,4},{1,2,5}, {1,3,4}, {1, 3,5}, {1,4,5}, {2,3,4}, {2,3,5}, {2,4,5}, {3,4,5}};
     EXPECT_EQ(combine(n, k), res);
     EXPECT_EQ(combine1(n, k), res);
+    EXPECT_EQ(combine2(n, k), res);
 }

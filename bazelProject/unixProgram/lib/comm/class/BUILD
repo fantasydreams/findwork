@@ -14,13 +14,3 @@ cc_library(
     ],
     visibility = ["//visibility:public"],
 )
-
-cc_library(
-    name = "singleton",
-    srcs = ["singleton.h"],
-    copts = ["-std=c++11"],
-    deps = [
-        "nocopyable",
-    ],
-    visibility = ["//visibility:public"],
-)

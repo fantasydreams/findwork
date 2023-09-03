@@ -1,4 +1,4 @@
-#include "lib/comm/class/singleton.h"
+#include "lib/comm/class/mode/singleton.h"
 #include "gtest/gtest.h"
 #include <vector>
 #include <cstdlib>

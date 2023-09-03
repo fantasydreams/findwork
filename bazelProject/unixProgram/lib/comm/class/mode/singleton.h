@@ -3,7 +3,7 @@
 #include <utility>
 #include <mutex>
 #include <pthread.h>
-#include "no_copyable.h"
+#include "lib/comm/class/no_copyable.h"
 
 namespace comm {
 // std::atomic_flag m_flag.test_and_set(std::memory_order_acquire) 和 m_flag.clear(std::memory_order_release)结合可以当做一个简单的自旋锁

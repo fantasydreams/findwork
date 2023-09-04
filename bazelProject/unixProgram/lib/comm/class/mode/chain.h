@@ -1,5 +1,6 @@
 #include <cstddef>
 #include <memory>
+#include <type_traits>
 #include <vector>
 #include <unordered_set>
 
@@ -105,12 +106,12 @@ class ChainHandler : public BaseChainHandler {
 };
 
 // shared_ptr + 局部变量
-class ChaninManager : public BaseChainHandler {
+class ChainManager : public BaseChainHandler {
     public:
-        ChaninManager() : m_idx(0){};
-        virtual ~ChaninManager() {};
+        ChainManager() : m_idx(0){};
+        virtual ~ChainManager() {};
 
-        inline ChaninManager& AddChain(BaseChainHandler* poChainHandler)  {
+        inline ChainManager& AddChain(BaseChainHandler* poChainHandler)  {
             std::shared_ptr<BaseChainHandler> p(poChainHandler);
             m_vecContaioner.push_back(p);
             return *this;
@@ -132,3 +133,53 @@ class ChaninManager : public BaseChainHandler {
 };
 
 
+// 新增是否处理接口
+class BaseChainHandlerV2 {
+    public:
+        BaseChainHandlerV2() = default; 
+        virtual ~BaseChainHandlerV2(){};
+        virtual bool Accept(const Context* poCtx) = 0;
+        virtual int Handle(const Context* poCtx) = 0;
+};
+
+
+class ChainHandlerV2 : public BaseChainHandlerV2 {
+    public:
+        explicit ChainHandlerV2(int iCondi) : m_iCondi(iCondi) {};
+        virtual ~ChainHandlerV2(){};
+        virtual bool Accept(const Context* poCtx){
+            return m_iCondi >= poCtx->m_iValue;
+        }
+        virtual int Handle(const Context* poCtx){
+            // do process;
+            const_cast<Context*>(poCtx)->m_iHandlerValue = m_iCondi;
+            return 0;
+        };
+    private:
+        int m_iCondi;
+};
+
+
+
+class ChainManagerV2 : public BaseChainHandlerV2 {
+    public: 
+        ChainManagerV2() = default;
+        virtual ~ChainManagerV2() {};
+        ChainManagerV2& AddChain(std::shared_ptr<BaseChainHandlerV2> poChainHandler) {
+            m_vecContaioner.emplace_back(poChainHandler);
+            return *this;
+        }
+
+        virtual int Handle(const Context* poCtx) override {
+            for(int i = 0; i < m_vecContaioner.size(); ++i) {
+                if(m_vecContaioner[i].get()->Accept(poCtx)) {
+                    return m_vecContaioner[i].get()->Handle(poCtx);
+                }
+            }
+            return 0;
+        }
+
+    private:
+        virtual bool Accept(const Context* poCtx) override {return true;}
+        std::vector<std::shared_ptr<BaseChainHandlerV2> > m_vecContaioner;
+};

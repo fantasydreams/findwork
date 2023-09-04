@@ -40,7 +40,7 @@ TEST(case_2, content)
     BaseChainHandler* poIns2 = new ChainHandler(2);
     BaseChainHandler* poIns3 = new ChainHandler(4);
 
-    ChaninManager oChainMange;
+    ChainManager oChainMange;
     oChainMange.AddChain(poIns1).AddChain(poIns2).AddChain(poIns3);
 
     Context oCtx(0);
@@ -62,5 +62,37 @@ TEST(case_2, content)
     oCtx.m_iValue = 5;
     oCtx.m_iHandlerValue = -1;
     EXPECT_EQ(oChainMange.Handle(&oCtx, &oChainMange), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, -1);
+}
+
+
+TEST(case_3, content) 
+{
+    std::shared_ptr<BaseChainHandlerV2> poIns1(new ChainHandlerV2(1));
+    std::shared_ptr<BaseChainHandlerV2> poIns2(new ChainHandlerV2(2));
+    std::shared_ptr<BaseChainHandlerV2> poIns3(new ChainHandlerV2(4));
+
+    ChainManagerV2 oChainMange;
+    oChainMange.AddChain(poIns1).AddChain(poIns2).AddChain(poIns3);
+
+    Context oCtx(0);
+    EXPECT_EQ(oChainMange.Handle(&oCtx), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, 1);
+
+    oCtx.m_iValue = 1; 
+    EXPECT_EQ(oChainMange.Handle(&oCtx), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, 1);
+
+    oCtx.m_iValue = 2;
+    EXPECT_EQ(oChainMange.Handle(&oCtx), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, 2);
+
+    oCtx.m_iValue = 3;
+    EXPECT_EQ(oChainMange.Handle(&oCtx), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, 4);
+
+    oCtx.m_iValue = 5;
+    oCtx.m_iHandlerValue = -1;
+    EXPECT_EQ(oChainMange.Handle(&oCtx), 0);
     EXPECT_EQ(oCtx.m_iHandlerValue, -1);
 }

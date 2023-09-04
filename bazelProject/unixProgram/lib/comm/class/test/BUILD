@@ -36,3 +36,15 @@ cc_binary(
 		"@googletest//:gtest_main"
 	],
 )
+
+
+cc_binary(
+	name  = "decorator_test",
+	srcs  = ["decorator_test.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		"//lib/comm/class/mode:decorator",
+		"//lib/comm/class:scopeguard",
+		"@googletest//:gtest_main"
+	],
+)

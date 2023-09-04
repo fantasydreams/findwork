@@ -28,3 +28,14 @@ cc_library(
     ],
     visibility = ["//visibility:public"],
 )
+
+
+cc_library(
+    name = "decorator",
+    srcs = ["decorator.h"],
+    copts = ["-std=c++11"],
+    deps = [
+        "//lib/comm/class:nocopyable",
+    ],
+    visibility = ["//visibility:public"],
+)

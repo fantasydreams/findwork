@@ -78,3 +78,57 @@ class BaseHandlerExample : public BaseChain{
     private:
         int m_iCondtion;
 };
+
+
+class BaseChainHandler {
+    public:
+       BaseChainHandler() = default;
+        virtual ~BaseChainHandler() {};
+        virtual int Handle(const Context* poCtx, BaseChainHandler* poChain){return 0;};
+};
+
+class ChainHandler : public BaseChainHandler {
+    public:
+        explicit ChainHandler(int condi) : m_iCondi(condi) {};
+        virtual ~ChainHandler(){};
+        virtual int Handle(const Context* poCtx, BaseChainHandler* poChain) {
+            if(m_iCondi >= poCtx->m_iValue) {
+                // process;
+                const_cast<Context*>(poCtx)->m_iHandlerValue = m_iCondi;
+                return 0;
+            }
+
+            return poChain->Handle(poCtx, poChain);
+        };
+    private:
+        int m_iCondi;
+};
+
+// shared_ptr + 局部变量
+class ChaninManager : public BaseChainHandler {
+    public:
+        ChaninManager() : m_idx(0){};
+        virtual ~ChaninManager() {};
+
+        inline ChaninManager& AddChain(BaseChainHandler* poChainHandler)  {
+            std::shared_ptr<BaseChainHandler> p(poChainHandler);
+            m_vecContaioner.push_back(p);
+            return *this;
+        };
+        
+        virtual int Handle(const Context* poCtx, BaseChainHandler* poChain) override {
+            if(m_vecContaioner.empty() || m_idx >= m_vecContaioner.size()) {
+                return 0;
+            }
+
+            size_t iIdx = m_idx++;
+            int iRet = m_vecContaioner[iIdx]->Handle(poCtx, &(*this)); // 这种如果链比较长的话开销感觉还是蛮大的
+            --m_idx;
+            return iRet;
+        };
+    private:
+        std::vector<std::shared_ptr<BaseChainHandler> > m_vecContaioner;
+        size_t m_idx;
+};
+
+

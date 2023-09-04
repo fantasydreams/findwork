@@ -32,3 +32,35 @@ TEST(case_1, content)
     EXPECT_EQ(poChainMange->Handle(&oCtx, poChainMange), 0);
     EXPECT_EQ(oCtx.m_iHandlerValue, -1);
 }
+
+
+TEST(case_2, content)
+{
+    BaseChainHandler* poIns1 = new ChainHandler(1);
+    BaseChainHandler* poIns2 = new ChainHandler(2);
+    BaseChainHandler* poIns3 = new ChainHandler(4);
+
+    ChaninManager oChainMange;
+    oChainMange.AddChain(poIns1).AddChain(poIns2).AddChain(poIns3);
+
+    Context oCtx(0);
+    EXPECT_EQ(oChainMange.Handle(&oCtx, &oChainMange), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, 1);
+
+    oCtx.m_iValue = 1; 
+    EXPECT_EQ(oChainMange.Handle(&oCtx, &oChainMange), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, 1);
+
+    oCtx.m_iValue = 2;
+    EXPECT_EQ(oChainMange.Handle(&oCtx, &oChainMange), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, 2);
+
+    oCtx.m_iValue = 3;
+    EXPECT_EQ(oChainMange.Handle(&oCtx, &oChainMange), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, 4);
+
+    oCtx.m_iValue = 5;
+    oCtx.m_iHandlerValue = -1;
+    EXPECT_EQ(oChainMange.Handle(&oCtx, &oChainMange), 0);
+    EXPECT_EQ(oCtx.m_iHandlerValue, -1);
+}

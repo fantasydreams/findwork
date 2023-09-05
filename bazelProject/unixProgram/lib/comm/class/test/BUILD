@@ -48,3 +48,15 @@ cc_binary(
 		"@googletest//:gtest_main"
 	],
 )
+
+
+cc_binary(
+	name  = "composite_test",
+	srcs  = ["composite_test.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		"//lib/comm/class/mode:composite",
+		"//lib/comm/class:scopeguard",
+		"@googletest//:gtest_main"
+	],
+)

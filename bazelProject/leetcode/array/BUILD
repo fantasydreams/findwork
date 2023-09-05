@@ -353,3 +353,19 @@ cc_binary(
 	deps  = ["74Searcha2DMatrix",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "78Subsets",
+	hdrs = ["78.Subsets.h"],
+	srcs = ["78.Subsets.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "78SubsetsTest",
+	srcs  = ["78.SubsetsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["78Subsets",
+			 "@googletest//:gtest_main"],
+)

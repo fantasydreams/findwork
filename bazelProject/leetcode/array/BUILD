@@ -369,3 +369,19 @@ cc_binary(
 	deps  = ["78Subsets",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "80RemoveDuplicatesfromSortedArrayII",
+	hdrs = ["80.RemoveDuplicatesfromSortedArrayII.h"],
+	srcs = ["80.RemoveDuplicatesfromSortedArrayII.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "80RemoveDuplicatesfromSortedArrayIITest",
+	srcs  = ["80.RemoveDuplicatesfromSortedArrayIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["80RemoveDuplicatesfromSortedArrayII",
+			 "@googletest//:gtest_main"],
+)

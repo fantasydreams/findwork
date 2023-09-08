@@ -1,4 +1,5 @@
 #include "83.RemoveDuplicatesfromSortedList.h"
+#include "linkcomm.h"
 #include <vector>
 
 ListNode* deleteDuplicates(ListNode* head) {
@@ -32,5 +33,46 @@ ListNode* deleteDuplicates1(ListNode* head) {
         }
     }
 
+    return head;
+}
+
+
+ListNode* deleteDuplicates2(ListNode* head) {
+    if(head == nullptr) {
+        return head;
+    }
+
+    ListNode oHead;
+    ListNode* pTail = &oHead;
+    pTail->next = head;
+    pTail = pTail->next;
+    head = head->next;
+    while(head) {
+        if(pTail->val != head->val) {
+            pTail->next = head;
+            pTail = pTail->next;
+            head = head ->next;
+        }else {
+            ListNode* pNode = head;
+            head = head->next;
+            delete pNode;
+        }
+    }
+    pTail->next = nullptr;
+    return oHead.next;
+}
+
+
+ListNode* deleteDuplicates3(ListNode* head) {
+    ListNode* pTail = head;
+    while(pTail && pTail->next) {
+        if(pTail->val != pTail->next->val) {
+            pTail = pTail -> next;
+        }else {
+            ListNode* pNode = pTail->next;
+            pTail->next = pTail->next->next;
+            delete pNode;
+        }
+    }
     return head;
 }

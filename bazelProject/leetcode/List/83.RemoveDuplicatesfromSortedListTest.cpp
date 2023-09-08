@@ -69,3 +69,76 @@ TEST(case_6,content)
     freeLinkList(pAns);
     freeLinkList(p1);
 }
+
+TEST(case_41,content)
+{
+    vector<int> vec = {-100,1,1,1,2,100,100};
+    vector<int> ans = {-100,1,2,100};
+    ListNode * pO = createLinkList(vec);
+    ListNode * p1 = createLinkList(ans);
+    ListNode * pAns = deleteDuplicates2(pO);
+    printList(pAns);
+    EXPECT_EQ(ListValEqual(p1, pAns), true);
+    freeLinkList(pAns);
+    freeLinkList(p1);
+}
+
+
+TEST(case_51,content)
+{
+    vector<int> vec = {};
+    ListNode * pO = createLinkList(vec);
+    ListNode * pAns = deleteDuplicates2(pO);
+    printList(pAns);
+    EXPECT_EQ((bool)pAns, false);
+}
+
+TEST(case_61,content)
+{
+    vector<int> vec = {1,2,3};
+    vector<int> ans = {1,2,3};
+    ListNode * pO = createLinkList(vec);
+    ListNode * p1 = createLinkList(ans);
+    ListNode * pAns = deleteDuplicates2(pO);
+    printList(pAns);
+    EXPECT_EQ(ListValEqual(p1, pAns), true);
+    freeLinkList(pAns);
+    freeLinkList(p1);
+}
+
+
+TEST(case_42,content)
+{
+    vector<int> vec = {-100,1,1,1,2,100,100};
+    vector<int> ans = {-100,1,2,100};
+    ListNode * pO = createLinkList(vec);
+    ListNode * p1 = createLinkList(ans);
+    ListNode * pAns = deleteDuplicates3(pO);
+    printList(pAns);
+    EXPECT_EQ(ListValEqual(p1, pAns), true);
+    freeLinkList(pAns);
+    freeLinkList(p1);
+}
+
+
+TEST(case_52,content)
+{
+    vector<int> vec = {};
+    ListNode * pO = createLinkList(vec);
+    ListNode * pAns = deleteDuplicates3(pO);
+    printList(pAns);
+    EXPECT_EQ((bool)pAns, false);
+}
+
+TEST(case_62,content)
+{
+    vector<int> vec = {1,2,3};
+    vector<int> ans = {1,2,3};
+    ListNode * pO = createLinkList(vec);
+    ListNode * p1 = createLinkList(ans);
+    ListNode * pAns = deleteDuplicates3(pO);
+    printList(pAns);
+    EXPECT_EQ(ListValEqual(p1, pAns), true);
+    freeLinkList(pAns);
+    freeLinkList(p1);
+}

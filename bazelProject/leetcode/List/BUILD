@@ -236,3 +236,20 @@ cc_binary(
 	deps  = ["61RotateList",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "82RemoveDuplicatesfromSortedListII",
+	hdrs = ["82.RemoveDuplicatesfromSortedListII.h"],
+	srcs = ["82.RemoveDuplicatesfromSortedListII.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "82RemoveDuplicatesfromSortedListIITest",
+	srcs  = ["82.RemoveDuplicatesfromSortedListIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["82RemoveDuplicatesfromSortedListII",
+			 "@googletest//:gtest_main"],
+)

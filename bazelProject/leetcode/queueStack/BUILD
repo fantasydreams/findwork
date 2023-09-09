@@ -109,3 +109,18 @@ cc_binary(
 	deps  = ["225ImplementStackusingQueues",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "84LargestRectangleinHistogram",
+	hdrs = ["84.LargestRectangleinHistogram.h"],
+	srcs = ["84.LargestRectangleinHistogram.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "84LargestRectangleinHistogramTest",
+	srcs  = ["84.LargestRectangleinHistogramTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["84LargestRectangleinHistogram",
+			 "@googletest//:gtest_main"],
+)

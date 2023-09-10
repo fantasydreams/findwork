@@ -124,3 +124,22 @@ cc_binary(
 	deps  = ["84LargestRectangleinHistogram",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "85MaximalRectangle",
+	hdrs = ["85.MaximalRectangle.h"],
+	srcs = ["85.MaximalRectangle.cpp"],
+    copts = ["-std=c++11"],
+	deps = [
+		"84LargestRectangleinHistogram",
+	]
+)
+
+cc_binary(
+	name  = "85MaximalRectangleTest",
+	srcs  = ["85.MaximalRectangleTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["85MaximalRectangle",
+			 "@googletest//:gtest_main"],
+)

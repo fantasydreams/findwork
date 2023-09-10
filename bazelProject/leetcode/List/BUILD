@@ -253,3 +253,19 @@ cc_binary(
 	deps  = ["82RemoveDuplicatesfromSortedListII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "86PartitionList",
+	hdrs = ["86.PartitionList.h"],
+	srcs = ["86.PartitionList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "86PartitionListTest",
+	srcs  = ["86.PartitionListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["86PartitionList",
+			 "@googletest//:gtest_main"],
+)

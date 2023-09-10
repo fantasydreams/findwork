@@ -469,3 +469,19 @@ cc_binary(
 	deps  = ["63UniquePathsII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "87ScrambleString",
+	hdrs = ["87.ScrambleString.h"],
+	srcs = ["87.ScrambleString.cpp"]
+)
+
+
+cc_binary(
+	name  = "87ScrambleStringTest",
+	srcs  = ["87.ScrambleStringTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["87ScrambleString",
+			 "@googletest//:gtest_main"],
+)

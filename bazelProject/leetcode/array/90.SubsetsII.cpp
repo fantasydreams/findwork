@@ -32,13 +32,13 @@ void bt1(vector<vector<int> > &ans, int pos, const vector<int>& nums, std::vecto
     ans.emplace_back(tmp);
 
     for(int i = pos; i < nums.size(); ++i) { // 这里能够保证所有的都能入选
-        if(i > pos && nums[i] == nums[i - 1]){
+        if(i > pos && nums[i] == nums[i - 1]){ // 这里能保证所有元素能入选
             continue;
         }
         
         tmp.push_back(nums[i]);
         bt1(ans, i + 1, nums, tmp);
-        tmp.pop_back(); // 往后退的过程中，就能保证序列不重复但是重复的元素的个数n (1-n)的情况都能选上
+        tmp.pop_back(); // 往后退的过程中，就能保证序列不重复但是重复的元素的个数n (1-n)的情况都能选上, 同时保证不重复
     }    
 
 

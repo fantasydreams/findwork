@@ -4,4 +4,6 @@
 // https://www.acwing.com/solution/leetcode/content/140/
 
 using namespace std;
-int largestRectangleArea(vector<int>& heights);
+int largestRectangleArea(const vector<int>& heights);
+int largestRectangleAreaConcise(const vector<int>& heights);
+int largestRectangleAreaClearly(vector<int>& heights);

@@ -56,3 +56,19 @@ void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n)
 
     std::swap(nums1, vecRes);
 }
+
+
+void merge2(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
+    int iIdx = nums1.size() - 1;
+    while(m && n) {
+        if(nums2[n - 1] > nums1[m - 1]) {
+            nums1[iIdx--] = nums2[--n];
+        }else {
+            nums1[iIdx--] = nums1[--m];
+        }
+    }
+
+    while(n) {
+        nums1[iIdx--] = nums2[--n];
+    }
+}

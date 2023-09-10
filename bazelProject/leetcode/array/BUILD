@@ -400,3 +400,35 @@ cc_binary(
 	deps  = ["81SearchinRotatedSortedArrayII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "89GrayCode",
+	hdrs = ["89.GrayCode.h"],
+	srcs = ["89.GrayCode.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "89GrayCodeTest",
+	srcs  = ["89.GrayCodeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["89GrayCode",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "90SubsetsII",
+	hdrs = ["90.SubsetsII.h"],
+	srcs = ["90.SubsetsII.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "90SubsetsIITest",
+	srcs  = ["90.SubsetsIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["90SubsetsII",
+			 "@googletest//:gtest_main"],
+)

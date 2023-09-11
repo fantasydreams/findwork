@@ -269,3 +269,19 @@ cc_binary(
 	deps  = ["86PartitionList",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "92ReverseLinkedListII",
+	hdrs = ["92.ReverseLinkedListII.h"],
+	srcs = ["92.ReverseLinkedListII.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "92ReverseLinkedListIITest",
+	srcs  = ["92.ReverseLinkedListIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["92ReverseLinkedListII",
+			 "@googletest//:gtest_main"],
+)

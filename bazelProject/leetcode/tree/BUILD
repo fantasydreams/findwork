@@ -605,3 +605,20 @@ cc_binary(
 	deps  = ["222CountCompleteTreeNodes",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "100SameTree",
+    hdrs  = ["100.SameTree.h"], 
+	srcs  = ["100.SameTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "100SameTreeTest",
+	srcs  = ["100.SameTreeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["100SameTree",
+			 "@googletest//:gtest_main"],
+)

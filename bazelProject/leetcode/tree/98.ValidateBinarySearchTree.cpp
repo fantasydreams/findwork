@@ -29,3 +29,28 @@ bool isValidBST(TreeNode* root) {
 
     return true;
 }
+
+
+bool isValidBST1(TreeNode* root) {
+    if(!root) {
+        return true;
+    }
+
+    bool bHead = true;
+    int32_t iPreNum = 0;
+    std::stack<TreeNode*> st;
+    pushLeftUntilNull(root, st);
+    while(!st.empty()) {
+        TreeNode* node = st.top();
+        st.pop();
+        if(bHead) {
+            bHead = false;
+        }else if(node->val <= iPreNum) {
+            return false;
+        }
+        iPreNum = node->val;
+        pushLeftUntilNull(node->right, st);
+    }
+
+    return true;
+}

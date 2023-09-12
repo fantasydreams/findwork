@@ -16,6 +16,7 @@ TEST(case_2,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     bool ans = true;
     EXPECT_EQ(isValidBST(root), ans);
+    EXPECT_EQ(isValidBST1(root), ans);
     FreeTree(root);
 }
 
@@ -27,6 +28,7 @@ TEST(case_3,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     bool ans = true;
     EXPECT_EQ(isValidBST(root), ans);
+    EXPECT_EQ(isValidBST1(root), ans);
     FreeTree(root);
 }
 
@@ -37,6 +39,7 @@ TEST(case_4,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     bool ans = false;
     EXPECT_EQ(isValidBST(root), ans);
+    EXPECT_EQ(isValidBST1(root), ans);
     FreeTree(root);
 }
 
@@ -47,5 +50,6 @@ TEST(case_5,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     bool ans = false;
     EXPECT_EQ(isValidBST(root), ans);
+    EXPECT_EQ(isValidBST1(root), ans);
     FreeTree(root);
 }

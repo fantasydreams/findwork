@@ -127,3 +127,19 @@ cc_binary(
 	deps  = ["60PermutationSequence",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "93RestoreIPAddresses",
+	hdrs = ["93.RestoreIPAddresses.h"],
+	srcs = ["93.RestoreIPAddresses.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "93RestoreIPAddressesTest",
+	srcs  = ["93.RestoreIPAddressesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["93RestoreIPAddresses",
+			 "@googletest//:gtest_main"],
+)

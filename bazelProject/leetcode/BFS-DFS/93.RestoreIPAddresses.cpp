@@ -20,7 +20,11 @@ bool checkValid(const std::string& str) {
 }
 
 void dfs(const std::string& str, int pos, std::vector<std::string> tmp, vector<string>& ans) {
-    if(pos >= str.size()) {
+    if(pos >= str.size() || tmp.size() >= 4) {
+        if(pos < str.size()) {
+            return;
+        }
+        
         if(tmp.size() == 4) {
             std::string record = tmp[0];
             for(int i = 1; i < tmp.size(); ++i) {
@@ -56,7 +60,7 @@ void dfs(const std::string& str, int pos, std::vector<std::string> tmp, vector<s
 vector<string> restoreIpAddresses(string s) {
     vector<string> ans, tmp;
     dfs(s, 0, tmp, ans);
-    std::set<std::string> unique(ans.begin(), ans.end());
-    vector<string> returnAns(unique.begin(), unique.end());
-    return returnAns;
+    // std::set<std::string> unique(ans.begin(), ans.end());
+    // vector<string> returnAns(unique.begin(), unique.end());
+    return ans;
 }

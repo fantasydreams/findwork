@@ -8,7 +8,8 @@ TEST(case_1, content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     
     std::vector<int> traverse = inorderTraversal(root);
-
+    std::vector<int> vec1 = inorderTraversal1(root);
+    EXPECT_EQ(vec1, mid);
     EXPECT_EQ(traverse, mid);
     FreeTree(root);
 }
@@ -21,6 +22,8 @@ TEST(case_2, content)
     
     std::vector<int> traverse = inorderTraversal(root);
 
+    std::vector<int> vec1 = inorderTraversal1(root);
+    EXPECT_EQ(vec1, mid);
     EXPECT_EQ(traverse, mid);
     FreeTree(root);
 }

@@ -485,3 +485,19 @@ cc_binary(
 	deps  = ["87ScrambleString",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "96UniqueBinarySearchTrees",
+	hdrs = ["96.UniqueBinarySearchTrees.h"],
+	srcs = ["96.UniqueBinarySearchTrees.cpp"]
+)
+
+
+cc_binary(
+	name  = "96UniqueBinarySearchTreesTest",
+	srcs  = ["96.UniqueBinarySearchTreesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["96UniqueBinarySearchTrees",
+			 "@googletest//:gtest_main"],
+)

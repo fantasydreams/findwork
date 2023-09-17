@@ -622,3 +622,19 @@ cc_binary(
 	deps  = ["100SameTree",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "95UniqueBinarySearchTreesII",
+    hdrs  = ["95.UniqueBinarySearchTreesII.h"], 
+	srcs  = ["95.UniqueBinarySearchTreesII.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [":treecomm"],
+)
+
+cc_binary(
+	name  = "95UniqueBinarySearchTreesIITest",
+	srcs  = ["95.UniqueBinarySearchTreesIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["95UniqueBinarySearchTreesII",
+			 "@googletest//:gtest_main"],
+)

@@ -22,6 +22,26 @@ bool isSymmetric(TreeNode* root) {
     return isSymmetric(root->left, root->right);
 }
 
+
+bool isSymmetric1(TreeNode* left, TreeNode* right) {
+        if(!left && !right)  {
+            return true;
+        }
+        if(left && !right || !left && right || left->val != right->val) {
+            return false;
+        }
+
+        return isSymmetric(left->left, right->right) && isSymmetric(left->right, right->left);
+    }
+
+bool isSymmetric1(TreeNode* root) {
+    if(!root) {
+        return true;
+    }
+
+    return isSymmetric(root->left, root->right);
+}
+
 bool isSymmetricIterator(TreeNode* root) {
     if(root == nullptr) {
         return true;

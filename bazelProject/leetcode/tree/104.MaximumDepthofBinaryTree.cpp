@@ -1,4 +1,5 @@
 #include "104.MaximumDepthofBinaryTree.h"
+#include <cstddef>
 #include <queue>
 
 int maxDepth(TreeNode* root) {
@@ -34,4 +35,25 @@ int maxDepthRecursive(TreeNode* root) {
         return 0;
     }
     return std::max(maxDepthRecursive(root ->left), maxDepthRecursive(root -> right)) + 1;
+}
+
+int maxDepth1(TreeNode* root) { // 2023/9/26
+    int ans = 0;
+    if(root == NULL) {
+        return ans;
+    }    
+
+    std::queue<TreeNode*> que;
+    que.push(root);
+    while(!que.empty()) {
+        int size = que.size();
+        while(size) {
+            TreeNode* pNode = que.front(); que.pop();
+            if(pNode->left) que.push(pNode->left);
+            if(pNode->right) que.push(pNode->right);
+            --size;
+        }
+        ++ans;
+    }
+    return ans;
 }

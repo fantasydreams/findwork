@@ -10,6 +10,7 @@ TEST(case_1, content)
     int ans = 3;
     EXPECT_EQ(maxDepth(root), ans);
     EXPECT_EQ(maxDepthRecursive(root), ans);
+    EXPECT_EQ(maxDepth1(root), ans);
 
     FreeTree(root);
 }

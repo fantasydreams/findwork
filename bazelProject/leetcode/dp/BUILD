@@ -501,3 +501,19 @@ cc_binary(
 	deps  = ["96UniqueBinarySearchTrees",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "97InterleavingString",
+	hdrs = ["97.InterleavingString.h"],
+	srcs = ["97.InterleavingString.cpp"]
+)
+
+
+cc_binary(
+	name  = "97InterleavingStringTest",
+	srcs  = ["97.InterleavingStringTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["97InterleavingString",
+			 "@googletest//:gtest_main"],
+)

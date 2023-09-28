@@ -12,3 +12,20 @@ TEST(case_1, content)
     FreeTree(root);
     FreeTree(newRoot);
 }
+
+
+TEST(case_2, content)
+{
+    std::vector<int> mid = {9, 3, 15, 20, 7};
+    std::vector<int> post = {9, 15, 7, 20, 3};
+    TreeNode * root = CreateTreeMidPost(mid, post);
+    TreeNode * newRoot = buildTreeHash(mid, post);
+    
+    TraverseTreePreNoRecursion(root);
+    printf("\n");
+    TraverseTreePreNoRecursion(newRoot);
+
+    EXPECT_EQ(isTreeValEqual(root, newRoot), true);
+    FreeTree(root);
+    FreeTree(newRoot);
+}

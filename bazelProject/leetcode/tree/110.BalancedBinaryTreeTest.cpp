@@ -9,6 +9,7 @@ TEST(case_1, content)
     
     int ans = true;
     EXPECT_EQ(isBalanced(root), ans);
+    EXPECT_EQ(isBalanced1(root), ans);
     FreeTree(root);
 }
 
@@ -20,6 +21,7 @@ TEST(case_2, content)
     
     int ans = true;
     EXPECT_EQ(isBalanced(root), ans);
+    EXPECT_EQ(isBalanced1(root), ans);
     FreeTree(root);
 }
 
@@ -31,5 +33,6 @@ TEST(case_3, content)
     
     int ans = false;
     EXPECT_EQ(isBalanced(root), ans);
+    EXPECT_EQ(isBalanced1(root), ans);
     FreeTree(root);
 }

@@ -703,3 +703,88 @@ cc_binary(
 	deps  = ["108ConvertSortedArraytoBinarySearchTree",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "109ConvertSortedListtoBinarySearchTree",
+    hdrs  = ["109.ConvertSortedListtoBinarySearchTree.h"], 
+	srcs  = ["109.ConvertSortedListtoBinarySearchTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+		"//List:linkComm",
+		":108ConvertSortedArraytoBinarySearchTree",
+	],
+)
+
+cc_binary(
+	srcs  = ["109.ConvertSortedListtoBinarySearchTreeTest.cpp"],
+	name  = "109ConvertSortedListtoBinarySearchTreeTest",
+	copts = ["-std=c++11"],
+	deps  = ["109ConvertSortedListtoBinarySearchTree",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)
+
+
+cc_library(
+	name  = "111MinimumDepthofBinaryTree",
+    hdrs  = ["111.MinimumDepthofBinaryTree.h"], 
+	srcs  = ["111.MinimumDepthofBinaryTree.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	srcs  = ["111.MinimumDepthofBinaryTreeTest.cpp"],
+	name  = "111MinimumDepthofBinaryTreeTest",
+	copts = ["-std=c++11"],
+	deps  = ["111MinimumDepthofBinaryTree",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)
+
+
+cc_library(
+	name  = "112PathSum",
+    hdrs  = ["112.PathSum.h"], 
+	srcs  = ["112.PathSum.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	srcs  = ["112.PathSumTest.cpp"],
+	name  = "112PathSumTest",
+	copts = ["-std=c++11"],
+	deps  = ["112PathSum",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)
+
+
+cc_library(
+	name  = "113PathSumII",
+    hdrs  = ["113.PathSumII.h"], 
+	srcs  = ["113.PathSumII.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	srcs  = ["113.PathSumIITest.cpp"],
+	name  = "113PathSumIITest",
+	copts = ["-std=c++11"],
+	deps  = ["113PathSumII",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)

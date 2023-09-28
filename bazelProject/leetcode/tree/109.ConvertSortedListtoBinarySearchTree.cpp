@@ -1,4 +1,22 @@
+#include "109.ConvertSortedListtoBinarySearchTree.h"
+#include "108.ConvertSortedArraytoBinarySearchTree.h"
+#include <vector>
+#include "treecomm.h"
+using namespace std;
 
+TreeNode* sortedListToBST1(ListNode* head) {
+    if(head == nullptr) {
+        return nullptr;
+    }    
+
+    std::vector<int> vec;
+    while(head) {
+        vec.push_back(head->val);
+        head = head->next;
+    }
+
+    return sortedArrayToBST(vec);
+}
 
 TreeNode* sortedListToBST(ListNode* head) {
          if(!head) {

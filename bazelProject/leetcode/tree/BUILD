@@ -788,3 +788,24 @@ cc_binary(
 			 "//List:linkComm",
 			],
 )
+
+
+cc_library(
+	name  = "114FlattenBinaryTreetoLinkedList",
+    hdrs  = ["114.FlattenBinaryTreetoLinkedList.h"], 
+	srcs  = ["114.FlattenBinaryTreetoLinkedList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	srcs  = ["114.FlattenBinaryTreetoLinkedListTest.cpp"],
+	name  = "114FlattenBinaryTreetoLinkedListTest",
+	copts = ["-std=c++11"],
+	deps  = ["114FlattenBinaryTreetoLinkedList",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)

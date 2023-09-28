@@ -1,4 +1,6 @@
 #include "116.PopulatingNextRightPointersinEachNode.h"
+#include "treecomm.h"
+#include <cstddef>
 #include <queue>
 
 
@@ -35,7 +37,7 @@ Node* connect(Node* root)
 }
 
 //剪枝
-Node* connect(Node* root)
+Node* connect2(Node* root)
 {
     if(!root) return root;
     if(root->left) {
@@ -45,8 +47,36 @@ Node* connect(Node* root)
         root->right->next = root->next->left;
     }
 
-    connect(root->left);
-    connect(root->right);
+    connect2(root->left);
+    connect2(root->right);
+
+    return root;
+}
+
+
+// letcode 117也能用这个方法
+Node* connect3(Node* root) {
+    if(!root) {
+        return nullptr;
+    }
+
+    std::queue<Node*> que;que.push(root);
+    while(!que.empty()) {
+        int size = que.size();
+        Node* pPre = nullptr;
+        while(size) {
+            Node* pNode = que.front(); que.pop();
+            if(pPre) {
+                pPre->next = pNode;
+            }
+
+            if(pNode->left) que.push(pNode->left);
+            if(pNode->right) que.push(pNode->right);
+            pPre = pNode;
+            --size;
+        }
+        pPre->next = nullptr;
+    }
 
     return root;
 }

@@ -432,3 +432,35 @@ cc_binary(
 	deps  = ["90SubsetsII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "118PascalsTriangle",
+	hdrs = ["118PascalsTriangle.h"],
+	srcs = ["118PascalsTriangle.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "118PascalsTriangleTest",
+	srcs  = ["118PascalsTriangleTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["118PascalsTriangle",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "119PascalsTriangleII",
+	hdrs = ["119.PascalsTriangleII.h"],
+	srcs = ["119.PascalsTriangleII.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "119PascalsTriangleIITest",
+	srcs  = ["119.PascalsTriangleIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["119PascalsTriangleII",
+			 "@googletest//:gtest_main"],
+)

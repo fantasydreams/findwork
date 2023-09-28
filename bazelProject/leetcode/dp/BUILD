@@ -517,3 +517,19 @@ cc_binary(
 	deps  = ["97InterleavingString",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "115DistinctSubsequences",
+	hdrs = ["115.DistinctSubsequences.h"],
+	srcs = ["115.DistinctSubsequences.cpp"]
+)
+
+
+cc_binary(
+	name  = "115DistinctSubsequencesTest",
+	srcs  = ["115.DistinctSubsequencesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["115DistinctSubsequences",
+			 "@googletest//:gtest_main"],
+)

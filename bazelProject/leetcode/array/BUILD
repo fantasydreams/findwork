@@ -464,3 +464,18 @@ cc_binary(
 	deps  = ["119PascalsTriangleII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "120Triangle",
+	hdrs = ["120Triangle.h"],
+	srcs = ["120Triangle.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "120TriangleTest",
+	srcs  = ["120TriangleTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["120Triangle",
+			 "@googletest//:gtest_main"],
+)

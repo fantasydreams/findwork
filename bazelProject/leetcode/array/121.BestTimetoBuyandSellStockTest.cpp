@@ -9,6 +9,7 @@ TEST(case_1,content)
     int ans = 5;
     EXPECT_EQ(maxProfit(stocks), ans);
     EXPECT_EQ(maxProfit1(stocks), ans);
+    EXPECT_EQ(maxProfit2(stocks), ans);
 }
 
 TEST(case_2,content)
@@ -17,5 +18,6 @@ TEST(case_2,content)
     int ans = 0;
     EXPECT_EQ(maxProfit(stocks), ans);
     EXPECT_EQ(maxProfit(stocks), ans);
+    EXPECT_EQ(maxProfit2(stocks), ans);
 }
 

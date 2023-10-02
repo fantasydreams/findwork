@@ -39,3 +39,14 @@ int maxProfit1(vector<int>& prices)
 
     return sell;
 }
+
+
+int maxProfit2(vector<int>& prices) {
+    int _min = INT_MAX, profit = 0;
+    for(const auto & price : prices) {
+        _min = std::min(_min, price);
+        profit = std::max(profit, price - _min);
+    }
+
+    return profit;
+}

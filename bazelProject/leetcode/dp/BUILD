@@ -533,3 +533,18 @@ cc_binary(
 	deps  = ["115DistinctSubsequences",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "123BestTimetoBuyandSellStockIII",
+	hdrs = ["123.BestTimetoBuyandSellStockIII.h"],
+	srcs = ["123.BestTimetoBuyandSellStockIII.cpp"]
+)
+
+
+cc_binary(
+	name  = "123BestTimetoBuyandSellStockIIITest",
+	srcs  = ["123.BestTimetoBuyandSellStockIIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["123BestTimetoBuyandSellStockIII",
+			 "@googletest//:gtest_main"],
+)

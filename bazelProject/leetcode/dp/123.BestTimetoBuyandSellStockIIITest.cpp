@@ -6,6 +6,7 @@ TEST(case_1, content) {
     int profit = 6;
     EXPECT_EQ(maxProfit(price), profit);
     EXPECT_EQ(maxProfitDp(price), profit);
+    EXPECT_EQ(maxProfitStat(price), profit);
 }
 
 
@@ -14,6 +15,7 @@ TEST(case_2, content) {
     int profit = 4;
     EXPECT_EQ(maxProfit(price), profit);
     EXPECT_EQ(maxProfitDp(price), profit);
+    EXPECT_EQ(maxProfitStat(price), profit);
 }
 
 TEST(case_3, content) {
@@ -21,4 +23,5 @@ TEST(case_3, content) {
     int profit = 0;
     EXPECT_EQ(maxProfit(price), profit);
     EXPECT_EQ(maxProfitDp(price), profit);
+    EXPECT_EQ(maxProfitStat(price), profit);
 }

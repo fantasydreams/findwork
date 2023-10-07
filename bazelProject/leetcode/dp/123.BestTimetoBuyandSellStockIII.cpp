@@ -43,3 +43,15 @@ int maxProfitDp(vector<int>& prices)  {
 
     return dp[prices.size() - 1][k];
 }
+
+int maxProfitStat(vector<int>& prices) {
+    int buy1 = -prices[0], buy2 = INT_MIN, sell1 = 0, sell2 = 0;
+    for(int i = 0; i < prices.size(); ++i) {
+        buy1 = std::max(buy1, -prices[i]);
+        sell1 = std::max(sell1, buy1 + prices[i]);
+        buy2 = std::max(buy2, sell1 - prices[i]);
+        sell2 = std::max(sell2, buy2 + prices[i]);
+    }
+
+    return sell2;
+} 

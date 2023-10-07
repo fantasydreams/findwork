@@ -1,4 +1,5 @@
 #include "309.BestTimetoBuyandSellStockwithCooldown.h"
+#include <algorithm>
 #include <climits>
 
 // blog https://blog.csdn.net/zjuPeco/article/details/76468185
@@ -43,3 +44,40 @@ int maxProfit1(vector<int>& prices)
     //最大利润不可能出现在buy而未sell的时候，所以不考虑s1
     return max(s0, s2);
 }
+
+// 状态机
+int maxProfitStat(vector<int>& prices) {
+    if(prices.size() < 2) {
+        return 0;
+    }
+
+    std::vector<int> s0(prices.size() + 1, 0); // reset
+    std::vector<int> s1(prices.size() + 1, INT_MIN); // buy or reset after buy
+    std::vector<int> s2(prices.size() + 1, INT_MIN); // sell
+    for(int i = 1; i <= prices.size(); ++i) {
+        s0[i] = std::max(s0[i - 1], s2[i - 1]);
+        s1[i] = std::max(s1[i - 1], -prices[i - 1] + s0[i - 1]);
+        s2[i] = s1[i - 1] + prices[i - 1];
+    }
+
+    return std::max(s0[prices.size()], s2[prices.size()]);
+} 
+
+
+int maxProfitStat1(vector<int>& prices) {
+    if(prices.size() < 2) {
+        return 0;
+    }
+
+    int s0 = 0; // reset
+    int s1 = INT_MIN; // buy or reset after buy
+    int s2 = INT_MIN; // sell
+    for(int i = 1; i <= prices.size(); ++i) {
+        int pre0 = s0, pre1 = s1;
+        s0 = std::max(s0, s2);
+        s1 = std::max(s1, -prices[i - 1] + pre0);
+        s2 = pre1 + prices[i - 1];
+    }
+
+    return std::max(s0, s2);
+} 

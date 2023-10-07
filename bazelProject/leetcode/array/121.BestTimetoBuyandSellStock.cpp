@@ -50,3 +50,26 @@ int maxProfit2(vector<int>& prices) {
 
     return profit;
 }
+
+
+int maxProfit3(vector<int>& prices) {
+    std::vector<std::vector<int> > dp(prices.size(), std::vector<int>(2, 0));
+    dp[0][0] = -prices[0], dp[0][1] = 0; // dp[i][0]代表第1天买入股票的最大收益，dp[i][1]代表当天卖出股票的最大收益
+    for(int i = 1; i < prices.size(); ++i) {
+        dp[i][0] = std::max(dp[i-1][0], -prices[i]);
+        dp[i][1] = std::max(dp[i-1][1], prices[i] + dp[i-1][0]);
+    }
+
+    return dp[prices.size() - 1][1];
+}
+
+// 空间压缩
+int maxProfit4(vector<int>& prices) {
+    int buyProfit = INT_MIN, sellProfit = 0;
+    for(int i = 0; i < prices.size(); ++i) {
+        buyProfit = std::max(buyProfit, -prices[i]);
+        sellProfit = std::max(sellProfit, buyProfit + prices[i]);
+    }
+
+    return sellProfit;
+}

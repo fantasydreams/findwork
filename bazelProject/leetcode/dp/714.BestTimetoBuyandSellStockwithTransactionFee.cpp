@@ -111,3 +111,35 @@ int maxProfit5(vector<int>& prices, int fee)
 
     return sell[n];
 }
+
+int maxProfit6(vector<int>& prices, int fee) {
+    int n = prices.size();
+    if(n <= 1) {
+        return 0;
+    }
+
+    std::vector<int> buy(n + 1, INT_MIN), sell(n + 1, 0);
+    for(int i = 1; i <= prices.size(); ++i) {
+        buy[i] = std::max(-prices[i - 1] - fee + sell[i - 1], buy[i - 1]);
+        sell[i] = std::max(sell[i - 1], buy[i - 1] + prices[i - 1]);
+    }
+
+    return sell[n];
+}
+
+
+int maxProfit7(vector<int>& prices, int fee) {
+    int n = prices.size();
+    if(n <= 1) {
+        return 0;
+    }
+
+    int buy = INT_MIN, sell = 0;
+    for(int i = 1; i <= prices.size(); ++i) {
+        int pre = buy;
+        buy = std::max(-prices[i - 1] - fee + sell, buy);
+        sell = std::max(sell, pre + prices[i - 1]);
+    }
+
+    return sell;
+}

@@ -1,4 +1,6 @@
 #include "188.BestTimetoBuyandSellStockIV.h"
+#include <climits>
+#include <vector>
 
 int maxprofit_(const vector<int> & prices)
 {
@@ -34,5 +36,48 @@ int maxProfit(int k, vector<int>& prices)
         return sell[k];
     }
 
+    return 0;
+}
+
+
+int maxProfitDp(int k, vector<int>& prices) {
+    if(prices.size() < 2) {
+        return 0;
+    }else if(k >= prices.size()) {
+        return maxprofit_(prices);
+    }else {
+        std::vector<std::vector<int> > dp(prices.size(), std::vector<int>(k + 1, 0));
+        for(int t = 1; t <= k; ++t) {
+            int _min = prices[0];
+            for(int i = 1; i < prices.size(); ++i) {
+                _min = std::min(_min, prices[i] - dp[i][t - 1]);
+                dp[i][t] = std::max(dp[i - 1][t], prices[i] -_min); // 进行了t次交易，要么是昨天已经进行了t次，要么就是昨天进行了t-1今日卖出t次
+            }
+        }
+
+        return dp[prices.size() - 1][k];
+    }
+    
+    return 0;
+}
+
+int maxProfitStat(int k, vector<int>& prices) {
+    if(prices.size() < 2) {
+        return 0;
+    }else if(k >= prices.size()) {
+        return maxprofit_(prices);
+    }else {
+        std::vector<int> buy(k + 1, INT_MIN);
+        std::vector<int> sell(k + 1, 0);
+
+        for(int i = 0; i < prices.size(); ++i) {
+            for(int t = 1; t <= k; ++t) {
+                buy[t] = std::max(sell[t - 1] - prices[i], buy[t]); // 要么买入，要么不买，不买就是buy[t]
+                sell[t] = std::max(prices[i] + buy[t], sell[t]); // 要么卖出，要么布卖，不买就是sell[t]
+            }
+        }
+        return sell[k];
+    }
+    
     return 0;
 }

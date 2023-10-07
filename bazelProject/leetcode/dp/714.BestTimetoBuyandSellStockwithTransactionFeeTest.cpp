@@ -13,4 +13,6 @@ TEST(case_1,content)
     EXPECT_EQ(maxProfit3(prices, fee), ans);
     EXPECT_EQ(maxProfit4(prices, fee), ans);
     EXPECT_EQ(maxProfit5(prices, fee), ans);
+    EXPECT_EQ(maxProfit6(prices, fee), ans);
+    EXPECT_EQ(maxProfit7(prices, fee), ans);
 }

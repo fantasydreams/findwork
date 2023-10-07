@@ -809,3 +809,24 @@ cc_binary(
 			 "//List:linkComm",
 			],
 )
+
+
+cc_library(
+	name  = "124BinaryTreeMaximumPathSum",
+    hdrs  = ["124.BinaryTreeMaximumPathSum.h"], 
+	srcs  = ["124.BinaryTreeMaximumPathSum.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	srcs  = ["124.BinaryTreeMaximumPathSumTest.cpp"],
+	name  = "124BinaryTreeMaximumPathSumTest",
+	copts = ["-std=c++11"],
+	deps  = ["124BinaryTreeMaximumPathSum",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)

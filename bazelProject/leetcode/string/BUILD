@@ -366,3 +366,19 @@ cc_binary(
 	deps  = ["71SimplifyPath",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "125ValidPalindrome",
+	hdrs = ["125.ValidPalindrome.h"],
+	srcs = ["125.ValidPalindrome.cpp"]
+)
+
+
+cc_binary(
+	name  = "125ValidPalindromeTest",
+	srcs  = ["125.ValidPalindromeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["125ValidPalindrome",
+			 "@googletest//:gtest_main"],
+)

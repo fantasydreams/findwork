@@ -1,6 +1,7 @@
 #include "121.BestTimetoBuyandSellStock.h"
 #include <climits>
 #include <cmath>
+#include <stack>
 
 int maxProfit(vector<int>& prices)
 {
@@ -72,4 +73,26 @@ int maxProfit4(vector<int>& prices) {
     }
 
     return sellProfit;
+}
+
+int maxProfitMonostoneStack(vector<int>& prices) {
+    if(prices.size() < 2) {
+        return 0;
+    }
+
+    int ans = 0;
+    std::stack<int> st; st.push(prices[0]);
+    for(int i = 1; i < prices.size(); ++i) {
+        while(!st.empty() && st.top() > prices[i]) {
+            st.pop();
+        }
+
+        if(st.empty()) {
+            st.push(prices[i]);
+        }else {
+            ans = std::max(prices[i] - st.top(), ans);
+        }
+    }
+
+    return ans;
 }

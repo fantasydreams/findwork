@@ -1,4 +1,5 @@
 #include "126.WordLadderII.h"
+#include <string>
 #include <unordered_map>
 #include <unordered_set>
 #include <climits>
@@ -136,7 +137,7 @@ void dfs(const vector<string> & wordList, const std::vector<std::vector<int>> & 
     {
         std::vector<std::string> tmp(path.size() - 1);
         std::transform(path.rbegin() + 1, path.rend(), tmp.begin(), [&](int i) {return wordList[i];});
-        ans.push_back(move(tmp));
+        ans.push_back(std::move(tmp));
         return;
     }
 
@@ -192,4 +193,90 @@ vector<vector<string>> findLadders1(string beginWord, string endWord, vector<str
     return ans;
 }
 
+
+bool isAdjStr(const std::string& a, const std::string& b) {
+    if(a.length() != b.length()) {
+        return false;
+    }
+
+    int dcnt = 0;
+    for(int i = 0; i < a.size(); ++i) {
+        dcnt += (a[i] != b[i]);
+    }
+
+    return dcnt == 1;
+}
+
+
+void bfs(const std::vector<std::vector<int>>& adjmetrix, std::vector<std::vector<int>>& parentmetrix, int begin) {
+    parentmetrix[begin] = {-1};
+    std::queue<int> que; que.push(begin);
+    std::vector<int> dist(505, INT_MAX); dist[begin] = 0;
+    while(!que.empty()) {
+        int u = que.front(); que.pop();
+        for(auto v : adjmetrix[u]) {
+            if(dist[v] > dist[u] + 1) {
+                dist[v] = dist[u] + 1;
+                // printf("u %d v %d\n", u, v);
+                parentmetrix[v] = {u};
+                que.push(v);
+            }else if(dist[v] == dist[u] + 1) {
+                parentmetrix[v].push_back(u);
+            }
+        }
+    }
+}
+
+void bt(const std::vector<std::vector<int>>& parentmetrix, int u, std::vector<int>& path, std::vector<std::string>& wordList, std::vector<std::vector<std::string>>& ans) {
+    if(u == -1) {
+        std::vector<string> tmp(path.size() - 1);
+        std::transform(path.rbegin() + 1, path.rend(), tmp.begin(), [&](int i){return wordList[i];});
+        ans.emplace_back(std::move(tmp));
+        return;
+    }
+
+    for(auto v : parentmetrix[u]) {
+        path.push_back(v);
+        bt(parentmetrix, v, path, wordList, ans);
+        path.pop_back();
+    }
+}
+
+vector<vector<string>> findLaddersAdj(string beginWord, string endWord, vector<string>& wordList)  {
+    int begin = -1, end = -1;
+    for(int i = 0; i < wordList.size(); ++i) {
+        if(wordList[i] == beginWord) {
+            begin = i;
+        }
+        if(endWord == wordList[i]) {
+            end = i;
+        }
+    }
+
+
+    std::vector<std::vector<string>> ans;
+    if(end == -1) {
+        return ans;
+    }
+
+    if(begin == -1) {
+        wordList.push_back(beginWord);
+        begin = wordList.size() - 1;
+    }
+
+    std::vector<std::vector<int>> adjmetrix(505, std::vector<int>()), parentmetrix(505, std::vector<int>());
+    for(int i = 0; i < wordList.size() - 1; ++i) {
+        for(int j = i + 1; j < wordList.size(); ++j) {
+            if(isAdjStr(wordList[i], wordList[j])) {
+                adjmetrix[i].push_back(j);
+                adjmetrix[j].push_back(i);
+            }
+        }
+    }
     
+    // printf(" end %d\n", end);
+    std::vector<int> path = {end};
+    bfs(adjmetrix, parentmetrix, begin);
+    bt(parentmetrix, end, path, wordList, ans);
+    return ans;
+}

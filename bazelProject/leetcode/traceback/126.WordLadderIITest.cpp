@@ -11,6 +11,7 @@ TEST(case_1,content)
     std::vector<std::vector<std::string>> ans = {{"hit","hot","dot","dog","cog"}, {"hit","hot","lot","log","cog"}};
     EXPECT_EQ(findLadders(beginWord, endWord, wordList), ans);
     EXPECT_EQ(findLadders1(beginWord, endWord, wordList), ans);
+    EXPECT_EQ(findLaddersAdj(beginWord, endWord, wordList), ans); 
 }
 
 TEST(case_2,content)
@@ -21,4 +22,5 @@ TEST(case_2,content)
     std::vector<std::vector<std::string>> ans = {};
     EXPECT_EQ(findLadders(beginWord, endWord, wordList), ans);
     EXPECT_EQ(findLadders1(beginWord, endWord, wordList), ans);
+    EXPECT_EQ(findLaddersAdj(beginWord, endWord, wordList), ans);
 }

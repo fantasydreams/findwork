@@ -10,6 +10,8 @@ TEST(case_1,content)
     int res = 5;
     EXPECT_EQ(ladderLength(beginWord, endWord, wordList), res);
     EXPECT_EQ(ladderLength1(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLengthBFS(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLengthBiBFS(beginWord, endWord, wordList), res);
 }
 
 TEST(case_2,content)
@@ -21,4 +23,19 @@ TEST(case_2,content)
     int res = 0;
     EXPECT_EQ(ladderLength(beginWord, endWord, wordList), res);
     EXPECT_EQ(ladderLength1(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLengthBFS(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLengthBiBFS(beginWord, endWord, wordList), res);
+}
+
+
+TEST(case_3,content)
+{
+    std::string beginWord = "ymain";
+    std::string endWord = "oecij";
+    std::vector<std::string> wordList = {"ymann","yycrj","oecij","ymcnj","yzcrj","yycij","xecij","yecij","ymanj","yzcnj","ymain"};
+    int res = 10;
+    EXPECT_EQ(ladderLength(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLength1(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLengthBFS(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLengthBiBFS(beginWord, endWord, wordList), res);
 }

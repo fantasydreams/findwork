@@ -1,7 +1,9 @@
 #include "127.WordLadder.h"
 #include <climits>
 #include <queue>
+#include <string>
 #include <vector>
+#include <unordered_set>
 
 bool isAdj(const std::string& a, const std::string& b) {
     if(a.size() != b.size()) {
@@ -184,4 +186,86 @@ int ladderLength1(string beginWord, string endWord, vector<string>& wordList) {
     int ans = 0; bool bfind = false;
     bt(parentmetrix, end, ans, bfind);
     return ans;
+}
+
+
+// 广度优先搜索 
+// https://leetcode.cn/problems/word-ladder/solutions/473600/dan-ci-jie-long-by-leetcode-solution/
+// https://zhuanlan.zhihu.com/p/103996384
+int ladderLengthBFS(string beginWord, string endWord, vector<string>& wordList) {
+    std::unordered_set<std::string> dict(wordList.begin(), wordList.end());
+    if(dict.count(endWord) == 0) {
+        return 0;
+    }
+
+    std::queue<std::string> que;que.push(beginWord);
+    int level = 0;
+    while(!que.empty()) {
+        ++level;
+        int n = que.size();
+        while(n--) {
+            std::string sNext = que.front(); que.pop();
+            for(int i = 0; i < beginWord.size(); ++i) {
+                for(char ch = 'a'; ch <= 'z'; ++ch) {
+                    char old = sNext[i];
+                    sNext[i] = ch;
+                    if(sNext == endWord) {
+                        return level + 1;
+                    }
+                    
+                    auto pIter = dict.find(sNext);
+                    if(pIter != dict.end()) {
+                        que.push(sNext);
+                        dict.erase(pIter);
+                    }
+
+                    sNext[i] = old;
+                }
+            }
+        }
+    }
+
+    return 0;
+}
+
+// 广度优先 【双向】 搜索
+int ladderLengthBiBFS(string beginWord, string endWord, vector<string>& wordList) {
+    std::unordered_set<std::string> setBegin, SetEnd, dict(wordList.begin(), wordList.end()); setBegin.insert(beginWord), SetEnd.insert(endWord);
+
+    if(dict.count(endWord) == 0) {
+        return 0;
+    }
+
+    int level = 0;
+    while(!setBegin.empty() && !SetEnd.empty()) {
+        if(setBegin.size() > SetEnd.size()) {
+            swap(setBegin, SetEnd);
+        }
+
+        ++level;
+        std::unordered_set<std::string> tmp;
+        for(auto& str : setBegin) {
+            std::string sNext = str;
+            for(int i = 0; i < beginWord.size(); ++i) {
+                char oldch = sNext[i];
+                for(char ch = 'a'; ch <= 'z'; ++ch) {
+                    sNext[i] = ch;
+                    if(SetEnd.count(sNext)) {
+                        return level + 1;
+                    }
+
+                    auto pIter = dict.find(sNext);
+                    if(pIter != dict.end()) {
+                        dict.erase(pIter);
+                        tmp.insert(sNext);
+                    }
+                }
+                sNext[i] = oldch;
+            }
+        }
+
+        swap(tmp, setBegin);
+    }
+
+    return 0;
 }

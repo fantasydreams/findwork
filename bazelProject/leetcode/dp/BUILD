@@ -548,3 +548,19 @@ cc_binary(
 	deps  = ["123BestTimetoBuyandSellStockIII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "132PalindromePartitioningII",
+	hdrs = ["132.PalindromePartitioningII.h"],
+	srcs = ["132.PalindromePartitioningII.cpp"]
+)
+
+
+cc_binary(
+	name  = "132PalindromePartitioningIITest",
+	srcs  = ["132.PalindromePartitioningIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["132PalindromePartitioningII",
+			 "@googletest//:gtest_main"],
+)

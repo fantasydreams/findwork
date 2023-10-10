@@ -78,3 +78,38 @@ std::vector<std::vector<std::string> > partitionDp(std::string s)
     GetpartitionDp(s, 0, res, tmp, dp);
     return res;
 }
+
+
+void GetpartitionDp1(const std::string & s, int start,
+     std::vector<std::vector<std::string> > & res, 
+     std::vector<std::string> & vec,
+     std::vector<std::vector<bool> > & dp) 
+{
+    if(s.empty()) {
+        return;
+    }
+
+    if(start >= s.size()) {
+        res.push_back(vec);
+        return;
+    }
+
+    for(int end = start; end < s.size(); ++end) {
+        if((s[start] == s[end] && ((end - start <= 2) || (start + 1 < s.size() && end - 1 >= 0 && dp[start + 1][end - 1])))) {
+            std::string substr = s.substr(start, end - start + 1);
+            dp[start][end] = true;
+            vec.emplace_back(std::move(substr));
+            GetpartitionDp1(s, end + 1, res, vec, dp) ;
+            vec.pop_back();
+        }
+    }
+
+}
+
+std::vector<std::vector<std::string> > partitionDp1(std::string s) {
+    std::vector<std::vector<std::string> >res;
+    std::vector<std::string> tmp;
+    std::vector<std::vector<bool> > dp(s.size(), std::vector<bool>(s.size(), 0));
+    GetpartitionDp1(s, 0, res, tmp, dp);
+    return res;
+}

@@ -79,3 +79,33 @@ int longestConsecutive1(vector<int>& nums) {
 
     return ans;
 }
+
+int longestConsecutive2(vector<int>& nums) {
+    unordered_set<int> hash(nums.begin(), nums.end());
+    int ans = 0;
+    while(!hash.empty()) {
+        int len = 1;
+        int cur = *hash.begin();
+        int find = cur + 1;
+        hash.erase(cur);
+
+        std::unordered_set<int>::iterator pIter = hash.find(find);
+        while(pIter != hash.end()) {
+            ++len;
+            hash.erase(pIter);
+            pIter = hash.find(++find);
+        }
+
+        find = cur - 1;
+        pIter = hash.find(find);
+        while(pIter != hash.end()) {
+            ++len;
+            hash.erase(pIter);
+            pIter = hash.find(--find);
+        }
+
+        ans = std::max(ans, len);
+    }
+
+    return ans;
+}

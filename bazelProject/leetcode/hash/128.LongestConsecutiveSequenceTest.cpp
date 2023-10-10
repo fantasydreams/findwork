@@ -10,6 +10,7 @@ TEST(case_1,content)
     int ans = 4;
     EXPECT_EQ(longestConsecutive(vecNums), ans);   
     EXPECT_EQ(longestConsecutive1(vecNums), ans);   
+    EXPECT_EQ(longestConsecutive2(vecNums), ans);  
 }
 
 
@@ -19,6 +20,7 @@ TEST(case_2,content)
     int ans = 9;
     EXPECT_EQ(longestConsecutive(vecNums), ans);   
     EXPECT_EQ(longestConsecutive1(vecNums), ans);   
+    EXPECT_EQ(longestConsecutive2(vecNums), ans);
 }
 
 TEST(case_3,content)
@@ -27,6 +29,7 @@ TEST(case_3,content)
     int ans = 0;
     EXPECT_EQ(longestConsecutive(vecNums), ans);   
     EXPECT_EQ(longestConsecutive1(vecNums), ans);   
+    EXPECT_EQ(longestConsecutive2(vecNums), ans);
 }
 
 TEST(case_4,content)
@@ -35,4 +38,5 @@ TEST(case_4,content)
     int ans = 1;
     EXPECT_EQ(longestConsecutive(vecNums), ans);   
     EXPECT_EQ(longestConsecutive1(vecNums), ans);   
+    EXPECT_EQ(longestConsecutive2(vecNums), ans);
 }

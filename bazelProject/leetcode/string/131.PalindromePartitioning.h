@@ -3,3 +3,4 @@
 
 std::vector<std::vector<std::string> > partition(std::string s);
 std::vector<std::vector<std::string> > partitionDp(std::string s);
+std::vector<std::vector<std::string> > partitionDp1(std::string s);

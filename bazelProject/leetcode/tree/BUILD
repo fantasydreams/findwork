@@ -830,3 +830,24 @@ cc_binary(
 			 "//List:linkComm",
 			],
 )
+
+
+cc_library(
+	name  = "129SumRoottoLeafNumbers",
+    hdrs  = ["129.SumRoottoLeafNumbers.h"], 
+	srcs  = ["129.SumRoottoLeafNumbers.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	srcs  = ["129.SumRoottoLeafNumbersTest.cpp"],
+	name  = "129SumRoottoLeafNumbersTest",
+	copts = ["-std=c++11"],
+	deps  = ["129SumRoottoLeafNumbers",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)

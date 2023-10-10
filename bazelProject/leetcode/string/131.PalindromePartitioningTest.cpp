@@ -7,6 +7,7 @@ TEST(case_1,content)
     std::vector<std::vector<std::string> > res = {{"a","a","b"}, {"aa","b"}};
     EXPECT_EQ(partition(str), res);
     EXPECT_EQ(partitionDp(str), res);
+    EXPECT_EQ(partitionDp1(str), res);
 }
 
 
@@ -16,6 +17,7 @@ TEST(case_2,content)
     std::vector<std::vector<std::string> > res = {{"a"}};
     EXPECT_EQ(partition(str), res);
     EXPECT_EQ(partitionDp(str), res);
+    EXPECT_EQ(partitionDp1(str), res);
 }
 
 TEST(case_3,content)
@@ -32,6 +34,7 @@ TEST(case_3,content)
     };
     EXPECT_EQ(partition(str), res);
     EXPECT_EQ(partitionDp(str), res);
+    EXPECT_EQ(partitionDp1(str), res);
 }
 
 int main(int argc, char* argv[])

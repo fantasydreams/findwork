@@ -479,3 +479,19 @@ cc_binary(
 	deps  = ["120Triangle",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "135Candy",
+	hdrs = ["135.Candy.h"],
+	srcs = ["135.Candy.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "135CandyTest",
+	srcs  = ["135.CandyTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["135.Candy",
+			 "@googletest//:gtest_main"],
+)

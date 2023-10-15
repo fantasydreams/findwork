@@ -8,3 +8,12 @@ int singleNumber(vector<int>& nums) {
 
     return ans;
 }
+
+int singleNumber1(vector<int> &nums) {
+    int ans = 0;
+    for(const auto& num : nums) {
+        ans ^= num;
+    }
+
+    return ans;
+}

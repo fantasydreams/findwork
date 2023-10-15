@@ -153,3 +153,21 @@ cc_binary(
 	deps  = ["260SingleNumberIII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "137SingleNumberII",
+	srcs  = [
+		"137.SingleNumberII.h",
+		"137.SingleNumberII.cpp"
+	],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "137SingleNumberIITest",
+	srcs  = ["137.SingleNumberIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["137SingleNumberII",
+			 "@googletest//:gtest_main"],
+)

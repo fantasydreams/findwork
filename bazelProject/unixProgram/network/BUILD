@@ -37,6 +37,31 @@ cc_binary(
 
 
 cc_binary(
+    name = "so_poll_server",
+    srcs = ["so_poll_server.cpp",
+        ],
+    deps = ["//lib/err:myerr",
+            "//lib/condition:condition",
+            "//lib/string:stringlib",
+            "//lib/file:mode",
+        ],
+    copts = ["-std=c++11"],
+)
+
+
+cc_binary(
+    name = "so_epoll_server",
+    srcs = ["so_epoll_server.cpp",
+        ],
+    deps = ["//lib/err:myerr",
+            "//lib/condition:condition",
+            "//lib/string:stringlib",
+            "//lib/file:mode",
+        ],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
     name = "so_test_tcp_server",
     srcs = ["so_test_tcp_server.cpp",
         ],

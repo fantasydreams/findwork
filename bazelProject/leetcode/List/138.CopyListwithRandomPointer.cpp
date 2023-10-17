@@ -76,3 +76,68 @@ Node* copyRandomList1(Node* head) {
 
     return newHead;
 }
+
+
+Node* copyRandomListHash(Node* head) {
+    if(head == nullptr) {
+        return nullptr;
+    }
+
+    Node * newHead = new Node(head->val);
+    std::unordered_map<Node*, Node*> hashMap(head, newHead);
+    Node* pTmp = head->next, *pPre = newHead;
+    while(pTmp) {
+        Node* pNode = new Node(pTmp->val);
+        hashMap[pTmp] = pNode;
+        pPre->next = pNode;
+        pPre = pNode;
+        pTmp = pTmp->next;
+    }
+
+    pTmp = head;
+    while(pTmp) {
+        hashMap[pTmp]->random = hashMap[pTmp->random];
+        pTmp = pTmp->next;
+    }
+
+    return newHead;
+}
+
+// merge copy  copy random split
+Node* copyRandomListON(Node* head) {
+    if(head == nullptr) {
+        return head;
+    }
+
+    Node* pTmp = head;
+    while(pTmp) {
+        Node* pNode = new Node(pTmp->val);
+        pNode->next = pTmp->next;
+        pTmp->next = pNode;
+        pTmp = pNode->next;
+    }
+
+    // copy random
+    pTmp = head;
+    while(pTmp) {
+        if(pTmp->random) {
+            pTmp->next->random = pTmp->random->next;
+        }
+        pTmp = pTmp->next->next;
+    }
+
+    // split;
+    
+    pTmp = head;
+    Node* newHead = pTmp->next;
+    while(pTmp) {
+        Node* pNode = pTmp->next;
+        pTmp->next = pNode->next;
+        pTmp = pTmp->next;
+        if(pTmp) {
+            pNode->next = pTmp->next;
+        }
+    }
+
+    return newHead;
+}

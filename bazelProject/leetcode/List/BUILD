@@ -285,3 +285,19 @@ cc_binary(
 	deps  = ["92ReverseLinkedListII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "141LinkedListCycle",
+	hdrs = ["141.LinkedListCycle.h"],
+	srcs = ["141.LinkedListCycle.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "141LinkedListCycleTest",
+	srcs  = ["141.LinkedListCycleTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["141LinkedListCycle",
+			 "@googletest//:gtest_main"],
+)

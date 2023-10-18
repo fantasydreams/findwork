@@ -58,7 +58,10 @@ cc_binary(
             "//lib/string:stringlib",
             "//lib/file:mode",
         ],
-    copts = ["-std=c++11"],
+    copts = [
+        "-std=c++11",
+        "-w",
+    ],
 )
 
 cc_binary(

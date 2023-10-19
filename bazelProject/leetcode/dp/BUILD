@@ -564,3 +564,18 @@ cc_binary(
 	deps  = ["132PalindromePartitioningII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "140WordBreakII",
+	hdrs = ["140.WordBreakII.h"],
+	srcs = ["140.WordBreakII.cpp"]
+)
+
+
+cc_binary(
+	name  = "140WordBreakIITest",
+	srcs  = ["140.WordBreakIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["140WordBreakII",
+			 "@googletest//:gtest_main"],
+)

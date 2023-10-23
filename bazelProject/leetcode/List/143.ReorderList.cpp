@@ -1,4 +1,6 @@
 #include "143.ReorderList.h"
+#include "linkcomm.h"
+#include <cstddef>
 
 
 // 拆成两半，后半部分反转，然后依次按顺序合起来
@@ -86,4 +88,41 @@ void reorderList1(ListNode* head)
         tmp=node->next;
     }
     
+}
+
+
+void reorderList2(ListNode* head) {
+    if(!head || head->next == nullptr) {
+        return;
+    }
+
+    ListNode oHead;
+    ListNode* fast = head, *slow = head;
+    ListNode* pre = nullptr;
+    while(fast) {
+        pre = slow;
+        slow = slow->next;
+        fast = fast->next;
+        if(fast) {
+            fast = fast->next;
+        }
+    };
+
+    pre->next = nullptr;
+    ListNode* reverse = nullptr;
+    while(slow) {
+        ListNode* node = slow;
+        slow = slow->next;
+        node->next = reverse;
+        reverse = node;
+    }
+
+    ListNode* tmp = head;
+    while(reverse) {
+        ListNode* node = reverse;
+        reverse = reverse->next;
+        node->next = tmp->next;
+        tmp->next = node;
+        tmp = node->next;
+    }
 }

@@ -65,3 +65,49 @@ ListNode* sortListMergeSort(ListNode* head) {
     ListNode * right = sortListMergeSort(slow);
     return mergeList(left, right);
 }
+
+
+struct ValNode {
+    ListNode* head;
+    ListNode* tail;
+    ValNode() : head(nullptr), tail(nullptr){};
+    ValNode(ListNode* node) : head(node), tail(node) {
+        head->next = nullptr;
+    }
+
+    ValNode(const ValNode& oValNode) {
+        head = oValNode.head;
+        tail = oValNode.tail;
+    }
+};
+
+ListNode* sortListHash(ListNode* head) {
+    if(head == nullptr) {
+        return head;
+    }
+
+    ListNode* pNode = head;
+    std::map<int, struct ValNode> hashmap;
+    while(pNode) {
+        ListNode* pCurNode = pNode;
+        pNode = pNode->next;
+        auto pIter = hashmap.find(pCurNode->val);
+        if(pIter == hashmap.end()) {
+            hashmap.insert({pCurNode->val, ValNode(pCurNode)});
+        }else {
+            pIter->second.tail->next = pCurNode;
+            pIter->second.tail = pCurNode;
+            pIter->second.tail->next = nullptr;
+        }
+    }    
+
+    ListNode* pre = nullptr;
+    for(auto pIter = hashmap.begin(); pIter != hashmap.end(); ++pIter) {
+        if(pre) {
+            pre->next = pIter->second.head;
+        }
+        pre = pIter->second.tail;
+    }
+
+    return hashmap.begin()->second.head;
+}

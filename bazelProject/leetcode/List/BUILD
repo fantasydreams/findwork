@@ -301,3 +301,19 @@ cc_binary(
 	deps  = ["141LinkedListCycle",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "147InsertionSortList",
+	hdrs = ["147.InsertionSortList.h"],
+	srcs = ["147.InsertionSortList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "147InsertionSortListTest",
+	srcs  = ["147.InsertionSortListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["147InsertionSortList",
+			 "@googletest//:gtest_main"],
+)

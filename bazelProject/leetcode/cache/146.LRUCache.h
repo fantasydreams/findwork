@@ -77,3 +77,40 @@ private:
     std::list<std::pair<int, int>> m_cache;
     std::unordered_map<int, std::list<std::pair<int, int>>::iterator> m_hashmap;
 };
+
+
+class LRUCache2 {
+public:
+    LRUCache2(int capacity) : m_capacity(capacity) {
+    }
+
+    int get(int key) {
+        auto pIter = m_hashmap.find(key);
+        if(pIter == m_hashmap.end()) {
+            return -1;
+        }
+
+        m_cache.splice(m_cache.begin(), m_cache, pIter->second);
+        return pIter->second->second;
+    }
+
+    void put(int key, int value) {
+        auto pIter = m_hashmap.find(key);
+        if(pIter != m_hashmap.end()) {
+            pIter->second->second = value;
+            m_cache.splice(m_cache.begin(), m_cache, pIter->second);
+        }else {
+            if(m_cache.size() >= m_capacity) {
+                m_hashmap.erase(m_cache.back().first);
+                m_cache.pop_back();
+            }
+
+            m_cache.push_front({key, value});
+            m_hashmap.insert({key, m_cache.begin()});
+        }
+    } 
+private:
+    int m_capacity;
+    std::list<std::pair<int, int> > m_cache;
+    std::unordered_map<int, std::list<std::pair<int, int> >::iterator> m_hashmap;
+};

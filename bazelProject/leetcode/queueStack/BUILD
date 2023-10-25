@@ -143,3 +143,21 @@ cc_binary(
 	deps  = ["85MaximalRectangle",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "150EvaluateReversePolishNotation",
+	hdrs = ["150.EvaluateReversePolishNotation.h"],
+	srcs = ["150.EvaluateReversePolishNotation.cpp"],
+    copts = ["-std=c++11"],
+	deps = [
+	]
+)
+
+cc_binary(
+	name  = "150EvaluateReversePolishNotationTest",
+	srcs  = ["150.EvaluateReversePolishNotationTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["150EvaluateReversePolishNotation",
+			 "@googletest//:gtest_main"],
+)

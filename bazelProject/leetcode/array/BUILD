@@ -495,3 +495,19 @@ cc_binary(
 	deps  = ["135.Candy",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "152MaximumProductSubarray",
+	hdrs = ["152.MaximumProductSubarray.h"],
+	srcs = ["152.MaximumProductSubarray.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "152MaximumProductSubarrayTest",
+	srcs  = ["152.MaximumProductSubarrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["152MaximumProductSubarray",
+			 "@googletest//:gtest_main"],
+)

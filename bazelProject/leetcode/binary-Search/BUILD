@@ -111,3 +111,18 @@ cc_binary(
 	deps  = ["35SearchInsertPosition",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "153FindMinimuminRotatedSortedArray",
+	hdrs = ["153.FindMinimuminRotatedSortedArray.h"],
+	srcs = ["153.FindMinimuminRotatedSortedArray.cpp"]
+)
+
+cc_binary(
+	name  = "153FindMinimuminRotatedSortedArrayTest",
+	srcs  = ["153.FindMinimuminRotatedSortedArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["153FindMinimuminRotatedSortedArray",
+			 "@googletest//:gtest_main"],
+)

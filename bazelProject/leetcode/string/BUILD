@@ -382,3 +382,19 @@ cc_binary(
 	deps  = ["125ValidPalindrome",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "151ReverseWordsinaString",
+	hdrs = ["151.ReverseWordsinaString.h"],
+	srcs = ["151.ReverseWordsinaString.cpp"]
+)
+
+
+cc_binary(
+	name  = "151ReverseWordsinaStringTest",
+	srcs  = ["151.ReverseWordsinaStringTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["151ReverseWordsinaString",
+			 "@googletest//:gtest_main"],
+)

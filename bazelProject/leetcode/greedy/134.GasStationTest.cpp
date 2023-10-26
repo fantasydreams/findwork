@@ -33,3 +33,12 @@ TEST(case_4, content) {
     int res = canCompleteCircuit(gas, cost);
     EXPECT_EQ(res, ans);
 }
+
+
+TEST(case_5, content) {
+    std::vector<int> gas = {1,1,2,3};
+    std::vector<int> cost = {2,3,1,1};
+    int ans = 2;
+    int res = canCompleteCircuit(gas, cost);
+    EXPECT_EQ(res, ans);
+}

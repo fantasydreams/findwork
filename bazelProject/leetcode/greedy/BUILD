@@ -198,3 +198,17 @@ cc_binary(
 	deps  = ["57InsertInterval",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "134GasStation",
+	hdrs = ["134.GasStation.h"],
+	srcs = ["134.GasStation.cpp"],
+)
+
+cc_binary(
+	name  = "134GasStationTest",
+	srcs  = ["134.GasStationTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["134GasStation",
+			 "@googletest//:gtest_main"],
+)

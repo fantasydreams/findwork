@@ -1,4 +1,5 @@
 #include "160.IntersectionofTwoLinkedLists.h"
+#include "linkcomm.h"
 
 
 
@@ -37,4 +38,56 @@ ListNode *getIntersectionNodeTwoPointer(ListNode* headA, ListNode *headB) {
     }
 
     return node1;
+}
+
+
+ListNode *getIntersectionNodeLen(ListNode* headA, ListNode * headB) {
+    if(headA == nullptr || headB == nullptr) {
+        return nullptr;
+    }
+
+    int lenA = getLinkLen(headA), lenB = getLinkLen(headB);
+    int longLen = lenA, shortLen = lenB;
+    ListNode * pLong = headA, *pShort = headB;
+    if(lenA < lenB) {
+        std::swap(longLen, shortLen);
+        std::swap(pLong, pShort);
+    }
+
+    int diff = longLen - shortLen;
+    while(diff) {
+        pLong = pLong->next;
+        --diff;
+    }
+
+    while(pLong && pShort && pLong != pShort) {
+        pLong = pLong->next;
+        pShort = pShort->next;
+    }
+
+    return pLong;
+}
+
+
+ListNode *getIntersectionNodeTwoPointer1(ListNode* headA, ListNode * headB) {
+    if(headA == nullptr || headB == nullptr) {
+        return nullptr;
+    }
+
+    ListNode* pA = headA, *pB = headB;
+    while(pA != pB) {
+        if(pA) {
+            pA = pA->next;
+        }else {
+            pA = headB;
+        }
+
+        if(pB) {
+            pB = pB->next;
+        }else {
+            pB = headA;
+        }
+    }
+
+    return pA;
 }

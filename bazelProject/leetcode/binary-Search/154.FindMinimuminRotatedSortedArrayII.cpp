@@ -50,3 +50,22 @@ int findMin1(vector<int>& nums)
 
     return nums[r];
 }
+
+
+int findMin2(vector<int>& nums) {
+    if(nums.size() == 1) {
+        return nums[0];
+    }
+    
+    int b = 0, e = nums.size() - 1, mid;
+    while(b < e) {
+        mid = b + ((e - b) >> 1);
+        if(nums[mid] > nums[e]) {
+            b = mid + 1;
+        }else {
+            --e;
+        }
+    }
+
+    return nums[e];
+}

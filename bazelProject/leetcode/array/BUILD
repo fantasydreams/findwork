@@ -511,3 +511,19 @@ cc_binary(
 	deps  = ["152MaximumProductSubarray",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "162FindPeakElement",
+	hdrs = ["162.FindPeakElement.h"],
+	srcs = ["162.FindPeakElement.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "162FindPeakElementTest",
+	srcs  = ["162.FindPeakElementTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["162FindPeakElement",
+			 "@googletest//:gtest_main"],
+)

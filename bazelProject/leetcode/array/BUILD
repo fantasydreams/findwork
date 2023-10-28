@@ -527,3 +527,19 @@ cc_binary(
 	deps  = ["162FindPeakElement",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "164MaximumGap",
+	hdrs = ["164.MaximumGap.h"],
+	srcs = ["164.MaximumGap.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "164MaximumGapTest",
+	srcs  = ["164.MaximumGapTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["164MaximumGap",
+			 "@googletest//:gtest_main"],
+)

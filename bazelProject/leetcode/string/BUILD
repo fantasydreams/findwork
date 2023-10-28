@@ -398,3 +398,35 @@ cc_binary(
 	deps  = ["151ReverseWordsinaString",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "165CompareVersionNumbers",
+	hdrs = ["165.CompareVersionNumbers.h"],
+	srcs = ["165.CompareVersionNumbers.cpp"]
+)
+
+
+cc_binary(
+	name  = "165CompareVersionNumbersTest",
+	srcs  = ["165.CompareVersionNumbersTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["165CompareVersionNumbers",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "166FractiontoRecurringDecimal",
+	hdrs = ["166.FractiontoRecurringDecimal.h"],
+	srcs = ["166.FractiontoRecurringDecimal.cpp"]
+)
+
+
+cc_binary(
+	name  = "166FractiontoRecurringDecimalTest",
+	srcs  = ["166.FractiontoRecurringDecimalTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["166FractiontoRecurringDecimal",
+			 "@googletest//:gtest_main"],
+)

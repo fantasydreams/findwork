@@ -56,6 +56,17 @@ int mySqrt2(int x)
     return res;
 }
 
+// 牛顿法
+// https://www.zhihu.com/question/20690553
+// https://www.cnblogs.com/Allen-rg/p/13602550.html
+double sqr(double n) { 
+     double k=1.0;
+     while(abs(k*k-n)>1e-9) { 
+         k=(k+n/k)/2; 
+     } 
+     return k; 
+}
+
 int mySqrt3(int x) {
     return pow(x, 0.5);
 }

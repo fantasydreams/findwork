@@ -11,3 +11,14 @@ int trailingZeroes(int n){
 
     return ans;
 }
+
+// https://blog.csdn.net/fuxuemingzhu/article/details/51347044
+int trailingZeroes1(int n){
+    int ans = 0;
+    while(n) {
+        ans += n / 5;
+        n /= 5;
+    }
+
+    return ans;
+}

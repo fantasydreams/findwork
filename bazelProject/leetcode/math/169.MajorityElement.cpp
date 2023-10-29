@@ -17,3 +17,22 @@ int majorityElement(vector<int>& nums) {
 
     return major;
 }
+
+
+int majorityElement1(vector<int>& nums) {
+    int major = nums[0], cnt = 1;
+    for(int i = 1; i < nums.size(); ++i) {
+        if(major == nums[i]) {
+            ++cnt;
+        }else {
+            if(cnt) {
+                --cnt;
+            }else {
+                major = nums[i];
+                cnt = 1;
+            }
+        }
+    }
+
+    return major;
+}

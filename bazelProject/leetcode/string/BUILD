@@ -430,3 +430,18 @@ cc_binary(
 	deps  = ["166FractiontoRecurringDecimal",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "171ExcelSheetColumnNumber",
+	hdrs = ["171.ExcelSheetColumnNumber.h"],
+	srcs = ["171.ExcelSheetColumnNumber.cpp"]
+)
+
+
+cc_binary(
+	name  = "171ExcelSheetColumnNumberTest",
+	srcs  = ["171.ExcelSheetColumnNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["171ExcelSheetColumnNumber",
+			 "@googletest//:gtest_main"],
+)

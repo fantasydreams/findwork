@@ -58,3 +58,18 @@ cc_binary(
 	deps  = ["75SortColors",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "179LargestNumber",
+	hdrs = ["179.LargestNumber.h"],
+	srcs = ["179.LargestNumber.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "179LargestNumberTest",
+	srcs  = ["179.LargestNumberTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["179LargestNumber",
+			 "@googletest//:gtest_main"],
+)

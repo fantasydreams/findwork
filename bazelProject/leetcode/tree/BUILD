@@ -851,3 +851,24 @@ cc_binary(
 			 "//List:linkComm",
 			],
 )
+
+
+cc_library(
+	name  = "173BinarySearchTreeIterator",
+    hdrs  = ["173.BinarySearchTreeIterator.h"], 
+	srcs  = ["173.BinarySearchTreeIterator.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	name  = "173BinarySearchTreeIteratorTest",
+	srcs  = ["173.BinarySearchTreeIteratorTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["173BinarySearchTreeIterator",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)

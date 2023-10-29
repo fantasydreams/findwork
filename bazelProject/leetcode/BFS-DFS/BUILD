@@ -143,3 +143,18 @@ cc_binary(
 	deps  = ["93RestoreIPAddresses",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "174DungeonGame",
+	hdrs = ["174.DungeonGame.h"],
+	srcs = ["174.DungeonGame.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "174DungeonGameTest",
+	srcs  = ["174.DungeonGameTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["174DungeonGame",
+			 "@googletest//:gtest_main"],
+)

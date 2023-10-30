@@ -1,4 +1,5 @@
 #include "168.ExcelSheetColumnTitle.h"
+#include <algorithm>
 #include <string>
 #include <numeric>
 #include <vector>
@@ -49,5 +50,16 @@ string convertToTitle1(int columnNumber) {
     
 
     reverse(ans.begin(), ans.end());
+    return ans;
+}
+
+
+string convertToTitle2(int columnNumber) {  
+    std::string ans;
+    while(columnNumber) {
+        ans.push_back('A' + (columnNumber-1) % 26);
+        columnNumber = (columnNumber - 1) / 26;
+    }
+    std::reverse(ans.begin(), ans.end());
     return ans;
 }

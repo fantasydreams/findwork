@@ -14,6 +14,7 @@ TEST(case_2,content)
     std::string ans = "A";
     EXPECT_EQ(convertToTitle(col), ans);
     EXPECT_EQ(convertToTitle1(col), ans); 
+    EXPECT_EQ(convertToTitle2(col), ans);
 }
 
 TEST(case_3,content)
@@ -22,6 +23,7 @@ TEST(case_3,content)
     std::string ans = "Z";
     EXPECT_EQ(convertToTitle(col), ans);
     EXPECT_EQ(convertToTitle1(col), ans); 
+    EXPECT_EQ(convertToTitle2(col), ans);
 }
 
 TEST(case_4,content)
@@ -30,6 +32,7 @@ TEST(case_4,content)
     std::string ans = "AA";
     EXPECT_EQ(convertToTitle(col), ans);
     EXPECT_EQ(convertToTitle1(col), ans); 
+    EXPECT_EQ(convertToTitle2(col), ans);
 }
 
 TEST(case_5,content)
@@ -38,6 +41,7 @@ TEST(case_5,content)
     std::string ans = "AB";
     EXPECT_EQ(convertToTitle(col), ans);
     EXPECT_EQ(convertToTitle1(col), ans); 
+    EXPECT_EQ(convertToTitle2(col), ans);
 }
 
 TEST(case_6,content)
@@ -46,4 +50,5 @@ TEST(case_6,content)
     std::string ans = "ZY";
     EXPECT_EQ(convertToTitle(col), ans);
     EXPECT_EQ(convertToTitle1(col), ans); 
+    EXPECT_EQ(convertToTitle2(col), ans);
 }

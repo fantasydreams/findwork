@@ -445,3 +445,19 @@ cc_binary(
 	deps  = ["171ExcelSheetColumnNumber",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "187RepeatedDNASequences",
+	hdrs = ["187.RepeatedDNASequences.h"],
+	srcs = ["187.RepeatedDNASequences.cpp"]
+)
+
+
+cc_binary(
+	name  = "187RepeatedDNASequencesTest",
+	srcs  = ["187.RepeatedDNASequencesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["187RepeatedDNASequences",
+			 "@googletest//:gtest_main"],
+)

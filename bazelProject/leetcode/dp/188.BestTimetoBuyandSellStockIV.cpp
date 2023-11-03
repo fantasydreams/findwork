@@ -81,3 +81,45 @@ int maxProfitStat(int k, vector<int>& prices) {
     
     return 0;
 }
+
+
+int maxProfitDp1(int k, vector<int>& prices) {
+    if(prices.size() < 2) {
+        return 0;
+    }else if(k >= prices.size()) {
+        return maxprofit_(prices);
+    }else {
+        std::vector<std::vector<int> >dp(prices.size(), std::vector<int>(k + 1, 0));
+        for(int i = 1; i <= k; ++i) {
+            int _min = prices[0];
+            for(int j = 1; j < prices.size(); ++j) {
+                _min = std::min(_min, prices[j] - dp[j][i - 1]);  // price[i] - price[j] + dp[j - 1][k-1] = price[i] - price[j] + dp[j][i - 1];
+                dp[j][i] = std::max(dp[j - 1][i], prices[j] - _min);
+            }
+        }
+
+        return dp[prices.size() - 1][k];
+    }
+}
+
+
+int maxProfitStat1(int k, vector<int>& prices) {
+    if(prices.size() < 2) {
+        return 0;
+    }else if(k >= prices.size()) {
+        return maxprofit_(prices);
+    }else {
+        std::vector<int> buy(k + 1, INT_MIN);
+        std::vector<int> sell(k + 1, 0);
+
+        for(int i = 0; i < prices.size(); ++i) {
+            for(int j = 1; j <= k; ++j) {
+                buy[j] = std::max(sell[j - 1] - prices[i], buy[j]);
+                sell[j] = std::max(sell[j], prices[i] + buy[j]);
+            }
+        }
+        return sell[k];
+    }
+    
+    return 0;
+}

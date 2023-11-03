@@ -171,3 +171,21 @@ cc_binary(
 	deps  = ["137SingleNumberII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "191Numberof1Bits",
+	srcs  = [
+		"191.Numberof1Bits.h",
+		"191.Numberof1Bits.cpp"
+	],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "191Numberof1BitsTest",
+	srcs  = ["191.Numberof1BitsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["191Numberof1Bits",
+			 "@googletest//:gtest_main"],
+)

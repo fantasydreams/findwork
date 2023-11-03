@@ -9,7 +9,9 @@ TEST(case_1,content)
     int k = 2, ans = 7;
     EXPECT_EQ(maxProfit(k, stocks), ans);
     EXPECT_EQ(maxProfitDp(k, stocks), ans);
+    EXPECT_EQ(maxProfitDp1(k, stocks), ans);
     EXPECT_EQ(maxProfitStat(k, stocks), ans);
+    EXPECT_EQ(maxProfitStat1(k, stocks), ans);
 }
 
 TEST(case_2,content)
@@ -18,7 +20,9 @@ TEST(case_2,content)
     int k = 2, ans = 2;
     EXPECT_EQ(maxProfit(k, stocks), ans);
     EXPECT_EQ(maxProfitDp(k, stocks), ans);
+    EXPECT_EQ(maxProfitDp1(k, stocks), ans);
     EXPECT_EQ(maxProfitStat(k, stocks), ans);
+    EXPECT_EQ(maxProfitStat1(k, stocks), ans);
 }
 
 TEST(case_3,content)
@@ -27,7 +31,9 @@ TEST(case_3,content)
     int k = 2, ans = 7;
     EXPECT_EQ(maxProfit(k, stocks), ans);
     EXPECT_EQ(maxProfitDp(k, stocks), ans);
+    EXPECT_EQ(maxProfitDp1(k, stocks), ans);
     EXPECT_EQ(maxProfitStat(k, stocks), ans);
+    EXPECT_EQ(maxProfitStat1(k, stocks), ans);
 }
 
 
@@ -37,5 +43,7 @@ TEST(case_4,content)
     int k = 1, ans = 1;
     EXPECT_EQ(maxProfit(k, stocks), ans);
     EXPECT_EQ(maxProfitDp(k, stocks), ans);
-    
+    EXPECT_EQ(maxProfitDp1(k, stocks), ans);    
+    EXPECT_EQ(maxProfitStat(k, stocks), ans);
+    EXPECT_EQ(maxProfitStat1(k, stocks), ans);
 }

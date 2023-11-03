@@ -543,3 +543,18 @@ cc_binary(
 	deps  = ["164MaximumGap",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "189RotateArray",
+	hdrs = ["189.RotateArray.h"],
+	srcs = ["189.RotateArray.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "189RotateArrayTest",
+	srcs  = ["189.RotateArrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["189RotateArray",
+			 "@googletest//:gtest_main"],
+)

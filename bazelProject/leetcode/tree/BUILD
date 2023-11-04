@@ -872,3 +872,24 @@ cc_binary(
 			 "//List:linkComm",
 			],
 )
+
+
+cc_library(
+	name  = "199BinaryTreeRightSideView",
+    hdrs  = ["199.BinaryTreeRightSideView.h"], 
+	srcs  = ["199.BinaryTreeRightSideView.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	name  = "199BinaryTreeRightSideViewTest",
+	srcs  = ["199.BinaryTreeRightSideViewTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["199BinaryTreeRightSideView",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)

@@ -158,3 +158,19 @@ cc_binary(
 	deps  = ["174DungeonGame",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "200NumberofIslands",
+	hdrs = ["200.NumberofIslands.h"],
+	srcs = ["200.NumberofIslands.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "200NumberofIslandsTest",
+	srcs  = ["200.NumberofIslandsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["200NumberofIslands",
+			 "@googletest//:gtest_main"],
+)

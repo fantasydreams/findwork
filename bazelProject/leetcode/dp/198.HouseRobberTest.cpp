@@ -10,6 +10,8 @@ TEST(case_1,content)
     EXPECT_EQ(rob(nums), ans);
     EXPECT_EQ(rob1(nums), ans);
     EXPECT_EQ(rob2(nums), ans);
+    EXPECT_EQ(rob3(nums), ans);
+    EXPECT_EQ(rob4(nums), ans);
 }
 
 TEST(case_2,content)
@@ -19,4 +21,17 @@ TEST(case_2,content)
     EXPECT_EQ(rob(nums), ans);
     EXPECT_EQ(rob1(nums), ans);
     EXPECT_EQ(rob2(nums), ans);
+    EXPECT_EQ(rob3(nums), ans);
+    EXPECT_EQ(rob4(nums), ans);
+}
+
+TEST(case_3,content)
+{
+    std::vector<int> nums = {3};
+    int ans = 3;
+    EXPECT_EQ(rob(nums), ans);
+    EXPECT_EQ(rob1(nums), ans);
+    EXPECT_EQ(rob2(nums), ans);
+    EXPECT_EQ(rob3(nums), ans);
+    EXPECT_EQ(rob4(nums), ans);
 }

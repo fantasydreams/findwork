@@ -196,8 +196,8 @@ class SingletonMemFence : comm::NonCopyable {
                 pInstace = m_pInstace.load(std::memory_order_relaxed);
                 if(m_pInstace == nullptr) {
                     pInstace = new Type(std::forward<Args>(args)...);
-                    m_pInstace.store(pInstace, std::memory_order_release);
                     std::atomic_thread_fence(std::memory_order_release);
+                    m_pInstace.store(pInstace, std::memory_order_relaxed);
                 }
             }
             return pInstace;
@@ -208,8 +208,8 @@ class SingletonMemFence : comm::NonCopyable {
             std::atomic_thread_fence(std::memory_order_acquire);
             Type* pInstace = m_pInstace.load(std::memory_order_relaxed);
             delete m_pInstace;
-            m_pInstace.store(nullptr, std::memory_order_relaxed);
             std::atomic_thread_fence(std::memory_order_release);
+            m_pInstace.store(nullptr, std::memory_order_relaxed);
         }
     private:
         static std::atomic<Type*> m_pInstace;

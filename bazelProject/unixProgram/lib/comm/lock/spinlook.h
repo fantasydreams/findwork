@@ -16,9 +16,14 @@ class SpinLockAtomic : public comm::NonCopyable{
 public:
     SpinLockAtomic() : m_lock (ATOMIC_FLAG_INIT) { }
     virtual ~SpinLockAtomic() {}
-    void Lock() {
+    void Lock() { // lock 和 unlock在代码中是有参考系的，因此用order_acquire也是可以的
         while(m_lock.test_and_set(std::memory_order_acquire)) { 
         }
+    }
+
+    bool TryLock() {
+        return !m_lock.test_and_set(std::memory_order_acquire);
+
     }
 
     void UnLock() {
@@ -121,4 +126,18 @@ public:
 
 private:
     SpinLockAtomic& m_oSpinLock;
+};
+
+class ScopeSpinLock {
+public:
+    explicit ScopeSpinLock(SpinLock & oSpinLock) : m_oSpinLock(oSpinLock) {
+        m_oSpinLock.Lock(); 
+    } 
+
+    ~ScopeSpinLock() {
+        m_oSpinLock.UnLock();
+    }
+
+private:
+    SpinLock& m_oSpinLock; 
 };

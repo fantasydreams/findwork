@@ -37,3 +37,22 @@ bool isHappyMap(int n) {
 
     return true;
 }
+
+
+bool isHappyHash(int n) {
+    if(n <= 0) {
+        return false;
+    }
+
+    std::unordered_set<int> hash;
+    while(n != 1) {
+        auto oPair = hash.insert(n);
+        if(oPair.second == false) {
+            return false;
+        }
+
+        n = nextNum(n);
+    }
+
+    return true;
+}

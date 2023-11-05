@@ -7,6 +7,7 @@ TEST(case_1,content)
     bool ans = true;
     EXPECT_EQ(isHappy(n), ans);
     EXPECT_EQ(isHappyMap(n), ans);
+    EXPECT_EQ(isHappyHash(n), ans);
 }
 
 TEST(case_2,content)
@@ -15,6 +16,7 @@ TEST(case_2,content)
     bool ans = true;
     EXPECT_EQ(isHappy(n), ans);
     EXPECT_EQ(isHappyMap(n), ans);
+    EXPECT_EQ(isHappyHash(n), ans);
 }
 
 TEST(case_3,content)
@@ -23,4 +25,5 @@ TEST(case_3,content)
     bool ans = false;
     EXPECT_EQ(isHappy(n), ans);
     EXPECT_EQ(isHappyMap(n), ans);
+    EXPECT_EQ(isHappyHash(n), ans);
 }

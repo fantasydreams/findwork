@@ -8,6 +8,7 @@ TEST(case_1,content)
 	std::string s = "egg", t = "add";
     bool ans = true;
     EXPECT_EQ(isIsomorphic(s, t), ans);
+    EXPECT_EQ(isIsomorphic1(s, t), ans);
 }
 
 TEST(case_2,content)
@@ -15,6 +16,7 @@ TEST(case_2,content)
 	std::string s = "foo", t = "bar";
     bool ans = false;
     EXPECT_EQ(isIsomorphic(s, t), ans);
+    EXPECT_EQ(isIsomorphic1(s, t), ans);
 }
 
 TEST(case_3,content)
@@ -22,6 +24,7 @@ TEST(case_3,content)
 	std::string s = "paper", t = "title";
     bool ans = true;
     EXPECT_EQ(isIsomorphic(s, t), ans);
+    EXPECT_EQ(isIsomorphic1(s, t), ans);
 }
 
 TEST(case_4,content)
@@ -29,4 +32,14 @@ TEST(case_4,content)
 	std::string s = "badc", t = "baba";
     bool ans = false;
     EXPECT_EQ(isIsomorphic(s, t), ans);
+    EXPECT_EQ(isIsomorphic1(s, t), ans);
+}
+
+
+TEST(case_5,content)
+{
+	std::string s = "12", t = "gh";
+    bool ans = true;
+    EXPECT_EQ(isIsomorphic(s, t), ans);
+    EXPECT_EQ(isIsomorphic1(s, t), ans);
 }

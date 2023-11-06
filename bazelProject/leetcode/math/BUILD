@@ -357,3 +357,18 @@ cc_binary(
 	deps  = ["50Pow_x_n",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "201BitwiseANDofNumbersRange",
+	hdrs = ["201.BitwiseANDofNumbersRange.h"],
+	srcs = ["201.BitwiseANDofNumbersRange.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "201BitwiseANDofNumbersRangeTest",
+	srcs  = ["201.BitwiseANDofNumbersRangeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["201BitwiseANDofNumbersRange",
+			 "@googletest//:gtest_main"],
+)

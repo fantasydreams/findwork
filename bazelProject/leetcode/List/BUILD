@@ -317,3 +317,20 @@ cc_binary(
 	deps  = ["147InsertionSortList",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "203RemoveLinkedListElements",
+	hdrs = ["203.RemoveLinkedListElements.h"],
+	srcs = ["203.RemoveLinkedListElements.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "203RemoveLinkedListElementsTest",
+	srcs  = ["203.RemoveLinkedListElementsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["203RemoveLinkedListElements",
+			 "@googletest//:gtest_main"],
+)

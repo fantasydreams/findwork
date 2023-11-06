@@ -30,3 +30,35 @@ bool isIsomorphic(string s, string t) {
 
     return true;
 }
+
+
+bool isIsomorphic1(string s, string t) {
+    if(s.size() != t.size()) {
+        return false;
+    }
+
+    std::unordered_map<char, std::vector<int> >hashMap;
+    std::unordered_map<char, int> hashFreq;
+    for(int i = 0; i < s.size(); ++i) {
+        hashMap[s[i]].push_back(i);
+    }
+
+    for(const char ch : t) {
+        ++hashFreq[ch];
+    }
+
+    for(auto pIter = hashMap.begin(); pIter != hashMap.end(); ++pIter) {
+        char ch = t[pIter->second[0]];
+        if(pIter->second.size() != hashFreq[ch]) {
+            return false;
+        }
+
+        for(const auto idx : pIter->second) {
+            if(t[idx] != ch) {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}

@@ -63,3 +63,22 @@ int countPrimes2(int n) {
     
     return ans;
 }
+
+
+int countPrimes3(int n) {
+    if(n <= 2) {
+        return 0;
+    }
+
+    int ans = 0;
+    std::vector<bool> prime(n, true);
+    for(int i = 2; i < n; ++i) {
+        if(prime[i]) {
+            ++ans;
+            for(int j = 2 * i; j < n; j += i) {
+                prime[j] = false;
+            }
+        }
+    }
+    return ans;
+}

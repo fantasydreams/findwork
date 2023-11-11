@@ -41,3 +41,17 @@ cc_binary(
 	deps  = ["684RedundantConnection",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "207CourseSchedule",
+	hdrs = ["207.CourseSchedule.h"],
+	srcs = ["207.CourseSchedule.cpp"]
+)
+
+cc_binary(
+	name  = "207CourseScheduleTest",
+	srcs  = ["207.CourseScheduleTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["207CourseSchedule",
+			 "@googletest//:gtest_main"],
+)

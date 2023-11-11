@@ -1,4 +1,5 @@
 #include <string>
+#include <unordered_map>
 #include <vector>
 using namespace std;
 
@@ -19,6 +20,7 @@ public:
     bool m_isVal;
 };
 
+// 这一版问题很大，内存泄漏！！
 class Trie {
 public:
     Trie() {
@@ -65,4 +67,56 @@ public:
 
 private:
     TrieNode * m_root;
+};
+
+
+class TrieNode1 {
+public:
+    TrieNode1() : m_bIsVal(false) {}
+    bool m_bIsVal;
+    std::unordered_map<char, TrieNode1> m_mapNext;
+}; 
+
+class Trie1 {
+public:
+    Trie1(){}
+    virtual ~Trie1(){}
+    void insert(const string& word) {
+        TrieNode1 * pNextPointer = &m_root;
+        for(const auto& ch : word) {
+            auto& oNextNode = ((pNextPointer)->m_mapNext)[ch];
+            pNextPointer = &oNextNode;
+        }
+        pNextPointer->m_bIsVal = true;
+    }
+
+    bool search(string word) {
+        TrieNode1* pNode = &m_root;
+        for(const auto& ch : word) {
+            auto pIter = pNode->m_mapNext.find(ch);
+            if(pIter != pNode->m_mapNext.end()) {
+                pNode = &(pIter->second);
+            }else {
+                return false;
+            }
+        }
+
+        return pNode->m_bIsVal;
+    }
+
+    bool startsWith(string prefix) {
+        TrieNode1* pNode = &m_root;
+        for(const auto& ch : prefix) {
+            auto pIter = pNode->m_mapNext.find(ch);
+            if(pIter == pNode->m_mapNext.end()) {
+                return false;
+            }
+            pNode = &(pIter->second);
+        }
+
+        return true;
+    }
+
+private:
+    TrieNode1 m_root;
 };

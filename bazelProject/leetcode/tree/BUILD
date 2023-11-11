@@ -893,3 +893,24 @@ cc_binary(
 			 "//List:linkComm",
 			],
 )
+
+
+cc_library(
+	name  = "211DesignAddandSearchWordsDataStructure",
+    hdrs  = ["211.DesignAddandSearchWordsDataStructure.h"], 
+	srcs  = ["211.DesignAddandSearchWordsDataStructure.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	name  = "211DesignAddandSearchWordsDataStructureTest",
+	srcs  = ["211.DesignAddandSearchWordsDataStructureTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["211DesignAddandSearchWordsDataStructure",
+			 "@googletest//:gtest_main",
+			 "//List:linkComm",
+			],
+)

@@ -558,3 +558,18 @@ cc_binary(
 	deps  = ["189RotateArray",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "209MinimumSizeSubarraySum",
+	hdrs = ["209.MinimumSizeSubarraySum.h"],
+	srcs = ["209.MinimumSizeSubarraySum.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "209MinimumSizeSubarraySumTest",
+	srcs  = ["209.MinimumSizeSubarraySumTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["209MinimumSizeSubarraySum",
+			 "@googletest//:gtest_main"],
+)

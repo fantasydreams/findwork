@@ -124,3 +124,41 @@ vector<int> findOrderBfs1(int numCourses, vector<vector<int>>& prerequisites) {
 
         return res.size() == numCourses ? res : std::vector<int>();
     }
+
+
+   vector<int> findOrderBfs2(int numCourses, vector<vector<int> >& prerequisites)  {
+        if(numCourses == 0) {
+            return std::vector<int>();
+        }
+        if(numCourses == 1) {
+            return std::vector<int>(1, 0);
+        }
+
+        std::unordered_map<int, std::vector<int> > adj;
+        std::vector<int> inDegree(numCourses, 0);
+        for(const auto& oPair : prerequisites) {
+            ++inDegree[oPair[0]];
+            adj[oPair[1]].push_back(oPair[0]);
+        }
+
+
+        std::queue<int> que;
+        for(int i = 0 ;i < numCourses; ++i) {
+            if(inDegree[i] == 0) {
+                que.push(i);
+            }
+        }
+
+        std::vector<int> ans;
+        while(!que.empty()) {
+            int courseNum = que.front();que.pop();
+            ans.push_back(courseNum);
+            for(const auto & iNext : adj[courseNum]) {
+                if(--inDegree[iNext] == 0) {
+                    que.push(iNext);
+                }
+            }
+        }
+
+        return ans.size() == numCourses ? ans : std::vector<int>();
+   }

@@ -1,4 +1,5 @@
 #include "213.HouseRobberII.h"
+#include <algorithm>
 
 void dfs(int pos, std::vector<bool> & robed, const std::vector<int> & nums, int & money, int & maxMoney)
 {
@@ -78,4 +79,30 @@ int rob1(vector<int>& nums)
 
     
     return std::max(dp[2], dp1[2]);
+}
+
+
+int rob2(vector<int> &nums) {
+    if(nums.size() <= 3) {
+        return *std::max_element(nums.begin(), nums.end());
+    }
+
+    std::vector<int> dp0(3, 0);
+    dp0[1] = nums[0];
+    for(int i = 1; i < nums.size() - 1; ++i) {
+        dp0[2] = std::max(dp0[1], dp0[0] + nums[i]);
+        dp0[0] = dp0[1];
+        dp0[1] = dp0[2];
+    }
+
+    std::vector<int> dp1(3);
+    dp1[1] = nums[1];
+    for(int i = 2; i < nums.size(); ++i) {
+        dp1[2] = std::max(dp1[1], dp1[0] + nums[i]);
+        dp1[0] = dp1[1];
+        dp1[1] = dp1[2];
+    }
+
+
+    return std::max(dp0[2], dp1[2]);
 }

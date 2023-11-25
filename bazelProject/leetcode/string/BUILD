@@ -461,3 +461,18 @@ cc_binary(
 	deps  = ["187RepeatedDNASequences",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "214ShortestPalindrome",
+	hdrs = ["214.ShortestPalindrome.h"],
+	srcs = ["214.ShortestPalindrome.cpp"]
+)
+
+
+cc_binary(
+	name  = "214ShortestPalindromeTest",
+	srcs  = ["214.ShortestPalindromeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["214ShortestPalindrome",
+			"@googletest//:gtest_main"],
+)

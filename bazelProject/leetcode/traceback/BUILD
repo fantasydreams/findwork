@@ -125,3 +125,18 @@ cc_binary(
 	deps  = ["127WordLadder",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "212WordSearchII",
+	hdrs = ["212.WordSearchII.h"],
+	srcs = ["212.WordSearchII.cpp"],
+)
+
+cc_binary(
+	name  = "212WordSearchIITest",
+	srcs  = ["212.WordSearchIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["212WordSearchII",
+			 "@googletest//:gtest_main"],
+)

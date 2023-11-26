@@ -372,3 +372,18 @@ cc_binary(
 	deps  = ["201BitwiseANDofNumbersRange",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "223RectangleArea",
+	hdrs = ["223.RectangleArea.h"],
+	srcs = ["223.RectangleArea.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "223RectangleAreaTest",
+	srcs  = ["223.RectangleAreaTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["223RectangleArea",
+			 "@googletest//:gtest_main"],
+)

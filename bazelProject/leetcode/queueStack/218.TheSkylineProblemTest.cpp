@@ -8,6 +8,8 @@ TEST(case_1,content)
 
     EXPECT_EQ(getSkyline(Input), Output);
     EXPECT_EQ(getSkyline1(Input), Output);
+    EXPECT_EQ(getSkylineSort(Input), Output);
+    EXPECT_EQ(getSkylineSortHeap(Input), Output);
 }
 
 
@@ -18,4 +20,6 @@ TEST(case_2,content)
 
     EXPECT_EQ(getSkyline(Input), Output);
     EXPECT_EQ(getSkyline1(Input), Output);
+    EXPECT_EQ(getSkylineSort(Input), Output);
+    EXPECT_EQ(getSkylineSortHeap(Input), Output);
 }

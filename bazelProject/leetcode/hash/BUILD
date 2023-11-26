@@ -215,3 +215,35 @@ cc_binary(
 	deps  = ["49GroupAnagrams",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name  = "219ContainsDuplicateII",
+    hdrs  = ["219.ContainsDuplicateII.h"], 
+	srcs  = ["219.ContainsDuplicateII.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "219ContainsDuplicateIITest",
+	srcs  = ["219.ContainsDuplicateIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["219ContainsDuplicateII",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name  = "220ContainsDuplicateIII",
+    hdrs  = ["220.ContainsDuplicateIII.h"], 
+	srcs  = ["220.ContainsDuplicateIII.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "220ContainsDuplicateIIITest",
+	srcs  = ["220.ContainsDuplicateIIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["220ContainsDuplicateIII",
+			 "@googletest//:gtest_main"],
+)

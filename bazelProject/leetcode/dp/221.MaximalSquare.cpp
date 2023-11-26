@@ -12,7 +12,7 @@ int maximalSquare(vector<vector<char>>& matrix)
     }
 
     int m = matrix.size(), n = matrix[0].size();
-    std::vector<std::vector<int>> dp(m, std::vector<int>(n, 0));
+    std::vector<std::vector<int> > dp(m, std::vector<int>(n, 0));
     // dp[i][j] = x 表示从i, j结尾 变长为 x 是正方形
     int ans = 0;
     for(int i = 0; i < m; ++i)
@@ -27,6 +27,31 @@ int maximalSquare(vector<vector<char>>& matrix)
                     dp[i][j] = std::min(std::min(dp[i-1][j-1], dp[i][j-1]), dp[i-1][j]) + 1;
                 }
                 ans = std::max(ans, dp[i][j]);
+            }
+        }
+    }
+
+    return ans * ans;
+}
+
+
+int maximalSquareDp(vector<vector<char> >& matrix) {
+    if(matrix.empty() || matrix[0].empty()) {
+        return 0;
+    }
+
+    int ans = 0;
+    std::vector<std::vector<int> > dp(matrix.size(), std::vector<int>(matrix[0].size()));
+    for(int row = 0; row < matrix.size(); ++row) {
+        for(int col = 0; col < matrix[row].size(); ++col) {
+            if(matrix[row][col] == '1') {
+                if(col == 0 || row == 0) {
+                    dp[row][col] = 1;
+                }else {
+                    dp[row][col] = std::min(std::min(dp[row - 1][col], dp[row - 1][col - 1]), dp[row][col - 1]) + 1;
+                }
+
+                ans = std::max(ans, dp[row][col]);
             }
         }
     }

@@ -1,7 +1,10 @@
 #include "218.TheSkylineProblem.h"
+#include <functional>
+#include <map>
 #include <queue>
 #include <algorithm>
 #include <set>
+#include <utility>
 
 vector<vector<int>> getSkyline(vector<vector<int>>& buildings) {
     vector<std::pair<int, int>> heigt;
@@ -56,7 +59,68 @@ vector<vector<int>> getSkyline1(vector<vector<int>>& buildings) {
         if(ans.empty() || cur_h != ans.back()[1]) {
             ans.push_back({cur_x, cur_h});
         }
-    } 
+    }
 
     return ans;
+}
+
+
+vector<vector<int> > getSkylineSort(vector<vector<int> >& buildings) {
+    std::vector<std::pair<int, int> > vecHeight;
+    std::vector<vector<int> > vecAns;
+    for(const auto & oItem : buildings) {
+        vecHeight.push_back({oItem[0], -oItem[2]});
+        vecHeight.push_back({oItem[1], oItem[2]});
+    }
+
+    sort(vecHeight.begin(), vecHeight.end());
+    std::multiset<int, std::greater<int> > mulSet;
+    mulSet.insert(0);
+    for(const auto & [pos, hei] : vecHeight) {
+        if(hei < 0) {
+            if(-hei > *mulSet.begin()) {
+                vecAns.push_back({pos, -hei});
+            }
+            mulSet.insert(-hei);
+        }else {
+            mulSet.erase(mulSet.find(hei));
+            if(hei > *mulSet.begin()) {
+                vecAns.push_back({pos, *mulSet.begin()});
+            }
+        }
+    }
+
+    return vecAns;
+}
+
+
+vector<vector<int> > getSkylineSortHeap(vector<vector<int> >& buildings) {
+    if(buildings.empty()) {
+        return {};
+    }
+    
+    int curX = 0;
+    std::vector<std::vector<int> > vecAns;
+    std::priority_queue<std::pair<int, int>> priQue; // right bound, height;
+    for(int idx = 0; idx < buildings.size() || !priQue.empty();) {
+        if(priQue.empty() || (idx < buildings.size() && buildings[idx][0] <= priQue.top().second)) {
+            curX = buildings[idx][0];
+            while(idx < buildings.size() && curX == buildings[idx][0]) {
+                priQue.push({buildings[idx][2], buildings[idx][1]});
+                ++idx;
+            }
+        }else {
+            curX = priQue.top().second;
+            while(!priQue.empty() && priQue.top().second <= curX) {
+                priQue.pop();
+            }
+        }
+
+        int hei = priQue.empty() ? 0 : priQue.top().first;
+        if(vecAns.empty() || vecAns.back()[1] != hei) {
+            vecAns.push_back({curX, hei});
+        }
+    }   
+
+    return vecAns;
 }

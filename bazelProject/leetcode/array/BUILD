@@ -573,3 +573,19 @@ cc_binary(
 	deps  = ["209MinimumSizeSubarraySum",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "216CombinationSumIII",
+	hdrs = ["216.CombinationSumIII.h"],
+	srcs = ["216.CombinationSumIII.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "216CombinationSumIIITest",
+	srcs  = ["216.CombinationSumIIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["216CombinationSumIII",
+			 "@googletest//:gtest_main"],
+)

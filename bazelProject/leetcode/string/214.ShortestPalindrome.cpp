@@ -1,6 +1,8 @@
 #include "214.ShortestPalindrome.h"
 #include <algorithm>
 
+// https://leetcode.wang/leetcode-214-Shortest-Palindrome.html
+
 string shortestPalindrome(string s) {
     std::string sReverse = s;
     std::reverse(sReverse.begin(), sReverse.end());

@@ -387,3 +387,19 @@ cc_binary(
 	deps  = ["223RectangleArea",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "224BasicCalculator",
+	hdrs = ["224.BasicCalculator.h"],
+	srcs = ["224.BasicCalculator.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "224BasicCalculatorTest",
+	srcs  = ["224.BasicCalculatorTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["224BasicCalculator",
+			 "@googletest//:gtest_main"],
+)

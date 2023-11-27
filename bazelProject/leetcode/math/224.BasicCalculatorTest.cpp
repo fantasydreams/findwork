@@ -6,6 +6,7 @@ TEST(BasicCalculator1, function1) {
     int ans = 2;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }
 
 
@@ -14,6 +15,7 @@ TEST(BasicCalculator2, function2) {
     int ans = 3;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }
 
 TEST(BasicCalculator3, function3) {
@@ -21,6 +23,7 @@ TEST(BasicCalculator3, function3) {
     int ans = 23;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }
 
 TEST(BasicCalculator4, function3) {
@@ -28,6 +31,7 @@ TEST(BasicCalculator4, function3) {
     int ans = 0;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }
 
 
@@ -37,6 +41,7 @@ TEST(BasicCalculator5, function3) {
     int ans = 0;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }
 
 
@@ -45,6 +50,7 @@ TEST(BasicCalculator6, function3) {
     int ans = -5;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }
 
 
@@ -53,6 +59,7 @@ TEST(BasicCalculator7, function3) {
     int ans = -1;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }
 
 TEST(BasicCalculator8, function3) {
@@ -60,6 +67,7 @@ TEST(BasicCalculator8, function3) {
     int ans = 2;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }
 
 TEST(BasicCalculator9, function3) {
@@ -67,6 +75,7 @@ TEST(BasicCalculator9, function3) {
     int ans = -3;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }
 
 
@@ -75,4 +84,5 @@ TEST(BasicCalculator10, function3) {
     int ans = -12;
 
     EXPECT_EQ(calculate(s), ans);
+    EXPECT_EQ(calculate1(s), ans);
 }

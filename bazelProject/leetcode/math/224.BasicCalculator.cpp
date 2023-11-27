@@ -1,4 +1,5 @@
 #include "224.BasicCalculator.h"
+#include <cmath>
 #include <queue>
 #include <stack>
 
@@ -98,4 +99,38 @@ int calculate(string s) {
     }
 
     return stPara.empty() ? 0 : stPara.front();
+}
+
+
+int calculate1(string s) {
+    std::stack<int> st;
+    st.push(1);
+    int sign = 1;
+
+    int ret = 0;
+    int i = 0; 
+    while(i < s.size()) {
+        if(s[i] == ' ') {
+            ++i;
+            continue;
+        }
+
+        if(s[i] =='+') {
+            sign = st.top();
+            ++i;
+        }else if(s[i] == '-') {
+            sign = -st.top();
+            ++i;
+        }else if(s[i] == '(') {
+            st.push(sign);
+            ++i;
+        }else if(s[i] == ')') {
+            st.pop();
+            ++i;
+        }else {
+            ret += sign * GetNextNumber(s, i);
+        }
+    }
+
+    return ret;
 }

@@ -476,3 +476,19 @@ cc_binary(
 	deps  = ["214ShortestPalindrome",
 			"@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "228SummaryRanges",
+	hdrs = ["228.SummaryRanges.h"],
+	srcs = ["228.SummaryRanges.cpp"]
+)
+
+
+cc_binary(
+	name  = "228SummaryRangesTest",
+	srcs  = ["228.SummaryRangesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["228SummaryRanges",
+			"@googletest//:gtest_main"],
+)

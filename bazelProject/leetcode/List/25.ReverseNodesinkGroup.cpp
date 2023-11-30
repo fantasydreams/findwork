@@ -1,5 +1,6 @@
 #include "25.ReverseNodesinkGroup.h"
 #include "linkcomm.h"
+#include <cstddef>
 
 void reverse(ListNode* pPre, ListNode* pCur, ListNode* pKth) {
     ListNode* pHead = pCur, *pKthNext = pKth->next;
@@ -42,4 +43,53 @@ ListNode* reverseKGroup(ListNode* head, int k)
     }
 
     return oHead.next;
+}
+
+
+ListNode* reversekTh(ListNode* pList, int k, ListNode*& pkthNext) {
+    ListNode* pHead = pList, *pTail = nullptr;
+    while (pList && k--) {
+        ListNode* pCur = pList;
+        pList = pList->next;
+        pCur->next = pTail;
+        pTail = pCur;
+        pHead = pCur;
+    }
+
+    ListNode* pTmpHead = pHead; pTail = nullptr;
+    if(k > 0) {
+        while(pTmpHead) {
+            ListNode* pCurNode = pTmpHead;
+            pTmpHead = pTmpHead->next;
+            pCurNode->next = pTail;
+            pTail = pCurNode;
+            pHead = pCurNode;
+        }
+    }
+
+    pkthNext = pList; 
+    return pHead;
+}
+
+
+ListNode* reverseKGroup1(ListNode* head, int k) {
+    if(k <= 1 || head == nullptr) {
+        return head;
+    }
+
+    ListNode *pAnsHead = nullptr, *pPreTail = nullptr;
+    while(head) {
+        ListNode* pTail = head;
+        ListNode* pkGroupHead = reversekTh(head, k, head);
+        if(pAnsHead == nullptr) {
+            pAnsHead = pkGroupHead;
+        }
+
+        if(pPreTail != nullptr) {
+            pPreTail->next = pkGroupHead;
+        }
+        pPreTail = pTail;
+    }
+
+    return pAnsHead;
 }

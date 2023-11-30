@@ -334,3 +334,20 @@ cc_binary(
 	deps  = ["203RemoveLinkedListElements",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "25ReverseNodesinkGroup",
+	hdrs = ["25.ReverseNodesinkGroup.h"],
+	srcs = ["25.ReverseNodesinkGroup.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "25ReverseNodesinkGroupTest",
+	srcs  = ["25.ReverseNodesinkGroupTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["25ReverseNodesinkGroup",
+			 "@googletest//:gtest_main"],
+)

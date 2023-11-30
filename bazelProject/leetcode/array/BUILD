@@ -589,3 +589,18 @@ cc_binary(
 	deps  = ["216CombinationSumIII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "229MajorityElementII",
+	hdrs = ["229.MajorityElementII.h"],
+	srcs = ["229.MajorityElementII.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "229MajorityElementIITest",
+	srcs  = ["229.MajorityElementIITest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["229MajorityElementII",
+			 "@googletest//:gtest_main"],
+)

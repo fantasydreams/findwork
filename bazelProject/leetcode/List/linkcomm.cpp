@@ -146,7 +146,7 @@ ListNode * revertList(ListNode * pList)
 ListNode * revertListNewList(ListNode * pList)
 {
     if(!pList) return nullptr;
-    ListNode * pNewHead = nullptr, *pCurNode = nullptr;
+    ListNode * pNewHead = nullptr;
     ListNode * pTmpList = pList;
     while(pTmpList)
     {

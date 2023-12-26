@@ -914,3 +914,24 @@ cc_binary(
 			 "//List:linkComm",
 			],
 )
+
+
+cc_library(
+	name  = "230KthSmallestElementinaBST",
+    hdrs  = ["230.KthSmallestElementinaBST.h"], 
+	srcs  = ["230.KthSmallestElementinaBST.cpp"],
+	copts = ["-std=c++11"],
+	deps  = [
+		":treecomm",
+	],
+)
+
+cc_binary(
+	name  = "230KthSmallestElementinaBSTTest",
+	srcs  = ["230.KthSmallestElementinaBSTTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["230KthSmallestElementinaBST",
+			 "@googletest//:gtest_main",
+			 ":treecomm",
+			],
+)

@@ -403,3 +403,19 @@ cc_binary(
 	deps  = ["224BasicCalculator",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "233NumberofDigitOne",
+	hdrs = ["233.NumberofDigitOne.h"],
+	srcs = ["233.NumberofDigitOne.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "233NumberofDigitOneTest",
+	srcs  = ["233.NumberofDigitOneTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["233NumberofDigitOne",
+			 "@googletest//:gtest_main"],
+)

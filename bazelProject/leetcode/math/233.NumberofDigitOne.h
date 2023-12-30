@@ -1,0 +1,2 @@
+
+int countDigitOne(int n);

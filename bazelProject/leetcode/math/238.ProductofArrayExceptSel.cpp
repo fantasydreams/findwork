@@ -1,5 +1,6 @@
 #include "238.ProductofArrayExceptSel.h"
 #include <map>
+#include <iostream>
 
 vector<int> productExceptSelf(vector<int>& nums) {
     int64_t product = 1;
@@ -48,6 +49,25 @@ vector<int> productExceptSelf1(vector<int>& nums) {
     for(int i = nums.size() - 2; i >= 0; --i) {
         ans[i] *= Product;
         Product *= nums[i];
+    }
+
+    return ans;
+}
+
+
+vector<int> productExceptSelf2(vector<int>& nums) {
+    vector<int> ans(nums.size(), 0);    
+    int product = 1;
+    for(int i = 0; i < nums.size(); ++i) {
+        ans[i] = product;
+        // std::cout << ans[i] << " " << product << std::endl;
+        product *= nums[i];
+    }
+
+    product = 1;
+    for(int i = nums.size() - 1; i >= 0; --i) {
+        ans[i] *= product;
+        product *= nums[i];
     }
 
     return ans;

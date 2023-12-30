@@ -351,3 +351,19 @@ cc_binary(
 	deps  = ["25ReverseNodesinkGroup",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "237DeleteNodeinaLinkedList",
+	hdrs = ["237.DeleteNodeinaLinkedList.h"],
+	srcs = ["237.DeleteNodeinaLinkedList.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["linkComm"],
+)
+
+cc_binary(
+	name  = "237DeleteNodeinaLinkedListTest",
+	srcs  = ["237.DeleteNodeinaLinkedListTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["237DeleteNodeinaLinkedList",
+			 "@googletest//:gtest_main"],
+)

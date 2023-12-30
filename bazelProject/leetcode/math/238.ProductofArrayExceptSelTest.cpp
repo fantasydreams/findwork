@@ -7,6 +7,7 @@ TEST(case_1,content)
     vector<int> ans = {6,3,2};
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf1(nums), ans);
+    EXPECT_EQ(productExceptSelf2(nums), ans);
 }
 
 TEST(case_2,content)
@@ -15,6 +16,7 @@ TEST(case_2,content)
     vector<int> ans = {24,12,8,6};
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf(nums), ans);
+    EXPECT_EQ(productExceptSelf2(nums), ans);
 }
 
 TEST(case_3,content)
@@ -23,6 +25,7 @@ TEST(case_3,content)
     vector<int> ans = {0,0,9,0,0};
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf(nums), ans);
+    EXPECT_EQ(productExceptSelf2(nums), ans);
 }
 
 TEST(case_4,content)
@@ -31,4 +34,5 @@ TEST(case_4,content)
     vector<int> ans = {0,0,0,0,0};
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf(nums), ans);
+    EXPECT_EQ(productExceptSelf2(nums), ans);
 }

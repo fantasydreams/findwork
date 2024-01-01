@@ -23,3 +23,23 @@ bool isAnagram(string s, string t) {
 
     return true;
 }
+
+
+bool isAnagram(string s, string t) {
+    if(s.length() != t.length()) {
+        return false;
+    }
+
+    vector<int> hash(26, 0);
+    for(const auto & ch : s) {
+        ++hash[ch - 'a'];
+    }
+
+    for(const auto & ch : t) {
+        if(--hash[ch - 'a'] < 0) {
+            return false;
+        };
+    }
+
+    return true;
+}

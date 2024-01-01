@@ -1,4 +1,5 @@
 #include "241.DifferentWaystoAddParentheses.h"
+#include <cstdlib>
 #include <unordered_map>
 #include <sstream>
 
@@ -147,6 +148,37 @@ vector<int> diffWaysToCompute1(string expression)
 }
 
 
+// 分治 + 递归
+vector<int> diffWaysToComputeRecurDiv(string expression) {
+    std::vector<int> ways;
+    for(int i = 0; i < expression.size(); ++i) {
+        if(expression[i] == '-' || expression[i] == '+' || expression[i] == '*') {
+            std::vector<int> vecL = diffWaysToCompute(expression.substr(0, i));
+            std::vector<int> vecR = diffWaysToCompute(expression.substr(i + 1));
+            for(auto & numL : vecL) {
+                for(auto & numR : vecR) {
+                    switch (expression[i]) {
+                        case '-':
+                            ways.push_back(numL-numR);
+                            break;
+                        case '+':
+                            ways.push_back(numL + numR);
+                            break;
+                        case '*':
+                            ways.push_back(numL * numR);
+                            break;
+                    }
+                }
+            }
+        }
+    }
+    if(ways.empty()) {
+        ways.push_back(atoi(expression.c_str()));
+    }
+
+    return ways;
+}
+
 
 vector<int> diffWaysToCompute2(string expression)
 {
@@ -194,4 +226,52 @@ vector<int> diffWaysToCompute2(string expression)
     }
 
     return dp[0][n-1];
+}
+
+
+vector<int> diffWaysToComputeDp(string expression) {
+    if(expression.empty()) {
+        return {};
+    }
+
+    expression += '+';
+    stringstream oss(expression);
+    std::vector<int> vecNums;
+    std::vector<char> vecOps;
+    int num;
+    char ch;
+    while(oss >> num && oss >> ch) {
+        vecNums.push_back(num);
+        vecOps.push_back(ch);
+    }
+
+    std::vector<std::vector<std::vector<int>> >dp(vecNums, std::vector<std::vector<int>>(n));
+    for(int i = 0; i < vecNums.size(); ++i) {
+        for(int j = i; j >= 0; --j) {
+            if(i == i) {
+                dp[j][i].push_back(vecNums[i]);
+            }else {
+                for(int k = j; k < i; ++k) {
+                    auto & vecRes = dp[j][i];
+                    for(const auto & numL : dp[j][k]) {
+                        for(const auto & numR : dp[k + 1][i]) {
+                            switch (vecOps[k]) {
+                                case '-':
+                                    vecRes.push_back(numL - numR);
+                                break;
+                                case '+':
+                                    vecRes.push_back(numL + numR);
+                                break;
+                                case '*':
+                                    vecRes.push_back(numL * numR);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return dp[0][vecNums.size() - 1];
 }

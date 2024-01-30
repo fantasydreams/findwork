@@ -6,6 +6,7 @@ TEST(case_1, content) {
     std::string ans = "blue is sky the";
     EXPECT_EQ(reverseWords(s), ans);
     EXPECT_EQ(reverseWords1(s), ans);
+    EXPECT_EQ(reverseWords2(s), ans);
 }
 
 
@@ -14,6 +15,7 @@ TEST(case_2, content) {
     std::string ans = "";
     EXPECT_EQ(reverseWords(s), ans);
     EXPECT_EQ(reverseWords1(s), ans);
+    EXPECT_EQ(reverseWords2(s), ans);
 }
 
 TEST(case_3, content) {
@@ -21,6 +23,7 @@ TEST(case_3, content) {
     std::string ans = "world hello";
     EXPECT_EQ(reverseWords(s), ans);
     EXPECT_EQ(reverseWords1(s), ans);
+    EXPECT_EQ(reverseWords2(s), ans);
 }
 
 
@@ -29,4 +32,5 @@ TEST(case_4, content) {
     std::string ans = "example good a";
     EXPECT_EQ(reverseWords(s), ans);
     EXPECT_EQ(reverseWords1(s), ans);
+    EXPECT_EQ(reverseWords2(s), ans);
 }

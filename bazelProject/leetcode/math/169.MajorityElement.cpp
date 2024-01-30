@@ -36,3 +36,22 @@ int majorityElement1(vector<int>& nums) {
 
     return major;
 }
+
+
+int majorityElement2(vector<int>& nums) {
+    int iAns = nums[0], iCnt = 1;
+    for(int iCursor = 1; iCursor < nums.size(); ++iCursor){
+        if(nums[iCursor] == iAns) {
+            ++iCnt;
+        }else {
+            if(iCnt == 0) {
+                iAns = nums[iCursor];
+                iCnt = 1;
+            }else {
+                --iCnt;
+            }
+        }
+    }
+
+    return iAns;
+}

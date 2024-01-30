@@ -55,3 +55,28 @@ int canCompleteCircuit1(vector<int>& gas, vector<int>& cost) {
 
     return mayIdx;
 }
+
+
+int canCompleteCircuit2(vector<int>& gas, vector<int>& cost) {
+    int iMayIdx = -1, sum = 0, tmpSum = 0;
+    for(int i = 0; i < gas.size(); ++i) {
+        int iDiff = gas[i] - cost[i];
+        sum += iDiff;
+
+        if(tmpSum < 0 || tmpSum + iDiff < 0)  {
+            iMayIdx = -1;
+            tmpSum = 0;
+            continue;
+        }
+
+        if(iMayIdx == -1) {
+            iMayIdx = i;
+        }
+        tmpSum += iDiff;
+    }
+
+    if(sum < 0) {
+        return -1;
+    }
+    return iMayIdx;
+}

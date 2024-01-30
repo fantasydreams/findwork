@@ -54,3 +54,29 @@ string longestCommonPrefix_1(vector<string> &strs)
     }
     return res;
 }
+
+
+string longestCommonPrefix_2(vector<string> &strs) {
+    std::string sAns;
+    if(strs.empty() || strs[0].empty()) {
+        return sAns;
+    }
+
+    for(int i = 0; i < strs[0].size(); ++i) {
+        int k = 0;
+        while(k < strs.size()) {
+            if(strs[k].size() <= i || strs[k][i] != strs[0][i]) {
+                break;
+            }
+            ++k;
+        }
+
+        if(k == strs.size()) {
+            sAns += strs[0][i];
+        }else {
+            break;
+        }
+    }
+
+    return sAns;
+}

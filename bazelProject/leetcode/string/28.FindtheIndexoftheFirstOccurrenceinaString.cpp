@@ -129,3 +129,13 @@ int strKmp1(string haystack, string needle) {
 
     return -1;
 }
+
+
+int strStrStdString(string haystack, string needle) {
+    auto iPos = haystack.find(needle);
+    if(iPos == std::string::npos){
+        return -1;
+    }else {
+        return iPos;
+    }
+}

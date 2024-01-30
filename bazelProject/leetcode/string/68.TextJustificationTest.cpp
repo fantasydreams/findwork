@@ -17,6 +17,7 @@ TEST(case_1, content)
     int maxWidth = 16;
     
     EXPECT_EQ(fullJustify(words, maxWidth), ans);
+    EXPECT_EQ(fullJustify1(words, maxWidth), ans);
 }
 
 
@@ -34,6 +35,7 @@ TEST(case_2, content)
     
     int maxWidth = 20;
     EXPECT_EQ(fullJustify(words, maxWidth), ans);
+    EXPECT_EQ(fullJustify1(words, maxWidth), ans);
 }
 
 TEST(case_3, content)
@@ -47,4 +49,5 @@ TEST(case_3, content)
 
     int maxWidth = 16; 
     EXPECT_EQ(fullJustify(words, maxWidth), ans);
+    EXPECT_EQ(fullJustify1(words, maxWidth), ans);
 }

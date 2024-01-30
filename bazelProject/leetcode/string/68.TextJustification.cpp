@@ -1,5 +1,6 @@
 #include "68.TextJustification.h"
 #include <string>
+#include <iostream>
 
 vector<string> fullJustify(vector<string>& words, int maxWidth) {
     vector<string> ans;
@@ -44,4 +45,57 @@ vector<string> fullJustify(vector<string>& words, int maxWidth) {
     }
 
     return ans;
+}
+
+
+vector<string> fullJustify1(vector<string>& words, int maxWidth) {
+    std::vector<std::string> vecAns;
+    if(words.empty()) {
+        return vecAns;
+    }
+    std::vector<std::pair<std::vector<std::string>, int> > vecTmp(1);
+    int iCurLine = 0;
+    for(const auto & sWord : words) {
+        int iAppendCnt = vecTmp[iCurLine].second == 0 ? sWord.size() : sWord.size() + 1;
+        if(iAppendCnt + vecTmp[iCurLine].second <= maxWidth) {
+            vecTmp[iCurLine].first.push_back(sWord);
+            vecTmp[iCurLine].second += iAppendCnt;
+        }else {
+            ++iCurLine;
+            vecTmp.emplace_back(std::vector<std::string>{sWord}, sWord.size());
+        }
+    }
+
+    // for(const auto & oPair : vecTmp) {
+    //     for(const auto & sWord : oPair.first) {
+    //         std::cout << sWord << " ";
+    //     }
+    //     std::cout << std::endl;
+    // }
+
+    for(int i = 0; i < vecTmp.size(); ++i) {
+        std::string sLine = vecTmp[i].first[0];
+        if(vecTmp[i].first.size() > 1) {
+            int Product = (maxWidth - vecTmp[i].second) / (vecTmp[i].first.size() - 1);
+            int Remainder = (maxWidth - vecTmp[i].second) % (vecTmp[i].first.size() - 1);
+            for(int k = 1; k < vecTmp[i].first.size(); ++k) {
+                int iAppendCnt = 1 + ((i + 1 == vecTmp.size()) ? 0 : Product);
+                if(Remainder > 0 && i != vecTmp.size() - 1) {
+                    iAppendCnt += 1;
+                    --Remainder;
+                }
+
+                sLine += std::string(iAppendCnt, ' ');
+                sLine += vecTmp[i].first[k];
+            }
+
+            sLine.append(std::string(maxWidth - sLine.size(), ' '));
+        }else {
+            sLine.append(std::string(maxWidth - vecTmp[i].second, ' '));
+        }
+
+        vecAns.emplace_back(sLine);
+    }
+
+    return vecAns;
 }

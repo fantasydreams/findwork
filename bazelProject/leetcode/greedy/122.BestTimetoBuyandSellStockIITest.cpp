@@ -9,6 +9,8 @@ TEST(case_1,content)
     EXPECT_EQ(maxProfit(f), 7);
     EXPECT_EQ(maxProfit1(f), 7);
     EXPECT_EQ(maxProfit2(f), 7);
+    EXPECT_EQ(maxProfithungry(f), 7);
+    EXPECT_EQ(maxProfitDp(f), 7);
 }
 
 TEST(case_2,content)
@@ -17,4 +19,6 @@ TEST(case_2,content)
     EXPECT_EQ(maxProfit(f), 4);
     EXPECT_EQ(maxProfit1(f), 4);
     EXPECT_EQ(maxProfit2(f), 4);
+    EXPECT_EQ(maxProfithungry(f), 4);
+    EXPECT_EQ(maxProfitDp(f), 4);
 }

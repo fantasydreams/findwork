@@ -8,6 +8,8 @@ TEST(case_1,content)
     int ans = 2;
     std::vector<int> step = {2,3,1,1,4};
     EXPECT_EQ(jump(step), ans);
+    EXPECT_EQ(jumpDp(step), ans);
+    EXPECT_EQ(jumpMax(step), ans);
 }
 
 
@@ -18,6 +20,8 @@ TEST(case_2,content)
     std::vector<int> step = {2,3,0,1,4};
     EXPECT_EQ(jump(step), ans);
     EXPECT_EQ(jump1(step), ans);
+    EXPECT_EQ(jumpDp(step), ans);
+    EXPECT_EQ(jumpMax(step), ans);
 }
 
 TEST(case_3,content)
@@ -26,6 +30,8 @@ TEST(case_3,content)
     std::vector<int> step = {2};
     EXPECT_EQ(jump(step), ans);
     EXPECT_EQ(jump1(step), ans);
+    EXPECT_EQ(jumpDp(step), ans);
+    EXPECT_EQ(jumpMax(step), ans);
 }
 
 
@@ -35,6 +41,8 @@ TEST(case_4, content)
     std::vector<int> step = {2,1};
     EXPECT_EQ(jump(step), ans);
     EXPECT_EQ(jump1(step), ans);
+    EXPECT_EQ(jumpDp(step), ans);
+    EXPECT_EQ(jumpMax(step), ans);
 }
 
 
@@ -44,4 +52,6 @@ TEST(case_5, content)
     std::vector<int> step = {2,1,5,1};
     EXPECT_EQ(jump(step), ans);
     EXPECT_EQ(jump1(step), ans);
+    EXPECT_EQ(jumpDp(step), ans);
+    EXPECT_EQ(jumpMax(step), ans);
 }

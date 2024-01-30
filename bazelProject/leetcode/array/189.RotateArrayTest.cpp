@@ -42,3 +42,46 @@ TEST(case_5, content) {
     rotate(vec, k);
     EXPECT_EQ(vec, ans);
 }
+
+
+TEST(case_11, content) {
+    int k = 3;
+    std::vector<int> vec = {1,2,3,4,5,6,7};
+    std::vector<int> ans = {5,6,7,1,2,3,4};
+    rotate1(vec, k);
+    EXPECT_EQ(vec, ans);
+}
+
+TEST(case_12, content) {
+    int k = 2;
+    std::vector<int> vec = {-1,-100,3,99};
+    std::vector<int> ans = {3,99,-1,-100};
+    rotate1(vec, k);
+    EXPECT_EQ(vec, ans);
+}
+
+
+TEST(case_13, content) {
+    int k = 4;
+    std::vector<int> vec = {-1,-100,3,99};
+    std::vector<int> ans = {-1,-100,3,99};
+    rotate1(vec, k);
+    EXPECT_EQ(vec, ans);
+}
+
+TEST(case_14, content) {
+    int k = 1;
+    std::vector<int> vec = {-1,-100,3,99};
+    std::vector<int> ans = {99, -1, -100, 3};
+    rotate1(vec, k);
+    EXPECT_EQ(vec, ans);
+}
+
+
+TEST(case_15, content) {
+    int k = 3;
+    std::vector<int> vec = {-1,-100,3,99};
+    std::vector<int> ans = {-100, 3, 99, -1};
+    rotate1(vec, k);
+    EXPECT_EQ(vec, ans);
+}

@@ -32,3 +32,21 @@ int removeDuplicates1(std::vector<int> &nums) {
 
     return nums.size() - skipsize;
 }
+
+
+
+int removeDuplicates2(std::vector<int>& nums) {
+    if(nums.empty()) {
+        return 0;
+    }
+
+    int iElemNum = 1, iCursor = 1;
+    while(iCursor < nums.size()) {
+        if(nums[iCursor] != nums[iCursor - 1]) {
+            nums[iElemNum++] = nums[iCursor];
+        }
+        ++iCursor;
+    }
+
+    return iElemNum;
+}

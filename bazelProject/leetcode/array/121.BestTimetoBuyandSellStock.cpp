@@ -96,3 +96,50 @@ int maxProfitMonostoneStack(vector<int>& prices) {
 
     return ans;
 }
+
+// 使用记录
+
+int maxProfit5(vector<int>& prices) {
+    int _min = INT_MAX, iAns = 0;
+    for(int i = 0; i < prices.size(); ++i) {
+        _min = std::min(_min, prices[i]);
+        iAns = std::max(iAns, prices[i] - _min);
+    }
+
+    return iAns;
+}
+
+// dp
+int maxProfitDp(vector<int>& prices) {
+    if(prices.size() < 2) {
+        return 0;
+    }
+
+    std::vector<std::vector<int> > dp(prices.size(), std::vector<int>(2, 0));
+    dp[0][0] = -prices[0], dp[0][1] = 0;
+    for(int i = 1; i < prices.size(); ++i) {
+        dp[i][0] = std::max(dp[i - 1][0], -prices[i]);
+        dp[i][1] = std::max(dp[i - 1][1], dp[i - 1][0] + prices[i]);
+    }
+
+    return dp[prices.size() - 1][1];
+}
+
+
+//单调栈
+int maxProfitMonostoneStack1(vector<int>& prices) { 
+    int iAns = 0;
+    std::stack<int> st;
+    for(const auto& iPrice : prices) {
+        while(!st.empty() && iPrice < st.top()) {
+            st.pop();
+        }
+
+        if(st.empty()) {
+            st.push(iPrice);
+        }
+
+        iAns = std::max(iAns, iPrice - st.top());
+    }
+    return iAns;
+}

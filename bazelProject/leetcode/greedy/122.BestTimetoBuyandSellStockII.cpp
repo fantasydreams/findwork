@@ -34,3 +34,27 @@ int maxProfit2(std::vector<int>& prices) {
 
     return dp[prices.size() - 1][1];
 }
+
+// 贪心策略
+int maxProfithungry(std::vector<int>& prices) {
+    int iAns = 0;
+    for(int i = 1; i < prices.size(); ++i) {
+        int iProfit = prices[i] - prices[i - 1];
+        iAns += std::max(iProfit, 0);
+    }
+
+    return iAns;
+}
+
+
+// dp
+int maxProfitDp(std::vector<int>& prices) {
+    std::vector<std::vector<int> > dp(prices.size(), std::vector<int>(2, 0));
+    dp[0][0] = -prices[0];
+    for(int i = 1; i < prices.size(); ++i) {
+        dp[i][0] = std::max(dp[i - 1][1] - prices[i], dp[i - 1][0]);
+        dp[i][1] = std::max(dp[i - 1][1], dp[i - 1][0] + prices[i]);
+    }
+
+    return dp[prices.size() - 1][1];
+}

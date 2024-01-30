@@ -13,6 +13,9 @@ TEST(case_1,content)
     EXPECT_EQ(maxProfit3(stocks), ans);
     EXPECT_EQ(maxProfit4(stocks), ans);
     EXPECT_EQ(maxProfitMonostoneStack(stocks), ans);
+    EXPECT_EQ(maxProfit5(stocks), ans);
+    EXPECT_EQ(maxProfitDp(stocks), ans);
+    EXPECT_EQ(maxProfitMonostoneStack1(stocks), ans);
 }
 
 TEST(case_2,content)
@@ -25,5 +28,8 @@ TEST(case_2,content)
     EXPECT_EQ(maxProfit3(stocks), ans);
     EXPECT_EQ(maxProfit4(stocks), ans);
     EXPECT_EQ(maxProfitMonostoneStack(stocks), ans);
+    EXPECT_EQ(maxProfit5(stocks), ans);
+    EXPECT_EQ(maxProfitDp(stocks), ans);
+    EXPECT_EQ(maxProfitMonostoneStack1(stocks), ans);
 }
 

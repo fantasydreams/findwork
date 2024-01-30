@@ -10,3 +10,15 @@ int removeElement(std::vector<int>& nums, int val) {
 
     return istart;
 }
+
+
+int removeElement1(std::vector<int>& nums, int val) {
+    int iElemNum = 0, iCursor = 0;
+    while(iCursor < nums.size()) {
+        if(nums[iCursor] != val) {
+            nums[iElemNum++] = nums[iCursor];
+        }
+        ++iCursor;
+    }
+    return iElemNum;
+}

@@ -419,3 +419,17 @@ cc_binary(
 	deps  = ["233NumberofDigitOne",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name = "274hIndex",
+	hdrs = ["274.hIndex.h"],
+	srcs = ["274.hIndex.cpp"]
+)
+
+cc_binary(
+	name  = "274hIndexTest",
+	srcs  = ["274.hIndexTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["274hIndex",
+			 "@googletest//:gtest_main"],
+)

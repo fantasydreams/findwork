@@ -11,3 +11,18 @@ void rotate(vector<int>& nums, int k) {
     std::reverse(nums.begin() + nums.size() - k, nums.end()); // [)
     std::reverse(nums.begin(), nums.end());
 }
+
+
+void rotate1(vector<int>& nums, int k){
+    if(nums.empty()) {
+        return;
+    }
+    k %= nums.size();
+    if(k == 0) {
+        return;
+    }
+
+    std::reverse(nums.begin(), nums.begin() + nums.size() - k);
+    std::reverse(nums.begin() + nums.size() - k, nums.end());
+    std::reverse(nums.begin(), nums.end());
+}

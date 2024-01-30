@@ -72,3 +72,21 @@ vector<int> productExceptSelf2(vector<int>& nums) {
 
     return ans;
 }
+
+
+vector<int> productExceptSelf3(vector<int>& nums) {
+    std::vector<int> ans(nums.size(), 1);
+    int product = nums.empty() ? 1 : nums[0];
+    for(int i = 1; i < nums.size(); ++i) {
+        ans[i] = product;
+        product *= nums[i];
+    }
+
+    product = 1;
+    for(int i = nums.size() - 1; i >= 0; --i) {
+        ans[i] *= product;
+        product *= nums[i];
+    }
+
+    return ans;
+}

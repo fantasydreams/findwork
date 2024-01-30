@@ -8,6 +8,7 @@ TEST(case_1,content)
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf1(nums), ans);
     EXPECT_EQ(productExceptSelf2(nums), ans);
+    EXPECT_EQ(productExceptSelf3(nums), ans);
 }
 
 TEST(case_2,content)
@@ -17,6 +18,7 @@ TEST(case_2,content)
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf2(nums), ans);
+    EXPECT_EQ(productExceptSelf3(nums), ans);
 }
 
 TEST(case_3,content)
@@ -26,6 +28,7 @@ TEST(case_3,content)
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf2(nums), ans);
+    EXPECT_EQ(productExceptSelf3(nums), ans);
 }
 
 TEST(case_4,content)
@@ -35,4 +38,5 @@ TEST(case_4,content)
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf(nums), ans);
     EXPECT_EQ(productExceptSelf2(nums), ans);
+    EXPECT_EQ(productExceptSelf3(nums), ans);
 }

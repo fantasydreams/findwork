@@ -63,3 +63,30 @@ string reverseWords1(string s) {
         
     return sAns;
 }
+
+inline void AppendToAns(std::string& sAns, std::string& sStr) {
+    std::reverse(sStr.begin(), sStr.end());
+    if(!sAns.empty()) {
+        sAns += " ";
+        sAns += sStr;
+    }else {
+        sAns += sStr;
+    }
+    sStr.clear();
+}
+
+string reverseWords2(string s) {
+    std::string sAns, sTmp;
+    for(int i = s.size() - 1; i>= 0; --i) {
+        if(s[i] != ' ') {
+            sTmp += s[i];   
+        }else if(!sTmp.empty()) {
+            AppendToAns(sAns, sTmp); 
+        }
+    }
+
+    if(!sTmp.empty()) {
+        AppendToAns(sAns, sTmp);
+    }
+    return sAns;
+}

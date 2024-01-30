@@ -7,6 +7,7 @@ TEST(case_1, content) {
     int ans = 3;
     EXPECT_EQ(canCompleteCircuit(gas, cost), ans);
     EXPECT_EQ(canCompleteCircuit1(gas, cost), ans);
+    EXPECT_EQ(canCompleteCircuit2(gas, cost), ans); 
 }
 
 
@@ -16,6 +17,7 @@ TEST(case_2, content) {
     int ans = -1;
     EXPECT_EQ(canCompleteCircuit(gas, cost), ans);
     EXPECT_EQ(canCompleteCircuit1(gas, cost), ans);
+    EXPECT_EQ(canCompleteCircuit2(gas, cost), ans); 
 }
 
 TEST(case_3, content) {
@@ -24,6 +26,7 @@ TEST(case_3, content) {
     int ans = 3;
     EXPECT_EQ(canCompleteCircuit(gas, cost), ans);
     EXPECT_EQ(canCompleteCircuit1(gas, cost), ans);
+    EXPECT_EQ(canCompleteCircuit2(gas, cost), ans); 
 }
 
 TEST(case_4, content) {
@@ -32,6 +35,7 @@ TEST(case_4, content) {
     int ans = 4;
     EXPECT_EQ(canCompleteCircuit(gas, cost), ans);
     EXPECT_EQ(canCompleteCircuit1(gas, cost), ans);
+    EXPECT_EQ(canCompleteCircuit2(gas, cost), ans); 
 }
 
 
@@ -41,4 +45,5 @@ TEST(case_5, content) {
     int ans = 2;
     EXPECT_EQ(canCompleteCircuit(gas, cost), ans);
     EXPECT_EQ(canCompleteCircuit1(gas, cost), ans);
+    EXPECT_EQ(canCompleteCircuit2(gas, cost), ans); 
 }

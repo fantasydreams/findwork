@@ -8,6 +8,8 @@ TEST(case_1,content)
     EXPECT_EQ(romanToInt(sroman), res);
     EXPECT_EQ(romanToInt1(sroman), res);
     EXPECT_EQ(romanToInt2(sroman), res);
+    EXPECT_EQ(romanToInt3(sroman), res);
+    EXPECT_EQ(romanToIntForward(sroman), res);
 }
 
 TEST(case_2,content)
@@ -17,6 +19,8 @@ TEST(case_2,content)
     EXPECT_EQ(romanToInt(sroman), res);
     EXPECT_EQ(romanToInt1(sroman), res);
     EXPECT_EQ(romanToInt2(sroman), res);
+    EXPECT_EQ(romanToInt3(sroman), res);
+    EXPECT_EQ(romanToIntForward(sroman), res);
 }
 
 
@@ -27,6 +31,8 @@ TEST(case_3,content)
     EXPECT_EQ(romanToInt(sroman), res);
     EXPECT_EQ(romanToInt1(sroman), res);
     EXPECT_EQ(romanToInt2(sroman), res);
+    EXPECT_EQ(romanToInt3(sroman), res);
+    EXPECT_EQ(romanToIntForward(sroman), res);
 }
 
 

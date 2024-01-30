@@ -45,3 +45,25 @@ int candy1(std::vector<int> &ratings) {
 
     return std::accumulate(vecCandy.begin(), vecCandy.end(), 0);
 }
+
+
+int candy2(std::vector<int> &ratings) {
+    if(ratings.size() < 2) {
+        return ratings.size();
+    }
+
+    std::vector<int> vecCandy(ratings.size(), 1);
+    for(int i = 1; i < ratings.size(); ++i) {
+        if(ratings[i] > ratings[i - 1]) {
+            vecCandy[i] = vecCandy[i - 1] + 1;
+        }
+    }
+
+    for(int i = ratings.size() - 2; i >= 0; --i) {
+        if(ratings[i] > ratings[i + 1]) {
+            vecCandy[i] = std::max(vecCandy[i], vecCandy[i + 1] + 1);
+        }
+    }
+
+    return std::accumulate(vecCandy.begin(), vecCandy.end(), 0);
+}

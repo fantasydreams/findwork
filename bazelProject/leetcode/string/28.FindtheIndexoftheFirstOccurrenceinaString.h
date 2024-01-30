@@ -5,3 +5,4 @@ int strStr(string haystack, string needle);
 int strStr1(string haystack, string needle);
 int strKmp(string haystack, string needle);
 int strKmp1(string haystack, string needle);
+int strStrStdString(string haystack, string needle);

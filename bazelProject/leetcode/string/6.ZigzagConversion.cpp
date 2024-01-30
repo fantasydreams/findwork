@@ -25,3 +25,28 @@ std::string convert(std::string s, int numRows)
 
     return res;
 }
+
+
+std::string convert1(std::string s, int numRows) {
+    std::string sAns;
+    if(numRows <= 1) {
+        return s;
+    }
+
+    std::vector<std::string> matrix(numRows);
+    int iLine = 0, iDirection = 1;
+    for(int i = 0; i < s.size(); ++i) {
+        matrix[iLine] += s[i];
+        if(iLine + iDirection * 1 < 0 || iLine + iDirection * 1 >= numRows) {
+            iDirection *= -1;
+        }
+
+        iLine += iDirection * 1;
+    }
+
+    for(const auto & str : matrix) {
+        sAns += str;
+    }
+
+    return sAns;
+}

@@ -12,3 +12,18 @@ int lengthOfLastWord(std::string s) {
 
     return ans;
 }
+
+
+int lengthOfLastWordStdString(std::string s) {
+    auto iPos = s.find_last_not_of(" ");
+    if(iPos == std::string::npos) {
+        return s.size();
+    }
+
+    auto iBackSpace = s.find_last_of(' ', iPos);
+    if(iBackSpace == std::string::npos) {
+        return iPos + 1;
+    }
+
+    return iPos - iBackSpace;
+}

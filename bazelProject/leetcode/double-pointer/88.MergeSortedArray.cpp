@@ -72,3 +72,20 @@ void merge2(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
         nums1[iIdx--] = nums2[--n];
     }
 }
+
+
+// 一种是重新申请一片空间，一种是倒着来，节省空间
+void merge3(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
+    int iIdx = m + n - 1;
+    while(m && n) {
+        if(nums2[n - 1] > nums1[m - 1]) {
+            nums1[iIdx--] = nums2[--n];
+        }else {
+            nums1[iIdx--] = nums1[--m];
+        }
+    }    
+    while(n) {
+        nums1[iIdx--] = nums2[--n];
+    }
+
+}

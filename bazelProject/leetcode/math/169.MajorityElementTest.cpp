@@ -7,6 +7,7 @@ TEST(case_1,content)
     int ans = 3;
     EXPECT_EQ(majorityElement(nums), ans);
     EXPECT_EQ(majorityElement1(nums), ans);
+    EXPECT_EQ(majorityElement2(nums), ans);
 }
 
 TEST(case_2,content)
@@ -15,4 +16,5 @@ TEST(case_2,content)
     int ans = 2;
     EXPECT_EQ(majorityElement(nums), ans);
     EXPECT_EQ(majorityElement1(nums), ans);
+    EXPECT_EQ(majorityElement2(nums), ans);
 }

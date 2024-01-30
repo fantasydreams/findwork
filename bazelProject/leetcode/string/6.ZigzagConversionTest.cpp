@@ -6,6 +6,7 @@ TEST(case_1,content)
 	  std::string str = "";
     std::string res = "";
     EXPECT_EQ(convert(str, 1), res);
+    EXPECT_EQ(convert1(str, 1), res);
 }
 
 
@@ -14,6 +15,7 @@ TEST(case_2,content)
 	  std::string str = "PAYPALISHIRING";
     std::string res = "PAHNAPLSIIGYIR";
     EXPECT_EQ(convert(str, 3), res);
+    EXPECT_EQ(convert1(str, 3), res);
 }
 
 TEST(case_3,content)
@@ -21,6 +23,7 @@ TEST(case_3,content)
 	  std::string str = "PAYPALISHIRING";
     std::string res = "PINALSIGYAHRPI";
     EXPECT_EQ(convert(str, 4), res);
+    EXPECT_EQ(convert1(str, 4), res);
 }
 
 TEST(case_4,content)
@@ -28,6 +31,7 @@ TEST(case_4,content)
 	  std::string str = "A";
     std::string res = "A";
     EXPECT_EQ(convert(str, 4), res);
+    EXPECT_EQ(convert1(str, 4), res);
 }
 
 TEST(case_5,content)
@@ -35,6 +39,7 @@ TEST(case_5,content)
 	  std::string str = "AB";
     std::string res = "AB";
     EXPECT_EQ(convert(str, 1), res);
+    EXPECT_EQ(convert1(str, 1), res);
 }
 
 

@@ -42,3 +42,36 @@ TEST(case_4,content)
     EXPECT_EQ(removeDuplicates1(height), vecAns.size());
     EXPECT_EQ(checkinSame(vecAns, height), true);
 }
+
+
+TEST(case_5,content)
+{
+    std::vector<int> height = {1,1,2};
+    std::vector<int> vecAns = {1,2};
+    EXPECT_EQ(removeDuplicates2(height), vecAns.size());
+    EXPECT_EQ(checkinSame(vecAns, height), true);
+}
+
+TEST(case_6,content)
+{
+    std::vector<int> height = {0,0,1,1,1,2,2,3,3,4};
+    std::vector<int> vecAns = {0,1,2,3,4};
+    EXPECT_EQ(removeDuplicates2(height), vecAns.size());
+    EXPECT_EQ(checkinSame(vecAns, height), true);
+}
+
+TEST(case_7,content)
+{
+    std::vector<int> height = {1,1,2};
+    std::vector<int> vecAns = {1,2};
+    EXPECT_EQ(removeDuplicates2(height), vecAns.size());
+    EXPECT_EQ(checkinSame(vecAns, height), true);
+}
+
+TEST(case_8,content)
+{
+    std::vector<int> height = {0,0,1,1,1,2,2,3,3,4};
+    std::vector<int> vecAns = {0,1,2,3,4};
+    EXPECT_EQ(removeDuplicates2(height), vecAns.size());
+    EXPECT_EQ(checkinSame(vecAns, height), true);
+}

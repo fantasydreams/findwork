@@ -10,6 +10,7 @@ TEST(case_1,content)
     EXPECT_EQ(strStr1(haystack, needle), ans); 
     EXPECT_EQ(strKmp(haystack, needle), ans);
     EXPECT_EQ(strKmp1(haystack, needle), ans);
+    EXPECT_EQ(strStrStdString(haystack, needle), ans);
 }
 
 TEST(case_2,content)
@@ -20,6 +21,7 @@ TEST(case_2,content)
     EXPECT_EQ(strStr1(haystack, needle), ans); 
     EXPECT_EQ(strKmp(haystack, needle), ans);
     EXPECT_EQ(strKmp1(haystack, needle), ans);
+    EXPECT_EQ(strStrStdString(haystack, needle), ans);
 }
 
 TEST(case_3,content)
@@ -30,6 +32,7 @@ TEST(case_3,content)
     EXPECT_EQ(strStr1(haystack, needle), ans); 
     EXPECT_EQ(strKmp(haystack, needle), ans);
     EXPECT_EQ(strKmp1(haystack, needle), ans);
+    EXPECT_EQ(strStrStdString(haystack, needle), ans);
 }
 
 TEST(case_4,content)
@@ -40,4 +43,5 @@ TEST(case_4,content)
     EXPECT_EQ(strStr1(haystack, needle), ans); 
     EXPECT_EQ(strKmp(haystack, needle), ans);
     EXPECT_EQ(strKmp1(haystack, needle), ans);
+    EXPECT_EQ(strStrStdString(haystack, needle), ans);
 }

@@ -42,3 +42,18 @@ bool canJumpDp(vector<int>& nums) {
 
     return dp[0];
 }
+
+
+bool canJumpDp1(vector<int>& nums) {
+    std::vector<bool> vec(nums.size(), false);
+    int iMinPos = nums.size() - 1;
+    vec[iMinPos] = true;
+    for(int i = iMinPos; i >= 0; --i) {
+        if(i + nums[i] >= iMinPos) {
+            vec[i] = true;
+            iMinPos = i;
+        }
+    }
+
+    return vec[0];
+}

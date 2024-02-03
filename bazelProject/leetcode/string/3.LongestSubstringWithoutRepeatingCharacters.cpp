@@ -122,3 +122,19 @@ int lengthOfLongestSubstringWithWindow(std::string s) {
     }
     return ans;
 }
+
+
+int lengthOfLongestSubstringWithWindow1(std::string s) {
+    int left = 0, right = 0, ans = 0;
+    std::vector<int> vec(256, 0);
+    while(right < s.size()) {
+        if(vec[s[right]] == 0) {
+            ans = std::max(ans, right - left + 1);
+            ++vec[s[right++]];
+        }else {
+            --vec[s[left++]];
+        }
+    }
+
+    return ans;
+}

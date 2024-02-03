@@ -492,3 +492,19 @@ cc_binary(
 	deps  = ["228SummaryRanges",
 			"@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "392IsSubsequence",
+	hdrs = ["392.IsSubsequence.h"],
+	srcs = ["392.IsSubsequence.cpp"]
+)
+
+
+cc_binary(
+	name  = "392IsSubsequenceTest",
+	srcs  = ["392.IsSubsequenceTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["392IsSubsequence",
+			"@googletest//:gtest_main"],
+)

@@ -11,6 +11,8 @@ TEST(case_1,content)
     
     EXPECT_EQ(findSubstring(s, words), ans);
     EXPECT_EQ(findSubstringWindow(s, words), ans);
+    EXPECT_EQ(findSubstringHashMap(s, words), ans);
+    EXPECT_EQ(findSubstringSlidingWindow(s, words), ans);
 }
 
 
@@ -22,6 +24,8 @@ TEST(case_2, content)
     
     EXPECT_EQ(findSubstring(s, words), ans);
     EXPECT_EQ(findSubstringWindow(s, words), ans);
+    EXPECT_EQ(findSubstringHashMap(s, words), ans);
+    EXPECT_EQ(findSubstringSlidingWindow(s, words), ans);
 }
 
 TEST(case_3, content)
@@ -32,6 +36,8 @@ TEST(case_3, content)
     
     EXPECT_EQ(findSubstring(s, words), ans);
     EXPECT_EQ(findSubstringWindow(s, words), ans);
+    EXPECT_EQ(findSubstringHashMap(s, words), ans);
+    EXPECT_EQ(findSubstringSlidingWindow(s, words), ans);
 }
 
 TEST(case_4, content)
@@ -42,4 +48,18 @@ TEST(case_4, content)
     
     EXPECT_EQ(findSubstring(s, words), ans);
     EXPECT_EQ(findSubstringWindow(s, words), ans);
+    EXPECT_EQ(findSubstringHashMap(s, words), ans);
+    EXPECT_EQ(findSubstringSlidingWindow(s, words), ans);
+}
+
+TEST(case_5, content)
+{
+    std::string s = "a";
+    std::vector<std::string> words = {"a","a"};
+    std::vector<int> ans = {};
+    
+    EXPECT_EQ(findSubstring(s, words), ans);
+    EXPECT_EQ(findSubstringWindow(s, words), ans);
+    EXPECT_EQ(findSubstringHashMap(s, words), ans);
+    EXPECT_EQ(findSubstringSlidingWindow(s, words), ans);
 }

@@ -40,3 +40,19 @@ std::vector<int> twoSum1(std::vector<int>& numbers, int target) {
 
     return {};
 }
+
+std::vector<int> twoSum2(std::vector<int>& numbers, int target) {
+    int iLeft = 0, iRight = numbers.size() - 1;
+    while(iLeft < iRight) {
+        int iSum = numbers[iLeft] + numbers[iRight];
+        if(iSum == target) {
+            return {iLeft + 1, iRight + 1};
+        }else if(iSum < target) {
+            ++iLeft;
+        }else {
+            --iRight;
+        }
+    }
+
+    return {};
+}

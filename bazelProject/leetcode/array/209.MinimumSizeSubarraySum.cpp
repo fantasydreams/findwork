@@ -20,3 +20,22 @@ int minSubArrayLen(int target, vector<int>& nums) {
 
     return minLen == nums.size() + 1 ? 0 : minLen;
 }
+
+
+int minSubArrayLen2(int target, vector<int>& nums) {
+    int iLeft = 0, iRight = 0;
+    int iCurmSUm = 0, iAns = nums.size() + 1;
+    while(iRight <= nums.size()) {
+        if(iCurmSUm < target) {
+            if(iRight < nums.size())  {
+                iCurmSUm += nums[iRight];
+            }
+            ++iRight;
+        }else {
+            iAns = std::min(iAns, iRight - iLeft);
+            iCurmSUm -= nums[iLeft++];
+        }
+    }
+
+    return iAns == nums.size() + 1 ? 0 : iAns;
+}

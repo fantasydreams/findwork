@@ -604,3 +604,19 @@ cc_binary(
 	deps  = ["229MajorityElementII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "153Sum",
+	hdrs = ["15.3Sum.h"],
+	srcs = ["15.3Sum.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "153SumTest",
+	srcs  = ["15.3SumTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["153Sum",
+			 "@googletest//:gtest_main"],
+)

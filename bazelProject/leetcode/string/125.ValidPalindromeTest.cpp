@@ -6,6 +6,7 @@ TEST(case_1, content) {
     bool ans = true;
 
     EXPECT_EQ(isPalindrome(str), ans);
+    EXPECT_EQ(isPalindrome1(str), ans);
 }
 
 TEST(case_2, content) {
@@ -13,6 +14,7 @@ TEST(case_2, content) {
     bool ans = true;
 
     EXPECT_EQ(isPalindrome(str), ans);
+    EXPECT_EQ(isPalindrome1(str), ans);
 }
 
 
@@ -21,6 +23,7 @@ TEST(case_6, content) {
     bool ans = true;
 
     EXPECT_EQ(isPalindrome(str), ans);
+    EXPECT_EQ(isPalindrome1(str), ans);
 }
 
 
@@ -29,6 +32,7 @@ TEST(case_3, content) {
     bool ans = true;
 
     EXPECT_EQ(isPalindrome(str), ans);
+    EXPECT_EQ(isPalindrome1(str), ans);
 }
 
 TEST(case_4, content) {
@@ -36,6 +40,7 @@ TEST(case_4, content) {
     bool ans = true;
 
     EXPECT_EQ(isPalindrome(str), ans);
+    EXPECT_EQ(isPalindrome1(str), ans);
 }
 
 TEST(case_5, content) {
@@ -43,4 +48,5 @@ TEST(case_5, content) {
     bool ans = false;
 
     EXPECT_EQ(isPalindrome(str), ans);
+    EXPECT_EQ(isPalindrome1(str), ans);
 }

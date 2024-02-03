@@ -6,6 +6,7 @@ TEST(case_1, content) {
     int ans = 2;
     std::vector<int> nums = {2,3,1,2,4,3};
     EXPECT_EQ(minSubArrayLen(target, nums), ans);
+    EXPECT_EQ(minSubArrayLen2(target, nums), ans);
 }
 
 TEST(case_2, content) {
@@ -13,6 +14,7 @@ TEST(case_2, content) {
     int ans = 1;
     std::vector<int> nums = {1,4,4};
     EXPECT_EQ(minSubArrayLen(target, nums), ans);
+    EXPECT_EQ(minSubArrayLen2(target, nums), ans);
 }
 
 TEST(case_3, content) {
@@ -20,6 +22,7 @@ TEST(case_3, content) {
     int ans = 0;
     std::vector<int> nums = {1,1,1,1,1,1,1,1};
     EXPECT_EQ(minSubArrayLen(target, nums), ans);
+    EXPECT_EQ(minSubArrayLen2(target, nums), ans);
 }
 
 TEST(case_4, content) {
@@ -27,4 +30,5 @@ TEST(case_4, content) {
     int ans = 2;
     std::vector<int> nums = {5,1,3,5,10,7,4,9,2,8};
     EXPECT_EQ(minSubArrayLen(target, nums), ans);
+    EXPECT_EQ(minSubArrayLen2(target, nums), ans);
 }

@@ -49,3 +49,20 @@ int maxArea1(std::vector<int>& height) {
 
     return MaxProduct;
 }
+
+
+int maxArea2(std::vector<int>& height) {
+    int iAns = 0;
+    int iLeft = 0, iRight = height.size() - 1;
+    while(iLeft < iRight) {
+        int iTmpAns = std::min(height[iLeft], height[iRight]) * (iRight - iLeft);
+        iAns = std::max(iAns, iTmpAns);
+        if(height[iLeft] < height[iRight]) {
+            ++iLeft;
+        }else {
+            --iRight;
+        }
+    }
+
+    return iAns;
+}

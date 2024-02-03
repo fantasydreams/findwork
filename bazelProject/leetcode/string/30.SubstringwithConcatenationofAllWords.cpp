@@ -99,3 +99,89 @@ vector<int> findSubstringWindow(string s, vector<string>& words) {
 
     return ans;
 }
+
+
+vector<int> findSubstringHashMap(string s, vector<string>& words) {
+    vector<int> vecAns;
+    if(s.empty() || words.empty() || words[0].empty()) {
+        return vecAns;
+    }
+
+    std::unordered_map<std::string, uint32_t> wordCnt;
+    for(const auto& sWord : words) {
+        ++wordCnt[sWord];
+    }
+
+    for(int i = 0; i <= (int64_t)(s.size() - words.size() * words[0].length()); ++i) {
+        // printf("idx %d s %d\n", i, s.size());
+        std::unordered_map<std::string, uint32_t> tmpWordCnt = wordCnt;
+        for(int k = 0; k < words.size() && i + (k + 1) * words[0].length() <= s.length(); ++k) {
+            const std::string& sSubStr = s.substr(i + k * words[0].length(), words[0].length());
+            auto pIter = tmpWordCnt.find(sSubStr);
+            if(pIter == tmpWordCnt.end()) {
+                break;
+            }
+            if(--pIter->second == 0) {
+                tmpWordCnt.erase(pIter);
+            }
+        }
+        
+        if(tmpWordCnt.empty()) {
+            vecAns.push_back(i);
+        }
+    }
+
+    return vecAns;
+}
+
+
+vector<int> findSubstringSlidingWindow(string s, vector<string>& words) {
+    vector<int> vecAns;
+    if(s.empty() || words.empty() || words[0].empty()) {
+        return vecAns;
+    }
+
+    int wordCnt = words.size();
+    int wordLen = words[0].length();
+    int strLen = s.length();
+
+    std::unordered_map<std::string, int> wordCntMap, tmpWordCntMap;
+    for(const auto& sWord : words) {
+        ++wordCntMap[sWord];
+    }
+
+    for(int i = 0; i < wordLen; ++i) {
+        int start = i, end = i;
+        while(start <= strLen - wordCnt * wordLen) {
+            while(end < start + wordCnt * wordLen) {
+                const std::string& sSubStr = s.substr(end, wordLen);
+                auto pIter = wordCntMap.find(sSubStr);
+                end += wordLen;
+                if(pIter == wordCntMap.end()) {
+                    tmpWordCntMap.clear();
+                    start = end;
+                    break;
+                }
+
+                ++tmpWordCntMap[sSubStr];
+                if(tmpWordCntMap[sSubStr] > pIter->second) {
+                    while(tmpWordCntMap[sSubStr] > pIter->second) {
+                        --tmpWordCntMap[s.substr(start, wordLen)];
+                        start += wordLen;
+                    }
+                    break;
+                }
+            }
+            
+            if(end == start + wordCnt * wordLen) {
+                vecAns.push_back(start);
+                --tmpWordCntMap[s.substr(start, wordLen)];
+                start += wordLen;
+            }
+        }
+
+        tmpWordCntMap.clear();
+    }    
+
+    return vecAns;
+}

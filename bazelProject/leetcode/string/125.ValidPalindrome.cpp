@@ -26,3 +26,27 @@ bool isPalindrome(string s) {
 
     return true;
 }
+
+
+bool isPalindrome1(string s) {
+    int b = 0, e = s.size() - 1;
+    while(b < e) {
+        while(b < e && (!isalpha(s[b]) && !isalnum(s[b]))) {
+            ++b;
+        }
+
+        while(b < e && (!isalpha(s[e]) && !isalnum(s[e]))) {
+            --e;
+        }
+        if(b >= e) {
+            return true;
+        }
+        s[b] = tolower(s[b]);
+        s[e] = tolower(s[e]);
+        if(s[b++] != s[e--]) {
+            return false;
+        }
+    }
+
+    return true;
+}

@@ -7,6 +7,7 @@ TEST(case_1,content)
     int res = 49;
     EXPECT_EQ(maxArea(height), res);
     EXPECT_EQ(maxArea1(height), res);
+    EXPECT_EQ(maxArea2(height), res);
 }
 
 TEST(case_2,content)
@@ -15,6 +16,7 @@ TEST(case_2,content)
     int res = 1;
     EXPECT_EQ(maxArea(height), res);
     EXPECT_EQ(maxArea1(height), res);
+    EXPECT_EQ(maxArea2(height), res);
 }
 
 int main(int argc, char* argv[])

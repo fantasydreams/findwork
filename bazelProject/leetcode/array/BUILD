@@ -620,3 +620,20 @@ cc_binary(
 	deps  = ["153Sum",
 			 "@googletest//:gtest_main"],
 )
+
+
+
+cc_library(
+	name = "289GameofLife",
+	hdrs = ["289.GameofLife.h"],
+	srcs = ["289.GameofLife.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "289GameofLifeTest",
+	srcs  = ["289.GameofLifeTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["289GameofLife",
+			 "@googletest//:gtest_main"],
+)

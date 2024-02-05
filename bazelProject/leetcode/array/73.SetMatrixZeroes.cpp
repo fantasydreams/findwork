@@ -64,3 +64,35 @@ void setZeroes1(vector<vector<int> >& matrix) {
         }
     }
 }
+
+
+void setZeroes2(vector<vector<int> >& matrix) {
+    if(matrix.empty() || matrix[0].empty()) {
+        return;
+    }
+
+    std::set<int> rows, cols, allRows;
+    for(int row = 0; row < matrix.size(); ++row) {
+        bool bSetZero = false;
+        for(int col = 0; col < matrix[row].size(); ++col) {
+            allRows.insert(row);
+            if(matrix[row][col] == 0) {
+                rows.insert(row);
+                cols.insert(col);
+                bSetZero = true;
+            }
+        }
+
+        if(bSetZero) {
+            std::fill(matrix[row].begin(), matrix[row].end(), 0);
+        }
+    }
+
+    std::set<int> diffRows;
+    std::set_difference(allRows.begin(), allRows.end(), rows.begin(), rows.end(), std::inserter(diffRows, diffRows.begin()));
+    for(const auto & col : cols) {
+        for(const auto& row : diffRows) {
+            matrix[row][col] = 0;
+        }
+    }
+}

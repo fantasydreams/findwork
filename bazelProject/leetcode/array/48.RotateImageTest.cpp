@@ -26,6 +26,14 @@ TEST(case_1,content)
     tmp = image;
     rotate3(tmp);
     EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotateUpDownAndSymmetry(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotateSimulate(tmp);
+    EXPECT_EQ(tmp, ans);
 }
 
 TEST(case_2,content)
@@ -53,6 +61,14 @@ TEST(case_2,content)
 
     tmp = image;
     rotate3(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotateUpDownAndSymmetry(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotateSimulate(tmp);
     EXPECT_EQ(tmp, ans);
 }
 
@@ -84,6 +100,14 @@ TEST(case_3,content)
     tmp = image;
     rotate3(tmp);
     EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotateUpDownAndSymmetry(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotateSimulate(tmp);
+    EXPECT_EQ(tmp, ans);
 }
 
 TEST(case_4,content)
@@ -107,6 +131,15 @@ TEST(case_4,content)
 
     tmp = image;
     rotate3(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotateUpDownAndSymmetry(tmp);
+    EXPECT_EQ(tmp, ans);
+
+
+    tmp = image;
+    rotateSimulate(tmp);
     EXPECT_EQ(tmp, ans);
 }
 
@@ -139,5 +172,13 @@ TEST(case_5,content)
 
     tmp = image;
     rotate3(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotateUpDownAndSymmetry(tmp);
+    EXPECT_EQ(tmp, ans);
+
+    tmp = image;
+    rotateSimulate(tmp);
     EXPECT_EQ(tmp, ans);
 }

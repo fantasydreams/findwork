@@ -58,3 +58,32 @@ void rotate3(vector<vector<int> >& matrix) { // 2023/08/17
         }
     }
 }
+
+
+void rotateUpDownAndSymmetry(vector<vector<int> >& matrix) {
+    int i = 0, j = matrix.size() - 1;
+    while( i < j) {
+        swap(matrix[i], matrix[j]);
+        ++i, --j;
+    }
+
+    for(int row = 0; row < matrix.size(); ++row) {
+        for(int col = row + 1; col < matrix[row].size(); ++col) {
+            swap(matrix[row][col], matrix[col][row]);
+        }
+    }
+}
+
+
+// 直接模拟旋转
+void rotateSimulate(vector<vector<int> > &matrix) {
+    int iTotalRowNum = matrix.size();
+    int iEndRow = iTotalRowNum / 2;
+    for(int row = 0; row < iEndRow; ++row) {
+        for(int col = row; col < iTotalRowNum - 1 - row; ++col) {
+            swap(matrix[row][col], matrix[col][iTotalRowNum - 1 - row]);
+            swap(matrix[row][col], matrix[iTotalRowNum - 1 - row][iTotalRowNum - 1 - col]);
+            swap(matrix[row][col], matrix[iTotalRowNum - 1 - col][row]);
+        }
+    }
+}

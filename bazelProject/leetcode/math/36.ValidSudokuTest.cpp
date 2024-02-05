@@ -20,6 +20,7 @@ TEST(case_1,content)
     bool ans = true;
     EXPECT_EQ(isValidSudoku(board), ans);
     EXPECT_EQ(isValidSudoku1(board), ans);
+    EXPECT_EQ(isValidSudoku2(board), ans);
 }
 
 TEST(case_2,content)
@@ -39,6 +40,7 @@ TEST(case_2,content)
     bool ans = false;
     EXPECT_EQ(isValidSudoku(board), ans);
     EXPECT_EQ(isValidSudoku1(board), ans);
+    EXPECT_EQ(isValidSudoku2(board), ans);
 }
 
 TEST(case_3,content)
@@ -57,6 +59,7 @@ TEST(case_3,content)
     bool ans = false;
     EXPECT_EQ(isValidSudoku(board), ans);
     EXPECT_EQ(isValidSudoku1(board), ans);
+    EXPECT_EQ(isValidSudoku2(board), ans);
 }
 
 TEST(case_4,content)
@@ -75,4 +78,5 @@ TEST(case_4,content)
     bool ans = false;
     EXPECT_EQ(isValidSudoku(board), ans);
     EXPECT_EQ(isValidSudoku1(board), ans);
+    EXPECT_EQ(isValidSudoku2(board), ans);
 }

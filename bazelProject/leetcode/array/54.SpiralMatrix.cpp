@@ -32,3 +32,47 @@ vector<int> spiralOrder(vector<vector<int> >& matrix) {
 
     return ans;
 }
+
+
+vector<int> spiralOrder1(vector<vector<int> >& matrix) {
+    std::vector<int> vecAns;
+    if(matrix.empty() || matrix[0].empty()) {
+        return vecAns;
+    }
+
+    int left = 0, right = matrix[0].size() - 1, top = 0, bottom = matrix.size() - 1;
+    while(top <= bottom) {
+        for(int i = left; i <= right; ++i) {
+            vecAns.push_back(matrix[top][i]);
+        }
+
+        if(++top > bottom) {
+            break;
+        }
+
+        for(int i = top; i <= bottom; ++i) {
+            vecAns.push_back(matrix[i][right]);
+        }
+
+        if(--right < left) {
+            break;
+        }
+        
+        for(int i = right; i>= left; --i) {
+            vecAns.push_back(matrix[bottom][i]);
+        }
+
+        if(--bottom < top) {
+            break;
+        }
+
+        for(int i = bottom; i >=top; --i) {
+            vecAns.push_back(matrix[i][left]);
+        }
+        if(++left > right) {
+            break;
+        }
+    }
+
+    return vecAns;
+}

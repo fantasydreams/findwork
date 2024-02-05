@@ -83,3 +83,24 @@ bool isValidSudoku1(vector<vector<char> >& board) {
 
     return true;
 }
+
+
+bool isValidSudoku2(vector<vector<char> > &board) {
+    std::vector<std::vector<bool> > row(board.size(), std::vector<bool>(9, false));
+    std::vector<std::vector<bool> > col = row, block = row;
+    for(int i = 0; i < board.size(); ++i) {
+        for(int j = 0; j < board.size(); ++j) {
+            if(board[i][j] == '.') {
+                continue;
+            }
+
+            int num = board[i][j] - '1';
+            if(row[i][num] || col[j][num] || block[i/3 * 3 + j / 3][num]) {
+                return false;
+            }
+            row[i][num] = col[j][num] = block[i/3 * 3 + j / 3][num] = true;
+        }
+    }
+
+    return true;
+}

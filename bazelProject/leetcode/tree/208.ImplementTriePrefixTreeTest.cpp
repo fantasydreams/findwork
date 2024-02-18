@@ -40,3 +40,15 @@ TEST(case_2, content)
     EXPECT_EQ(trie.search("app"), true);     // return True
     EXPECT_EQ(trie.search("app1"), false);
 }
+
+TEST(case_3, content)
+{
+    Trie2 trie;
+    trie.insert("apple");
+    EXPECT_EQ(trie.search("apple"),true);
+    EXPECT_EQ(trie.search("app"),false);     // return False
+    EXPECT_EQ(trie.startsWith("app"), true); // return True
+    trie.insert("app");
+    EXPECT_EQ(trie.search("app"), true);     // return True
+    EXPECT_EQ(trie.search("app1"), false);
+}

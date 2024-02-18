@@ -93,3 +93,51 @@ ListNode* reverseKGroup1(ListNode* head, int k) {
 
     return pAnsHead;
 }
+
+
+ListNode* ReverseKthGroup(ListNode* pHead, int k, ListNode* & pKthNext) {
+    ListNode* pNewHead = nullptr;
+    int i = 0;
+    while(pHead && i < k) {
+        ListNode* pNode = pHead;
+        pHead = pHead->next;
+        pNode->next = pNewHead;
+        pNewHead = pNode;
+        ++i;
+    }
+    
+    if(i < k) { // 翻转
+        ListNode* pTmp = pNewHead;
+        pNewHead = nullptr;
+        while(pTmp) {
+            ListNode* pNode = pTmp;
+            pTmp = pTmp->next;
+            pNode->next = pNewHead;
+            pNewHead = pNode;
+        }
+    }
+
+    pKthNext = pHead;
+    return pNewHead;
+}
+
+ListNode* reverseKGroup2(ListNode* head, int k) {
+    if(k <= 1 || head == nullptr) {
+        return head;
+    }
+
+    ListNode* pAnsHead = nullptr, *pPreTail = nullptr;
+    while(head) {
+        ListNode *pTail = head;
+        ListNode *pKthGroupHead = ReverseKthGroup(head, k, head);
+        if(pAnsHead == nullptr) {
+            pAnsHead = pKthGroupHead;
+        }
+        if(pPreTail != nullptr) {
+            pPreTail->next = pKthGroupHead;
+        }
+        pPreTail = pTail;
+    }
+
+    return pAnsHead;
+}

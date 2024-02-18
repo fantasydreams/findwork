@@ -141,3 +141,42 @@ Node* copyRandomListON(Node* head) {
 
     return newHead;
 }
+
+Node* copyRandomListON1(Node* head) {
+    if(head == nullptr) {
+        return head;
+    }
+
+    // copy
+    Node *pNode = head;
+    while(pNode) {
+        Node* pTmp = new Node(pNode->val);
+        pTmp->next = pNode->next;
+        pNode->next = pTmp;
+
+        pNode = pTmp->next;
+    }
+
+    // assgin ramdon
+    pNode = head;
+    while(pNode) {
+        if(pNode->random) {
+            pNode->next->random = pNode->random->next;
+        }
+        pNode = pNode->next->next;
+    }
+
+    // split;
+    pNode = head;
+    Node newHead(0);
+    Node* pPre = &newHead;
+    while(pNode) {
+        pPre->next = pNode->next;
+        pPre = pPre->next;
+        pNode->next = pPre->next;
+        pNode = pNode->next;
+    }
+
+    return newHead.next;
+}
+

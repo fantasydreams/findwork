@@ -69,3 +69,40 @@ string simplifyPath1(string path) {
 
         return ans;
     }
+
+
+string simplifyPath2(string path) {
+    std::string sAns;
+    std::vector<std::string> vecDirPath;
+    size_t iPos = 0;
+    while(iPos != std::string::npos && iPos < path.size()) {
+        std::string sDir;
+        size_t iNextPos = path.find('/', iPos);
+        if(iNextPos == std::string::npos) {
+            sDir = path.substr(iPos);
+            iPos = iNextPos;            
+        }else {
+            sDir = path.substr(iPos, iNextPos - iPos);
+            iPos = iNextPos + 1;
+        }
+
+        if(sDir == ".") {
+            continue;
+        }else if(sDir == "..") {
+            if(!vecDirPath.empty()) {
+                vecDirPath.pop_back();
+            }
+        }else if(!sDir.empty()) {
+            vecDirPath.emplace_back(sDir);
+        }
+    }
+
+    sAns = "/";
+    for(int i = 0; i < vecDirPath.size(); ++i) {
+        sAns.append(vecDirPath[i]);
+        if(i != vecDirPath.size() - 1) {
+            sAns.append("/");
+        }
+    }
+    return sAns;
+}

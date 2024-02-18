@@ -11,6 +11,7 @@ TEST(case_1, content) {
 
     int ans = 1;
     EXPECT_EQ(numIslands(matrix), ans);
+    EXPECT_EQ(numIslands1(matrix), ans);
 }
 
 
@@ -24,4 +25,5 @@ TEST(case_2, content) {
 
     int ans = 3;
     EXPECT_EQ(numIslands(matrix), ans);
+    EXPECT_EQ(numIslands1(matrix), ans);
 }

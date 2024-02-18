@@ -6,6 +6,7 @@ TEST(case_1,content)
     TreeNode * root = nullptr;
     bool ans = true;
     EXPECT_EQ(isValidBST(root), ans);
+    EXPECT_EQ(isValidBST2(root), ans);
 }
 
 
@@ -17,6 +18,7 @@ TEST(case_2,content)
     bool ans = true;
     EXPECT_EQ(isValidBST(root), ans);
     EXPECT_EQ(isValidBST1(root), ans);
+    EXPECT_EQ(isValidBST2(root), ans);
     FreeTree(root);
 }
 
@@ -29,6 +31,7 @@ TEST(case_3,content)
     bool ans = true;
     EXPECT_EQ(isValidBST(root), ans);
     EXPECT_EQ(isValidBST1(root), ans);
+    EXPECT_EQ(isValidBST2(root), ans);
     FreeTree(root);
 }
 
@@ -40,6 +43,7 @@ TEST(case_4,content)
     bool ans = false;
     EXPECT_EQ(isValidBST(root), ans);
     EXPECT_EQ(isValidBST1(root), ans);
+    EXPECT_EQ(isValidBST2(root), ans);
     FreeTree(root);
 }
 
@@ -51,5 +55,6 @@ TEST(case_5,content)
     bool ans = false;
     EXPECT_EQ(isValidBST(root), ans);
     EXPECT_EQ(isValidBST1(root), ans);
+    EXPECT_EQ(isValidBST2(root), ans);
     FreeTree(root);
 }

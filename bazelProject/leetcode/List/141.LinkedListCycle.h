@@ -34,3 +34,25 @@ bool hasCycle1(ListNode *head) {
     
     return false;
 }
+
+
+bool hasCycle2(ListNode *head) {
+    if(head == nullptr) {
+        return false;
+    }
+
+    ListNode* pSlow = head, *pFast = head->next;
+    while(pFast) {
+        if(pSlow == pFast) {
+            return true;
+        }
+
+        pSlow = pSlow->next;
+        pFast = pFast->next;
+        if(pFast) {
+            pFast = pFast->next;
+        }
+    }
+
+    return false;
+}

@@ -8,6 +8,7 @@ TEST(case_1,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     int ans = 1;
     EXPECT_EQ(getMinimumDifference(root), ans);
+    EXPECT_EQ(getMinimumDifference1(root), ans);
     FreeTree(root);
 }
 
@@ -18,5 +19,6 @@ TEST(case_2,content)
     TreeNode * root = CreateTreePreMid(pre, mid);
     int ans = 1;
     EXPECT_EQ(getMinimumDifference(root), ans);
+    EXPECT_EQ(getMinimumDifference1(root), ans);
     FreeTree(root);
 }

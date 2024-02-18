@@ -8,4 +8,5 @@ TEST(case_1, content) {
 
     std::vector<int> ans = {1, 3, 4};
     EXPECT_EQ(rightSideView(root), ans);
+    EXPECT_EQ(rightSideView1(root), ans);
 }

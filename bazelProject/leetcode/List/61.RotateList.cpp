@@ -43,3 +43,33 @@ ListNode* rotateRight(ListNode* head, int k) {
 
     return head;
 }
+
+
+ListNode* rotateRight1(ListNode* head, int k) {
+    int iLinkLen = getListLen(head);
+    if(k == 0 || iLinkLen == 0 || iLinkLen == 1) {
+        return head;
+    }
+
+    k %= iLinkLen;
+    if(k == 0 || iLinkLen == 0 || iLinkLen == 1) {
+        return head;
+    }
+
+    ListNode oHead; oHead.next = head;
+    ListNode* pTmp = &oHead;
+    while(pTmp && k--) {
+        pTmp = pTmp->next;
+    }
+
+    ListNode* pPreNode = &oHead;
+    while(pTmp && pTmp->next) {
+        pPreNode = pPreNode->next;
+        pTmp = pTmp->next;
+    }
+
+    ListNode* pAns = pPreNode->next;
+    pPreNode->next = nullptr;
+    pTmp->next = head;
+    return pAns;
+}

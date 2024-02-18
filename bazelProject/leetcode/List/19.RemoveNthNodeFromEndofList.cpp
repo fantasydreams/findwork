@@ -1,4 +1,6 @@
 #include "19.RemoveNthNodeFromEndofList.h"
+#include "linkcomm.h"
+#include <cstddef>
 
 ListNode* removeNthFromEnd(ListNode* head, int n) {
     ListNode oHead, *slow = &oHead, *fast = slow;
@@ -43,5 +45,28 @@ ListNode* removeNthFromEnd1(ListNode* head, int n) {
     pslow->next = pdel->next;
     delete pdel;
 
+    return oHead.next;
+}
+
+
+ListNode* removeNthFromEnd2(ListNode* head, int n) {
+    ListNode oHead; oHead.next = head;
+    ListNode* pSlow = &oHead, *pFast = pSlow;
+    while(pFast && n--) {
+        pFast = pFast->next;
+    }
+
+    if(pFast == nullptr) {
+        return head;
+    }
+
+    while(pFast && pFast->next) {
+        pSlow = pSlow->next;
+        pFast = pFast->next;
+    }
+
+    ListNode* pNode = pSlow->next;
+    pSlow->next = pNode->next;
+    delete pNode;
     return oHead.next;
 }

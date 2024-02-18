@@ -10,6 +10,7 @@ TEST(case_1, content)
     
     vector<vector<int>> ans = {{3},{9,20}, {15, 7}};
     EXPECT_EQ(ans, levelOrder(root));
+    EXPECT_EQ(ans, levelOrder1(root));
 
     FreeTree(root);
 }

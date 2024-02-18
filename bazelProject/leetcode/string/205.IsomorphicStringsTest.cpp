@@ -9,6 +9,7 @@ TEST(case_1,content)
     bool ans = true;
     EXPECT_EQ(isIsomorphic(s, t), ans);
     EXPECT_EQ(isIsomorphic1(s, t), ans);
+    EXPECT_EQ(isIsomorphic2(s, t), ans);
 }
 
 TEST(case_2,content)
@@ -17,6 +18,7 @@ TEST(case_2,content)
     bool ans = false;
     EXPECT_EQ(isIsomorphic(s, t), ans);
     EXPECT_EQ(isIsomorphic1(s, t), ans);
+    EXPECT_EQ(isIsomorphic2(s, t), ans);
 }
 
 TEST(case_3,content)
@@ -25,6 +27,7 @@ TEST(case_3,content)
     bool ans = true;
     EXPECT_EQ(isIsomorphic(s, t), ans);
     EXPECT_EQ(isIsomorphic1(s, t), ans);
+    EXPECT_EQ(isIsomorphic2(s, t), ans);
 }
 
 TEST(case_4,content)
@@ -33,6 +36,7 @@ TEST(case_4,content)
     bool ans = false;
     EXPECT_EQ(isIsomorphic(s, t), ans);
     EXPECT_EQ(isIsomorphic1(s, t), ans);
+    EXPECT_EQ(isIsomorphic2(s, t), ans);
 }
 
 
@@ -42,4 +46,5 @@ TEST(case_5,content)
     bool ans = true;
     EXPECT_EQ(isIsomorphic(s, t), ans);
     EXPECT_EQ(isIsomorphic1(s, t), ans);
+    EXPECT_EQ(isIsomorphic2(s, t), ans);
 }

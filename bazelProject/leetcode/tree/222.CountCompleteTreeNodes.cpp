@@ -80,3 +80,28 @@ int countNodesAttr(TreeNode* root) {
     return countNodesAttr(root->left) + countNodesAttr(root->right) + 1;
 
 }
+
+int countNodesAttr1(TreeNode* root) {
+    if(root == nullptr) {
+        return 0;
+    }
+
+    int iLevelLeft = 0, iLevelRight = 0;
+    TreeNode* pTmp = root;
+    while(pTmp) {
+        ++iLevelLeft;
+        pTmp = pTmp->left;
+    }
+
+    pTmp = root;
+    while(pTmp) {
+        ++iLevelRight;
+        pTmp = pTmp->right;
+    }
+
+    if(iLevelLeft == iLevelRight) {
+        return (2 << (iLevelLeft - 1)) - 1;
+    }
+
+    return countNodesAttr1(root->left) + countNodesAttr1(root->right) + 1;
+}

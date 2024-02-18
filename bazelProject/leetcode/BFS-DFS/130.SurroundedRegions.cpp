@@ -175,3 +175,57 @@ void solveBFS(vector<vector<char> >& board) {
         }
     }
 }
+
+
+void solveBFS1(vector<vector<char> >& board) {
+    if(board.empty() || board[0].empty()) {
+        return;
+    }
+
+    std::queue<std::pair<int, int> > que;
+    for(int i = 0;i < board[0].size(); ++i) {
+        if(board[0][i] == 'O') {
+            que.push({0, i});
+        }
+        if(board[board.size() - 1][i] == 'O') {
+            que.push({board.size() - 1, i});
+        }
+    }
+
+    for(int i = 0; i < board.size(); ++i) {
+        if(board[i][0] == 'O') {
+            que.push({i, 0});
+        }
+        if(board[i][board[i].size() - 1] == 'O') {
+            que.push({i, board[i].size() - 1});
+        }
+    }
+
+    while(!que.empty()) {
+        auto [x, y] = que.front(); que.pop();
+        static std::vector<int> vec = {-1, 0, 1, 0, -1};
+        board[x][y] = 'o';
+        for(int i = 0; i < 4; ++i) {
+            int nextx = x + vec[i];
+            int nexty = y + vec[i + 1];
+            if(nextx < 0 || nextx >= board.size() || nexty < 0 || nexty >= board[nextx].size()) {
+                continue;
+            }
+
+            if(board[nextx][nexty] == 'O') {
+                que.push({nextx, nexty});
+            }
+        }
+    }
+
+    for(int row = 0; row < board.size(); ++row) {
+        for(int col = 0; col < board[row].size(); ++col) {
+            if(board[row][col] == 'O') {
+                board[row][col] = 'X';
+            }
+            if(board[row][col] == 'o') {
+                board[row][col] = 'O';
+            }
+        }
+    }
+}

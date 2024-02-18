@@ -18,3 +18,19 @@ int kthSmallest(TreeNode* root, int k) {
 
     return -1;
 }
+
+
+int kthSmallest1(TreeNode* root, int k) { 
+    std::stack<TreeNode*> st;
+    PushTaskLeftPathUntilNull(root, st);
+    while(!st.empty()) {
+        TreeNode* pNode = st.top(); st.pop();
+        if(--k == 0) {
+            return pNode->val;
+        }
+
+        PushTaskLeftPathUntilNull(pNode->right, st);
+    }
+
+    return -1;
+}

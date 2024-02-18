@@ -20,3 +20,4 @@ public:
 };
 
 Node* cloneGraph(Node* node);
+Node* cloneGraph1(Node* node);

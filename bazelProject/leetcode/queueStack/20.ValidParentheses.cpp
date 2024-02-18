@@ -50,3 +50,30 @@ bool isValid1(string s)
     }
     return st.empty();
 }
+
+
+bool isValid2(string s) {
+    if(s.empty()) {
+        return true;
+    }
+
+    std::stack<char> st;
+    for(const auto & ch : s) {
+        if(ch == '(' || ch == '{' || ch == '[') {
+            st.push(ch);
+        }else {
+            if(st.empty()) {
+                return false;
+            }
+
+            char pop = st.top();
+            st.pop();
+            if((ch == ')' && pop == '(') || (ch == ']' && pop == '[') || (ch == '}' && pop == '{')) {
+                continue;
+            }
+            return false;
+        }
+    }
+
+    return st.empty();
+}

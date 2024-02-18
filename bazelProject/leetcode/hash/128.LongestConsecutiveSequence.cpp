@@ -109,3 +109,25 @@ int longestConsecutive2(vector<int>& nums) {
 
     return ans;
 }
+
+// 这个是不对的，出现重复的数字，计算结果就不对了
+int longestConsecutive3(vector<int>& nums) {
+    if(nums.empty()) {
+        return 0;
+    }
+    std::sort(nums.begin(), nums.end());
+    int ans = 1, tmp = 1;
+    for(int i = 1; i < nums.size(); ++i) {
+        if(nums[i] == nums[i - 1] + 1) {
+            ++tmp;
+            ans = std::max(ans, tmp);
+        }
+        else if(nums[i] == nums[i - 1]) {
+            continue;
+        }else {
+            tmp = 1;
+        }
+    }
+
+    return ans;
+}

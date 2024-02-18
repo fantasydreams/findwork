@@ -1,5 +1,6 @@
 
 #include "102.BinaryTreeLevelOrderTraversal.h"
+#include "treecomm.h"
 #include <queue>
 
 vector<vector<int> > levelOrder(TreeNode* root) {
@@ -26,4 +27,31 @@ vector<vector<int> > levelOrder(TreeNode* root) {
     }
 
     return ans;
+}
+
+
+vector<vector<int> > levelOrder1(TreeNode* root) {
+    vector<vector<int> > vecAns;
+    if(root == nullptr) {
+        return vecAns;
+    }   
+
+    std::queue<TreeNode*> que; que.push(root);
+    while(!que.empty()) {
+        int iSize = que.size();
+        std::vector<int> vecLevel;
+        while(iSize--) {
+            TreeNode* pNode = que.front(); que.pop();
+            vecLevel.push_back(pNode->val);
+            if(pNode->left) {
+                que.push(pNode->left);
+            }
+            if(pNode->right) {
+                que.push(pNode->right);
+            }
+        }
+        vecAns.emplace_back(std::move(vecLevel));
+    }
+
+    return vecAns;
 }

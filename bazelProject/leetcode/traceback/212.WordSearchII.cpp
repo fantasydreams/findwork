@@ -121,3 +121,116 @@ vector<string> findWords(vector<vector<char> >& board, vector<string>& words) {
     for_each(set.begin(), set.end(), [&](const std::string& str){vecAns.emplace_back(std::move(str));});
     return vecAns;
 }
+
+
+class TrieNode2 {
+public:
+    TrieNode2() : m_bIsVal(false) {}
+    bool m_bIsVal;
+    std::unordered_map<char, TrieNode2> m_mapNext;
+}; 
+
+
+class Trie2 {
+public:
+    Trie2() {
+
+    }
+    
+    void insert(const string& word) {
+        auto pIter = &m_root;
+        for(const auto& ch : word) {
+            pIter = &pIter->m_mapNext[ch];
+        }
+        pIter->m_bIsVal = true;
+    }
+    
+    bool search(const string& word) {
+        auto pIter = &m_root;
+        for(const auto & ch : word) {
+            auto pIterNext = pIter->m_mapNext.find(ch);
+            if(pIterNext == pIter->m_mapNext.end()) {
+                return false;
+            }
+            pIter = &pIterNext->second;
+        }
+
+        return pIter->m_bIsVal;
+    }
+    
+    bool startsWith(const string& prefix) {
+        auto pIter = &m_root;
+        for(const auto & ch : prefix) {
+            auto pIterNext = pIter->m_mapNext.find(ch);
+            if(pIterNext == pIter->m_mapNext.end()) {
+                return false;
+            }
+            pIter = &pIterNext->second;
+        }
+        return true;
+    }
+
+    const TrieNode2& GetRoot() {
+        return m_root;
+    }
+private:
+    TrieNode2 m_root;
+};
+
+
+void DFS(vector<vector<char> >& board, const TrieNode2& oNode, std::string& sTmp, int row, int col, std::unordered_set<std::string>& setFinds, std::vector<std::vector<bool> >&vecVisited) {
+    if(oNode.m_bIsVal) {
+        setFinds.insert(sTmp);
+    }
+
+    static std::vector<int> vec = {-1, 0, 1, 0, -1};
+    for(int i = 0; i < 4; ++i) {
+        int nextx = row + vec[i];
+        int nexty = col + vec[i + 1];
+        if(nextx < 0 || nextx >= board.size() || nexty < 0 || nexty >= board[nextx].size() || vecVisited[nextx][nexty]) {
+            continue;
+        }
+
+        auto pIter = oNode.m_mapNext.find(board[nextx][nexty]);
+        if(pIter == oNode.m_mapNext.end()) {
+            continue;
+        }
+
+        vecVisited[nextx][nexty] = true;
+        sTmp.push_back(board[nextx][nexty]);
+        DFS(board, pIter->second, sTmp, nextx, nexty, setFinds, vecVisited);
+        sTmp.pop_back();
+        vecVisited[nextx][nexty] = false;
+    }
+    
+}
+
+vector<string> findWords1(vector<vector<char> >& board, vector<string>& words) {
+    std::vector<std::string> vecAns;
+    std::unordered_set<std::string> setFinds;
+    std::vector<std::vector<bool> >vecVisited(board.size(), std::vector<bool>(board[0].size(), false));
+    if(board.empty() || board[0].empty() || words.empty()) {
+        return vecAns;
+    }
+
+    Trie2 oTire;
+    for_each(words.begin(), words.end(), [&](const std::string& sStr){oTire.insert(sStr);});
+    for(int row = 0; row < board.size(); ++row) {
+        for(int col = 0; col < board[row].size(); ++col) {
+            auto pIter = oTire.GetRoot().m_mapNext.find(board[row][col]);
+            if(pIter == oTire.GetRoot().m_mapNext.end()) {
+                continue;
+            }
+
+            std::string sTmp;
+            sTmp.push_back(board[row][col]);
+            vecVisited[row][col] = true;
+            DFS(board, pIter->second, sTmp, row, col, setFinds, vecVisited);
+            vecVisited[row][col] = false;
+        }
+    }
+
+
+    for_each(setFinds.begin(), setFinds.end(), [&](const std::string& sStr){vecAns.emplace_back(std::move(sStr));});
+    return vecAns;
+}

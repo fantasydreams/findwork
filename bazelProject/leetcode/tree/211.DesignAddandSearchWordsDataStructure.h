@@ -1,3 +1,4 @@
+#include "treecomm.h"
 #include <string>
 using namespace std;
 
@@ -25,14 +26,6 @@ public:
         const TrieNode* pNode = &oNode;
         for(int i = pos; i < word.size(); ++i) {
             if(word[i] == '.') {
-                if(i == word.size()) {
-                    for(auto pIter = pNode->m_mapNext.begin(); pIter != pNode->m_mapNext.end(); ++pIter) {
-                        if(pIter->second.m_bIsVal == true) {
-                            return true;
-                        }
-                    }
-                    return false;
-                }
                 bool bRes = false;
                 for(auto pIter = pNode->m_mapNext.begin(); pIter != pNode->m_mapNext.end() && !bRes; ++pIter) {
                     bRes = search(pIter->second, word, i + 1);
@@ -77,3 +70,94 @@ public:
 private:
     Trie1 m_trie;
 };
+
+class TrieNode2 {
+public:
+    TrieNode2() : m_bIsVal(false) {}
+    bool m_bIsVal;
+    std::unordered_map<char, TrieNode2> m_mapNext;
+}; 
+
+class Trie2 {
+public:
+    Trie2() {
+
+    }
+    
+    void insert(const string& word) {
+        auto pIter = &m_root;
+        for(const auto& ch : word) {
+            pIter = &pIter->m_mapNext[ch];
+        }
+        pIter->m_bIsVal = true;
+    }
+    
+    
+    bool search(TrieNode2* pIter, const std::string & sWord, int iLoc) {
+        for(int i = iLoc; i < sWord.size(); ++i) {
+            if(sWord[i] == '.') {
+                bool bAns = false;
+                for(auto pIterNew = pIter->m_mapNext.begin(); pIterNew != pIter->m_mapNext.end() && !bAns; ++pIterNew) {
+                    bAns = search(&pIterNew->second, sWord, i + 1);
+                }
+                return bAns;
+            }else {
+                auto pIterNext = pIter->m_mapNext.find(sWord[i]);
+                if(pIterNext == pIter->m_mapNext.end()) {
+                    return false;
+                }
+                pIter = &pIterNext->second;
+            }
+        }
+
+        return pIter->m_bIsVal;
+    }
+
+    bool search(const string& word) {
+        return search(&m_root, word, 0);
+    }
+
+    bool startsWith(string prefix) {
+        auto pIter = &m_root;
+        for(const auto & ch : prefix) {
+            auto pIterNext = pIter->m_mapNext.find(ch);
+            if(pIterNext == pIter->m_mapNext.end()) {
+                return false;
+            }
+            pIter = &pIterNext->second;
+        }
+        return true;
+    }
+private:
+    TrieNode2 m_root;
+};
+
+
+class WordDictionary1 {
+public:
+    WordDictionary1() {
+
+    }
+    
+    void addWord(string word) {
+        m_trie.insert(word);
+    }
+    
+    bool search(string word) {
+        if(word.empty()) {
+            return false;
+        }
+
+        return m_trie.search(word);
+    }
+
+private:
+    Trie2 m_trie;
+};
+
+/**
+ * Your WordDictionary object will be instantiated and called as such:
+ * WordDictionary* obj = new WordDictionary();
+ * obj->addWord(word);
+ * bool param_2 = obj->search(word);
+ */

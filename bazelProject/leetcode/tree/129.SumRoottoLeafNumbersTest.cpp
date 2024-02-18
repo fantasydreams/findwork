@@ -9,6 +9,7 @@ TEST(case_1, content) {
     
     int ans = 25; 
     EXPECT_EQ(sumNumbers(root), ans);
+    EXPECT_EQ(sumNumbers1(root), ans);
     FreeTree(root);
 }
 
@@ -20,5 +21,6 @@ TEST(case_2, content) {
     
     int ans = 1026; 
     EXPECT_EQ(sumNumbers(root), ans);
+    EXPECT_EQ(sumNumbers1(root), ans);
     FreeTree(root);
 }

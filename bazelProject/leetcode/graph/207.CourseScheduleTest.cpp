@@ -6,6 +6,7 @@ TEST(case_1, content) {
     std::vector<std::vector<int> > prerequisites = {{1,0}};
     int ans = true;
     EXPECT_EQ(canFinish(numCourses, prerequisites), ans);
+    EXPECT_EQ(canFinish1(numCourses, prerequisites), ans);
 }
 
 
@@ -14,4 +15,5 @@ TEST(case_2, content) {
     std::vector<std::vector<int> > prerequisites = {{1,0}, {0, 1}};
     int ans = false;
     EXPECT_EQ(canFinish(numCourses, prerequisites), ans);
+    EXPECT_EQ(canFinish1(numCourses, prerequisites), ans);
 }

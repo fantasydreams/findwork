@@ -2,6 +2,7 @@
 #include <climits>
 #include <queue>
 #include <string>
+#include <unordered_map>
 #include <vector>
 #include <unordered_set>
 
@@ -265,6 +266,49 @@ int ladderLengthBiBFS(string beginWord, string endWord, vector<string>& wordList
         }
 
         swap(tmp, setBegin);
+    }
+
+    return 0;
+}
+
+
+int ladderLengthBiBFS1(string beginWord, string endWord, vector<string>& wordList) {
+    std::unordered_set<std::string> oWordDict(wordList.begin(), wordList.end()), setBegin, setEnd;
+    setBegin.insert(beginWord); setEnd.insert(endWord);
+    if(oWordDict.count(endWord) == 0) {
+        return 0;
+    }
+    
+    int iAns = 0;
+    while(!setBegin.empty() && !setEnd.empty()) {
+        if(setBegin.size() > setEnd.size()) {
+            swap(setBegin, setEnd);
+        }
+
+        ++iAns;
+        std::unordered_set<std::string> setTmp;
+        for(const auto & word : setBegin) {
+            for(int i = 0; i < word.size(); ++i) {
+                for(char ch = 'a'; ch <= 'z'; ++ch) {
+                    std::string sNewWord = word;
+                    sNewWord[i] = ch;
+                    if(sNewWord == word) {
+                        continue;
+                    }
+
+                    if(setEnd.count(sNewWord)) {
+                        return iAns + 1;
+                    }
+
+                    auto pIter = oWordDict.find(sNewWord);
+                    if(pIter != oWordDict.end()) {
+                        oWordDict.erase(pIter);
+                        setTmp.insert(sNewWord);
+                    }
+                }
+            }
+        }
+        swap(setTmp, setBegin);
     }
 
     return 0;

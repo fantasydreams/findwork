@@ -9,6 +9,7 @@ TEST(case_1, content) {
 
     int ans = 1;
     EXPECT_EQ(kthSmallest(root, 1), ans);
+    EXPECT_EQ(kthSmallest1(root, 1), ans);
     FreeTree(root);
 }
 
@@ -20,6 +21,7 @@ TEST(case_2, content) {
 
     int ans = 2;
     EXPECT_EQ(kthSmallest(root, 2), ans);
+    EXPECT_EQ(kthSmallest1(root, 2), ans);
     FreeTree(root);
 }
 
@@ -30,5 +32,6 @@ TEST(case_3, content) {
 
     int ans = 3;
     EXPECT_EQ(kthSmallest(root, 3), ans);
+    EXPECT_EQ(kthSmallest1(root, 3), ans);
     FreeTree(root);
 }

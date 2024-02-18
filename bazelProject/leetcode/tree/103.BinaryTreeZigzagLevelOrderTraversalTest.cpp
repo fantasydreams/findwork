@@ -13,6 +13,7 @@ TEST(case_1, content) {
     };
 
     EXPECT_EQ(zigzagLevelOrder(root), ans);
+    EXPECT_EQ(zigzagLevelOrder1(root), ans);
     FreeTree(root);
 }
 
@@ -27,6 +28,7 @@ TEST(case_2, content) {
     };
 
     EXPECT_EQ(zigzagLevelOrder(root), ans);
+    EXPECT_EQ(zigzagLevelOrder1(root), ans);
     FreeTree(root);
 }
 
@@ -39,5 +41,6 @@ TEST(case_3, content) {
     };
 
     EXPECT_EQ(zigzagLevelOrder(root), ans);
+    EXPECT_EQ(zigzagLevelOrder1(root), ans);
     FreeTree(root);
 }

@@ -247,3 +247,18 @@ cc_binary(
 	deps  = ["220ContainsDuplicateIII",
 			 "@googletest//:gtest_main"],
 )
+
+cc_library(
+	name  = "290WordPattern",
+    hdrs  = ["290.WordPattern.h"], 
+	srcs  = ["290.WordPattern.cpp"],
+	copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "290WordPatternTest",
+	srcs  = ["290.WordPatternTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["290WordPattern",
+			 "@googletest//:gtest_main"],
+)

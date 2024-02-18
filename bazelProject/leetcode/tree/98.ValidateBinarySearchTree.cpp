@@ -1,5 +1,7 @@
 #include "98.ValidateBinarySearchTree.h"
+#include "treecomm.h"
 #include <climits>
+#include <cstdint>
 #include <stack>
 
 void pushLeftUntilNull(TreeNode* root, std::stack<TreeNode*>& st) {
@@ -50,6 +52,25 @@ bool isValidBST1(TreeNode* root) {
         }
         iPreNum = node->val;
         pushLeftUntilNull(node->right, st);
+    }
+
+    return true;
+}
+
+
+bool isValidBST2(TreeNode* root) {
+    std::stack<TreeNode*> st;
+    pushLeftUntilNull(root, st);
+
+    int64_t iPre = INT64_MIN;
+    while(!st.empty()) {
+        TreeNode* pNode = st.top(); st.pop();
+        if(iPre >= pNode->val) {
+            return false;
+        }
+
+        iPre = pNode->val;
+        pushLeftUntilNull(pNode->right, st);
     }
 
     return true;

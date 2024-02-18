@@ -40,3 +40,44 @@ TEST(case_3, content) {
     EXPECT_EQ(pre, ans);
     FreeTree(root);
 }
+
+
+TEST(case_1, content1) {
+    std::vector<int> pre = {1,2,3,4,5,6};
+    std::vector<int> mid = {3,2,4,1,5,6};
+    TreeNode * root = CreateTreePreMid(pre, mid);
+    
+    flatten1(root);
+
+    std::vector<int> ans;
+    TraverseTreePreNoRecursion(root, ans);
+    EXPECT_EQ(pre, ans);
+    FreeTree(root);
+}
+
+
+TEST(case_2, content1) {
+    std::vector<int> pre = {};
+    std::vector<int> mid = {};
+    TreeNode * root = CreateTreePreMid(pre, mid);
+    
+    flatten1(root);
+
+    std::vector<int> ans;
+    TraverseTreePreNoRecursion(root, ans);
+    EXPECT_EQ(pre, ans);
+    FreeTree(root);
+}
+
+TEST(case_3, content1) {
+    std::vector<int> pre = {1};
+    std::vector<int> mid = {1};
+    TreeNode * root = CreateTreePreMid(pre, mid);
+    
+    flatten1(root);
+
+    std::vector<int> ans;
+    TraverseTreePreNoRecursion(root, ans);
+    EXPECT_EQ(pre, ans);
+    FreeTree(root);
+}

@@ -6,6 +6,7 @@ TEST(case_1, content) {
     int k = 3;
     bool ans = true;
     EXPECT_EQ(containsNearbyDuplicate(nums, k), ans);
+    EXPECT_EQ(containsNearbyDuplicate1(nums, k), ans);
 }
 
 
@@ -14,6 +15,7 @@ TEST(case_2, content) {
     int k = 1;
     bool ans = true;
     EXPECT_EQ(containsNearbyDuplicate(nums, k), ans);
+    EXPECT_EQ(containsNearbyDuplicate1(nums, k), ans);
 }
 
 TEST(case_3, content) {
@@ -21,4 +23,5 @@ TEST(case_3, content) {
     int k = 2;
     bool ans = false;
     EXPECT_EQ(containsNearbyDuplicate(nums, k), ans);
+    EXPECT_EQ(containsNearbyDuplicate1(nums, k), ans);
 }

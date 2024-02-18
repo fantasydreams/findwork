@@ -134,3 +134,35 @@ int calculate1(string s) {
 
     return ret;
 }
+
+
+int calculate2(string s) {
+    int ans = 0;
+    std::stack<int> st; st.push(1);
+    int sign = 1, idx = 0;;
+    while(idx < s.size()) {
+        if(s[idx] == ' ') {
+            ++idx;
+            continue;
+        }
+
+        if(s[idx] == '-') {
+            sign = -st.top();
+            ++idx;
+        }else if(s[idx] == '+') {
+            sign = st.top();
+            ++idx;
+        }else if(s[idx] == '(') {
+            st.push(sign);
+            ++idx;
+        }else if(s[idx] == ')') {
+            st.pop();
+            ++idx;
+        }else {
+            ans += sign * GetNextNumber(s, idx);
+        }
+    }
+
+
+    return ans;
+}

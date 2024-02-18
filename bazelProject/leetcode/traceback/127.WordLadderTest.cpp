@@ -12,6 +12,7 @@ TEST(case_1,content)
     EXPECT_EQ(ladderLength1(beginWord, endWord, wordList), res);
     EXPECT_EQ(ladderLengthBFS(beginWord, endWord, wordList), res);
     EXPECT_EQ(ladderLengthBiBFS(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLengthBiBFS1(beginWord, endWord, wordList), res);
 }
 
 TEST(case_2,content)
@@ -25,6 +26,7 @@ TEST(case_2,content)
     EXPECT_EQ(ladderLength1(beginWord, endWord, wordList), res);
     EXPECT_EQ(ladderLengthBFS(beginWord, endWord, wordList), res);
     EXPECT_EQ(ladderLengthBiBFS(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLengthBiBFS1(beginWord, endWord, wordList), res);
 }
 
 
@@ -38,4 +40,5 @@ TEST(case_3,content)
     EXPECT_EQ(ladderLength1(beginWord, endWord, wordList), res);
     EXPECT_EQ(ladderLengthBFS(beginWord, endWord, wordList), res);
     EXPECT_EQ(ladderLengthBiBFS(beginWord, endWord, wordList), res);
+    EXPECT_EQ(ladderLengthBiBFS1(beginWord, endWord, wordList), res);
 }

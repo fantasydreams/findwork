@@ -43,3 +43,33 @@ bool canFinish(int numCourses, vector<vector<int> >& prerequisites) {
 
     return iStudyCourseNum == numCourses;
 }
+
+
+bool canFinish1(int numCourses, vector<vector<int> >& prerequisites) {
+    std::vector<int> vecDegree(numCourses, 0);
+    std::unordered_map<int, std::unordered_set<int> > setAfterCourses;
+    for(int i = 0; i < prerequisites.size(); ++i) {
+        ++vecDegree[prerequisites[i][0]];
+        setAfterCourses[prerequisites[i][1]].insert(prerequisites[i][0]);
+    }
+
+    int iStudyCourseNum = 0;
+    std::queue<int> que;
+    for(int i = 0; i < vecDegree.size(); ++i) {
+        if(vecDegree[i] == 0) {
+            que.push(i);
+        }
+    }
+
+    while(!que.empty()) {
+        int iCousrseNum = que.front(); que.pop();
+        ++iStudyCourseNum;
+        for(const auto iAfter : setAfterCourses[iCousrseNum]) {
+            if(vecDegree[iAfter] > 0 && --vecDegree[iAfter] == 0) {
+                que.push(iAfter);
+            }
+        }
+    }
+
+    return iStudyCourseNum == numCourses;;
+}

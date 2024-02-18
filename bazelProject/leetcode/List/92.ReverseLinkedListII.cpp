@@ -25,3 +25,30 @@ ListNode* reverseBetween(ListNode* head, int left, int right) {
     pMidTail->next = pNode;
     return oLeft.next;
 }
+
+
+ListNode* reverseBetween1(ListNode* head, int left, int right) {
+    ListNode oHead; oHead.next = head; ListNode* pMidPre = &oHead;
+    ListNode oReversePre; ListNode* pReversePre = &oReversePre;
+    int iCur = 1;
+    ListNode* pNode = head;
+    while(iCur < left) {
+        pNode = pNode->next;
+        pMidPre = pMidPre->next;
+        ++iCur;
+    }
+
+    ListNode * pMidTail = pNode;
+    while(iCur <= right) {
+        ListNode* pTmp = pNode;
+        pNode = pNode->next;
+        pTmp->next = pReversePre->next;
+        pReversePre->next = pTmp;
+        ++iCur;
+    }
+
+    pMidPre->next = pReversePre->next;
+    pMidTail->next = pNode;
+
+    return oHead.next;
+}

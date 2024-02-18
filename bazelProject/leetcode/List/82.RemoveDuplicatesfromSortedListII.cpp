@@ -73,3 +73,30 @@ ListNode* deleteDuplicates1(ListNode* head) {
     pTail->next = nullptr;
     return oHead.next;
 }
+
+
+ListNode* deleteDuplicates2(ListNode* head) {
+    if(head == nullptr) {
+        return head;
+    }
+
+    ListNode oHead(head->val - 1);
+    ListNode* pNode  = &oHead;
+    int iPreVal = oHead.val;
+    while(head) {
+        if(iPreVal != head->val && (head->next == nullptr || head->next->val != head->val)) {
+            pNode->next = head;
+            head = head->next;
+            pNode = pNode->next;            
+            iPreVal = pNode->val;
+        }else {
+            ListNode* pNode1 = head;
+            iPreVal = head->val;
+            head = head->next;
+            delete pNode1;
+        }
+    }
+
+    pNode->next = nullptr;
+    return oHead.next;
+}

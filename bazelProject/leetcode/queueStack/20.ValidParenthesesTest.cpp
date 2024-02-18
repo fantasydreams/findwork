@@ -7,6 +7,7 @@ TEST(case_1,content)
     bool ans = true;
     EXPECT_EQ(isValid(str), ans);
     EXPECT_EQ(isValid1(str), ans);
+    EXPECT_EQ(isValid2(str), ans);
 }
 
 TEST(case_2,content)
@@ -15,6 +16,7 @@ TEST(case_2,content)
     bool ans = true;
     EXPECT_EQ(isValid(str), ans);
     EXPECT_EQ(isValid1(str), ans);
+    EXPECT_EQ(isValid2(str), ans);
 }
 
 TEST(case_3,content)
@@ -23,6 +25,7 @@ TEST(case_3,content)
     bool ans = false;
     EXPECT_EQ(isValid(str), ans);
     EXPECT_EQ(isValid1(str), ans);
+    EXPECT_EQ(isValid2(str), ans);
 }
 
 TEST(case_4,content)
@@ -31,4 +34,5 @@ TEST(case_4,content)
     bool ans = false;
     EXPECT_EQ(isValid(str), ans);
     EXPECT_EQ(isValid1(str), ans);
+    EXPECT_EQ(isValid2(str), ans);
 }

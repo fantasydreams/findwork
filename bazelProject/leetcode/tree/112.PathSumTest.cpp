@@ -9,6 +9,7 @@ TEST(case_1, content) {
     int targetSum = 22;
     bool ans = true;
     EXPECT_EQ(hasPathSum(root, targetSum), ans);
+    EXPECT_EQ(hasPathSum1(root, targetSum), ans);
     FreeTree(root);
 }
 
@@ -20,6 +21,8 @@ TEST(case_2, content) {
     int targetSum = 24;
     bool ans = false;
     EXPECT_EQ(hasPathSum(root, targetSum), ans);
+    EXPECT_EQ(hasPathSum1(root, targetSum), ans);
+    FreeTree(root);
 }
 
 
@@ -31,6 +34,7 @@ TEST(case_3, content) {
     int targetSum = 5;
     bool ans = false;
     EXPECT_EQ(hasPathSum(root, targetSum), ans);
+    EXPECT_EQ(hasPathSum1(root, targetSum), ans);
     FreeTree(root);
 }
 
@@ -43,6 +47,7 @@ TEST(case_4, content) {
     int targetSum = 4;
     bool ans = true;
     EXPECT_EQ(hasPathSum(root, targetSum), ans);
+    EXPECT_EQ(hasPathSum1(root, targetSum), ans);
     FreeTree(root);
 }
 
@@ -55,6 +60,8 @@ TEST(case_5, content) {
     int targetSum = 3;
     bool ans = true;
     EXPECT_EQ(hasPathSum(root, targetSum), ans);
+    EXPECT_EQ(hasPathSum1(root, targetSum), ans);
+    EXPECT_EQ(hasPathSumNoRecursive(root, targetSum), ans);
     FreeTree(root);
 }
 
@@ -66,6 +73,8 @@ TEST(case_6, content) {
     int targetSum = 0;
     bool ans = false;
     EXPECT_EQ(hasPathSum(root, targetSum), ans);
+    EXPECT_EQ(hasPathSum1(root, targetSum), ans);
+    EXPECT_EQ(hasPathSumNoRecursive(root, targetSum), ans);
     FreeTree(root);
 }
 
@@ -78,5 +87,7 @@ TEST(case_7, content) {
     int targetSum = 1;
     bool ans = false;
     EXPECT_EQ(hasPathSum(root, targetSum), ans);
+    EXPECT_EQ(hasPathSum1(root, targetSum), ans);
+    EXPECT_EQ(hasPathSumNoRecursive(root, targetSum), ans);
     FreeTree(root);
 }

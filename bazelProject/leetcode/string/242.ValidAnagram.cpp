@@ -25,7 +25,7 @@ bool isAnagram(string s, string t) {
 }
 
 
-bool isAnagram(string s, string t) {
+bool isAnagram1(string s, string t) {
     if(s.length() != t.length()) {
         return false;
     }
@@ -39,6 +39,25 @@ bool isAnagram(string s, string t) {
         if(--hash[ch - 'a'] < 0) {
             return false;
         };
+    }
+
+    return true;
+}
+
+bool isAnagram2(string s, string t) {
+    if(s.length() != t.length()) {
+        return false;
+    }
+
+    vector<int> hash(128, 0);
+    for(const auto & ch : s) {
+        ++hash[ch];
+    }
+
+    for(const auto & ch : t) {
+        if(--hash[ch] < 0) {
+            return false;
+        }
     }
 
     return true;

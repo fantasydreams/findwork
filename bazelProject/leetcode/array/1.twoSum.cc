@@ -1,4 +1,5 @@
 #include "header.h"
+#include <unordered_map>
 
 
 std::vector<int> twoSum(const std::vector<int> &array, int sum) {
@@ -24,6 +25,20 @@ std::vector<int> twoSum1(const std::vector<int>& nums, int target) {
 			return {pIter->second, static_cast<int>(i)};
 		}
 		hashMap[nums[i]] = i;
+	}
+
+	return {};
+}
+
+
+std::vector<int> twoSum2(const std::vector<int>& nums, int target) {
+	std::unordered_map<int, int> map;
+	for(int i = 0; i < nums.size(); ++i) {
+		auto pIter = map.find(target - nums[i]);
+		if(pIter != map.end()) {
+			return {pIter->second, i};
+		}
+		map[nums[i]] = i;
 	}
 
 	return {};

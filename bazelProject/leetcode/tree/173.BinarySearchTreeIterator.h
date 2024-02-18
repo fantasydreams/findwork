@@ -30,3 +30,29 @@ private:
     }
     std::stack<TreeNode*> st;
 };
+
+
+class BSTIterator1 {
+public:
+    BSTIterator1(TreeNode* root) {
+        pushStackUtilLeftNull(root);
+    }
+    
+    int next() {
+        TreeNode* pNode = st.top(); st.pop();
+        pushStackUtilLeftNull(pNode->right);
+        return pNode->val;
+    }
+    
+    bool hasNext() {
+        return !st.empty();
+    }
+private:
+    void pushStackUtilLeftNull(TreeNode* node) {
+        while(node) {
+            st.push(node);
+            node = node->left;
+        }
+    }
+    std::stack<TreeNode*> st;
+};

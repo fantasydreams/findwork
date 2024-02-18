@@ -21,3 +21,21 @@ int maxPathSum(TreeNode* root) {
     return ans;
 }
 
+
+int maxPathSum1(TreeNode* root, int& max) {
+    if(root == nullptr) {
+        return 0;
+    }
+
+    int iLeftVal = std::max(maxPathSum1(root->left, max), 0);
+    int iRightVal = std::max(maxPathSum1(root->right, max), 0);
+    max = std::max(iLeftVal + iRightVal + root->val, max);
+    int iTmp = std::max(iLeftVal, iRightVal) + root->val;
+    return iTmp > 0 ? iTmp : 0;
+}
+
+int maxPathSum1(TreeNode* root) {
+    int iAns = INT_MIN;
+    maxPathSum1(root, iAns);
+    return iAns;
+}

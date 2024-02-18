@@ -174,3 +174,51 @@ cc_binary(
 	deps  = ["200NumberofIslands",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "399EvaluateDivision",
+	hdrs = ["399.EvaluateDivision.h"],
+	srcs = ["399.EvaluateDivision.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "399EvaluateDivisionTest",
+	srcs  = ["399.EvaluateDivisionTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["399EvaluateDivision",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "909SnakesandLadders",
+	hdrs = ["909.SnakesandLadders.h"],
+	srcs = ["909.SnakesandLadders.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "909SnakesandLaddersTest",
+	srcs  = ["909.SnakesandLaddersTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["909SnakesandLadders",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "433MinimumGeneticMutation",
+	hdrs = ["433.MinimumGeneticMutation.h"],
+	srcs = ["433.MinimumGeneticMutation.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "433MinimumGeneticMutationTest",
+	srcs  = ["433.MinimumGeneticMutationTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["433MinimumGeneticMutation",
+			 "@googletest//:gtest_main"],
+)

@@ -8,6 +8,7 @@ TEST(case_1,content)
     EXPECT_EQ(isHappy(n), ans);
     EXPECT_EQ(isHappyMap(n), ans);
     EXPECT_EQ(isHappyHash(n), ans);
+    EXPECT_EQ(isHappyHash1(n), ans);
 }
 
 TEST(case_2,content)
@@ -17,6 +18,7 @@ TEST(case_2,content)
     EXPECT_EQ(isHappy(n), ans);
     EXPECT_EQ(isHappyMap(n), ans);
     EXPECT_EQ(isHappyHash(n), ans);
+    EXPECT_EQ(isHappyHash1(n), ans);
 }
 
 TEST(case_3,content)
@@ -26,4 +28,5 @@ TEST(case_3,content)
     EXPECT_EQ(isHappy(n), ans);
     EXPECT_EQ(isHappyMap(n), ans);
     EXPECT_EQ(isHappyHash(n), ans);
+    EXPECT_EQ(isHappyHash1(n), ans);
 }

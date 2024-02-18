@@ -11,6 +11,7 @@ TEST(case_1, content)
     EXPECT_EQ(maxDepth(root), ans);
     EXPECT_EQ(maxDepthRecursive(root), ans);
     EXPECT_EQ(maxDepth1(root), ans);
+    EXPECT_EQ(maxDepth2(root), ans);
 
     FreeTree(root);
 }

@@ -1,4 +1,5 @@
 #include "199.BinaryTreeRightSideView.h"
+#include "treecomm.h"
 
 vector<int> rightSideView(TreeNode* root) {
     std::vector<int> ans;
@@ -25,4 +26,31 @@ vector<int> rightSideView(TreeNode* root) {
     }
 
     return ans;
+}
+
+vector<int> rightSideView1(TreeNode* root) {
+    std::vector<int> vecAns;
+    if(root == nullptr) {
+        return vecAns;
+    }
+
+    std::queue<TreeNode*> que; que.push(root);
+    while(!que.empty()) {
+        int iSize = que.size();
+        while(iSize--) {
+            TreeNode* pNode = que.front(); que.pop();
+            if(iSize == 0) {
+                vecAns.push_back(pNode->val);
+            }
+
+            if(pNode->left) {
+                que.push(pNode->left);
+            }
+            if(pNode->right) {
+                que.push(pNode->right);
+            }
+        }
+    }
+
+    return vecAns;
 }

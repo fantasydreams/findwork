@@ -10,6 +10,8 @@ TEST(case_1, content)
     bool ans = false;
     EXPECT_EQ(isSymmetric(root), ans);
     EXPECT_EQ(isSymmetricIterator(root), ans);
+    EXPECT_EQ(isSymmetric2(root), ans);
+    EXPECT_EQ(isSymmetricNoRecursor(root), ans);
     FreeTree(root);
 }
 
@@ -22,6 +24,8 @@ TEST(case_2, content)
     bool ans = true;
     EXPECT_EQ(isSymmetric(root), ans);
     EXPECT_EQ(isSymmetricIterator(root), ans);
+    EXPECT_EQ(isSymmetric2(root), ans);
+    EXPECT_EQ(isSymmetricNoRecursor(root), ans);
     FreeTree(root);
 }
 
@@ -34,6 +38,8 @@ TEST(case_3, content)
     bool ans = true;
     EXPECT_EQ(isSymmetric(root), ans);
     EXPECT_EQ(isSymmetricIterator(root), ans);
+    EXPECT_EQ(isSymmetric2(root), ans);
+    EXPECT_EQ(isSymmetricNoRecursor(root), ans);
     FreeTree(root);
 }
 
@@ -46,6 +52,8 @@ TEST(case_4, content)
     bool ans = false;
     EXPECT_EQ(isSymmetric(root), ans);
     EXPECT_EQ(isSymmetricIterator(root), ans);
+    EXPECT_EQ(isSymmetric2(root), ans);
+    EXPECT_EQ(isSymmetricNoRecursor(root), ans);
     FreeTree(root);
 }
 
@@ -58,6 +66,8 @@ TEST(case_5, content)
     bool ans = true;
     EXPECT_EQ(isSymmetric(root), ans);
     EXPECT_EQ(isSymmetricIterator(root), ans);
+    EXPECT_EQ(isSymmetric2(root), ans);
+    EXPECT_EQ(isSymmetricNoRecursor(root), ans);
     FreeTree(root);
 }
 
@@ -70,6 +80,8 @@ TEST(case_6, content)
     bool ans = true;
     EXPECT_EQ(isSymmetric(root), ans);
     EXPECT_EQ(isSymmetricIterator(root), ans);
+    EXPECT_EQ(isSymmetric2(root), ans);
+    EXPECT_EQ(isSymmetricNoRecursor(root), ans);
     FreeTree(root);
 }
 
@@ -82,6 +94,8 @@ TEST(case_7, content)
     bool ans = false;
     EXPECT_EQ(isSymmetric(root), ans);
     EXPECT_EQ(isSymmetricIterator(root), ans);
+    EXPECT_EQ(isSymmetric2(root), ans);
+    EXPECT_EQ(isSymmetricNoRecursor(root), ans);
     FreeTree(root);
 }
 
@@ -94,5 +108,7 @@ TEST(case_8, content)
     bool ans = true;
     EXPECT_EQ(isSymmetric(root), ans);
     EXPECT_EQ(isSymmetricIterator(root), ans);
+    EXPECT_EQ(isSymmetric2(root), ans);
+    EXPECT_EQ(isSymmetricNoRecursor(root), ans);
     FreeTree(root);
 }

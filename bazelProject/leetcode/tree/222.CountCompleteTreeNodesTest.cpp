@@ -9,6 +9,7 @@ TEST(case_1, content)
     
     int ans = 7;
     EXPECT_EQ(countNodes(root), ans);
+    EXPECT_EQ(countNodesAttr1(root), ans);
     FreeTree(root);
 }
 
@@ -21,6 +22,7 @@ TEST(case_2, content)
     
     int ans = 7;
     EXPECT_EQ(countNodesON(root), ans);
+    EXPECT_EQ(countNodesAttr1(root), ans);
     FreeTree(root);
 }
 
@@ -32,5 +34,6 @@ TEST(case_3, content)
     
     int ans = 7;
     EXPECT_EQ(countNodesAttr(root), ans);
+    EXPECT_EQ(countNodesAttr1(root), ans);
     FreeTree(root);
 }

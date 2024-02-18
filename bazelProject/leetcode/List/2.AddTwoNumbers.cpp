@@ -1,7 +1,8 @@
 #include "2.AddTwoNumbers.h"
+#include "linkcomm.h"
 
 
-ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
+ListNode* addTwoNumbers1(ListNode* l1, ListNode* l2) 
 {
     ListNode * pListHead = nullptr, *pCurNode = nullptr;
     int carry = 0;
@@ -95,6 +96,47 @@ ListNode* addTwoNumbers2(ListNode* l1, ListNode* l2) {
 
     if(pLong == nullptr) {
         return new ListNode(0);
+    }
+
+    return pLong;
+}
+
+
+ListNode* addTwoNumbers3(ListNode* l1, ListNode* l2) {
+    ListNode* pTmp1 = l1, *pTmp2 = l2;
+    while(pTmp1 && pTmp2) {
+        pTmp1 = pTmp1 -> next;
+        pTmp2 = pTmp2 -> next;
+    }
+
+    ListNode* pLong = pTmp1 ? l1 : l2;
+    ListNode* pShort = pTmp1 ? l2 : l1;
+    ListNode* pPre = pLong;
+    pTmp1 = pLong, pTmp2 = pShort;
+    int carry = 0;
+    while(pTmp2) {
+        int sum = pTmp1->val + pTmp2->val + carry;
+        pTmp1->val = sum % 10;
+        carry = sum / 10;
+        pPre = pTmp1;
+        pTmp1 = pTmp1->next;
+        pTmp2 = pTmp2->next;
+    }
+
+    while(pTmp1 && carry) {
+        int sum = pTmp1->val + carry;
+        pTmp1->val = sum % 10;
+        carry = sum / 10;
+        pPre = pTmp1;
+        pTmp1 = pTmp1->next;
+    }
+
+    if(carry) {
+        pPre->next = new ListNode(carry);
+    }
+
+    if(pLong == nullptr) {
+        pLong = new ListNode(0);
     }
 
     return pLong;

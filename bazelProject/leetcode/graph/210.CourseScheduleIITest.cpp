@@ -12,6 +12,7 @@ TEST(case_1,content)
     EXPECT_EQ(ans, bfs);
     EXPECT_EQ(findOrderBfs1(numCourses, prerequisites), ans);
     EXPECT_EQ(findOrderBfs2(numCourses, prerequisites), ans);
+    EXPECT_EQ(findOrderBfs3(numCourses, prerequisites), ans);
 }
 
 
@@ -26,6 +27,7 @@ TEST(case_2,content)
     EXPECT_EQ(ans, bfs);
     // EXPECT_EQ(findOrderBfs1(numCourses, prerequisites), ans);
     EXPECT_EQ(findOrderBfs2(numCourses, prerequisites), ans);
+    // EXPECT_EQ(findOrderBfs3(numCourses, prerequisites), ans);
 }
 
 
@@ -40,6 +42,7 @@ TEST(case_3,content)
     EXPECT_EQ(ans, bfs);
     EXPECT_EQ(findOrderBfs1(numCourses, prerequisites), ans);
     EXPECT_EQ(findOrderBfs2(numCourses, prerequisites), ans);
+    EXPECT_EQ(findOrderBfs3(numCourses, prerequisites), ans);
 }
 
 int main(int argc, char* argv[])

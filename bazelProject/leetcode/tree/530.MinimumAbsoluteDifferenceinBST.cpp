@@ -1,4 +1,5 @@
 #include "530.MinimumAbsoluteDifferenceinBST.h"
+#include "treecomm.h"
 #include <stack>
 #include <climits>
 using namespace std;
@@ -21,4 +22,26 @@ int getMinimumDifference(TreeNode* root) {
     }
 
     return ans;
+}
+
+
+int getMinimumDifference1(TreeNode* root) {
+    if(root == nullptr) {
+        return 0;
+    }
+
+    int iAns = INT_MAX;
+    std::stack<TreeNode*> st;
+    PushTaskLeftPathUntilNull(root, st);
+    TreeNode* pPre = nullptr;
+    while(!st.empty()) {
+        TreeNode* pNode = st.top(); st.pop();
+        if(pPre) {
+            iAns = std::min(pNode->val - pPre->val, iAns);
+        }
+
+        pPre = pNode;
+        PushTaskLeftPathUntilNull(pNode->right, st);
+    }
+    return iAns;
 }

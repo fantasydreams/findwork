@@ -7,6 +7,7 @@ TEST(case_1, content)
     std::string sAns = "/home";
     EXPECT_EQ(simplifyPath(sPath), sAns);
     EXPECT_EQ(simplifyPath1(sPath), sAns);
+    EXPECT_EQ(simplifyPath2(sPath), sAns);
 }
 
 TEST(case_2, content)
@@ -15,6 +16,7 @@ TEST(case_2, content)
     std::string sAns = "/";
     EXPECT_EQ(simplifyPath(sPath), sAns);
     EXPECT_EQ(simplifyPath1(sPath), sAns);
+    EXPECT_EQ(simplifyPath2(sPath), sAns);
 }
 
 TEST(case_3, content)
@@ -23,4 +25,5 @@ TEST(case_3, content)
     std::string sAns = "/home/foo";
     EXPECT_EQ(simplifyPath(sPath), sAns);
     EXPECT_EQ(simplifyPath1(sPath), sAns);
+    EXPECT_EQ(simplifyPath2(sPath), sAns);
 }

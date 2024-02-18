@@ -120,3 +120,56 @@ public:
 private:
     TrieNode1 m_root;
 };
+
+
+
+class TrieNode2 {
+public:
+    TrieNode2() : m_bIsVal(false) {}
+    bool m_bIsVal;
+    std::unordered_map<char, TrieNode2> m_mapNext;
+}; 
+
+
+
+class Trie2 {
+public:
+    Trie2() {
+
+    }
+    
+    void insert(const string& word) {
+        auto pIter = &m_root;
+        for(const auto& ch : word) {
+            pIter = &pIter->m_mapNext[ch];
+        }
+        pIter->m_bIsVal = true;
+    }
+    
+    bool search(const string& word) {
+        auto pIter = &m_root;
+        for(const auto & ch : word) {
+            auto pIterNext = pIter->m_mapNext.find(ch);
+            if(pIterNext == pIter->m_mapNext.end()) {
+                return false;
+            }
+            pIter = &pIterNext->second;
+        }
+
+        return pIter->m_bIsVal;
+    }
+    
+    bool startsWith(const string& prefix) {
+        auto pIter = &m_root;
+        for(const auto & ch : prefix) {
+            auto pIterNext = pIter->m_mapNext.find(ch);
+            if(pIterNext == pIter->m_mapNext.end()) {
+                return false;
+            }
+            pIter = &pIterNext->second;
+        }
+        return true;
+    }
+private:
+    TrieNode2 m_root;
+};

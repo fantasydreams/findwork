@@ -1,4 +1,5 @@
 #include "226.InvertBinaryTree.h"
+#include "treecomm.h"
 #include <stack>
 
 
@@ -37,6 +38,35 @@ TreeNode* invertTreeNoRecursion(TreeNode * root)
             pTmp->right = tmp;
         }else{
             PushTaskLeftPathUntilNull(pTmp->right, stack);
+        }
+    }
+
+    return root;
+}
+
+TreeNode* invertTree1(TreeNode* root) {
+    if(root == nullptr) {
+        return root;
+    }
+
+    invertTree1(root->left);
+    invertTree1(root->right);
+    std::swap(root->left, root->right);
+    return root;
+}
+
+TreeNode* invertTreeNoRecursion1(TreeNode * root) {
+    std::stack<TreeNode*>  st;
+    PushTaskLeftPathUntilNull(root, st);
+    TreeNode* pPre = nullptr;
+    while(!st.empty()) {
+        TreeNode* pCur = st.top();
+        if(pCur->right == pPre || pCur->right == nullptr) {
+            pPre = pCur;
+            st.pop();
+            std::swap(pCur->left, pCur->right);
+        }else {
+            PushTaskLeftPathUntilNull(pCur->right, st);
         }
     }
 

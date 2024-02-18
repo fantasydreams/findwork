@@ -9,6 +9,7 @@ TEST(case_1, content) {
     
     int ans = 6;
     EXPECT_EQ(maxPathSum(root), ans);
+    EXPECT_EQ(maxPathSum1(root), ans);
     FreeTree(root);
 }
 
@@ -20,5 +21,6 @@ TEST(case_2, content) {
     
     int ans = 42;
     EXPECT_EQ(maxPathSum(root), ans);
+    EXPECT_EQ(maxPathSum1(root), ans);
     FreeTree(root);
 }

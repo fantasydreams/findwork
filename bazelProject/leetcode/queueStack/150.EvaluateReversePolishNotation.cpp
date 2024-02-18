@@ -28,3 +28,32 @@ int evalRPN(vector<string>& tokens) {
 
     return number.top();
 }
+
+
+int evalRPN1(vector<string>& tokens) {
+    int ans = 0;
+    if(tokens.empty()) {
+        return ans;
+    }
+
+    std::stack<int64_t> st;
+    for(const auto& token : tokens) {
+        if(token == "+" || token == "-" || token == "*" || token == "/") {
+            int64_t iNum2 = st.top(); st.pop();
+            int64_t iNum1 = st.top(); st.pop();
+            if(token == "+") {
+                st.push(iNum1 + iNum2);
+            }else if(token == "-") {
+                st.push(iNum1 - iNum2);
+            }else if(token == "*") {
+                st.push(iNum1 * iNum2);
+            }else {
+                st.push(iNum1 / iNum2);
+            }
+        }else {
+            st.push(atoi(token.c_str()));
+        }
+    }
+
+    return st.top();
+}

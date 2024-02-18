@@ -11,6 +11,7 @@ TEST(case_1,content)
     EXPECT_EQ(longestConsecutive(vecNums), ans);   
     EXPECT_EQ(longestConsecutive1(vecNums), ans);   
     EXPECT_EQ(longestConsecutive2(vecNums), ans);  
+    EXPECT_EQ(longestConsecutive3(vecNums), ans);  
 }
 
 
@@ -21,6 +22,7 @@ TEST(case_2,content)
     EXPECT_EQ(longestConsecutive(vecNums), ans);   
     EXPECT_EQ(longestConsecutive1(vecNums), ans);   
     EXPECT_EQ(longestConsecutive2(vecNums), ans);
+    EXPECT_EQ(longestConsecutive3(vecNums), ans);  
 }
 
 TEST(case_3,content)
@@ -30,6 +32,7 @@ TEST(case_3,content)
     EXPECT_EQ(longestConsecutive(vecNums), ans);   
     EXPECT_EQ(longestConsecutive1(vecNums), ans);   
     EXPECT_EQ(longestConsecutive2(vecNums), ans);
+    EXPECT_EQ(longestConsecutive3(vecNums), ans);  
 }
 
 TEST(case_4,content)
@@ -39,4 +42,5 @@ TEST(case_4,content)
     EXPECT_EQ(longestConsecutive(vecNums), ans);   
     EXPECT_EQ(longestConsecutive1(vecNums), ans);   
     EXPECT_EQ(longestConsecutive2(vecNums), ans);
+    EXPECT_EQ(longestConsecutive3(vecNums), ans);  
 }

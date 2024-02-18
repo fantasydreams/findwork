@@ -9,6 +9,7 @@ TEST(case_1,content)
     std::vector<int> res = {0,1};
     EXPECT_EQ(twoSum(vec,9), res);
     EXPECT_EQ(twoSum1(vec,9), res);
+    EXPECT_EQ(twoSum2(vec,9), res);
 }
 
 TEST(case_2,content)
@@ -17,6 +18,7 @@ TEST(case_2,content)
     std::vector<int> res = {1,2};
     EXPECT_EQ(twoSum(vec,6), res);
     EXPECT_EQ(twoSum1(vec,6), res);
+    EXPECT_EQ(twoSum2(vec,6), res);
 }
 
 TEST(case_3,content)
@@ -25,6 +27,7 @@ TEST(case_3,content)
     std::vector<int> res = {0,1};
     EXPECT_EQ(twoSum(vec,6), res);
     EXPECT_EQ(twoSum1(vec,6), res);
+    EXPECT_EQ(twoSum2(vec,6), res);
 }
 
 TEST(case_4,content)
@@ -33,6 +36,7 @@ TEST(case_4,content)
     std::vector<int> res = {0,1};
     EXPECT_EQ(twoSum(vec,6), res);
     EXPECT_EQ(twoSum1(vec,6), res);
+    EXPECT_EQ(twoSum2(vec,6), res);
 }
 
 TEST(case_5,content)
@@ -41,6 +45,7 @@ TEST(case_5,content)
     std::vector<int> res = {0,1};
     EXPECT_EQ(twoSum(vec,6), res);
     EXPECT_EQ(twoSum1(vec,6), res);
+    EXPECT_EQ(twoSum2(vec,6), res);
 }
 
 TEST(case_6,content)
@@ -49,6 +54,7 @@ TEST(case_6,content)
     std::vector<int> res = {};
     EXPECT_EQ(twoSum(vec,7), res);
     EXPECT_EQ(twoSum1(vec,7), res);
+    EXPECT_EQ(twoSum2(vec,7), res);
 }
 
 TEST(case_7,content)
@@ -57,6 +63,7 @@ TEST(case_7,content)
     std::vector<int> res = {};
     EXPECT_EQ(twoSum(vec,4), res);
     EXPECT_EQ(twoSum1(vec,4), res);
+    EXPECT_EQ(twoSum2(vec,4), res);
 }
 
 int main(int argc, char* argv[])

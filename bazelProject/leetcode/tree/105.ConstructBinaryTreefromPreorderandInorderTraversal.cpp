@@ -1,4 +1,5 @@
 #include "105.ConstructBinaryTreefromPreorderandInorderTraversal.h"
+#include "treecomm.h"
 #include <ostream>
 #include <unordered_map>
 #include <iostream>
@@ -88,4 +89,33 @@ TreeNode* buildTreeHash(vector<int>& preorder, vector<int>& inorder) {
     // }
 
     return buildTreeUserDict(preorder, 0, preorder.size() - 1, inorder, 0, inorder.size() - 1, hashMap);
+}
+
+
+TreeNode* buildTreeUserDict1(const std::vector<int>& preorder, int iPreL, int iPreR, const std::vector<int>& inorder, int iMidL, int iMidR, std::unordered_map<int, int>& hashMap) {
+    if(iPreL > iPreR || iPreL>= preorder.size() || iPreR < 0 || iMidL > iMidR || iMidL >= inorder.size() || iMidR < 0) {
+        return nullptr;
+    }
+    TreeNode* root = new TreeNode(preorder[iPreL]);
+    int iLoc = hashMap.at(preorder[iPreL]);
+    root->left = buildTreeUserDict1(preorder, iPreL + 1, iPreL + iLoc - iMidL, inorder, iMidL, iLoc - 1, hashMap);
+    root->right = buildTreeUserDict1(preorder, iPreL + iLoc - iMidL + 1, iPreR, inorder, iLoc + 1, iMidR, hashMap);
+    return root;
+}
+
+
+TreeNode* buildTreeHash1(vector<int>& preorder, vector<int>& inorder) {
+    if(preorder.size() == 0 || preorder.size() != inorder.size()) {
+        return nullptr;
+    }
+
+    unordered_map<int, int> hashMap;
+    for(int i = 0; i < inorder.size(); ++i) {
+        auto oPair = hashMap.insert({inorder[i], i});
+        if(oPair.second == false) {
+            return nullptr;
+        }
+    }
+
+    return buildTreeUserDict1(preorder, 0, preorder.size() - 1, inorder, 0, inorder.size() - 1, hashMap);
 }

@@ -93,3 +93,57 @@ TEST(case_7,content)
     freeLinkList(pdel);
     freeLinkList(pans);
 }
+
+
+TEST(case_14,content)
+{
+    std::vector<int> a = {2,3,4};
+    std::vector<int> ans = {2,3};
+    ListNode * pa = createLinkList(a);
+    ListNode * pans = createLinkList(ans);
+    ListNode * pdel = removeNthFromEnd2(pa, 1);
+
+    EXPECT_EQ(ListValEqual(pans, pdel), true);
+    freeLinkList(pdel);
+    freeLinkList(pans);
+}
+
+TEST(case_15,content)
+{
+    std::vector<int> a = {2,3,4};
+    std::vector<int> ans = {2,4};
+    ListNode * pa = createLinkList(a);
+    ListNode * pans = createLinkList(ans);
+    ListNode * pdel = removeNthFromEnd2(pa, 2);
+
+    EXPECT_EQ(ListValEqual(pans, pdel), true);
+    freeLinkList(pdel);
+    freeLinkList(pans);
+}
+
+TEST(case_16,content)
+{
+    std::vector<int> a = {2,3,4};
+    std::vector<int> ans = {3,4};
+    ListNode * pa = createLinkList(a);
+    ListNode * pans = createLinkList(ans);
+    ListNode * pdel = removeNthFromEnd2(pa, 3);
+    printList(pdel);
+    EXPECT_EQ(ListValEqual(pans, pdel), true);
+    freeLinkList(pdel);
+    freeLinkList(pans);
+}
+
+
+TEST(case_17,content)
+{
+    std::vector<int> a = {2,3,4};
+    std::vector<int> ans = {2,3,4};
+    ListNode * pa = createLinkList(a);
+    ListNode * pans = createLinkList(ans);
+    ListNode * pdel = removeNthFromEnd2(pa, 4);
+    printList(pdel);
+    EXPECT_EQ(ListValEqual(pans, pdel), true);
+    freeLinkList(pdel);
+    freeLinkList(pans);
+}

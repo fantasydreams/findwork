@@ -69,3 +69,32 @@ int search1(vector<int>& nums, int target) {
         return binary_search(nums,right,nums.size()-1,target);
     return -1;
 }
+
+
+int search2(vector<int>& nums, int target) {
+    int iBegin = 0, iEnd = nums.size() - 1;
+    while(iBegin <= iEnd) {
+        int iMid = iBegin + ((iEnd - iBegin) >> 1);
+        if(nums[iMid] == target) {
+            return iMid;
+        }else if(nums[iMid] > nums[iBegin]) {
+            if(nums[iBegin] <= target && target < nums[iMid]) {
+                iEnd = iMid - 1;
+            }else {
+                iBegin = iMid + 1;
+            }
+        }else if(nums[iMid] < nums[iEnd]) {
+            if(nums[iMid] < target && target <= nums[iEnd]) {
+                iBegin = iMid + 1;
+            }else {
+                iEnd = iMid - 1;
+            }
+        }else if(nums[iMid] == nums[iBegin]){
+            ++iBegin;
+        }else {
+            --iEnd;
+        }
+    }
+
+    return -1;
+}

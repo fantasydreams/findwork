@@ -84,3 +84,25 @@ bool searchMatrix3(vector<vector<int> >& matrix, int target) {
 
     return false;
 }
+
+
+bool searchMatrix4(vector<vector<int> >& matrix, int target) {
+    if(matrix.empty() || matrix[0].empty()) {
+        return false;
+    }
+    int iBegin = 0, iEnd = matrix.size() * matrix[0].size() - 1;
+    while(iBegin <= iEnd) {
+        int iMid = iBegin + ((iEnd - iBegin) >> 1);
+        int iRow = iMid / matrix[0].size();
+        int iCol = iMid % matrix[0].size();
+        if(matrix[iRow][iCol] == target) {
+            return true;
+        }else if(matrix[iRow][iCol] < target) {
+            iBegin = iMid + 1;
+        }else {
+            iEnd = iMid - 1;
+        }
+    }
+
+    return false;
+}

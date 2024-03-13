@@ -40,3 +40,41 @@ int lengthOfLIS1(vector<int>& nums)
 
     return place.size();
 }
+
+int lengthOfLIS2(vector<int>& nums) {
+    if(nums.empty()) {
+        return 0;
+    }
+
+    std::vector<int> vecDp(nums.size(), 1);
+    int iAns = 0;
+    for(int i = 0; i < nums.size(); ++i) {
+        for(int j = i - 1; j >= 0; --j) {
+            if(nums[i] > nums[j]) {
+                vecDp[i] = std::max(vecDp[i], vecDp[j] + 1);
+            }
+        }
+        iAns = std::max(iAns, vecDp[i]);
+    }
+
+    return iAns;
+}
+
+
+int lengthOfLIS3(vector<int>& nums) {
+    if(nums.empty()) {
+        return 0;
+    }
+
+    std::vector<int> tmp;
+    for(const auto iNum : nums) {
+        if(tmp.empty() || tmp.back() < iNum) {
+            tmp.push_back(iNum);
+        }else {
+            auto pIter = lower_bound(tmp.begin(), tmp.end(), iNum);
+            tmp[pIter - tmp.begin()] = iNum;
+        }
+    }
+
+    return tmp.size();
+}

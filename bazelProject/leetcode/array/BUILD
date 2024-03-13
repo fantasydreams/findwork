@@ -637,3 +637,19 @@ cc_binary(
 	deps  = ["289GameofLife",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "918MaximumSumCircularSubarray",
+	hdrs = ["918.MaximumSumCircularSubarray.h"],
+	srcs = ["918.MaximumSumCircularSubarray.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "918MaximumSumCircularSubarrayTest",
+	srcs  = ["918.MaximumSumCircularSubarrayTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["918MaximumSumCircularSubarray",
+			 "@googletest//:gtest_main"],
+)

@@ -9,6 +9,7 @@ TEST(case_1,content)
     EXPECT_EQ(maxPoints(vecNums), ans);
     EXPECT_EQ(maxPoints1(vecNums), ans);
     EXPECT_EQ(maxPoints2(vecNums), ans);
+    EXPECT_EQ(maxPoints3(vecNums), ans);
 }
 
 TEST(case_2,content)
@@ -18,6 +19,7 @@ TEST(case_2,content)
     EXPECT_EQ(maxPoints(vecNums), ans);
     EXPECT_EQ(maxPoints1(vecNums), ans);
     EXPECT_EQ(maxPoints2(vecNums), ans);
+    EXPECT_EQ(maxPoints3(vecNums), ans);
 }
 
 TEST(case_3,content)
@@ -27,6 +29,7 @@ TEST(case_3,content)
     EXPECT_EQ(maxPoints(vecNums), ans);
     EXPECT_EQ(maxPoints1(vecNums), ans);
     EXPECT_EQ(maxPoints2(vecNums), ans);
+    EXPECT_EQ(maxPoints3(vecNums), ans);
 }
 
 TEST(case_4,content)
@@ -36,6 +39,7 @@ TEST(case_4,content)
     EXPECT_EQ(maxPoints(vecNums), ans);
     EXPECT_EQ(maxPoints1(vecNums), ans);
     EXPECT_EQ(maxPoints2(vecNums), ans);
+    EXPECT_EQ(maxPoints3(vecNums), ans);
 }
 
 TEST(case_5,content)
@@ -45,6 +49,7 @@ TEST(case_5,content)
     EXPECT_EQ(maxPoints(vecNums), ans);
     EXPECT_EQ(maxPoints1(vecNums), ans);
     EXPECT_EQ(maxPoints2(vecNums), ans);
+    EXPECT_EQ(maxPoints3(vecNums), ans);
 }
 
 TEST(case_6,content)
@@ -54,6 +59,7 @@ TEST(case_6,content)
     EXPECT_EQ(maxPoints(vecNums), ans);
     EXPECT_EQ(maxPoints1(vecNums), ans);
     EXPECT_EQ(maxPoints2(vecNums), ans);
+    EXPECT_EQ(maxPoints3(vecNums), ans);
 }
 
 TEST(case_7,content)
@@ -63,4 +69,16 @@ TEST(case_7,content)
     EXPECT_EQ(maxPoints(vecNums), ans);
     EXPECT_EQ(maxPoints1(vecNums), ans);
     EXPECT_EQ(maxPoints2(vecNums), ans);
+    EXPECT_EQ(maxPoints3(vecNums), ans);
+}
+
+
+TEST(case_8,content)
+{
+    int ans = 5;
+    std::vector<vector<int>> vecNums =  {{0,0},{4,5},{7,8},{8,9},{5,6},{3,4},{1,1}};
+    EXPECT_EQ(maxPoints(vecNums), ans);
+    EXPECT_EQ(maxPoints1(vecNums), ans);
+    EXPECT_EQ(maxPoints2(vecNums), ans);
+    EXPECT_EQ(maxPoints3(vecNums), ans);
 }

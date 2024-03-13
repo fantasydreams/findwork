@@ -10,6 +10,7 @@ TEST(case_1,content)
     EXPECT_EQ(combine(n, k), res);
     EXPECT_EQ(combine1(n, k), res);
     EXPECT_EQ(combine2(n, k), res);
+    EXPECT_EQ(combine3(n, k), res);
 }
 
 TEST(case_2,content)
@@ -19,6 +20,7 @@ TEST(case_2,content)
     EXPECT_EQ(combine(n, k), res);
     EXPECT_EQ(combine1(n, k), res);
     EXPECT_EQ(combine2(n, k), res);
+    EXPECT_EQ(combine3(n, k), res);
 }
 
 TEST(case_3,content)
@@ -28,6 +30,7 @@ TEST(case_3,content)
     EXPECT_EQ(combine(n, k), res);
     EXPECT_EQ(combine1(n, k), res);
     EXPECT_EQ(combine2(n, k), res);
+    EXPECT_EQ(combine3(n, k), res);
 }
 
 TEST(case_4,content)
@@ -37,4 +40,5 @@ TEST(case_4,content)
     EXPECT_EQ(combine(n, k), res);
     EXPECT_EQ(combine1(n, k), res);
     EXPECT_EQ(combine2(n, k), res);
+    EXPECT_EQ(combine3(n, k), res);
 }

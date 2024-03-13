@@ -17,6 +17,7 @@ TEST(case_1, content)
     EXPECT_EQ(searchMatrix1(matrix, target), true);
     EXPECT_EQ(searchMatrix2(matrix, target), true);
     EXPECT_EQ(searchMatrix3(matrix, target), true);
+    EXPECT_EQ(searchMatrix4(matrix, target), true);
 }
 
 TEST(case_2, content)
@@ -31,6 +32,7 @@ TEST(case_2, content)
     EXPECT_EQ(searchMatrix1(matrix, target), false);
     EXPECT_EQ(searchMatrix2(matrix, target), false);
     EXPECT_EQ(searchMatrix3(matrix, target), false);
+    EXPECT_EQ(searchMatrix4(matrix, target), false);
 }
 
 TEST(case_3, content)
@@ -45,6 +47,7 @@ TEST(case_3, content)
     EXPECT_EQ(searchMatrix1(matrix, target), false);
     EXPECT_EQ(searchMatrix2(matrix, target), false);
     EXPECT_EQ(searchMatrix3(matrix, target), false);
+    EXPECT_EQ(searchMatrix4(matrix, target), false);
 }
 
 TEST(case_4, content)
@@ -57,4 +60,5 @@ TEST(case_4, content)
     EXPECT_EQ(searchMatrix1(matrix, target), true);
     EXPECT_EQ(searchMatrix2(matrix, target), true);
     EXPECT_EQ(searchMatrix3(matrix, target), true);
+    EXPECT_EQ(searchMatrix4(matrix, target), true);
 }

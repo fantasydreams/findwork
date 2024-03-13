@@ -9,6 +9,8 @@ TEST(case_1,content)
     std::vector<int> vec1 = {1,2,3};
     EXPECT_EQ(searchInsert(vec1, target), ans);
     EXPECT_EQ(searchInsertStl(vec1, target), ans);
+    EXPECT_EQ(searchInsertSTL(vec1, target), ans);
+    EXPECT_EQ(searchInsertBinS(vec1, target), ans);
 }
 
 
@@ -18,6 +20,8 @@ TEST(case_2,content)
     std::vector<int> vec1 = {1,3,5,6};
     EXPECT_EQ(searchInsert(vec1, target), ans);
     EXPECT_EQ(searchInsertStl(vec1, target), ans);
+    EXPECT_EQ(searchInsertSTL(vec1, target), ans);
+    EXPECT_EQ(searchInsertBinS(vec1, target), ans);
 }
 
 
@@ -27,6 +31,8 @@ TEST(case_3,content)
     std::vector<int> vec1 = {1,3,5,6};
     EXPECT_EQ(searchInsert(vec1, target), ans);
     EXPECT_EQ(searchInsertStl(vec1, target), ans);
+    EXPECT_EQ(searchInsertSTL(vec1, target), ans);
+    EXPECT_EQ(searchInsertBinS(vec1, target), ans);
 }
 
 
@@ -36,4 +42,6 @@ TEST(case_4,content)
     std::vector<int> vec1 = {1,3,5,6};
     EXPECT_EQ(searchInsert(vec1, target), ans);
     EXPECT_EQ(searchInsertStl(vec1, target), ans);
+    EXPECT_EQ(searchInsertSTL(vec1, target), ans);
+    EXPECT_EQ(searchInsertBinS(vec1, target), ans);
 }

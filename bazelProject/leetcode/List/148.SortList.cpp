@@ -1,4 +1,5 @@
 #include "148.SortList.h"
+#include "linkcomm.h"
 #include <queue>
 #include <vector>
 
@@ -110,4 +111,44 @@ ListNode* sortListHash(ListNode* head) {
     }
 
     return hashmap.begin()->second.head;
+}
+
+
+ListNode* sortListMergeSort1(ListNode* head) {
+    if(head == nullptr || head->next == nullptr) {
+        return head;
+    }
+
+    ListNode oHead; oHead.next = head;
+    ListNode* pFast = &oHead, *pSlow = &oHead;
+    while(pFast && pFast->next) {
+        pFast = pFast->next;
+        if(pFast) {
+            pFast = pFast->next;
+        }
+        pSlow = pSlow->next;
+    }
+
+    ListNode* pMidRight = pSlow->next;
+    pSlow->next = nullptr;
+
+    ListNode* p1 = sortListMergeSort1(head);
+    ListNode* p2 = sortListMergeSort1(pMidRight);
+
+    ListNode oNewHead;
+    ListNode* pPre = &oNewHead;
+    while(p1 && p2) {
+        if(p1->val < p2->val) {
+            pPre->next = p1;
+            p1 = p1->next;
+        }else {
+            pPre->next = p2;
+            p2 = p2->next;
+        }
+
+        pPre = pPre->next;
+    }
+
+    pPre->next = p1 ? p1 : p2;
+    return oNewHead.next;
 }

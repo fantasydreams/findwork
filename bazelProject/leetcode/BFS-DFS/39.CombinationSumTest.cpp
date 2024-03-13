@@ -8,6 +8,7 @@ TEST(case_1, content)
     std::vector<int> candidates = {2,3,6,7};
     std::vector<std::vector<int> > ans = {{2,2,3},{7}};
     EXPECT_EQ(combinationSum(candidates, target), ans);
+    EXPECT_EQ(combinationSum1(candidates, target), ans);
 }
 
 
@@ -17,6 +18,7 @@ TEST(case_2, content)
     std::vector<int> candidates = {2,3,5};
     std::vector<std::vector<int> > ans = {{2,2,2,2},{2, 3, 3}, {3, 5}};
     EXPECT_EQ(combinationSum(candidates, target), ans);
+    EXPECT_EQ(combinationSum1(candidates, target), ans);
 }
 
 TEST(case_3, content)
@@ -25,4 +27,5 @@ TEST(case_3, content)
     std::vector<int> candidates = {2};
     std::vector<std::vector<int> > ans = {};
     EXPECT_EQ(combinationSum(candidates, target), ans);
+    EXPECT_EQ(combinationSum1(candidates, target), ans);
 }

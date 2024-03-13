@@ -68,3 +68,27 @@ vector<vector<int> > combine2(int n, int k) // 2023 / 09 / 03
     dfs(res, n, 0, 0, tmp);
     return res;
 }
+
+void DFS(int n, int pos, int icur, std::vector<int>& tmp, std::vector<std::vector<int> > &vecAns) {
+    if(icur==tmp.size()) {
+        vecAns.push_back(tmp);
+    }
+    if(icur >= tmp.size()) {
+        return;
+    }
+
+    for(int i = pos; i < n; ++i) {
+        if(n - pos + icur < tmp.size()) {
+            break;
+        }
+        tmp[icur] = i + 1;
+        DFS(n, i + 1, icur + 1, tmp, vecAns);
+    }
+}
+
+vector<vector<int> > combine3(int n, int k) {
+    std::vector<int> tmp(k, 0);
+    std::vector<vector<int> > vecAns;
+    DFS(n, 0, 0, tmp, vecAns);
+    return vecAns;
+}

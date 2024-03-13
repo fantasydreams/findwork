@@ -53,3 +53,24 @@ double myPow2(double x, long long n) {
 double myPowx(double x, int n) {
     return myPow2(x, n);
 }
+
+
+double myPow3(double x, long long n) {
+    if(n == 0) {
+        return 1;
+    }
+    if(n == 1) {
+        return x;
+    }
+    
+    if(n < 0) {
+        n = -n;
+        x = 1.0 / x;
+    }
+
+    return myPow3(x * x, n / 2) * ((n & 0x1) ? x : 1);
+}
+
+double myPow1(double x, int n) {
+    return myPow3(x, n);
+}

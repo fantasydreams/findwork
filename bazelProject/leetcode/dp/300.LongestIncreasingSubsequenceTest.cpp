@@ -9,6 +9,8 @@ TEST(case_1,content)
     int ans = 4;
     EXPECT_EQ(lengthOfLIS(nums), ans);
     EXPECT_EQ(lengthOfLIS1(nums), ans);
+    EXPECT_EQ(lengthOfLIS2(nums), ans);
+    EXPECT_EQ(lengthOfLIS3(nums), ans);
 }
 
 TEST(case_2,content)
@@ -17,6 +19,8 @@ TEST(case_2,content)
     int ans = 4;
     EXPECT_EQ(lengthOfLIS(nums), ans);
     EXPECT_EQ(lengthOfLIS1(nums), ans);
+    EXPECT_EQ(lengthOfLIS2(nums), ans);
+    EXPECT_EQ(lengthOfLIS3(nums), ans);
 }
 
 
@@ -26,4 +30,6 @@ TEST(case_3,content)
     int ans = 1;
     EXPECT_EQ(lengthOfLIS(nums), ans);
     EXPECT_EQ(lengthOfLIS1(nums), ans);
+    EXPECT_EQ(lengthOfLIS2(nums), ans);
+    EXPECT_EQ(lengthOfLIS3(nums), ans);
 }

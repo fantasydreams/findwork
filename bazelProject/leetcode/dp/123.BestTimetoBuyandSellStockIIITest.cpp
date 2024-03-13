@@ -7,6 +7,7 @@ TEST(case_1, content) {
     EXPECT_EQ(maxProfit(price), profit);
     EXPECT_EQ(maxProfitDp(price), profit);
     EXPECT_EQ(maxProfitStat(price), profit);
+    EXPECT_EQ(maxProfitDp1(price), profit);
 }
 
 
@@ -16,6 +17,7 @@ TEST(case_2, content) {
     EXPECT_EQ(maxProfit(price), profit);
     EXPECT_EQ(maxProfitDp(price), profit);
     EXPECT_EQ(maxProfitStat(price), profit);
+    EXPECT_EQ(maxProfitDp1(price), profit);
 }
 
 TEST(case_3, content) {
@@ -24,4 +26,5 @@ TEST(case_3, content) {
     EXPECT_EQ(maxProfit(price), profit);
     EXPECT_EQ(maxProfitDp(price), profit);
     EXPECT_EQ(maxProfitStat(price), profit);
+    EXPECT_EQ(maxProfitDp1(price), profit);
 }

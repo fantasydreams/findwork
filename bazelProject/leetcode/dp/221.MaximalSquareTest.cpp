@@ -9,6 +9,7 @@ TEST(case_1,content)
     int ans = 4;
     EXPECT_EQ(maximalSquare(nums), ans);
     EXPECT_EQ(maximalSquareDp(nums), ans);
+    EXPECT_EQ(maximalSquareDp1(nums), ans);
 }
 
 TEST(case_2,content)
@@ -17,6 +18,7 @@ TEST(case_2,content)
     int ans = 1;
     EXPECT_EQ(maximalSquare(nums), ans);
     EXPECT_EQ(maximalSquareDp(nums), ans);
+    EXPECT_EQ(maximalSquareDp1(nums), ans);
 }
 
 TEST(case_3,content)
@@ -25,4 +27,5 @@ TEST(case_3,content)
     int ans = 0;
     EXPECT_EQ(maximalSquare(nums), ans);
     EXPECT_EQ(maximalSquareDp(nums), ans);
+    EXPECT_EQ(maximalSquareDp1(nums), ans);
 }

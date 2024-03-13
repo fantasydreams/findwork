@@ -22,3 +22,14 @@ int trailingZeroes1(int n){
 
     return ans;
 }
+
+
+int trailingZeroes2(int n) {
+    int iAns = 0;
+    while(n) {
+        iAns += n / 5;
+        n /= 5;
+    }
+
+    return iAns;
+}

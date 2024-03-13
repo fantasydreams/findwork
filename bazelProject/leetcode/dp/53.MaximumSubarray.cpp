@@ -63,3 +63,20 @@ int maxSubArray2(vector<int>& nums) { // 2023 / 08 /21
 
     return iMax;
 }
+
+
+int maxSubArray3(vector<int>& nums) {
+    int iAns = nums[0];
+    int iTmp = 0;
+    for(const auto& iNum : nums) {
+        if(iTmp > 0) {
+            iTmp += iNum;
+        }else {
+            iTmp = iNum;
+        }
+
+        iAns = std::max(iAns, iTmp);
+    }
+
+    return iAns;
+}

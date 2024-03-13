@@ -27,3 +27,15 @@ uint32_t reverseBits1(uint32_t n) {
 
     return ans;
 }
+
+
+uint32_t reverseBits2(uint32_t n) {
+    int iAns = 0, iBit = 0;
+    for(int i = 0; i < 32; ++i) {
+        iBit = n & 0x1;
+        n >>= 1;
+        iAns = iAns << 1 | iBit;
+    }
+
+    return iAns;
+}

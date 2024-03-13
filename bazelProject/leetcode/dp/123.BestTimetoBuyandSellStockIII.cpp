@@ -55,3 +55,18 @@ int maxProfitStat(vector<int>& prices) {
 
     return sell2;
 } 
+
+
+int maxProfitDp1(vector<int>& prices) {
+    int k = 2;
+    std::vector<std::vector<int> >dp(prices.size(), std::vector<int>(k + 1, 0));
+    for(int i = 1; i <= k; ++i) {
+        int min = prices[0];
+        for(int j = 1; j < prices.size(); ++j) {
+            min = std::min(min, prices[j] - dp[j][i-1]);
+            dp[j][i] = std::max(dp[j-1][i], prices[j] - min);
+        }
+    }
+
+    return dp.back().back();
+}

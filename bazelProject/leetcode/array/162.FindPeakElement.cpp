@@ -19,3 +19,30 @@ int findPeakElement(vector<int>& nums) {
 
     return 0;
 }
+
+
+int findPeakElement1(vector<int>& nums) {
+    auto pGet = [&](int iIdx) -> std::pair<int, int> {
+        if(iIdx == -1 || iIdx == nums.size()) {
+            return {0, INT_MIN};
+        }
+        return {1, nums[iIdx]};
+    };
+
+    int iBegin = 0, iEnd = nums.size() - 1;
+    while(iBegin <= iEnd) {
+        int iMid = iBegin + ((iEnd - iBegin) >> 1);
+        auto iBefore = pGet(iMid - 1);
+        auto iMidVal = pGet(iMid);
+        auto iAfter = pGet(iMid + 1);
+        if( iBefore < iMidVal && iMidVal > iAfter) {
+            return iMid;
+        }else if(iBefore < iMidVal) {
+            iBegin = iMid + 1;
+        }else {
+            iEnd = iMid - 1;
+        }
+    }
+
+    return 0;
+}

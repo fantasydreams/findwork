@@ -1,4 +1,6 @@
 #include "23.MergekSortedLists.h"
+#include <cstdarg>
+#include <list>
 #include <queue>
 
 class compare{
@@ -54,6 +56,37 @@ ListNode* mergeKLists1(vector<ListNode*>& lists) {
         if(pNode->next) {
             oPriorityQue.push(pNode->next);
         }
+    }
+
+    return oHead.next;
+}
+
+
+class cmp1 {
+public:
+    bool operator()(const ListNode* a, const ListNode* b) {
+        return a->val > b->val;
+    }
+};
+
+ListNode* mergeKLists2(vector<ListNode*>& lists)  {
+    ListNode oHead, *pPre = &oHead;
+    std::priority_queue<ListNode*, std::vector<ListNode*>, cmp1> pri_que;
+    for(int i = 0; i < lists.size(); ++i) {
+        if(lists[i] != nullptr) {
+            pri_que.push(lists[i]);
+        }
+    }
+
+    while(!pri_que.empty()) {
+        ListNode * pNode = pri_que.top();
+        pPre->next = pNode;
+        pri_que.pop();
+        if(pNode->next) {
+            pri_que.push(pNode->next);
+        }
+
+        pPre = pPre->next;
     }
 
     return oHead.next;

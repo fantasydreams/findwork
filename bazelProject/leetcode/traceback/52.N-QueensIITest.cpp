@@ -8,6 +8,7 @@ TEST(case_1,content)
     int n = 4;
     int ans = 2;
     EXPECT_EQ(totalNQueens(n), ans);
+    EXPECT_EQ(totalNQueens1(n), ans);
 }
 
 TEST(case_2,content)
@@ -15,4 +16,5 @@ TEST(case_2,content)
     int n = 1;
     int ans = 1;
     EXPECT_EQ(totalNQueens(n), ans);
+    EXPECT_EQ(totalNQueens1(n), ans);
 }

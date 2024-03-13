@@ -11,6 +11,7 @@ TEST(case_1,content)
     EXPECT_EQ(wordBreak(word, wordDict), ans);
     EXPECT_EQ(wordBreakDp(word, wordDict), ans);
     EXPECT_EQ(wordBreakDp1(word, wordDict), ans);
+    EXPECT_EQ(wordBreakDp2(word, wordDict), ans);
 }
 
 
@@ -22,6 +23,7 @@ TEST(case_2,content)
     EXPECT_EQ(wordBreak(word, wordDict), ans);
     EXPECT_EQ(wordBreakDp(word, wordDict), ans);
     EXPECT_EQ(wordBreakDp1(word, wordDict), ans);
+    EXPECT_EQ(wordBreakDp2(word, wordDict), ans);
 }
 
 TEST(case_3,content)
@@ -32,6 +34,7 @@ TEST(case_3,content)
     EXPECT_EQ(wordBreak(word, wordDict), ans);
     EXPECT_EQ(wordBreakDp(word, wordDict), ans);
     EXPECT_EQ(wordBreakDp1(word, wordDict), ans);
+    EXPECT_EQ(wordBreakDp2(word, wordDict), ans);
 }
 
 TEST(case_4,content)
@@ -42,4 +45,5 @@ TEST(case_4,content)
     EXPECT_EQ(wordBreak(word, wordDict), ans);
     EXPECT_EQ(wordBreakDp(word, wordDict), ans);
     EXPECT_EQ(wordBreakDp1(word, wordDict), ans);
+    EXPECT_EQ(wordBreakDp2(word, wordDict), ans);
 }

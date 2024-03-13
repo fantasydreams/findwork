@@ -4,6 +4,8 @@
 #include <inttypes.h>
 //普通算法，以某个字符为中心，向两边扩展来计算最大回文字串
 //时间复杂度：O(n^2)，空间复杂度O(n)
+using namespace std;
+
 std::string longestPalindrome(std::string s)
 {
     std::string tmpRes;
@@ -247,6 +249,7 @@ std::string longestPalindrome1(std::string s)
     }   
 
     return ans;
+}
 
 std::string longestPalindromeManacher1(std::string s)
 {
@@ -282,4 +285,38 @@ std::string longestPalindromeManacher1(std::string s)
     }
     // printVec(vecMa);
     return s.substr((maxCenter - maxR) / 2, maxR);
+}
+
+std::string longestPalindromeWithDP1(std::string s) {
+    if(s.empty() || s.length() == 1) {
+        return s;
+    }
+
+    std::vector<std::vector<int> > dp(s.size(), std::vector<int>(s.size(), false));
+    for(int i = 0; i < s.size(); ++i) {
+        dp[i][i] = true;
+        if(i && s[i] == s[i - 1]) {
+            dp[i - 1][i] = true;
+        }
+    }
+
+    int start = 0, len = 0;
+    for(int i = 0; i < s.size(); ++i) {
+        for(int j = i; j >= 0; --j) {
+            if(i == j) {
+                dp[j][i] = true;
+            }else if(j + 1 == i) {
+                dp[j][i] = s[j] == s[i];
+            }else {
+                dp[j][i] = dp[j+1][i-1] && s[j] == s[i];
+            }
+
+            if(dp[j][i] && i - j + 1 > len) {
+                len = i - j + 1;
+                start = j;
+            }
+        }
+    }
+
+    return s.substr(start, len);
 }

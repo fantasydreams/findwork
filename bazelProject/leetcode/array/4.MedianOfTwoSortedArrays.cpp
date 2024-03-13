@@ -1,4 +1,5 @@
 #include "4.MedianOfTwoSortedArrays.h"
+#include <climits>
 
 // 第一种方式，采用归并排序，先将已经排好序的两个数组进行归并排序
 // 空间复杂度O(N)，时间复杂度O(N)
@@ -155,19 +156,69 @@ double findMedianSortedArraysBinarySearchNotRecursion(const vector<int>& nums1, 
     return 0;
 }
 
-
-double findMedianSortedArraysBinarySearchNotRecursion1(const vector<int>& nums1, const vector<int>& nums2) 
-{
-    size_t iLen = nums1.size() + nums2.size();
-    if(nums1.size() < nums2.size()) {
-        swap(nums1, nums2);
+double findKthNotRecursion1(const vector<int>& nums1, const vector<int>& nums2, size_t k) {
+    int aIdx = 0, bIdx = 0;
+    while(aIdx < nums1.size() && bIdx < nums2.size() && k > 1) {
+        int newK = k / 2 - 1;
+        int a = nums1.size() > aIdx + newK ? nums1[aIdx + newK] : INT_MAX;
+        int b = nums2.size() > bIdx + newK ? nums2[bIdx + newK] : INT_MAX;
+        if(a < b) {
+            aIdx += k / 2;
+        }else {
+            bIdx += k / 2;
+        }
+        k -= k / 2;
     }
 
-    size_t kth = (iLen >> 1);
-    size_t idx1 = 0, idx2 = 0, step;
-    while(kth) {
-        step = kTh >> 1;
-        
+    if(aIdx >= nums1.size()) {
+        return nums2[bIdx + k - 1];
+    }
+    if(bIdx >= nums2.size()) {
+        return nums1[aIdx + k - 1];
     }
 
+    if(k == 1) return std::min(nums1[aIdx], nums2[bIdx]);
+}
+
+double findMedianSortedArraysBinarySearchNotRecursion1(const vector<int>& nums1, const vector<int>& nums2) {
+    int iTotal = nums1.size() + nums2.size();
+    int iHalf = iTotal / 2;
+    if(iTotal % 2 == false) {
+        double a = findKthNotRecursion1(nums1, nums2, iHalf);
+        double b = findKthNotRecursion1(nums1, nums2, iHalf + 1);
+        return (a + b) / 2;
+    }else {
+        return findKthNotRecursion1(nums1, nums2, iHalf + 1);
+    }
+    return 0;
+}
+
+double findKth1(const vector<int>& nums1, const vector<int>& nums2, size_t aIdx, size_t bIdx, size_t k) {
+    if(aIdx >= nums1.size()) return nums2[bIdx + k - 1];
+    if(bIdx >= nums2.size()) return nums1[aIdx + k - 1];
+    if(k == 1) {
+        return std::min(nums1[aIdx], nums2[bIdx]);
+    }
+
+    int iNewK =  k / 2 - 1;
+    int a = aIdx + iNewK >= nums1.size() ? INT_MAX : nums1[aIdx + iNewK];
+    int b = bIdx + iNewK >= nums2.size() ? INT_MAX : nums2[bIdx + iNewK];
+    if(a < b) {
+        return findKth1(nums1, nums2, aIdx + k / 2, bIdx, k - k / 2);
+    }else {
+        return findKth1(nums1, nums2, aIdx, bIdx + k / 2, k - k / 2);
+    }
+}
+
+double findMedianSortedArraysBinarySearch1(const vector<int>& nums1, const vector<int>& nums2) {
+    int iTotal = nums1.size() + nums2.size();
+    int iHalf = iTotal / 2;
+    if(iTotal % 2 == false) {
+        double a = findKth1(nums1, nums2, 0, 0, iHalf);
+        double b = findKth1(nums1, nums2, 0, 0, iHalf + 1);
+        return (a + b) / 2;
+    }else {
+        return findKth1(nums1, nums2, 0, 0, iHalf + 1);
+    }
+    return 0;
 }

@@ -17,3 +17,12 @@ int singleNumber1(vector<int> &nums) {
 
     return ans;
 }
+
+int singleNumber2(vector<int> &nums) {
+    int iAns = 0;
+    for(const auto & iNum : nums) {
+        iAns ^= iNum;
+    }
+
+    return iAns;
+}

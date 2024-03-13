@@ -43,3 +43,18 @@ TEST(case_3,content)
     freeLinkList(pSorted);
     freeLinkList(pRes);
 }
+
+
+TEST(case_4,content)
+{
+    std::vector<int> linkvec = {123,32,23,5,7,1,2,3,4,5};
+    std::vector<int> con = {1,2,3,4,5,5,7,23,32,123};
+	ListNode * pRes = createLinkList(con);
+    ListNode * pSort = createLinkList(linkvec);
+    ListNode * pSorted = sortListMergeSort1(pSort);
+    
+    // printList(pSorted);
+    EXPECT_EQ(ListValEqual(pSorted, pRes), true);
+    freeLinkList(pSorted);
+    freeLinkList(pRes);
+}

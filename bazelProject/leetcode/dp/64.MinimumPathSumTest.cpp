@@ -12,6 +12,8 @@ TEST(case_1,content)
     EXPECT_EQ(minPathSum2(grid), ans);
     EXPECT_EQ(minPathSumDp(grid), ans);
     EXPECT_EQ(minPathSumDpCompress(grid), ans);
+    EXPECT_EQ(minPathSumDp1(grid), ans);
+    EXPECT_EQ(minPathSumDpCompress1(grid), ans);
 }
 
 TEST(case_2,content)
@@ -23,6 +25,8 @@ TEST(case_2,content)
     EXPECT_EQ(minPathSum2(grid), ans);
     EXPECT_EQ(minPathSumDp(grid), ans);
     EXPECT_EQ(minPathSumDpCompress(grid), ans);
+    EXPECT_EQ(minPathSumDp1(grid), ans);
+    EXPECT_EQ(minPathSumDpCompress1(grid), ans);
 }
 
 

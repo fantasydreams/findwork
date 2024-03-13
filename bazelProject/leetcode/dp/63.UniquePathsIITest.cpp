@@ -15,6 +15,7 @@ TEST(case_1, content)
     int ans = 2;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 TEST(case_2, content)
@@ -26,6 +27,7 @@ TEST(case_2, content)
     int ans = 1;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 TEST(case_3, content)
@@ -37,6 +39,7 @@ TEST(case_3, content)
     int ans = 0;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 TEST(case_4, content)
@@ -48,6 +51,7 @@ TEST(case_4, content)
     int ans = 1;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 TEST(case_5, content)
@@ -60,6 +64,7 @@ TEST(case_5, content)
     int ans = 1;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 TEST(case_6, content)
@@ -72,6 +77,7 @@ TEST(case_6, content)
     int ans = 0;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 TEST(case_7, content)
@@ -84,6 +90,7 @@ TEST(case_7, content)
     int ans = 0;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 TEST(case_8, content)
@@ -96,6 +103,7 @@ TEST(case_8, content)
     int ans = 3;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 TEST(case_9, content)
@@ -108,6 +116,7 @@ TEST(case_9, content)
     int ans = 3;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 TEST(case_10, content)
@@ -120,6 +129,7 @@ TEST(case_10, content)
     int ans = 2;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }
 
 
@@ -132,4 +142,5 @@ TEST(case_11, content)
     int ans = 0;
     EXPECT_EQ(uniquePathsWithObstacles(nnums), ans);
     EXPECT_EQ(uniquePathsWithObstaclesDFS(nnums), ans);
+    EXPECT_EQ(uniquePathsWithObstacles1(nnums), ans);
 }

@@ -45,3 +45,20 @@ int singleNumberBit1(vector<int>& nums) {
     return one;
 }
 
+
+
+int singleNumberBit2(vector<int>& nums) {
+    int iAns = 0;
+    for(int i = 0; i < 32; ++i) {
+        int iTmp = 0;
+        for(const auto & iNum : nums) {
+            iTmp += (iNum >> i) & 0x1;
+        }
+
+        if(iTmp % 3) {
+            iAns |= 1 << i;
+        }
+    }
+
+    return iAns;
+}   

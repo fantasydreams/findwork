@@ -127,3 +127,51 @@ int minPathSumDpCompress(vector<vector<int> >& grid) {
 
     return dp[grid[0].size() - 1];
 }
+
+
+int minPathSumDp1(vector<vector<int> >& grid) {
+    if(grid.empty() || grid[0].empty()) {
+        return 0;
+    }
+
+    std::vector<std::vector<int> > dp(grid.size(), std::vector<int>(grid[0].size(), INT_MAX));
+    for(int i = 0; i < grid.size(); ++i) {
+        for(int j = 0; j < grid[i].size(); ++j) {
+            if(i == 0 && j == 0) {
+                dp[i][j] = grid[i][j];
+            }else if(i == 0) {
+                dp[i][j] = dp[i][j - 1] + grid[i][j];
+            }else if(j == 0) {
+                dp[i][j] = dp[i - 1][j] + grid[i][j];
+            }else {
+                dp[i][j] = std::min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
+            }
+        }
+    }
+
+    return dp.back().back();
+}
+
+
+int minPathSumDpCompress1(vector<vector<int> >& grid) {
+    if(grid.empty() || grid[0].empty()) {
+        return 0;
+    }
+
+    std::vector<int> dp(grid[0].size(), 0);
+    for(int i = 0; i < grid.size(); ++ i) {
+        for(int j = 0; j < grid[i].size(); ++j) {
+            if(i == 0 && j == 0) {
+                dp[j] = grid[i][j];
+            }else if(i == 0) {
+                dp[j] = dp[j - 1] + grid[i][j];
+            }else if(j == 0) {
+                dp[j] = dp[j] + grid[i][j];
+            }else {
+                dp[j] = std::min(dp[j], dp[j - 1]) + grid[i][j];
+            }
+        }
+    }
+
+    return dp.back();
+}

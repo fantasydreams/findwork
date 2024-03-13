@@ -23,3 +23,30 @@ int findMin(vector<int>& nums) {
 
     return 0;
 }
+
+
+int findMin1(vector<int>& nums) {
+    if(nums.size() == 1 || nums.front() < nums.back()) {
+        return nums.front();
+    }
+
+    int iBegin = 0, iEnd = nums.size() - 1;
+    while(iBegin <= iEnd) {
+        if(iBegin == iEnd) {
+            return nums[iBegin];
+        }
+
+        if(iBegin + 1 == iEnd) {
+            return std::min(nums[iBegin], nums[iEnd]);
+        }else {
+            int iMid = iBegin + ((iEnd - iBegin) >> 1);
+            if(nums[iMid] > nums[iBegin] && nums[iMid] > nums[iEnd]) {
+                iBegin = iMid + 1;
+            }else {
+                iEnd = iMid;
+            }
+        }
+    }
+
+    return 0;
+}

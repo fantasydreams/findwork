@@ -83,3 +83,20 @@ int rob4(vector<int>& nums) {
     }
     return dp[2];
 }
+
+int rob5(vector<int>& nums) {
+    if(nums.empty()) {
+        return 0;
+    }
+
+    std::vector<int> dp(3, 0);
+    dp[1] = nums[0];
+    dp[2] = dp[1];
+    for(int i = 1; i < nums.size(); ++i) {
+        dp[2] = std::max(dp[0] + nums[i], dp[1]);
+        dp[0] = dp[1];
+        dp[1] = dp[2];
+    }
+
+    return dp[2];
+}

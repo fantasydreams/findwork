@@ -71,3 +71,27 @@ bool wordBreakDp1(string s, vector<string>& wordDict) {
 
     return dp[s.size()];
 } 
+
+
+
+bool wordBreakDp2(string s, vector<string>& wordDict) {
+    if(s.empty()) {
+        return false;
+    }
+
+    std::vector<bool> vecDp(s.size() + 1, false);
+    vecDp[0] = true;
+    for(int i = 0; i <= s.size(); ++i) {
+        for(const auto & sStr : wordDict) {
+            if(i < sStr.size()) {
+                continue;
+            }
+
+            if(!vecDp[i] && s.substr(i - sStr.size(), sStr.size()) == sStr) {
+                vecDp[i] = vecDp[i - sStr.size()];
+            }
+        }
+    }
+
+    return vecDp[s.size()];
+}

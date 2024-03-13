@@ -73,3 +73,51 @@ cc_binary(
 	deps  = ["179LargestNumber",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "502IPO",
+	hdrs = ["502.IPO.h"],
+	srcs = ["502.IPO.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "502IPOTest",
+	srcs  = ["502.IPOTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["502IPO",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "373FindKPairswithSmallestSums",
+	hdrs = ["373.FindKPairswithSmallestSums.h"],
+	srcs = ["373.FindKPairswithSmallestSums.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "373FindKPairswithSmallestSumsTest",
+	srcs  = ["373.FindKPairswithSmallestSumsTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["373FindKPairswithSmallestSums",
+			 "@googletest//:gtest_main"],
+)
+
+
+cc_library(
+	name = "295FindMedianfromDataStream",
+	hdrs = ["295.FindMedianfromDataStream.h"],
+	srcs = ["295.FindMedianfromDataStream.cpp"],
+    copts = ["-std=c++11"],
+)
+
+cc_binary(
+	name  = "295FindMedianfromDataStreamTest",
+	srcs  = ["295.FindMedianfromDataStreamTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["295FindMedianfromDataStream",
+			 "@googletest//:gtest_main"],
+)

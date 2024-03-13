@@ -140,3 +140,18 @@ cc_binary(
 	deps  = ["212WordSearchII",
 			 "@googletest//:gtest_main"],
 )
+
+
+cc_library(
+	name = "22GenerateParentheses",
+	hdrs = ["22.GenerateParentheses.h"],
+	srcs = ["22.GenerateParentheses.cpp"],
+)
+
+cc_binary(
+	name  = "22GenerateParenthesesTest",
+	srcs  = ["22.GenerateParenthesesTest.cpp"],
+	copts = ["-std=c++11"],
+	deps  = ["22GenerateParentheses",
+			 "@googletest//:gtest_main"],
+)

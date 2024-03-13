@@ -1,4 +1,5 @@
 #include "67.AddBinary.h"
+#include <algorithm>
 
 string addBinary(string a, string b) {
     const auto & sShort = a.size() < b.size() ? a : b;
@@ -24,4 +25,33 @@ string addBinary(string a, string b) {
     }
 
     return sLong;
+}
+
+
+string addBinary1(string a, string b) {
+    reverse(a.begin(), a.end());
+    reverse(b.begin(), b.end());
+    if(a.length() > b.length()) {
+        swap(a, b);
+    }
+
+    int carry = 0, idx = 0;
+    while(idx < a.size()) {
+        int sum = a[idx] + b[idx] - 2 * '0' + carry;
+        carry = sum / 2;
+        b[idx++] = sum % 2 + '0';
+    }
+
+    while(idx < b.size() && carry) {
+        int sum = b[idx] - '0' + carry;
+        carry = sum / 2;
+        b[idx++] = sum % 2 + '0';
+    }
+
+    if(carry) {
+        b.push_back(carry + '0');
+    }
+
+    reverse(b.begin(), b.end());
+    return b;
 }

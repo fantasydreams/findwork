@@ -65,3 +65,18 @@ vector<int> searchRangeSTL(vector<int>& nums, int target) {
         return {(int)std::distance(nums.begin(), pIter), (int)std::distance(nums.begin(), pIterEnd)};
     }
 }
+
+
+vector<int> searchRangeSTL1(vector<int>& nums, int target) { 
+    auto pIterBegin = std::lower_bound(nums.begin(), nums.end(), target);
+    if(pIterBegin == nums.end() || *pIterBegin != target) {
+        return {-1, -1};
+    }
+    auto pIterEnd = std::upper_bound(pIterBegin, nums.end(), target);
+    if(pIterEnd == nums.end()) {
+        return {(int)std::distance(nums.begin(), pIterBegin), int(nums.size() -1)};
+    }else if(*pIterEnd != target) {
+        return {(int)std::distance(nums.begin(), pIterBegin), int(std::distance(nums.begin(), pIterEnd) -1)};
+    }
+    return {(int)std::distance(nums.begin(), pIterBegin), (int)std::distance(nums.begin(), pIterEnd)};
+}

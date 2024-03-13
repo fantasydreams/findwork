@@ -27,3 +27,30 @@ std::vector<int> plusOne(std::vector<int>& digits) {
     std::reverse(ans.begin(), ans.end());
     return ans;
 }
+
+std::vector<int> plusOne1(std::vector<int>& digits) {
+    if(digits.empty()) {
+        return {1};
+    }
+
+    int idx = 0;
+    for(; idx < digits.size(); ++idx) {
+        if(digits[idx]) {
+            break;
+        }
+    }
+    digits.erase(digits.begin(), digits.begin() + idx);
+
+    int carry = 1;
+    for(int i = digits.size() - 1; i >= 0; --i) {
+        int sum = digits[i] + carry;
+        carry = sum / 10;
+        digits[i] = sum % 10;
+    }
+
+    if(carry) {
+        digits.insert(digits.begin(), carry);
+    }
+
+    return digits;
+}

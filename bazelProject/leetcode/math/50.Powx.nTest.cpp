@@ -11,6 +11,7 @@ TEST(case_1, content)
     double ans = 1024.0000;
 
     EXPECT_EQ(myPow(x, n), ans);
+    EXPECT_EQ(myPow1(x, n), ans);
 }
 
 
@@ -21,6 +22,7 @@ TEST(case_2, content)
     double ans = 9.26100;
 
     EXPECT_EQ(fabs(myPow(x, n) - ans) < 1e10, true);
+    EXPECT_EQ(fabs(myPow1(x, n) - ans) < 1e10, true);
 }
 
 
@@ -31,6 +33,7 @@ TEST(case_3, content)
     double ans = 0.25000;
 
     EXPECT_EQ(fabs(myPow(x, n) - ans) < 1e-10, true);
+    EXPECT_EQ(fabs(myPow1(x, n) - ans) < 1e-10, true);
 }
 
 
@@ -41,6 +44,7 @@ TEST(case_4, content)
     double ans = x;
 
     EXPECT_EQ(myPow(x, n), ans);
+    EXPECT_EQ(myPow1(x, n), ans);
 }
 
 
@@ -51,6 +55,7 @@ TEST(case_5, content)
     double ans = 1;
 
     EXPECT_EQ(myPow(x, n), ans);
+    EXPECT_EQ(myPow1(x, n), ans);
 }
 
 TEST(case_6, content)
@@ -60,6 +65,7 @@ TEST(case_6, content)
     double ans = 1;
 
     EXPECT_EQ(myPow(x, n), ans);
+    EXPECT_EQ(myPow1(x, n), ans);
 }
 
 TEST(case_7, content)
@@ -70,6 +76,7 @@ TEST(case_7, content)
     double tmp = myPowx(x, n);
 
     EXPECT_EQ(fabs(tmp - ans) < 1e-5, true);
+    EXPECT_EQ(fabs(tmp - myPow1(x, n)) < 1e-5, true);
     // EXPECT_EQ(tmp, ans);
 }
 
@@ -81,5 +88,6 @@ TEST(case_8, content)
     double tmp = myPow(x, n);
 
     EXPECT_EQ(fabs(tmp - ans) < 1e-5, true);
+    EXPECT_EQ(fabs(tmp - myPow1(x, n)) < 1e-5, true);
     // EXPECT_EQ(tmp, ans);
 }

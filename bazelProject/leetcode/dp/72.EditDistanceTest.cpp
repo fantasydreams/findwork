@@ -9,6 +9,7 @@ TEST(case_1,content)
     int ans = 3;
     EXPECT_EQ(minDistance(word1, word2), ans);
     EXPECT_EQ(minDistanceDp(word1, word2), ans);
+    EXPECT_EQ(minDistanceDp1(word1, word2), ans);
 }
 
 TEST(case_2,content)
@@ -17,4 +18,5 @@ TEST(case_2,content)
     int ans = 5;
     EXPECT_EQ(minDistance(word1, word2), ans);
     EXPECT_EQ(minDistanceDp(word1, word2), ans);
+    EXPECT_EQ(minDistanceDp1(word1, word2), ans);
 }

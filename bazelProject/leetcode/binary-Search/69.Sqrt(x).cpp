@@ -70,3 +70,24 @@ double sqr(double n) {
 int mySqrt3(int x) {
     return pow(x, 0.5);
 }
+
+
+int mySqrt4(int x) {
+    if(!x) {
+        return 0;
+    }
+    int iBegin = 1, iEnd = x / 2 + 1;
+    while(iBegin <= iEnd) {
+        int iMid = iBegin + ((iEnd - iBegin) >> 1);
+        int sqrtVal = x / iMid;
+        if(sqrtVal == iMid) {
+            return iMid;
+        }else if(sqrtVal < iMid) {
+            iEnd = iMid - 1;
+        }else {
+            iBegin = iMid + 1;
+        }
+    }
+
+    return iEnd;
+}

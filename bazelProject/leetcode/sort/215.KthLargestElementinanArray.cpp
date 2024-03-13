@@ -116,3 +116,15 @@ int findKthLargestPriQue(vector<int> &nums, int k) {
 
     return priQue.top();
 }
+
+int findKthLargestPriQue1(vector<int> &nums, int k) {
+    std::priority_queue<int, std::vector<int>, Compare> que;
+    for(const auto& iNum : nums) {
+        que.push(iNum);
+        if(que.size() > k) {
+            que.pop();
+        }
+    }
+
+    return que.top();
+}

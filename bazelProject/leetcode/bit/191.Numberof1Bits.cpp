@@ -10,3 +10,13 @@ int hammingWeight(uint32_t n) {
 
     return ans;
 }
+
+int hammingWeight1(uint32_t n) {
+    int iAns = 0;
+    while(n) {
+        iAns += n & 0x1;
+        n >>= 1;
+    }
+
+    return iAns;
+}

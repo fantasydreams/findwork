@@ -52,3 +52,28 @@ int uniquePathsWithObstaclesDFS(vector<vector<int> >& obstacleGrid) {
     DFS(obstacleGrid, 0, 0, ans);
     return ans;
 }
+
+int uniquePathsWithObstacles1(vector<vector<int> >& obstacleGrid) {
+    if(obstacleGrid.empty() || obstacleGrid.front().empty()) {
+        return 0;
+    }
+
+    if(obstacleGrid.front().front() == 1 || obstacleGrid.back().back() == 1) {
+        return 0;
+    }
+
+    std::vector<std::vector<int> > dp(obstacleGrid.size(), std::vector<int>(obstacleGrid.front().size(), 0));
+    for(int i = 0; i < obstacleGrid.size(); ++i) {
+        for(int j = 0; j < obstacleGrid[i].size(); ++j) {
+            if(i == 0) {
+                dp[i][j] = j == 0 ? obstacleGrid[i][j] == 0 : obstacleGrid[i][j] == 0 ? dp[i][j - 1] : 0;
+            }else if(j == 0) {
+                dp[i][j] = obstacleGrid[i][j] == 0 ? dp[i - 1][j] : 0;
+            }else {
+                dp[i][j] = obstacleGrid[i][j] == 0 ? dp[i - 1][j] + dp[i][j - 1] : 0;
+            }
+        }
+    }
+    
+    return dp.back().back();
+}

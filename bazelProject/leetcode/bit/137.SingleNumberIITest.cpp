@@ -7,6 +7,7 @@ TEST(case_1, content) {
     EXPECT_EQ(singleNumberHash(vec), ans);
     EXPECT_EQ(singleNumberBit(vec), ans);
     EXPECT_EQ(singleNumberBit1(vec), ans);
+    EXPECT_EQ(singleNumberBit2(vec), ans);
 }
 
 
@@ -16,4 +17,5 @@ TEST(case_2, content) {
     EXPECT_EQ(singleNumberHash(vec), ans);
     EXPECT_EQ(singleNumberBit(vec), ans);
     EXPECT_EQ(singleNumberBit1(vec), ans);
+    EXPECT_EQ(singleNumberBit2(vec), ans);
 }

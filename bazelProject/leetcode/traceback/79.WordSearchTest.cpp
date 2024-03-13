@@ -9,6 +9,8 @@ TEST(case_1,content)
     std::string word = "ABCCED";
     bool bexsit = true;
     EXPECT_EQ(exist(res, word), bexsit);
+    EXPECT_EQ(exist2(res, word), bexsit);
+    EXPECT_EQ(exist3(res, word), bexsit);
 }
 
 
@@ -18,6 +20,8 @@ TEST(case_2,content)
     std::string word = "SEE";
     bool bexsit = true;
     EXPECT_EQ(exist(res, word), bexsit);
+    EXPECT_EQ(exist2(res, word), bexsit);
+    EXPECT_EQ(exist3(res, word), bexsit);
 }
 
 TEST(case_3,content)
@@ -26,4 +30,17 @@ TEST(case_3,content)
     std::string word = "ABCB";
     bool bexsit = false;
     EXPECT_EQ(exist(res, word), bexsit);
+    EXPECT_EQ(exist2(res, word), bexsit);
+    EXPECT_EQ(exist3(res, word), bexsit);
+}
+
+
+TEST(case_4,content)
+{
+    vector<vector<char>> res = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+    std::string word = "SEE";
+    bool bexsit = true;
+    EXPECT_EQ(exist(res, word), bexsit);
+    EXPECT_EQ(exist2(res, word), bexsit);
+    EXPECT_EQ(exist3(res, word), bexsit);
 }
